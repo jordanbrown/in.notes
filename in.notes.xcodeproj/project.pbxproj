@@ -19,6 +19,7 @@
 		4839959C191427D20085611D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48399584191427D20085611D /* UIKit.framework */; };
 		483995A4191427D20085611D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 483995A2191427D20085611D /* InfoPlist.strings */; };
 		483995A6191427D20085611D /* in_notesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 483995A5191427D20085611D /* in_notesTests.m */; };
+		483995B019142C060085611D /* iPhone568.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483995AF19142C060085611D /* iPhone568.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		483995A1191427D20085611D /* in.notesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "in.notesTests-Info.plist"; sourceTree = "<group>"; };
 		483995A3191427D20085611D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		483995A5191427D20085611D /* in_notesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = in_notesTests.m; sourceTree = "<group>"; };
+		483995AF19142C060085611D /* iPhone568.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone568.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			children = (
 				4839958F191427D20085611D /* INAppDelegate.h */,
 				48399590191427D20085611D /* INAppDelegate.m */,
+				483995AF19142C060085611D /* iPhone568.storyboard */,
 				48399592191427D20085611D /* Images.xcassets */,
 				48399587191427D20085611D /* Supporting Files */,
 			);
@@ -220,6 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				483995B019142C060085611D /* iPhone568.storyboard in Resources */,
 				4839958B191427D20085611D /* InfoPlist.strings in Resources */,
 				48399593191427D20085611D /* Images.xcassets in Resources */,
 			);
@@ -361,6 +365,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "in.notes/in.notes-Prefix.pch";
 				INFOPLIST_FILE = "in.notes/in.notes-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -374,6 +379,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "in.notes/in.notes-Prefix.pch";
 				INFOPLIST_FILE = "in.notes/in.notes-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
