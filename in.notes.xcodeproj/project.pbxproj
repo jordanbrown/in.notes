@@ -82,6 +82,8 @@
 		4839968219143A5F0085611D /* INComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839968119143A5F0085611D /* INComposeViewController.m */; };
 		4839968619143C360085611D /* KHFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839968519143C360085611D /* KHFlatButton.m */; };
 		48399689191441AF0085611D /* in.notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48399687191441AF0085611D /* in.notes.xcdatamodeld */; };
+		4839968C1914433D0085611D /* INPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839968B1914433D0085611D /* INPost.m */; };
+		4839968F191443D00085611D /* INPost+Manage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839968E191443D00085611D /* INPost+Manage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -240,6 +242,10 @@
 		4839968419143C360085611D /* KHFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHFlatButton.h; sourceTree = "<group>"; };
 		4839968519143C360085611D /* KHFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHFlatButton.m; sourceTree = "<group>"; };
 		48399688191441AF0085611D /* in.notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = in.notes.xcdatamodel; sourceTree = "<group>"; };
+		4839968A1914433D0085611D /* INPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INPost.h; sourceTree = "<group>"; };
+		4839968B1914433D0085611D /* INPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INPost.m; sourceTree = "<group>"; };
+		4839968D191443D00085611D /* INPost+Manage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "INPost+Manage.h"; sourceTree = "<group>"; };
+		4839968E191443D00085611D /* INPost+Manage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "INPost+Manage.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,7 +313,7 @@
 				483995B219142CC20085611D /* INHomeViewController.m */,
 				4839968019143A5F0085611D /* INComposeViewController.h */,
 				4839968119143A5F0085611D /* INComposeViewController.m */,
-				48399687191441AF0085611D /* in.notes.xcdatamodeld */,
+				48399690191443D70085611D /* Core Data */,
 				48399592191427D20085611D /* Images.xcassets */,
 				48399587191427D20085611D /* Supporting Files */,
 			);
@@ -633,6 +639,18 @@
 			path = KHFlatButton;
 			sourceTree = "<group>";
 		};
+		48399690191443D70085611D /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				48399687191441AF0085611D /* in.notes.xcdatamodeld */,
+				4839968A1914433D0085611D /* INPost.h */,
+				4839968B1914433D0085611D /* INPost.m */,
+				4839968D191443D00085611D /* INPost+Manage.h */,
+				4839968E191443D00085611D /* INPost+Manage.m */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -754,6 +772,7 @@
 				483995B319142CC20085611D /* INHomeViewController.m in Sources */,
 				4839965C191437FA0085611D /* MagicalRecord+ShorthandSupport.m in Sources */,
 				4839964D191437FA0085611D /* NSManagedObject+MagicalFinders.m in Sources */,
+				4839968F191443D00085611D /* INPost+Manage.m in Sources */,
 				48399660191437FA0085611D /* MCCharacterCounter.m in Sources */,
 				48399676191437FA0085611D /* SDWebImageDownloader.m in Sources */,
 				4839967A191437FA0085611D /* UIButton+WebCache.m in Sources */,
@@ -763,6 +782,7 @@
 				4839966E191437FA0085611D /* REDActionSheetButton.m in Sources */,
 				48399670191437FA0085611D /* RZCellSizeManager.m in Sources */,
 				4839968219143A5F0085611D /* INComposeViewController.m in Sources */,
+				4839968C1914433D0085611D /* INPost.m in Sources */,
 				4839965F191437FA0085611D /* MCAttachmentView.m in Sources */,
 				48399669191437FA0085611D /* MCMarkdownSyntaxStorage.m in Sources */,
 				48399652191437FA0085611D /* NSManagedObjectContext+MagicalSaves.m in Sources */,

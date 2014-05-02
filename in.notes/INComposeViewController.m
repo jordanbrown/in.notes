@@ -13,6 +13,7 @@
 #import "MCImageStore.h"
 #import "MCCharacterCounter.h"
 #import "MCHashtagContainer.h"
+#import "INPost+Manage.h"
 
 @interface INComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, MCMoreButtonDelegate, MCAttachmentContainerDelegate, MCMarkdownTextViewDelegate>
 
@@ -81,7 +82,19 @@
 
 - (IBAction)publishButtonSelected:(id)sender
 {
-    // Save to Core Data.
+    [INPost postWithText:self.markdownTextView.text
+                   image:[[MCImageStore sharedStore]imageForKey:kMCImageStoreKey]
+               thumbnail:[UIImage resizeImage:[[MCImageStore sharedStore]imageForKey:kMCImageStoreKey] toSize:CGSizeMake(242.0f, 100.0f) cornerRadius:0.0]
+                hashtags:[MCHashtagContainer hashtagArrayFromString:self.markdownTextView.text] completion:^(NSError *error) {
+                    
+                    /**
+                     *  It is important to clear the cache because "image" is still in memory.
+                     *  User can post "empty" posts if not cleared.
+                     */
+                    [[MCImageStore sharedStore]deleteImageForKey:kMCImageStoreKey];
+                    [self.navigationController popToRootViewControllerAnimated:YES];
+                    
+                }];
 }
 
 #pragma mark - MCMore Button Delegate

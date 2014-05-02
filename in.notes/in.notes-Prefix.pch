@@ -21,5 +21,6 @@
     #import "MagicalRecord/CoreData+MagicalRecord.h"
 
     #import "UIImage+MCResize.h"
+    #import "MCHashtagContainer.h"
 
 #endif

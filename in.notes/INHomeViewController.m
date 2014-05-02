@@ -7,6 +7,7 @@
 //
 
 #import "INHomeViewController.h"
+#import "INPost+Manage.h"
 
 @interface INHomeViewController ()
 
