@@ -74,36 +74,10 @@
     // to change font size, reloadData on table view is called in the FeedVC.
     self.postText.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
     
-    MCUser *user = [MCUser user];
-    
-    self.userAvatar.image = [UIImage imageWithData:user.thumbnail];
-    self.userHandle.text = [self usernameForUsername:user.username];
-    self.postText.text = post.text;
-    
-    [self.postImage.layer setCornerRadius:5.0];
-    [self.postImage.layer setMasksToBounds:YES];
-    
-    [self.postImage setImageWithURL:[NSURL URLWithString:post.thumbnail]
-                   placeholderImage:[UIImage imageNamed:kMCImageTableViewCellPlaceholder]
-                            options:0
-                           progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-                               
-                               // Update progress view...
-                               
-                           } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
-                               
-                               // Do nothing with the image... Allowing the SDWebImage handle caching.
-                               
-                           }];
+    self.postText.text = @"";
+    self.postImage.image = [UIImage imageNamed:@"cell-thumb-placeholder"];
 
     _post = post;
-}
-
-- (NSString *)usernameForUsername:(NSString *)username
-{
-    username = [username stringByReplacingOccurrencesOfString:@"twitter:" withString:@""];
-    username = [username stringByReplacingOccurrencesOfString:@"facebook:" withString:@""];
-    return username;
 }
 
 - (void)handleTapGesture:(UITapGestureRecognizer *)gesture

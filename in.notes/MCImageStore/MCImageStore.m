@@ -53,12 +53,12 @@
 
 - (NSData *)imageDataForCurrentImage
 {
-    return UIImageJPEGRepresentation([self imageForKey:kMCImageStoreKey], MC_IMAGE_STORE_DEFAULT_JPG_QUALITY);
+    return UIImageJPEGRepresentation([self imageForKey:kMCImageStoreKey], IN_IMAGE_STORE_DEFAULT_JPG_QUALITY);
 }
 
 - (NSData *)imageDataForImage:(UIImage *)image
 {
-    return UIImageJPEGRepresentation(image, MC_IMAGE_STORE_DEFAULT_JPG_QUALITY);
+    return UIImageJPEGRepresentation(image, IN_IMAGE_STORE_DEFAULT_JPG_QUALITY);
 }
 
 - (NSString *)imageName

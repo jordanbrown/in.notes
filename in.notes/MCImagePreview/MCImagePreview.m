@@ -77,9 +77,9 @@
 - (void)previewImage
 {
     [UIView animateWithDuration:MC_IN_ANIMATION_DURATION
-                          delay:MC_ZERO
+                          delay:IN_ZERO
          usingSpringWithDamping:MC_SPRING_DAMPING
-          initialSpringVelocity:MC_ZERO
+          initialSpringVelocity:IN_ZERO
                         options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
                          

@@ -28,14 +28,45 @@
                             <outlet property="delegate" destination="Igx-uW-31B" id="xZR-Wc-Xtf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Notes" id="GYl-Uc-xab"/>
+                    <navigationItem key="navigationItem" title="Notes" id="GYl-Uc-xab">
+                        <barButtonItem key="rightBarButtonItem" image="compose-button" id="Wpc-Xo-5c9">
+                            <connections>
+                                <segue destination="3GC-kK-GRH" kind="push" id="99U-8P-grT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="p1G-V6-deD">
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rA2-Fl-JTl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="468" y="72"/>
+            <point key="canvasLocation" x="-115" y="120"/>
+        </scene>
+        <!--Compose View Controller - New-->
+        <scene sceneID="yh9-uf-o3H">
+            <objects>
+                <viewController storyboardIdentifier="INComposeViewController" id="3GC-kK-GRH" customClass="INComposeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b1t-zJ-PHN"/>
+                        <viewControllerLayoutGuide type="bottom" id="35I-ts-lm3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HmQ-g1-A6Y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New" id="gsQ-Y0-9I7">
+                        <barButtonItem key="rightBarButtonItem" image="done-button" id="6sx-aS-1bn">
+                            <connections>
+                                <action selector="publishButtonSelected:" destination="3GC-kK-GRH" id="3ai-TO-iJd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QtB-8o-Gsh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="277" y="120"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5A3-3G-77k">
@@ -50,9 +81,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Oh-Vc-FPr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="79" y="72"/>
+            <point key="canvasLocation" x="-504" y="120"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="compose-button" width="23" height="23"/>
+        <image name="done-button" width="23" height="23"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

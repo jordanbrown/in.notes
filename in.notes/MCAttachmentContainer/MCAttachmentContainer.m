@@ -35,10 +35,10 @@
 
 - (void)moveToPoint:(CGPoint)point
 {
-    [UIView animateWithDuration:MC_DEFAULT_ANIMATION_DURATION
-                          delay:MC_ZERO
-         usingSpringWithDamping:MC_DEFAULT_SPRING_DAMPING
-          initialSpringVelocity:MC_ZERO
+    [UIView animateWithDuration:IN_DEFAULT_ANIMATION_DURATION
+                          delay:IN_ZERO
+         usingSpringWithDamping:IN_DEFAULT_SPRING_DAMPING
+          initialSpringVelocity:IN_ZERO
                         options:UIViewAnimationOptionCurveLinear
                      animations:^{
                          self.frame = CGRectMake(point.x, point.y, self.frame.size.width, self.frame.size.height);
@@ -50,7 +50,7 @@
     if (usingSpring) {
         [self moveToPoint:point];
     } else {
-        [UIView animateWithDuration:MC_DEFAULT_ANIMATION_DURATION animations:^{
+        [UIView animateWithDuration:IN_DEFAULT_ANIMATION_DURATION animations:^{
             self.frame = CGRectMake(point.x, point.y, self.frame.size.width, self.frame.size.height);
         }];
     }
@@ -58,10 +58,10 @@
 
 - (void)setAttachmentImage:(UIImage *)image
 {
-    [UIView animateWithDuration:MC_DEFAULT_ANIMATION_DURATION
-                          delay:MC_ZERO
-         usingSpringWithDamping:MC_DEFAULT_SPRING_DAMPING
-          initialSpringVelocity:MC_ZERO
+    [UIView animateWithDuration:IN_DEFAULT_ANIMATION_DURATION
+                          delay:IN_ZERO
+         usingSpringWithDamping:IN_DEFAULT_SPRING_DAMPING
+          initialSpringVelocity:IN_ZERO
                         options:UIViewAnimationOptionCurveLinear
                      animations:^{
                          [self.attachmentView setImage:[UIImage resizeImage:image toSize:MC_ATTACHMENT_VIEW_SIZE cornerRadius:0.0f]];

@@ -8,11 +8,22 @@
 
 #import "INAppDelegate.h"
 
+@interface INAppDelegate ()
+
+- (void)setupAppearance;
+
+@end
+
 @implementation INAppDelegate
+
+- (void)setupAppearance
+{
+    [[UINavigationBar appearance]setTintColor:[UIColor darkGrayColor]];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    return YES;
+    [self setupAppearance]; return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

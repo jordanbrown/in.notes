@@ -16,4 +16,10 @@
 
     #import "INConstants.h"
 
+#define MR_SHORTHAND
+#define MR_ENABLE_ACTIVE_RECORD_LOGGING 0
+    #import "MagicalRecord/CoreData+MagicalRecord.h"
+
+    #import "UIImage+MCResize.h"
+
 #endif

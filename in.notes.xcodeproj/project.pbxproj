@@ -52,8 +52,6 @@
 		48399660191437FA0085611D /* MCCharacterCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 483995F9191437FA0085611D /* MCCharacterCounter.m */; };
 		48399661191437FA0085611D /* MCImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 483995FC191437FA0085611D /* MCImageTableViewCell.m */; };
 		48399662191437FA0085611D /* MCImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 483995FD191437FA0085611D /* MCImageTableViewCell.xib */; };
-		48399663191437FA0085611D /* MCTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 483995FF191437FA0085611D /* MCTextTableViewCell.m */; };
-		48399664191437FA0085611D /* MCTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48399600191437FA0085611D /* MCTextTableViewCell.xib */; };
 		48399665191437FA0085611D /* MCHashtagContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 48399603191437FA0085611D /* MCHashtagContainer.m */; };
 		48399666191437FA0085611D /* MCImagePreview.m in Sources */ = {isa = PBXBuildFile; fileRef = 48399606191437FA0085611D /* MCImagePreview.m */; };
 		48399667191437FA0085611D /* UIImage+MCResize.m in Sources */ = {isa = PBXBuildFile; fileRef = 48399609191437FA0085611D /* UIImage+MCResize.m */; };
@@ -81,6 +79,8 @@
 		4839967D191437FA0085611D /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839963E191437FA0085611D /* UIImage+WebP.m */; };
 		4839967E191437FA0085611D /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 48399640191437FA0085611D /* UIImageView+WebCache.m */; };
 		4839967F191437FA0085611D /* SProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 48399643191437FA0085611D /* SProgressHUD.m */; };
+		4839968219143A5F0085611D /* INComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839968119143A5F0085611D /* INComposeViewController.m */; };
+		4839968619143C360085611D /* KHFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839968519143C360085611D /* KHFlatButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,9 +178,6 @@
 		483995FB191437FA0085611D /* MCImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCImageTableViewCell.h; sourceTree = "<group>"; };
 		483995FC191437FA0085611D /* MCImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCImageTableViewCell.m; sourceTree = "<group>"; };
 		483995FD191437FA0085611D /* MCImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MCImageTableViewCell.xib; sourceTree = "<group>"; };
-		483995FE191437FA0085611D /* MCTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTextTableViewCell.h; sourceTree = "<group>"; };
-		483995FF191437FA0085611D /* MCTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTextTableViewCell.m; sourceTree = "<group>"; };
-		48399600191437FA0085611D /* MCTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MCTextTableViewCell.xib; sourceTree = "<group>"; };
 		48399602191437FA0085611D /* MCHashtagContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCHashtagContainer.h; sourceTree = "<group>"; };
 		48399603191437FA0085611D /* MCHashtagContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCHashtagContainer.m; sourceTree = "<group>"; };
 		48399605191437FA0085611D /* MCImagePreview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCImagePreview.h; sourceTree = "<group>"; };
@@ -237,6 +234,10 @@
 		48399640191437FA0085611D /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		48399642191437FA0085611D /* SProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SProgressHUD.h; sourceTree = "<group>"; };
 		48399643191437FA0085611D /* SProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SProgressHUD.m; sourceTree = "<group>"; };
+		4839968019143A5F0085611D /* INComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INComposeViewController.h; sourceTree = "<group>"; };
+		4839968119143A5F0085611D /* INComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INComposeViewController.m; sourceTree = "<group>"; };
+		4839968419143C360085611D /* KHFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHFlatButton.h; sourceTree = "<group>"; };
+		4839968519143C360085611D /* KHFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHFlatButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +303,8 @@
 				483995AF19142C060085611D /* iPhone568.storyboard */,
 				483995B119142CC20085611D /* INHomeViewController.h */,
 				483995B219142CC20085611D /* INHomeViewController.m */,
+				4839968019143A5F0085611D /* INComposeViewController.h */,
+				4839968119143A5F0085611D /* INComposeViewController.m */,
 				48399592191427D20085611D /* Images.xcassets */,
 				48399587191427D20085611D /* Supporting Files */,
 			);
@@ -311,6 +314,7 @@
 		48399587191427D20085611D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4839968319143C360085611D /* KHFlatButton */,
 				483995B5191437FA0085611D /* MagicalRecord */,
 				483995F2191437FA0085611D /* MCAttachmentContainer */,
 				483995F7191437FA0085611D /* MCCharacterCounter */,
@@ -480,9 +484,6 @@
 				483995FB191437FA0085611D /* MCImageTableViewCell.h */,
 				483995FC191437FA0085611D /* MCImageTableViewCell.m */,
 				483995FD191437FA0085611D /* MCImageTableViewCell.xib */,
-				483995FE191437FA0085611D /* MCTextTableViewCell.h */,
-				483995FF191437FA0085611D /* MCTextTableViewCell.m */,
-				48399600191437FA0085611D /* MCTextTableViewCell.xib */,
 			);
 			path = MCFeedCell;
 			sourceTree = "<group>";
@@ -620,6 +621,15 @@
 			path = SProgressHUD;
 			sourceTree = "<group>";
 		};
+		4839968319143C360085611D /* KHFlatButton */ = {
+			isa = PBXGroup;
+			children = (
+				4839968419143C360085611D /* KHFlatButton.h */,
+				4839968519143C360085611D /* KHFlatButton.m */,
+			);
+			path = KHFlatButton;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -700,7 +710,6 @@
 				4839958B191427D20085611D /* InfoPlist.strings in Resources */,
 				48399593191427D20085611D /* Images.xcassets in Resources */,
 				48399662191437FA0085611D /* MCImageTableViewCell.xib in Resources */,
-				48399664191437FA0085611D /* MCTextTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -749,6 +758,7 @@
 				4839967F191437FA0085611D /* SProgressHUD.m in Sources */,
 				4839966E191437FA0085611D /* REDActionSheetButton.m in Sources */,
 				48399670191437FA0085611D /* RZCellSizeManager.m in Sources */,
+				4839968219143A5F0085611D /* INComposeViewController.m in Sources */,
 				4839965F191437FA0085611D /* MCAttachmentView.m in Sources */,
 				48399669191437FA0085611D /* MCMarkdownSyntaxStorage.m in Sources */,
 				48399652191437FA0085611D /* NSManagedObjectContext+MagicalSaves.m in Sources */,
@@ -770,6 +780,7 @@
 				4839964C191437FA0085611D /* NSManagedObject+MagicalDataImport.m in Sources */,
 				48399647191437FA0085611D /* NSNumber+MagicalDataImport.m in Sources */,
 				4839965D191437FA0085611D /* MagicalRecord.m in Sources */,
+				4839968619143C360085611D /* KHFlatButton.m in Sources */,
 				4839966D191437FA0085611D /* REDActionSheet.m in Sources */,
 				48399591191427D20085611D /* INAppDelegate.m in Sources */,
 				48399661191437FA0085611D /* MCImageTableViewCell.m in Sources */,
@@ -778,7 +789,6 @@
 				4839965E191437FA0085611D /* MCAttachmentContainer.m in Sources */,
 				48399668191437FA0085611D /* MCImageStore.m in Sources */,
 				4839967B191437FA0085611D /* UIImage+GIF.m in Sources */,
-				48399663191437FA0085611D /* MCTextTableViewCell.m in Sources */,
 				48399658191437FA0085611D /* MagicalRecord+ErrorHandling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
