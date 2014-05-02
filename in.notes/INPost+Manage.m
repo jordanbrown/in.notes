@@ -35,4 +35,13 @@
     }];
 }
 
++ (void)deletePost:(INPost *)post
+{
+    [MagicalRecord saveUsingCurrentThreadContextWithBlock:^(NSManagedObjectContext *localContext) {
+        
+        [localContext deleteObject:post];
+        
+    } completion:nil];
+}
+
 @end

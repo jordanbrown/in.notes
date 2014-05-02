@@ -7,13 +7,12 @@
 //
 
 #import "MCImageTableViewCell.h"
+#import "INPost.h"
 
 @interface MCImageTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *userAvatar;
-@property (weak, nonatomic) IBOutlet UILabel *userHandle;
-@property (weak, nonatomic) IBOutlet UILabel *postText;
-@property (weak, nonatomic) IBOutlet UIImageView *postImage;
+@property (weak, nonatomic) IBOutlet UILabel *txtLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *thumbnail;
 
 @end
 
@@ -62,20 +61,23 @@
         tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleTapGesture:)];
         tapGesture.numberOfTapsRequired = 1;
         tapGesture.numberOfTouchesRequired = 1;
-        self.postImage.userInteractionEnabled = YES;
+        self.thumbnail.userInteractionEnabled = YES;
         
-        [self.postImage addGestureRecognizer:tapGesture];
+        [self.thumbnail addGestureRecognizer:tapGesture];
     }
 }
 
-- (void)setData:(MCPost *)post
+- (void)setData:(INPost *)post
 {
     // The initial font size is set here. However, if the user decides
     // to change font size, reloadData on table view is called in the FeedVC.
-    self.postText.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    self.txtLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
     
-    self.postText.text = @"";
-    self.postImage.image = [UIImage imageNamed:@"cell-thumb-placeholder"];
+    [self.thumbnail.layer setMasksToBounds:YES];
+    [self.thumbnail.layer setCornerRadius:5.0];
+    
+    self.txtLabel.text = post.text;
+    self.thumbnail.image = [UIImage imageWithData:post.thumbnail];
 
     _post = post;
 }
@@ -84,7 +86,7 @@
 {
     if (gesture.state == UIGestureRecognizerStateEnded) {
         
-        [self.imageCellDelegate userDidSelectImageView:self.postImage indexPath:self.indexPath];
+        [self.imageCellDelegate userDidSelectImageView:self.thumbnail indexPath:self.indexPath];
         
     }
 }

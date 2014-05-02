@@ -22,5 +22,6 @@
 
     #import "UIImage+MCResize.h"
     #import "MCHashtagContainer.h"
+    #import "RZCellSizeManager+CoreData.h"
 
 #endif

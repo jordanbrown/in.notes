@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class MCPost;
+@class INPost;
 
 @protocol MCImageTableViewCellDelegate <NSObject>
 
@@ -19,7 +19,7 @@
 @interface MCImageTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) id <MCImageTableViewCellDelegate> imageCellDelegate;
-@property (weak, nonatomic) MCPost *post;
+@property (weak, nonatomic) INPost *post;
 
 @property (strong, nonatomic) NSIndexPath *indexPath;
 
@@ -28,6 +28,6 @@
 + (NSString *)className;
 + (CGFloat)estimateCellHeight;
 
-- (void)setData:(MCPost *)post;
+- (void)setData:(INPost *)post;
 
 @end

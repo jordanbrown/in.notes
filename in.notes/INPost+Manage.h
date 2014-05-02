@@ -14,4 +14,6 @@ typedef void(^INPostCompletionHandler)(NSError *error);
 
 + (void)postWithText:(NSString *)text image:(UIImage *)image thumbnail:(UIImage *)thumbnail hashtags:(NSArray *)hashtags completion:(INPostCompletionHandler)completionHandler;
 
++ (void)deletePost:(INPost *)post;
+
 @end
