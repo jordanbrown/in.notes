@@ -23,7 +23,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [self setupAppearance]; return YES;
+    [self setupAppearance];
+    [MagicalRecord setupCoreDataStack];
+    
+    return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

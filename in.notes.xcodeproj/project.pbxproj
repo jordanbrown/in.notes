@@ -81,6 +81,7 @@
 		4839967F191437FA0085611D /* SProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 48399643191437FA0085611D /* SProgressHUD.m */; };
 		4839968219143A5F0085611D /* INComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839968119143A5F0085611D /* INComposeViewController.m */; };
 		4839968619143C360085611D /* KHFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839968519143C360085611D /* KHFlatButton.m */; };
+		48399689191441AF0085611D /* in.notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48399687191441AF0085611D /* in.notes.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -238,6 +239,7 @@
 		4839968119143A5F0085611D /* INComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INComposeViewController.m; sourceTree = "<group>"; };
 		4839968419143C360085611D /* KHFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHFlatButton.h; sourceTree = "<group>"; };
 		4839968519143C360085611D /* KHFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHFlatButton.m; sourceTree = "<group>"; };
+		48399688191441AF0085611D /* in.notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = in.notes.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +307,7 @@
 				483995B219142CC20085611D /* INHomeViewController.m */,
 				4839968019143A5F0085611D /* INComposeViewController.h */,
 				4839968119143A5F0085611D /* INComposeViewController.m */,
+				48399687191441AF0085611D /* in.notes.xcdatamodeld */,
 				48399592191427D20085611D /* Images.xcassets */,
 				48399587191427D20085611D /* Supporting Files */,
 			);
@@ -747,6 +750,7 @@
 				48399659191437FA0085611D /* MagicalRecord+iCloud.m in Sources */,
 				48399651191437FA0085611D /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				48399654191437FA0085611D /* NSManagedObjectModel+MagicalRecord.m in Sources */,
+				48399689191441AF0085611D /* in.notes.xcdatamodeld in Sources */,
 				483995B319142CC20085611D /* INHomeViewController.m in Sources */,
 				4839965C191437FA0085611D /* MagicalRecord+ShorthandSupport.m in Sources */,
 				4839964D191437FA0085611D /* NSManagedObject+MagicalFinders.m in Sources */,
@@ -998,6 +1002,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		48399687191441AF0085611D /* in.notes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				48399688191441AF0085611D /* in.notes.xcdatamodel */,
+			);
+			currentVersion = 48399688191441AF0085611D /* in.notes.xcdatamodel */;
+			path = in.notes.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 48399575191427D20085611D /* Project object */;
 }
