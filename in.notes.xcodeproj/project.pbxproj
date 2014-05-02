@@ -20,6 +20,7 @@
 		483995A4191427D20085611D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 483995A2191427D20085611D /* InfoPlist.strings */; };
 		483995A6191427D20085611D /* in_notesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 483995A5191427D20085611D /* in_notesTests.m */; };
 		483995B019142C060085611D /* iPhone568.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483995AF19142C060085611D /* iPhone568.storyboard */; };
+		483995B319142CC20085611D /* INHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 483995B219142CC20085611D /* INHomeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,9 @@
 		483995A3191427D20085611D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		483995A5191427D20085611D /* in_notesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = in_notesTests.m; sourceTree = "<group>"; };
 		483995AF19142C060085611D /* iPhone568.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone568.storyboard; sourceTree = "<group>"; };
+		483995B119142CC20085611D /* INHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INHomeViewController.h; sourceTree = "<group>"; };
+		483995B219142CC20085611D /* INHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INHomeViewController.m; sourceTree = "<group>"; };
+		483995B419142CE40085611D /* INConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INConstants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,9 +113,12 @@
 		48399586191427D20085611D /* in.notes */ = {
 			isa = PBXGroup;
 			children = (
+				483995B419142CE40085611D /* INConstants.h */,
 				4839958F191427D20085611D /* INAppDelegate.h */,
 				48399590191427D20085611D /* INAppDelegate.m */,
 				483995AF19142C060085611D /* iPhone568.storyboard */,
+				483995B119142CC20085611D /* INHomeViewController.h */,
+				483995B219142CC20085611D /* INHomeViewController.m */,
 				48399592191427D20085611D /* Images.xcassets */,
 				48399587191427D20085611D /* Supporting Files */,
 			);
@@ -245,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4839958D191427D20085611D /* main.m in Sources */,
+				483995B319142CC20085611D /* INHomeViewController.m in Sources */,
 				48399591191427D20085611D /* INAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
