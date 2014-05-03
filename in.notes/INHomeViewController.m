@@ -12,7 +12,7 @@
 #import "MCImageTableViewCell.h"
 #import "MCImagePreview.h"
 
-@interface INHomeViewController () <NSFetchedResultsControllerDelegate, MCImageTableViewCellDelegate, UISearchBarDelegate>
+@interface INHomeViewController () <NSFetchedResultsControllerDelegate, MCImageTableViewCellDelegate, UISearchBarDelegate, MSCMoreOptionTableViewCellDelegate>
 
 @property (strong, nonatomic) RZCellSizeManager *sizeManager;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
@@ -115,6 +115,7 @@
     [imageCell setIndexPath:indexPath];
     [imageCell setData:post];
     [imageCell setImageCellDelegate:self];
+    [imageCell setDelegate:self]; // Sets up the MoreOptionButton Delegate.
     
     return imageCell;
 }
@@ -146,7 +147,7 @@
        atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(NSIndexPath *)newIndexPath
 {
-    UITableView *tableView = self.tableView; NSLog(@"Method called.");
+    UITableView *tableView = self.tableView;
     
     switch(type) {
             
@@ -254,6 +255,18 @@
     }
     
     [self.tableView reloadData];
+}
+
+#pragma mark - MSCMoreOptionTableViewCellDelegate
+
+- (NSString *)tableView:(UITableView *)tableView titleForMoreOptionButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"Edit";
+}
+
+- (void)tableView:(UITableView *)tableView moreOptionButtonPressedInRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"Method called.");
 }
 
 @end

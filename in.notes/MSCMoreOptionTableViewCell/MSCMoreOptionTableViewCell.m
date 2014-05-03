@@ -209,7 +209,7 @@
     [self.moreOptionButton sizeToFit];
 
     CGRect moreOptionButtonFrame = CGRectZero;
-    moreOptionButtonFrame.size.width = self.moreOptionButton.frame.size.width + 40.f;
+    moreOptionButtonFrame.size.width = self.moreOptionButton.frame.size.width + 50.f;
     /*
      * Look for the "Delete" button to apply it's height also to the "More" button.
      * If it can't be found there is a fallback to the deleteConfirmationView's height.

@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MSCMoreOptionTableViewCell.h"
+
 @class INPost;
 
 @protocol MCImageTableViewCellDelegate <NSObject>
@@ -16,7 +18,7 @@
 
 @end
 
-@interface MCImageTableViewCell : UITableViewCell
+@interface MCImageTableViewCell : MSCMoreOptionTableViewCell
 
 @property (weak, nonatomic) id <MCImageTableViewCellDelegate> imageCellDelegate;
 @property (weak, nonatomic) INPost *post;
