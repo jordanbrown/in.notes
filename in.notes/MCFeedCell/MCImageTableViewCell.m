@@ -87,9 +87,7 @@
 - (void)handleTapGesture:(UITapGestureRecognizer *)gesture
 {
     if (gesture.state == UIGestureRecognizerStateEnded) {
-        
         [self.imageCellDelegate userDidSelectImageView:self.thumbnail indexPath:self.indexPath];
-        
     }
 }
 
