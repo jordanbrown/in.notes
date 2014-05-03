@@ -10,8 +10,9 @@
 #import "INPost+Manage.h"
 #import "RZCellSizeManager.h"
 #import "MCImageTableViewCell.h"
+#import "MCImagePreview.h"
 
-@interface INHomeViewController () <NSFetchedResultsControllerDelegate>
+@interface INHomeViewController () <NSFetchedResultsControllerDelegate, MCImageTableViewCellDelegate>
 
 @property (strong, nonatomic) RZCellSizeManager *sizeManager;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
@@ -95,7 +96,7 @@
     
     [imageCell setIndexPath:indexPath];
     [imageCell setData:post];
-    // [imageCell setImageCellDelegate:self];
+    [imageCell setImageCellDelegate:self];
     
     return imageCell;
 }
@@ -174,6 +175,49 @@
         [INPost deletePost:[self.fetchedResultsController objectAtIndexPath:indexPath]];
         
     }
+}
+
+#pragma mark - MCImageTableViewCellDelegate
+
+- (void)userDidSelectImageView:(UIImageView *)imageView indexPath:(NSIndexPath *)indexPath
+{
+    /**
+     *  If the user is loading the image, disable interactions to assure he / she cant navigate to
+     *  a comment / new post / view controller.
+     */
+    // [self.feedViewController.navigationController.view setUserInteractionEnabled:NO];
+    
+    SProgressHUD *progressHUD = [[SProgressHUD alloc]initForViewType:kMCViewTypeImageThumbnailView];
+    progressHUD.alpha = 0.0;
+    
+    __block MCImagePreview *imagePreview = nil;
+    
+    [imageView addSubview:progressHUD];
+    [UIView animateWithDuration:0.4
+                     animations:^{
+                         
+                         progressHUD.alpha = 1.0;
+                         
+                     } completion:^(BOOL finished) {
+                         
+                         if (finished) {
+                             
+                             INPost *post = [self.fetchedResultsController objectAtIndexPath:indexPath];
+                             imagePreview = [[MCImagePreview alloc]initWithImage:[UIImage imageWithData:post.image]
+                                                                            view:self.navigationController.view
+                                                                      completion:^{
+                                                                          
+                                                                          [imagePreview removeFromSuperview];
+                                                                          imagePreview = nil;
+                                                                          
+                                                                      }];
+                             
+                             [self.navigationController.view addSubview:imagePreview];
+                             [imagePreview previewImage];
+                             [progressHUD removeFromSuperview];
+                         }
+                         
+                     }];
 }
 
 @end

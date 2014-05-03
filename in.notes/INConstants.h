@@ -13,6 +13,7 @@
 #define IN_DEFAULT_SPRING_DAMPING 0.8
 #define IN_DEFAULT_DELAY 0.5
 #define IN_IMAGE_STORE_DEFAULT_JPG_QUALITY 0.7
+#define IN_GENERIC_Q "com.macciti.macciTi.genericQ"
 
 
 #pragma mark - INHomeViewController

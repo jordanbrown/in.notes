@@ -58,8 +58,8 @@
         case kMCViewTypeImageThumbnailView: {
             
             CGRect progressHUDFrame = (CGRect) {
-                .size.width = 242.0f,
-                .size.height = 100.0f,
+                .size.width = 300.0f,
+                .size.height = 129.0f,
                 .origin.x = 0.0f,
                 .origin.y = 0.0
             };

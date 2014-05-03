@@ -76,7 +76,7 @@
     self.txtLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
     
     [self.thumbnail.layer setMasksToBounds:YES];
-    [self.thumbnail.layer setCornerRadius:5.0];
+    [self.thumbnail.layer setCornerRadius:3.0];
     
     self.txtLabel.text = post.text;
     self.thumbnail.image = [UIImage imageWithData:post.thumbnail];
