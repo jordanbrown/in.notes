@@ -1,23 +1,23 @@
 //
-//  MCAttachmentView.m
-//  macciTi
+//  INAttachmentView.m
+//  in.notes
 //
 //  Created by iC on 3/24/14.
-//  Copyright (c) 2014 Mac*Citi, LLC. All rights reserved.
+//  Copyright (c) 2014 in.notes. All rights reserved.
 //
 
 #import "INAttachmentView.h"
 #import "REDActionSheet.h"
 
-@interface MCAttachmentView ()
+@interface INAttachmentView ()
 
 - (void)handleTapGesture:(UITapGestureRecognizer *)gesture;
 
 @end
 
-@implementation MCAttachmentView
+@implementation INAttachmentView
 
-- (instancetype)initWithFrame:(CGRect)frame delegate:(id<MCAttachmentViewDelegate>)delegate
+- (instancetype)initWithFrame:(CGRect)frame delegate:(id<INAttachmentViewDelegate>)delegate
 {
     self = [super initWithFrame:frame];
     if (self) {

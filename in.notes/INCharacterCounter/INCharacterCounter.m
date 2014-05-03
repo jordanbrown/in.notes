@@ -1,17 +1,17 @@
 //
-//  MCCharacterCounter.m
-//  macciTi
+//  INCharacterCounter.m
+//  in.notes
 //
 //  Created by iC on 4/4/14.
-//  Copyright (c) 2014 Mac*Citi, LLC. All rights reserved.
+//  Copyright (c) 2014 in.notes. All rights reserved.
 //
 
-#import "MCCharacterCounter.h"
+#import "INCharacterCounter.h"
 
 #define ANIMATION_DURATION 2.0
 #define ANIMATION_DELAY 2.0
 
-@implementation MCCharacterCounter
+@implementation INCharacterCounter
 
 - (id)initWithFrame:(CGRect)frame
 {

@@ -47,7 +47,6 @@
 		4839965B191437FA0085611D /* MagicalRecord+Setup.m in Sources */ = {isa = PBXBuildFile; fileRef = 483995EA191437FA0085611D /* MagicalRecord+Setup.m */; };
 		4839965C191437FA0085611D /* MagicalRecord+ShorthandSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 483995EC191437FA0085611D /* MagicalRecord+ShorthandSupport.m */; };
 		4839965D191437FA0085611D /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 483995EE191437FA0085611D /* MagicalRecord.m */; };
-		48399660191437FA0085611D /* MCCharacterCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 483995F9191437FA0085611D /* MCCharacterCounter.m */; };
 		48399661191437FA0085611D /* MCImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 483995FC191437FA0085611D /* MCImageTableViewCell.m */; };
 		48399662191437FA0085611D /* MCImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 483995FD191437FA0085611D /* MCImageTableViewCell.xib */; };
 		48399665191437FA0085611D /* MCHashtagContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 48399603191437FA0085611D /* MCHashtagContainer.m */; };
@@ -72,6 +71,7 @@
 		48D844B219159A2500567AFA /* intro-image-thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 48D844B119159A2500567AFA /* intro-image-thumbnail.png */; };
 		48D844B91915A8F700567AFA /* INAttachmentContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844B61915A8F700567AFA /* INAttachmentContainer.m */; };
 		48D844BA1915A8F700567AFA /* INAttachmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844B81915A8F700567AFA /* INAttachmentView.m */; };
+		48D844BE1915AAB200567AFA /* INCharacterCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844BD1915AAB200567AFA /* INCharacterCounter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,8 +160,6 @@
 		483995EF191437FA0085611D /* MagicalRecordShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordShorthand.h; sourceTree = "<group>"; };
 		483995F0191437FA0085611D /* CoreData+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreData+MagicalRecord.h"; sourceTree = "<group>"; };
 		483995F1191437FA0085611D /* MagicalRecordVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordVersion.h; sourceTree = "<group>"; };
-		483995F8191437FA0085611D /* MCCharacterCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCharacterCounter.h; sourceTree = "<group>"; };
-		483995F9191437FA0085611D /* MCCharacterCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCharacterCounter.m; sourceTree = "<group>"; };
 		483995FB191437FA0085611D /* MCImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCImageTableViewCell.h; sourceTree = "<group>"; };
 		483995FC191437FA0085611D /* MCImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCImageTableViewCell.m; sourceTree = "<group>"; };
 		483995FD191437FA0085611D /* MCImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MCImageTableViewCell.xib; sourceTree = "<group>"; };
@@ -207,6 +205,8 @@
 		48D844B61915A8F700567AFA /* INAttachmentContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INAttachmentContainer.m; sourceTree = "<group>"; };
 		48D844B71915A8F700567AFA /* INAttachmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAttachmentView.h; sourceTree = "<group>"; };
 		48D844B81915A8F700567AFA /* INAttachmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INAttachmentView.m; sourceTree = "<group>"; };
+		48D844BC1915AAB200567AFA /* INCharacterCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INCharacterCounter.h; sourceTree = "<group>"; };
+		48D844BD1915AAB200567AFA /* INCharacterCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INCharacterCounter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,9 +284,9 @@
 		48399587191427D20085611D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				48D844AC1915975200567AFA /* INBootsrtapData */,
 				48D844B41915A8F700567AFA /* INAttachmentContainer */,
-				483995F7191437FA0085611D /* MCCharacterCounter */,
+				48D844AC1915975200567AFA /* INBootsrtapData */,
+				48D844BB1915AAB200567AFA /* INCharacterCounter */,
 				483995FA191437FA0085611D /* MCFeedCell */,
 				48399601191437FA0085611D /* MCHashtagContainer */,
 				48399604191437FA0085611D /* MCImagePreview */,
@@ -421,15 +421,6 @@
 				483995EF191437FA0085611D /* MagicalRecordShorthand.h */,
 			);
 			path = Core;
-			sourceTree = "<group>";
-		};
-		483995F7191437FA0085611D /* MCCharacterCounter */ = {
-			isa = PBXGroup;
-			children = (
-				483995F8191437FA0085611D /* MCCharacterCounter.h */,
-				483995F9191437FA0085611D /* MCCharacterCounter.m */,
-			);
-			path = MCCharacterCounter;
 			sourceTree = "<group>";
 		};
 		483995FA191437FA0085611D /* MCFeedCell */ = {
@@ -593,6 +584,15 @@
 			path = INAttachmentContainer;
 			sourceTree = "<group>";
 		};
+		48D844BB1915AAB200567AFA /* INCharacterCounter */ = {
+			isa = PBXGroup;
+			children = (
+				48D844BC1915AAB200567AFA /* INCharacterCounter.h */,
+				48D844BD1915AAB200567AFA /* INCharacterCounter.m */,
+			);
+			path = INCharacterCounter;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -711,7 +711,6 @@
 				4839965C191437FA0085611D /* MagicalRecord+ShorthandSupport.m in Sources */,
 				4839964D191437FA0085611D /* NSManagedObject+MagicalFinders.m in Sources */,
 				4839968F191443D00085611D /* INPost+Manage.m in Sources */,
-				48399660191437FA0085611D /* MCCharacterCounter.m in Sources */,
 				48399650191437FA0085611D /* NSManagedObjectContext+MagicalObserving.m in Sources */,
 				4839964E191437FA0085611D /* NSManagedObject+MagicalRecord.m in Sources */,
 				4839967F191437FA0085611D /* SProgressHUD.m in Sources */,
@@ -737,6 +736,7 @@
 				48399647191437FA0085611D /* NSNumber+MagicalDataImport.m in Sources */,
 				4839965D191437FA0085611D /* MagicalRecord.m in Sources */,
 				4839968619143C360085611D /* KHFlatButton.m in Sources */,
+				48D844BE1915AAB200567AFA /* INCharacterCounter.m in Sources */,
 				4839966D191437FA0085611D /* REDActionSheet.m in Sources */,
 				48399591191427D20085611D /* INAppDelegate.m in Sources */,
 				48D844B91915A8F700567AFA /* INAttachmentContainer.m in Sources */,

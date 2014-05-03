@@ -11,15 +11,15 @@
 #import "MCMoreButton.h"
 #import "INAttachmentContainer.h"
 #import "MCImageStore.h"
-#import "MCCharacterCounter.h"
+#import "INCharacterCounter.h"
 #import "MCHashtagContainer.h"
 #import "INPost+Manage.h"
 
-@interface INComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, MCMoreButtonDelegate, MCAttachmentContainerDelegate, MCMarkdownTextViewDelegate>
+@interface INComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, MCMoreButtonDelegate, INAttachmentContainerDelegate, MCMarkdownTextViewDelegate>
 
 @property (strong, nonatomic) MCMarkdownTextView *markdownTextView;
 @property (strong, nonatomic) MCMoreButton *moreButton;
-@property (strong, nonatomic) MCCharacterCounter *characterCounter;
+@property (strong, nonatomic) INCharacterCounter *characterCounter;
 @property (strong, nonatomic) INAttachmentContainer *attachmentContainer;
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *publishButton;
@@ -56,8 +56,8 @@
     self.moreButton = [[MCMoreButton alloc]initWithFrame:MC_MORE_BUTTON_INIT_FRAME delegate:self];
     self.markdownTextView = [[MCMarkdownTextView alloc]initWithFrame:MC_MARKDOWN_TEXT_VIEW_INIT_FRAME];
     self.markdownTextView.markdownDelegate = self;
-    self.characterCounter = [[MCCharacterCounter alloc]initWithFrame:MC_CHARACTER_COUNTER_INIT_FRAME];
-    self.attachmentContainer = [[INAttachmentContainer alloc]initWithFrame:MC_ATTACHMENT_CONTAINER_INIT_FRAME];
+    self.characterCounter = [[INCharacterCounter alloc]initWithFrame:IN_CHARACTER_COUNTER_INIT_FRAME];
+    self.attachmentContainer = [[INAttachmentContainer alloc]initWithFrame:IN_ATTACHMENT_CONTAINER_INIT_FRAME];
     self.attachmentContainer.delegate = self;
     
     // Subviews setup.
@@ -117,11 +117,11 @@
 
 #pragma mark - Attachemnt Container Delegate
 
-- (void)attachmentContainerDidRemoveImageWithRequest:(kMCAttachmentRequest)request
+- (void)attachmentContainerDidRemoveImageWithRequest:(kINAttachmentRequest)request
 {
-    if (request == kMCAttachmentRequestRemoveImage) {
+    if (request == kINAttachmentRequestRemoveImage) {
         [self performSelector:@selector(setMarkdownTextViewAsFirstResponder) withObject:nil afterDelay:0.9];
-    } else if (request == kMCAttachmentRequestReplaceImage) {
+    } else if (request == kINAttachmentRequestReplaceImage) {
         [self performSelector:@selector(moreButtonSelected:) withObject:nil afterDelay:IN_DEFAULT_DELAY];
     }
 }

@@ -1,9 +1,9 @@
 //
-//  MCAttachmentView.h
-//  macciTi
+//  INAttachmentView.h
+//  in.notes
 //
 //  Created by iC on 3/24/14.
-//  Copyright (c) 2014 Mac*Citi, LLC. All rights reserved.
+//  Copyright (c) 2014 in.notes. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -14,21 +14,21 @@
  *  of the request.
  */
 typedef enum : NSUInteger {
-    kMCAttachmentRequestRemoveImage = 0,
-    kMCAttachmentRequestReplaceImage = 1,
-    kMCAttachmentRequestCancel = 2,
-} kMCAttachmentRequest;
+    kINAttachmentRequestRemoveImage = 0,
+    kINAttachmentRequestReplaceImage = 1,
+    kINAttachmentRequestCancel = 2,
+} kINAttachmentRequest;
 
-@protocol MCAttachmentViewDelegate <NSObject>
+@protocol INAttachmentViewDelegate <NSObject>
 
 - (void)didSelectActionSheetButtonAtIndex:(NSInteger)index;
 
 @end
 
-@interface MCAttachmentView : UIImageView
+@interface INAttachmentView : UIImageView
 
-@property (weak, nonatomic) id <MCAttachmentViewDelegate> delegate;
+@property (weak, nonatomic) id <INAttachmentViewDelegate> delegate;
 
-- (instancetype)initWithFrame:(CGRect)frame delegate:(id<MCAttachmentViewDelegate>)delegate;
+- (instancetype)initWithFrame:(CGRect)frame delegate:(id<INAttachmentViewDelegate>)delegate;
 
 @end

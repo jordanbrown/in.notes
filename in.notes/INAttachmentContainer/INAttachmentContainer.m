@@ -1,16 +1,16 @@
 //
-//  MCAttachmentContainer.m
-//  macciTi
+//  INAttachmentContainer.m
+//  in.notes
 //
 //  Created by iC on 3/18/14.
-//  Copyright (c) 2014 Mac*Citi, LLC. All rights reserved.
+//  Copyright (c) 2014 in.notes. All rights reserved.
 //
 
 #import "INAttachmentContainer.h"
 
-@interface INAttachmentContainer () <UICollisionBehaviorDelegate, MCAttachmentViewDelegate>
+@interface INAttachmentContainer () <UICollisionBehaviorDelegate, INAttachmentViewDelegate>
 
-@property (strong, nonatomic, readwrite) MCAttachmentView *attachmentView;
+@property (strong, nonatomic, readwrite) INAttachmentView *attachmentView;
 @property (strong, nonatomic) UIDynamicAnimator *animator;
 @property (strong, nonatomic) UIGravityBehavior *gravity;
 @property (strong, nonatomic) UIDynamicItemBehavior *itemBehaviour;
@@ -64,8 +64,8 @@
           initialSpringVelocity:IN_ZERO
                         options:UIViewAnimationOptionCurveLinear
                      animations:^{
-                         [self.attachmentView setImage:[UIImage resizeImage:image toSize:MC_ATTACHMENT_VIEW_SIZE cornerRadius:1.0f]];
-                         [self.attachmentView setFrame:MC_ATTACHMENT_VIEW_VISIBLE_FRAME];
+                         [self.attachmentView setImage:[UIImage resizeImage:image toSize:IN_ATTACHMENT_VIEW_SIZE cornerRadius:1.0f]];
+                         [self.attachmentView setFrame:IN_ATTACHMENT_VIEW_VISIBLE_FRAME];
                      } completion:^(BOOL finished) {
                          if (finished) {
                              // NSLog(@"Attachment image is set with frame: %@", NSStringFromCGRect(self.attachmentView.frame));
@@ -99,12 +99,12 @@
     return [[NSUUID UUID]UUIDString];
 }
 
-#pragma mark - MCAttachment View
+#pragma mark - INAttachment View
 
-- (MCAttachmentView *)attachmentView
+- (INAttachmentView *)attachmentView
 {
     if (!_attachmentView) {
-        _attachmentView = [[MCAttachmentView alloc]initWithFrame:MC_ATTACHMENT_VIEW_INIT_FRAME delegate:self];
+        _attachmentView = [[INAttachmentView alloc]initWithFrame:IN_ATTACHMENT_VIEW_INIT_FRAME delegate:self];
     }
     return _attachmentView;
 }
@@ -113,13 +113,13 @@
 {
     [self resetDynamicAnimator]; // Before adding "another" behaviour, remove all previous ones. 
     
-    if (index == kMCAttachmentRequestRemoveImage) {
+    if (index == kINAttachmentRequestRemoveImage) {
         [self resetAttachmentView];
-        [self.delegate attachmentContainerDidRemoveImageWithRequest:kMCAttachmentRequestRemoveImage];
-    } else if (index == kMCAttachmentRequestReplaceImage) {
+        [self.delegate attachmentContainerDidRemoveImageWithRequest:kINAttachmentRequestRemoveImage];
+    } else if (index == kINAttachmentRequestReplaceImage) {
         [self resetAttachmentView];
-        [self.delegate attachmentContainerDidRemoveImageWithRequest:kMCAttachmentRequestReplaceImage];
-    } else if (index == kMCAttachmentRequestCancel) {
+        [self.delegate attachmentContainerDidRemoveImageWithRequest:kINAttachmentRequestReplaceImage];
+    } else if (index == kINAttachmentRequestCancel) {
         // Action was canceled. Nothing to do.
     }
 }
@@ -129,7 +129,7 @@
     UIView *intermediateView = [self.attachmentView snapshotViewAfterScreenUpdates:NO];
     
     [self insertSubview:intermediateView aboveSubview:self.attachmentView];
-    [self.attachmentView setFrame:MC_ATTACHMENT_VIEW_INIT_FRAME];
+    [self.attachmentView setFrame:IN_ATTACHMENT_VIEW_INIT_FRAME];
     [self.attachmentView setImage:nil];
     
     self.gravity = [[UIGravityBehavior alloc]initWithItems:@[intermediateView]];

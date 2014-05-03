@@ -1,29 +1,29 @@
 //
-//  MCAttachmentContainer.h
-//  macciTi
+//  INAttachmentContainer.h
+//  in.notes
 //
 //  Created by iC on 3/18/14.
-//  Copyright (c) 2014 Mac*Citi, LLC. All rights reserved.
+//  Copyright (c) 2014 in.notes. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "INAttachmentView.h"
 
-#define MC_ATTACHMENT_CONTAINER_INIT_FRAME CGRectMake(0.0f, self.view.frame.size.height + 216.0f, 320.0f, 216.0f)
-#define MC_ATTACHMENT_VIEW_INIT_FRAME CGRectMake(10.0f, self.frame.size.height + 98.0f, 300.0f, 196.0f)
-#define MC_ATTACHMENT_VIEW_SIZE CGSizeMake(300.0f, 196.0f)
-#define MC_ATTACHMENT_VIEW_VISIBLE_FRAME CGRectMake(10.0f, 10.0f, 300.0f, 196.0f)
+#define IN_ATTACHMENT_CONTAINER_INIT_FRAME CGRectMake(0.0f, self.view.frame.size.height + 216.0f, 320.0f, 216.0f)
+#define IN_ATTACHMENT_VIEW_INIT_FRAME CGRectMake(10.0f, self.frame.size.height + 98.0f, 300.0f, 196.0f)
+#define IN_ATTACHMENT_VIEW_SIZE CGSizeMake(300.0f, 196.0f)
+#define IN_ATTACHMENT_VIEW_VISIBLE_FRAME CGRectMake(10.0f, 10.0f, 300.0f, 196.0f)
 
-@protocol MCAttachmentContainerDelegate <NSObject>
+@protocol INAttachmentContainerDelegate <NSObject>
 
-- (void)attachmentContainerDidRemoveImageWithRequest:(kMCAttachmentRequest)request;
+- (void)attachmentContainerDidRemoveImageWithRequest:(kINAttachmentRequest)request;
 
 @end
 
 @interface INAttachmentContainer : UIImageView
 
-@property (strong, nonatomic, readonly) MCAttachmentView *attachmentView;
-@property (weak, nonatomic) id <MCAttachmentContainerDelegate> delegate;
+@property (strong, nonatomic, readonly) INAttachmentView *attachmentView;
+@property (weak, nonatomic) id <INAttachmentContainerDelegate> delegate;
 
 /**
  *  Method for setting attachemnt image inside of the container.
