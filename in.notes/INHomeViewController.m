@@ -11,8 +11,9 @@
 #import "RZCellSizeManager.h"
 #import "MCImageTableViewCell.h"
 #import "MCImagePreview.h"
+#import "INComposeViewController.h"
 
-@interface INHomeViewController () <NSFetchedResultsControllerDelegate, MCImageTableViewCellDelegate, UISearchBarDelegate, MSCMoreOptionTableViewCellDelegate>
+@interface INHomeViewController () <NSFetchedResultsControllerDelegate, MCImageTableViewCellDelegate, UISearchBarDelegate>
 
 @property (strong, nonatomic) RZCellSizeManager *sizeManager;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
@@ -22,6 +23,8 @@
 - (void)configureTableView;
 - (void)configureFontSize;
 - (void)configureSearchBar;
+
+- (IBAction)composeNewPostButtonSelected:(id)sender;
 
 @end
 
@@ -92,6 +95,11 @@
     [self.tableView reloadData];
 }
 
+- (IBAction)composeNewPostButtonSelected:(id)sender
+{
+    [self performSegueWithIdentifier:kINComposeViewController sender:nil];
+}
+
 #pragma mark - NSFetched Results Controller
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -115,7 +123,6 @@
     [imageCell setIndexPath:indexPath];
     [imageCell setData:post];
     [imageCell setImageCellDelegate:self];
-    [imageCell setDelegate:self]; // Sets up the MoreOptionButton Delegate.
     
     return imageCell;
 }
@@ -255,18 +262,6 @@
     }
     
     [self.tableView reloadData];
-}
-
-#pragma mark - MSCMoreOptionTableViewCellDelegate
-
-- (NSString *)tableView:(UITableView *)tableView titleForMoreOptionButtonForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return @"Edit";
-}
-
-- (void)tableView:(UITableView *)tableView moreOptionButtonPressedInRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSLog(@"Method called.");
 }
 
 @end

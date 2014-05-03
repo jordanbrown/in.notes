@@ -22,10 +22,13 @@
                         <barButtonItem key="leftBarButtonItem" image="more-button" id="3KV-FE-lSj"/>
                         <barButtonItem key="rightBarButtonItem" image="compose-button" id="Wpc-Xo-5c9">
                             <connections>
-                                <segue destination="3GC-kK-GRH" kind="push" id="99U-8P-grT"/>
+                                <action selector="composeNewPostButtonSelected:" destination="Igx-uW-31B" id="pJR-sz-3hS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="3GC-kK-GRH" kind="push" identifier="INComposeViewController" id="Hkm-aV-lML"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rA2-Fl-JTl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
