@@ -9,7 +9,7 @@
 #import "INComposeViewController.h"
 #import "MCMarkdownTextView.h"
 #import "MCMoreButton.h"
-#import "MCAttachmentContainer.h"
+#import "INAttachmentContainer.h"
 #import "MCImageStore.h"
 #import "MCCharacterCounter.h"
 #import "MCHashtagContainer.h"
@@ -20,7 +20,7 @@
 @property (strong, nonatomic) MCMarkdownTextView *markdownTextView;
 @property (strong, nonatomic) MCMoreButton *moreButton;
 @property (strong, nonatomic) MCCharacterCounter *characterCounter;
-@property (strong, nonatomic) MCAttachmentContainer *attachmentContainer;
+@property (strong, nonatomic) INAttachmentContainer *attachmentContainer;
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *publishButton;
 
@@ -57,7 +57,7 @@
     self.markdownTextView = [[MCMarkdownTextView alloc]initWithFrame:MC_MARKDOWN_TEXT_VIEW_INIT_FRAME];
     self.markdownTextView.markdownDelegate = self;
     self.characterCounter = [[MCCharacterCounter alloc]initWithFrame:MC_CHARACTER_COUNTER_INIT_FRAME];
-    self.attachmentContainer = [[MCAttachmentContainer alloc]initWithFrame:MC_ATTACHMENT_CONTAINER_INIT_FRAME];
+    self.attachmentContainer = [[INAttachmentContainer alloc]initWithFrame:MC_ATTACHMENT_CONTAINER_INIT_FRAME];
     self.attachmentContainer.delegate = self;
     
     // Subviews setup.

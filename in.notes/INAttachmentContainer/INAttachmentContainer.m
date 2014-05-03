@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Mac*Citi, LLC. All rights reserved.
 //
 
-#import "MCAttachmentContainer.h"
+#import "INAttachmentContainer.h"
 
-@interface MCAttachmentContainer () <UICollisionBehaviorDelegate, MCAttachmentViewDelegate>
+@interface INAttachmentContainer () <UICollisionBehaviorDelegate, MCAttachmentViewDelegate>
 
 @property (strong, nonatomic, readwrite) MCAttachmentView *attachmentView;
 @property (strong, nonatomic) UIDynamicAnimator *animator;
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation MCAttachmentContainer
+@implementation INAttachmentContainer
 
 - (instancetype)initWithFrame:(CGRect)frame
 {

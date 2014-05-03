@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MCAttachmentView.h"
+#import "INAttachmentView.h"
 
 #define MC_ATTACHMENT_CONTAINER_INIT_FRAME CGRectMake(0.0f, self.view.frame.size.height + 216.0f, 320.0f, 216.0f)
 #define MC_ATTACHMENT_VIEW_INIT_FRAME CGRectMake(10.0f, self.frame.size.height + 98.0f, 300.0f, 196.0f)
@@ -20,7 +20,7 @@
 
 @end
 
-@interface MCAttachmentContainer : UIImageView
+@interface INAttachmentContainer : UIImageView
 
 @property (strong, nonatomic, readonly) MCAttachmentView *attachmentView;
 @property (weak, nonatomic) id <MCAttachmentContainerDelegate> delegate;

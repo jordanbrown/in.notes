@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Mac*Citi, LLC. All rights reserved.
 //
 
-#import "MCAttachmentView.h"
+#import "INAttachmentView.h"
 #import "REDActionSheet.h"
 
 @interface MCAttachmentView ()
