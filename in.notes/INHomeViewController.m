@@ -203,6 +203,8 @@
     }
 }
 
+#pragma mark - UIScrollViewdelegate methods
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     [self.view endEditing:YES];
