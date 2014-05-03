@@ -69,8 +69,10 @@
 
 - (void)setData:(INPost *)post
 {
-    // The initial font size is set here. However, if the user decides
-    // to change font size, reloadData on table view is called in the FeedVC.
+    /**
+     *  The initial font size is set here. However, if the user decides
+     *  to change font size, reloadData on table view is called in the FeedVC.
+     */
     self.txtLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
     
     [self.thumbnail.layer setMasksToBounds:YES];

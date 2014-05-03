@@ -84,7 +84,8 @@
 {
     [INPost postWithText:self.markdownTextView.text
                    image:[[MCImageStore sharedStore]imageForKey:kMCImageStoreKey]
-               thumbnail:[UIImage resizeImage:[[MCImageStore sharedStore]imageForKey:kMCImageStoreKey] toSize:CGSizeMake(300.0f, 100.0f) cornerRadius:0.0]
+               thumbnail:[UIImage resizeImage:[[MCImageStore sharedStore]imageForKey:kMCImageStoreKey]
+                                       toSize:CGSizeMake(300.0f, 129.0f) cornerRadius:0.0]
                 hashtags:[MCHashtagContainer hashtagArrayFromString:self.markdownTextView.text] completion:^(NSError *error) {
                     
                     /**

@@ -8,7 +8,7 @@
         <scene sceneID="bMa-5N-9P2">
             <objects>
                 <tableViewController storyboardIdentifier="INHomeViewController" id="Igx-uW-31B" customClass="INHomeViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" sectionHeaderHeight="22" sectionFooterHeight="22" id="YGg-zY-XVD">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" sectionHeaderHeight="22" sectionFooterHeight="22" id="YGg-zY-XVD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -19,6 +19,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Notes" id="GYl-Uc-xab">
+                        <barButtonItem key="leftBarButtonItem" image="more-button" id="3KV-FE-lSj"/>
                         <barButtonItem key="rightBarButtonItem" image="compose-button" id="Wpc-Xo-5c9">
                             <connections>
                                 <segue destination="3GC-kK-GRH" kind="push" id="99U-8P-grT"/>
@@ -74,6 +75,7 @@
     <resources>
         <image name="compose-button" width="23" height="23"/>
         <image name="done-button" width="23" height="23"/>
+        <image name="more-button" width="23" height="23"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
