@@ -9,11 +9,11 @@
 #import "INHomeViewController.h"
 #import "INPost+Manage.h"
 #import "RZCellSizeManager.h"
-#import "MCImageTableViewCell.h"
+#import "INImageTableViewCell.h"
 #import "MCImagePreview.h"
 #import "INComposeViewController.h"
 
-@interface INHomeViewController () <NSFetchedResultsControllerDelegate, MCImageTableViewCellDelegate, UISearchBarDelegate, MCImagePreviewDelegate>
+@interface INHomeViewController () <NSFetchedResultsControllerDelegate, INImageTableViewCellDelegate, UISearchBarDelegate, MCImagePreviewDelegate>
 
 @property (strong, nonatomic) RZCellSizeManager *sizeManager;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
@@ -48,9 +48,9 @@
 {
     self.sizeManager = [[RZCellSizeManager alloc]init];
     
-    [self.sizeManager registerCellClassName:[MCImageTableViewCell className]
-                             forObjectClass:[MCImageTableViewCell class]
-                         configurationBlock:^(MCImageTableViewCell *cell, id object) {
+    [self.sizeManager registerCellClassName:[INImageTableViewCell className]
+                             forObjectClass:[INImageTableViewCell class]
+                         configurationBlock:^(INImageTableViewCell *cell, id object) {
                              [cell setData:object];
                          }];
 }
@@ -64,7 +64,7 @@
                                                      delegate:self
                                                     inContext:[NSManagedObjectContext contextForCurrentThread]];
     
-    [self.tableView registerNib:[MCImageTableViewCell nib] forCellReuseIdentifier:[MCImageTableViewCell reuseIdentifier]];
+    [self.tableView registerNib:[INImageTableViewCell nib] forCellReuseIdentifier:[INImageTableViewCell reuseIdentifier]];
 }
 
 - (void)configureFontSize
@@ -118,7 +118,7 @@
 {
     INPost *post = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    MCImageTableViewCell *imageCell = [tableView dequeueReusableCellWithIdentifier:[MCImageTableViewCell reuseIdentifier]];
+    INImageTableViewCell *imageCell = [tableView dequeueReusableCellWithIdentifier:[INImageTableViewCell reuseIdentifier]];
     
     [imageCell setIndexPath:indexPath];
     [imageCell setData:post];

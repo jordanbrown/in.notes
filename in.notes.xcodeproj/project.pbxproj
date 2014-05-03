@@ -47,8 +47,6 @@
 		4839965B191437FA0085611D /* MagicalRecord+Setup.m in Sources */ = {isa = PBXBuildFile; fileRef = 483995EA191437FA0085611D /* MagicalRecord+Setup.m */; };
 		4839965C191437FA0085611D /* MagicalRecord+ShorthandSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 483995EC191437FA0085611D /* MagicalRecord+ShorthandSupport.m */; };
 		4839965D191437FA0085611D /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 483995EE191437FA0085611D /* MagicalRecord.m */; };
-		48399661191437FA0085611D /* MCImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 483995FC191437FA0085611D /* MCImageTableViewCell.m */; };
-		48399662191437FA0085611D /* MCImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 483995FD191437FA0085611D /* MCImageTableViewCell.xib */; };
 		48399665191437FA0085611D /* MCHashtagContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 48399603191437FA0085611D /* MCHashtagContainer.m */; };
 		48399666191437FA0085611D /* MCImagePreview.m in Sources */ = {isa = PBXBuildFile; fileRef = 48399606191437FA0085611D /* MCImagePreview.m */; };
 		48399667191437FA0085611D /* UIImage+MCResize.m in Sources */ = {isa = PBXBuildFile; fileRef = 48399609191437FA0085611D /* UIImage+MCResize.m */; };
@@ -72,6 +70,8 @@
 		48D844B91915A8F700567AFA /* INAttachmentContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844B61915A8F700567AFA /* INAttachmentContainer.m */; };
 		48D844BA1915A8F700567AFA /* INAttachmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844B81915A8F700567AFA /* INAttachmentView.m */; };
 		48D844BE1915AAB200567AFA /* INCharacterCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844BD1915AAB200567AFA /* INCharacterCounter.m */; };
+		48D844C31915B0B100567AFA /* INImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844C11915B0B100567AFA /* INImageTableViewCell.m */; };
+		48D844C41915B0B100567AFA /* INImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D844C21915B0B100567AFA /* INImageTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,9 +160,6 @@
 		483995EF191437FA0085611D /* MagicalRecordShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordShorthand.h; sourceTree = "<group>"; };
 		483995F0191437FA0085611D /* CoreData+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreData+MagicalRecord.h"; sourceTree = "<group>"; };
 		483995F1191437FA0085611D /* MagicalRecordVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordVersion.h; sourceTree = "<group>"; };
-		483995FB191437FA0085611D /* MCImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCImageTableViewCell.h; sourceTree = "<group>"; };
-		483995FC191437FA0085611D /* MCImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCImageTableViewCell.m; sourceTree = "<group>"; };
-		483995FD191437FA0085611D /* MCImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MCImageTableViewCell.xib; sourceTree = "<group>"; };
 		48399602191437FA0085611D /* MCHashtagContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCHashtagContainer.h; sourceTree = "<group>"; };
 		48399603191437FA0085611D /* MCHashtagContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCHashtagContainer.m; sourceTree = "<group>"; };
 		48399605191437FA0085611D /* MCImagePreview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCImagePreview.h; sourceTree = "<group>"; };
@@ -207,6 +204,9 @@
 		48D844B81915A8F700567AFA /* INAttachmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INAttachmentView.m; sourceTree = "<group>"; };
 		48D844BC1915AAB200567AFA /* INCharacterCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INCharacterCounter.h; sourceTree = "<group>"; };
 		48D844BD1915AAB200567AFA /* INCharacterCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INCharacterCounter.m; sourceTree = "<group>"; };
+		48D844C01915B0B100567AFA /* INImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INImageTableViewCell.h; sourceTree = "<group>"; };
+		48D844C11915B0B100567AFA /* INImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INImageTableViewCell.m; sourceTree = "<group>"; };
+		48D844C21915B0B100567AFA /* INImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = INImageTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,7 +287,7 @@
 				48D844B41915A8F700567AFA /* INAttachmentContainer */,
 				48D844AC1915975200567AFA /* INBootsrtapData */,
 				48D844BB1915AAB200567AFA /* INCharacterCounter */,
-				483995FA191437FA0085611D /* MCFeedCell */,
+				48D844BF1915B0B100567AFA /* INFeedCell */,
 				48399601191437FA0085611D /* MCHashtagContainer */,
 				48399604191437FA0085611D /* MCImagePreview */,
 				48399607191437FA0085611D /* MCImageResize */,
@@ -421,16 +421,6 @@
 				483995EF191437FA0085611D /* MagicalRecordShorthand.h */,
 			);
 			path = Core;
-			sourceTree = "<group>";
-		};
-		483995FA191437FA0085611D /* MCFeedCell */ = {
-			isa = PBXGroup;
-			children = (
-				483995FB191437FA0085611D /* MCImageTableViewCell.h */,
-				483995FC191437FA0085611D /* MCImageTableViewCell.m */,
-				483995FD191437FA0085611D /* MCImageTableViewCell.xib */,
-			);
-			path = MCFeedCell;
 			sourceTree = "<group>";
 		};
 		48399601191437FA0085611D /* MCHashtagContainer */ = {
@@ -593,6 +583,16 @@
 			path = INCharacterCounter;
 			sourceTree = "<group>";
 		};
+		48D844BF1915B0B100567AFA /* INFeedCell */ = {
+			isa = PBXGroup;
+			children = (
+				48D844C01915B0B100567AFA /* INImageTableViewCell.h */,
+				48D844C11915B0B100567AFA /* INImageTableViewCell.m */,
+				48D844C21915B0B100567AFA /* INImageTableViewCell.xib */,
+			);
+			path = INFeedCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -673,8 +673,8 @@
 				48D844AF1915975200567AFA /* intro-image.png in Resources */,
 				48D844B219159A2500567AFA /* intro-image-thumbnail.png in Resources */,
 				4839958B191427D20085611D /* InfoPlist.strings in Resources */,
+				48D844C41915B0B100567AFA /* INImageTableViewCell.xib in Resources */,
 				48399593191427D20085611D /* Images.xcassets in Resources */,
-				48399662191437FA0085611D /* MCImageTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -731,6 +731,7 @@
 				4839964B191437FA0085611D /* NSManagedObject+MagicalAggregation.m in Sources */,
 				48399667191437FA0085611D /* UIImage+MCResize.m in Sources */,
 				48399653191437FA0085611D /* NSManagedObjectContext+MagicalThreading.m in Sources */,
+				48D844C31915B0B100567AFA /* INImageTableViewCell.m in Sources */,
 				48D844BA1915A8F700567AFA /* INAttachmentView.m in Sources */,
 				4839964C191437FA0085611D /* NSManagedObject+MagicalDataImport.m in Sources */,
 				48399647191437FA0085611D /* NSNumber+MagicalDataImport.m in Sources */,
@@ -740,7 +741,6 @@
 				4839966D191437FA0085611D /* REDActionSheet.m in Sources */,
 				48399591191427D20085611D /* INAppDelegate.m in Sources */,
 				48D844B91915A8F700567AFA /* INAttachmentContainer.m in Sources */,
-				48399661191437FA0085611D /* MCImageTableViewCell.m in Sources */,
 				48399666191437FA0085611D /* MCImagePreview.m in Sources */,
 				48399668191437FA0085611D /* MCImageStore.m in Sources */,
 				48399658191437FA0085611D /* MagicalRecord+ErrorHandling.m in Sources */,

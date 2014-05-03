@@ -1,22 +1,22 @@
 //
-//  MCImageTableViewCell.m
+//  INImageTableViewCell.m
 //  FakeModel
 //
 //  Created by iC on 4/3/14.
-//  Copyright (c) 2014 Mac*Citi, LLC. All rights reserved.
+//  Copyright (c) 2014 in.notes. All rights reserved.
 //
 
-#import "MCImageTableViewCell.h"
+#import "INImageTableViewCell.h"
 #import "INPost.h"
 
-@interface MCImageTableViewCell ()
+@interface INImageTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UILabel *txtLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *thumbnail;
 
 @end
 
-@implementation MCImageTableViewCell
+@implementation INImageTableViewCell
 
 + (NSString *)reuseIdentifier
 {
