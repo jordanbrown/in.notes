@@ -64,7 +64,7 @@
           initialSpringVelocity:IN_ZERO
                         options:UIViewAnimationOptionCurveLinear
                      animations:^{
-                         [self.attachmentView setImage:[UIImage resizeImage:image toSize:MC_ATTACHMENT_VIEW_SIZE cornerRadius:0.0f]];
+                         [self.attachmentView setImage:[UIImage resizeImage:image toSize:MC_ATTACHMENT_VIEW_SIZE cornerRadius:1.0f]];
                          [self.attachmentView setFrame:MC_ATTACHMENT_VIEW_VISIBLE_FRAME];
                      } completion:^(BOOL finished) {
                          if (finished) {
