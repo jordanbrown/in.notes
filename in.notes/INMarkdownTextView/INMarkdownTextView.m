@@ -1,32 +1,32 @@
 //
-//  MCPostTextView.m
-//  macciTi
+//  INPostTextView.m
+//  in.notes
 //
 //  Created by iC on 3/17/14.
-//  Copyright (c) 2014 Mac*Citi, LLC. All rights reserved.
+//  Copyright (c) 2014 in.notes. All rights reserved.
 //
 
-#import "MCMarkdownTextView.h"
-#import "MCMarkdownSyntaxStorage.h"
+#import "INMarkdownTextView.h"
+#import "INMarkdownSyntaxStorage.h"
 
-#define MC_MAX_CHARACTERS_COUNT 240
+#define IN_MAX_CHARACTERS_COUNT 240
 
 static NSString * const kEmptyString = @"";
 
-@interface MCMarkdownTextView () <UITextViewDelegate>
+@interface INMarkdownTextView () <UITextViewDelegate>
 
-@property (strong, nonatomic) MCMarkdownSyntaxStorage *syntaxStorage;
+@property (strong, nonatomic) INMarkdownSyntaxStorage *syntaxStorage;
 
 @end
 
-@implementation MCMarkdownTextView
+@implementation INMarkdownTextView
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
     NSDictionary *attributes = @{NSFontAttributeName : [UIFont preferredFontForTextStyle:UIFontTextStyleBody]};
     NSAttributedString *attributedString = [[NSAttributedString alloc]initWithString:kEmptyString attributes:attributes];
     
-    _syntaxStorage = [[MCMarkdownSyntaxStorage alloc]init];
+    _syntaxStorage = [[INMarkdownSyntaxStorage alloc]init];
     [_syntaxStorage appendAttributedString:attributedString];
     
     CGRect newFrame = frame;
@@ -58,12 +58,12 @@ static NSString * const kEmptyString = @"";
      *  it simply wont work. Should also mention that the current limit of 240 characters
      *  looks / works great with the markdown container.
      */
-    if (textView.text.length > MC_MAX_CHARACTERS_COUNT) {
-        textView.text = [textView.text substringToIndex:MC_MAX_CHARACTERS_COUNT];
+    if (textView.text.length > IN_MAX_CHARACTERS_COUNT) {
+        textView.text = [textView.text substringToIndex:IN_MAX_CHARACTERS_COUNT];
     }
     
     // Updating the delegate interested in knowing the characters count.
-    [self.markdownDelegate markdownTextViewDidUpdateCharactersCount:MC_MAX_CHARACTERS_COUNT - (int)textView.text.length];
+    [self.markdownDelegate markdownTextViewDidUpdateCharactersCount:IN_MAX_CHARACTERS_COUNT - (int)textView.text.length];
 }
 
 @end

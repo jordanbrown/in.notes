@@ -20,8 +20,8 @@
 #define MR_ENABLE_ACTIVE_RECORD_LOGGING 0
     #import "MagicalRecord/CoreData+MagicalRecord.h"
 
-    #import "UIImage+MCResize.h"
-    #import "MCHashtagContainer.h"
+    #import "UIImage+Resize.h"
+    #import "INHashtagContainer.h"
     #import "RZCellSizeManager+CoreData.h"
     #import "SProgressHUD.h"
 

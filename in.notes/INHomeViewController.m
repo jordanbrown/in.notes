@@ -10,10 +10,10 @@
 #import "INPost+Manage.h"
 #import "RZCellSizeManager.h"
 #import "INImageTableViewCell.h"
-#import "MCImagePreview.h"
+#import "INImagePreview.h"
 #import "INComposeViewController.h"
 
-@interface INHomeViewController () <NSFetchedResultsControllerDelegate, INImageTableViewCellDelegate, UISearchBarDelegate, MCImagePreviewDelegate>
+@interface INHomeViewController () <NSFetchedResultsControllerDelegate, INImageTableViewCellDelegate, UISearchBarDelegate, INImagePreviewDelegate>
 
 @property (strong, nonatomic) RZCellSizeManager *sizeManager;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
@@ -217,7 +217,7 @@
     SProgressHUD *progressHUD = [[SProgressHUD alloc]initForViewType:kMCViewTypeImageThumbnailView];
     progressHUD.alpha = 0.0;
     
-    __block MCImagePreview *imagePreview = nil;
+    __block INImagePreview *imagePreview = nil;
     
     [imageView addSubview:progressHUD];
     [UIView animateWithDuration:0.4
@@ -230,7 +230,7 @@
                          if (finished) {
                              
                              INPost *post = [self.fetchedResultsController objectAtIndexPath:indexPath];
-                             imagePreview = [[MCImagePreview alloc]initWithImage:[UIImage imageWithData:post.image]
+                             imagePreview = [[INImagePreview alloc]initWithImage:[UIImage imageWithData:post.image]
                                                                             view:self.navigationController.view
                                                                       completion:^{
                                                                           

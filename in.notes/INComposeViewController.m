@@ -7,18 +7,18 @@
 //
 
 #import "INComposeViewController.h"
-#import "MCMarkdownTextView.h"
-#import "MCMoreButton.h"
+#import "INMarkdownTextView.h"
+#import "INMoreButton.h"
 #import "INAttachmentContainer.h"
-#import "MCImageStore.h"
+#import "INImageStore.h"
 #import "INCharacterCounter.h"
-#import "MCHashtagContainer.h"
+#import "INHashtagContainer.h"
 #import "INPost+Manage.h"
 
-@interface INComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, MCMoreButtonDelegate, INAttachmentContainerDelegate, MCMarkdownTextViewDelegate>
+@interface INComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, INMoreButtonDelegate, INAttachmentContainerDelegate, INMarkdownTextViewDelegate>
 
-@property (strong, nonatomic) MCMarkdownTextView *markdownTextView;
-@property (strong, nonatomic) MCMoreButton *moreButton;
+@property (strong, nonatomic) INMarkdownTextView *markdownTextView;
+@property (strong, nonatomic) INMoreButton *moreButton;
 @property (strong, nonatomic) INCharacterCounter *characterCounter;
 @property (strong, nonatomic) INAttachmentContainer *attachmentContainer;
 
@@ -42,7 +42,7 @@
 {
     [super viewDidAppear:animated];
     [self.markdownTextView becomeFirstResponder];
-    [self.moreButton moveToPoint:MC_MORE_BUTTON_ABOVE_KEYBOARD_POINT];
+    [self.moreButton moveToPoint:IN_MORE_BUTTON_ABOVE_KEYBOARD_POINT];
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,8 +53,8 @@
 - (void)setup
 {
     // Initialization.
-    self.moreButton = [[MCMoreButton alloc]initWithFrame:MC_MORE_BUTTON_INIT_FRAME delegate:self];
-    self.markdownTextView = [[MCMarkdownTextView alloc]initWithFrame:MC_MARKDOWN_TEXT_VIEW_INIT_FRAME];
+    self.moreButton = [[INMoreButton alloc]initWithFrame:IN_MORE_BUTTON_INIT_FRAME delegate:self];
+    self.markdownTextView = [[INMarkdownTextView alloc]initWithFrame:IN_MARKDOWN_TEXT_VIEW_INIT_FRAME];
     self.markdownTextView.markdownDelegate = self;
     self.characterCounter = [[INCharacterCounter alloc]initWithFrame:IN_CHARACTER_COUNTER_INIT_FRAME];
     self.attachmentContainer = [[INAttachmentContainer alloc]initWithFrame:IN_ATTACHMENT_CONTAINER_INIT_FRAME];
@@ -83,16 +83,16 @@
 - (IBAction)publishButtonSelected:(id)sender
 {
     [INPost postWithText:self.markdownTextView.text
-                   image:[[MCImageStore sharedStore]imageForKey:kMCImageStoreKey]
-               thumbnail:[UIImage resizeImage:[[MCImageStore sharedStore]imageForKey:kMCImageStoreKey]
+                   image:[[INImageStore sharedStore]imageForKey:kINImageStoreKey]
+               thumbnail:[UIImage resizeImage:[[INImageStore sharedStore]imageForKey:kINImageStoreKey]
                                        toSize:CGSizeMake(300.0f, 129.0f) cornerRadius:0.0]
-                hashtags:[MCHashtagContainer hashtagArrayFromString:self.markdownTextView.text] completion:^(NSError *error) {
+                hashtags:[INHashtagContainer hashtagArrayFromString:self.markdownTextView.text] completion:^(NSError *error) {
                     
                     /**
                      *  It is important to clear the cache because "image" is still in memory.
                      *  User can post "empty" posts if not cleared.
                      */
-                    [[MCImageStore sharedStore]deleteImageForKey:kMCImageStoreKey];
+                    [[INImageStore sharedStore]deleteImageForKey:kINImageStoreKey];
                     [self.navigationController popToRootViewControllerAnimated:YES];
                     
                 }];
@@ -111,7 +111,7 @@
         return;
     }
     [self.markdownTextView resignFirstResponder];
-    [self.attachmentContainer setFrame:MC_MARKDOWN_TEXT_VIEW_BEHIND_KEYBOARD_FRAME];
+    [self.attachmentContainer setFrame:IN_MARKDOWN_TEXT_VIEW_BEHIND_KEYBOARD_FRAME];
     [self performSelector:@selector(presentImagePicker) withObject:nil afterDelay:IN_DEFAULT_DELAY];
 }
 
@@ -145,11 +145,11 @@
  */
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    [[MCImageStore sharedStore]deleteImageForKey:kMCImageStoreKey];
-    [[MCImageStore sharedStore]setImage:[info objectForKey:UIImagePickerControllerOriginalImage]forKey:kMCImageStoreKey];
+    [[INImageStore sharedStore]deleteImageForKey:kINImageStoreKey];
+    [[INImageStore sharedStore]setImage:[info objectForKey:UIImagePickerControllerOriginalImage]forKey:kINImageStoreKey];
     [self dismissViewControllerAnimated:YES completion: ^{
         [self.markdownTextView resignFirstResponder];
-        [self.attachmentContainer setAttachmentImage:[[MCImageStore sharedStore]imageForKey:kMCImageStoreKey]];
+        [self.attachmentContainer setAttachmentImage:[[INImageStore sharedStore]imageForKey:kINImageStoreKey]];
     }];
 }
 

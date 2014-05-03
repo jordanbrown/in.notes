@@ -1,24 +1,24 @@
 //
-//  MCHashtagContainer.m
-//  macciTi
+//  INHashtagContainer.m
+//  in.notes
 //
 //  Created by iC on 4/11/14.
-//  Copyright (c) 2014 Mac*Citi, LLC. All rights reserved.
+//  Copyright (c) 2014 in.notes. All rights reserved.
 //
 
 // TO DO: Make sure hashtags only contain words, no special characters. 
 
-#import "MCHashtagContainer.h"
+#import "INHashtagContainer.h"
 
-static NSString * const kMCHashtagSearchPattern = @"(#[A-Za-z0-9]+)";
+static NSString * const kINHashtagSearchPattern = @"(#[A-Za-z0-9]+)";
 
-@implementation MCHashtagContainer
+@implementation INHashtagContainer
 
 + (NSArray *)hashtagArrayFromString:(NSString *)string
 {
     NSMutableArray *hashtags = [[NSMutableArray alloc]init];
     NSError *error = nil;
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:kMCHashtagSearchPattern
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:kINHashtagSearchPattern
                                                                            options:NSRegularExpressionCaseInsensitive
                                                                              error:&error];
     if (!error) {
@@ -38,7 +38,7 @@ static NSString * const kMCHashtagSearchPattern = @"(#[A-Za-z0-9]+)";
 {
     __block NSString *hashtags = [[NSString alloc]init];
     NSError *error = nil;
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:kMCHashtagSearchPattern
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:kINHashtagSearchPattern
                                                                            options:NSRegularExpressionCaseInsensitive
                                                                              error:&error];
     if (!error) {
@@ -56,8 +56,8 @@ static NSString * const kMCHashtagSearchPattern = @"(#[A-Za-z0-9]+)";
 
 + (NSData *)hashtagDataFromString:(NSString *)string
 {
-    if ([[MCHashtagContainer hashtagArrayFromString:string]count] > 0) {
-        return [NSKeyedArchiver archivedDataWithRootObject:[MCHashtagContainer hashtagArrayFromString:string]];
+    if ([[INHashtagContainer hashtagArrayFromString:string]count] > 0) {
+        return [NSKeyedArchiver archivedDataWithRootObject:[INHashtagContainer hashtagArrayFromString:string]];
     } else {
         return [NSData data];
     }

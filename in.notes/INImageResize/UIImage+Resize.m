@@ -1,14 +1,14 @@
 //
-//  UIImage+MCResize.m
-//  macciTi
+//  UIImage+Resize.m
+//  in.notes
 //
 //  Created by iC on 4/28/14.
-//  Copyright (c) 2014 Mac*Citi, LLC. All rights reserved.
+//  Copyright (c) 2014 in.notes. All rights reserved.
 //
 
-#import "UIImage+MCResize.h"
+#import "UIImage+Resize.h"
 
-@implementation UIImage (MCResize)
+@implementation UIImage (Resize)
 
 + (UIImage *)resizeImage:(UIImage *)image toSize:(CGSize)size cornerRadius:(float)cornerRadius
 {

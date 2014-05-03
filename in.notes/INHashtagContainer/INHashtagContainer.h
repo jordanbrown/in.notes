@@ -1,14 +1,14 @@
 //
-//  MCHashtagContainer.h
-//  macciTi
+//  INHashtagContainer.h
+//  in.notes
 //
 //  Created by iC on 4/11/14.
-//  Copyright (c) 2014 Mac*Citi, LLC. All rights reserved.
+//  Copyright (c) 2014 in.notes. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface MCHashtagContainer : NSObject
+@interface INHashtagContainer : NSObject
 
 /**
  *  Methods for analyzing the string for hashtag.

@@ -1,18 +1,18 @@
 //
-//  MCImageStore.m
-//  macciTi
+//  INImageStore.m
+//  in.notes
 //
 //  Created by iC on 3/20/14.
-//  Copyright (c) 2014 Mac*Citi, LLC. All rights reserved.
+//  Copyright (c) 2014 in.notes. All rights reserved.
 //
 
-#import "MCImageStore.h"
+#import "INImageStore.h"
 
-@implementation MCImageStore
+@implementation INImageStore
 
 + (instancetype)sharedStore
 {
-    static MCImageStore *sharedStore = nil;
+    static INImageStore *sharedStore = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedStore = [[self alloc]init];
@@ -53,7 +53,7 @@
 
 - (NSData *)imageDataForCurrentImage
 {
-    return UIImageJPEGRepresentation([self imageForKey:kMCImageStoreKey], IN_IMAGE_STORE_DEFAULT_JPG_QUALITY);
+    return UIImageJPEGRepresentation([self imageForKey:kINImageStoreKey], IN_IMAGE_STORE_DEFAULT_JPG_QUALITY);
 }
 
 - (NSData *)imageDataForImage:(UIImage *)image

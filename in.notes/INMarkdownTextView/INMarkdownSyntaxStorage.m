@@ -1,20 +1,20 @@
 //
-//  MCSyntaxHighlightTextStorage.m
-//  macciTi
+//  INSyntaxHighlightTextStorage.m
+//  in.notes
 //
 //  Created by iC on 3/13/14.
-//  Copyright (c) 2014 Mac*Citi, LLC. All rights reserved.
+//  Copyright (c) 2014 in.notes. All rights reserved.
 //
 
-#import "MCMarkdownSyntaxStorage.h"
+#import "INMarkdownSyntaxStorage.h"
 
-@interface MCMarkdownSyntaxStorage ()
+@interface INMarkdownSyntaxStorage ()
 
 @property (strong, nonatomic) NSMutableAttributedString *backingStore;
 
 @end
 
-@implementation MCMarkdownSyntaxStorage
+@implementation INMarkdownSyntaxStorage
 
 - (instancetype)init
 {

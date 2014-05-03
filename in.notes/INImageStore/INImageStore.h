@@ -1,23 +1,23 @@
 //
-//  MCImageStore.h
-//  macciTi
+//  INImageStore.h
+//  in.notes
 //
 //  Created by iC on 3/20/14.
-//  Copyright (c) 2014 Mac*Citi, LLC. All rights reserved.
+//  Copyright (c) 2014 in.notes. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-static NSString * const kMCImageStoreKey = @"imageStoreKey";
+static NSString * const kINImageStoreKey = @"imageStoreKey";
 
-@interface MCImageStore : NSObject
+@interface INImageStore : NSObject
 
 @property (strong, nonatomic) NSMutableDictionary *store;
 
 /**
  *  Singleton for storing "last" image selected by the user in the applicatioin sandbox.
  *
- *  @return instance of the MCImageStore.
+ *  @return instance of the INImageStore.
  */
 
 + (instancetype)sharedStore;
@@ -49,7 +49,7 @@ static NSString * const kMCImageStoreKey = @"imageStoreKey";
 - (NSData *)imageDataForImage:(UIImage *)image;
 
 /**
- *  This method is completely optional, as in, its not needed at for working with current MCImageStore.
+ *  This method is completely optional, as in, its not needed at for working with current INImageStore.
  *  It is relevant only if using Parse. So instead of calling [PFFile fileWithData:] and have the server 
  *  generate the name for the file, I generate it myself. I assume its faster? waiting on the server to generate
  *  a UUID might be unnoticable, but it is still faster on phone.

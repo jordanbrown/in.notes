@@ -1,27 +1,27 @@
 //
-//  MCImagePreview.m
-//  macciTi
+//  INImagePreview.m
+//  in.notes
 //
 //  Created by iC on 4/30/14.
-//  Copyright (c) 2014 Mac*Citi, LLC. All rights reserved.
+//  Copyright (c) 2014 in.notes. All rights reserved.
 //
 
-#import "MCImagePreview.h"
+#import "INImagePreview.h"
 #import "KHFlatButton.h"
 
-#define MC_IN_ANIMATION_DURATION 0.6
-#define MC_OUT_ANIMAITON_DURAITON 0.4
-#define MC_SPRING_DAMPING 0.7
+#define IN_IN_ANIMATION_DURATION 0.6
+#define IN_OUT_ANIMAITON_DURAITON 0.4
+#define IN_SPRING_DAMPING 0.7
 
-@interface MCImagePreview ()
+@interface INImagePreview ()
 
 @property (weak, nonatomic) UIImage *image;
-@property (strong, nonatomic) MCImagePreviewCompletionHandler completion;
+@property (strong, nonatomic) INImagePreviewCompletionHandler completion;
 @property (weak, nonatomic) UIView *senderView;
 
 @end
 
-@implementation MCImagePreview
+@implementation INImagePreview
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -33,12 +33,12 @@
     return [self initWithImage:image view:nil completion:nil];
 }
 
-- (instancetype)initWithImage:(UIImage *)image completion:(MCImagePreviewCompletionHandler)completion
+- (instancetype)initWithImage:(UIImage *)image completion:(INImagePreviewCompletionHandler)completion
 {
     return [self initWithImage:image view:nil completion:completion];
 }
 
-- (instancetype)initWithImage:(UIImage *)image view:(UIView *)view completion:(MCImagePreviewCompletionHandler)completion
+- (instancetype)initWithImage:(UIImage *)image view:(UIView *)view completion:(INImagePreviewCompletionHandler)completion
 {
     self = [super initWithFrame:[[UIScreen mainScreen]bounds]];
     if (self) {
@@ -76,9 +76,9 @@
 
 - (void)previewImage
 {
-    [UIView animateWithDuration:MC_IN_ANIMATION_DURATION
+    [UIView animateWithDuration:IN_IN_ANIMATION_DURATION
                           delay:IN_ZERO
-         usingSpringWithDamping:MC_SPRING_DAMPING
+         usingSpringWithDamping:IN_SPRING_DAMPING
           initialSpringVelocity:IN_ZERO
                         options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
@@ -91,7 +91,7 @@
 
 - (void)handleTapGesture:(id)sender
 {
-    [UIView animateWithDuration:MC_OUT_ANIMAITON_DURAITON
+    [UIView animateWithDuration:IN_OUT_ANIMAITON_DURAITON
                      animations:^{
                          
                          self.alpha = 0.0;

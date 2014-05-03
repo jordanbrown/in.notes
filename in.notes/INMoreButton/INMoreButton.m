@@ -1,27 +1,27 @@
 //
-//  MCButton.m
-//  macciTi
+//  INButton.m
+//  in.notes
 //
 //  Created by iC on 3/17/14.
-//  Copyright (c) 2014 Mac*Citi, LLC. All rights reserved.
+//  Copyright (c) 2014 in.notes. All rights reserved.
 //
 
-#import "MCMoreButton.h"
+#import "INMoreButton.h"
 
-@interface MCMoreButton ()
+@interface INMoreButton ()
 
 - (void)moreButtonSelected:(id)sender;
 
 @end
 
-@implementation MCMoreButton
+@implementation INMoreButton
 
 - (id)initWithFrame:(CGRect)frame
 {
     return [self initWithFrame:frame delegate:nil];
 }
 
-- (instancetype)initWithFrame:(CGRect)frame delegate:(id<MCMoreButtonDelegate>)delegate
+- (instancetype)initWithFrame:(CGRect)frame delegate:(id<INMoreButtonDelegate>)delegate
 {
     self = [super initWithFrame:frame];
     if (self) {

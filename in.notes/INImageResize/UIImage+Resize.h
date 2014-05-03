@@ -1,14 +1,14 @@
 //
-//  UIImage+MCResize.h
-//  macciTi
+//  UIImage+Resize.h
+//  in.notes
 //
 //  Created by iC on 4/28/14.
-//  Copyright (c) 2014 Mac*Citi, LLC. All rights reserved.
+//  Copyright (c) 2014 in.notes. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface UIImage (MCResize)
+@interface UIImage (Resize)
 
 /**
  *  Method for resizing images with optional corner rounding.
