@@ -13,7 +13,7 @@
 #import "MCImagePreview.h"
 #import "INComposeViewController.h"
 
-@interface INHomeViewController () <NSFetchedResultsControllerDelegate, MCImageTableViewCellDelegate, UISearchBarDelegate>
+@interface INHomeViewController () <NSFetchedResultsControllerDelegate, MCImageTableViewCellDelegate, UISearchBarDelegate, MCImagePreviewDelegate>
 
 @property (strong, nonatomic) RZCellSizeManager *sizeManager;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
@@ -236,7 +236,7 @@
                                                                           imagePreview = nil;
                                                                           
                                                                       }];
-                             
+                             imagePreview.delegate = self;
                              [self.navigationController.view addSubview:imagePreview];
                              [imagePreview previewImage];
                              [progressHUD removeFromSuperview];
@@ -262,6 +262,21 @@
     }
     
     [self.tableView reloadData];
+}
+
+#pragma mark - MCIMagePreviewDelegate
+
+- (void)imagePreviewDidFinishPreparingImage:(UIImage *)image
+{
+    NSArray *activityItems = @[image];
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc]initWithActivityItems:activityItems applicationActivities:nil];
+    dispatch_queue_t waitQ = dispatch_queue_create(IN_GENERIC_Q, NULL);
+    dispatch_async(waitQ, ^{
+        usleep(400000);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self presentViewController:activityViewController animated:YES completion:nil];
+        });
+    });
 }
 
 @end
