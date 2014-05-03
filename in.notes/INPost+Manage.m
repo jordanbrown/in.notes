@@ -10,6 +10,21 @@
 
 @implementation INPost (Manage)
 
++ (void)bootstrapInitialPostData
+{
+    [self postWithText:kINBootstrapInitialText
+                 image:[UIImage imageNamed:kINBootstrapInitialImage]
+             thumbnail:[UIImage imageNamed:kINBootstrapInitialThumbnail]
+              hashtags:nil
+            completion:^(NSError *error) {
+                
+                if (!error) {
+                    [[NSUserDefaults standardUserDefaults]setBool:YES forKey:kINBootstrappedInitialData];
+                    [[NSUserDefaults standardUserDefaults]synchronize];
+                }
+            }];
+}
+
 + (void)postWithText:(NSString *)text image:(UIImage *)image thumbnail:(UIImage *)thumbnail hashtags:(NSArray *)hashtags completion:(INPostCompletionHandler)completionHandler
 {
     [MagicalRecord saveUsingCurrentThreadContextWithBlock:^(NSManagedObjectContext *localContext) {

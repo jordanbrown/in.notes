@@ -7,14 +7,25 @@
 //
 
 #import "INAppDelegate.h"
+#import "INPost+Manage.h"
 
 @interface INAppDelegate ()
 
+- (void)bootstrapInitialData;
 - (void)setupAppearance;
 
 @end
 
 @implementation INAppDelegate
+
+#pragma mark - Setup
+
+- (void)bootstrapInitialData
+{
+    if (![[NSUserDefaults standardUserDefaults]boolForKey:kINBootstrappedInitialData]) {
+        [INPost bootstrapInitialPostData];
+    }
+}
 
 - (void)setupAppearance
 {
@@ -23,8 +34,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [self setupAppearance];
     [MagicalRecord setupCoreDataStack];
+    [self bootstrapInitialData];
+    [self setupAppearance];
     
     return YES;
 }

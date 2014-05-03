@@ -12,6 +12,8 @@ typedef void(^INPostCompletionHandler)(NSError *error);
 
 @interface INPost (Manage)
 
++ (void)bootstrapInitialPostData;
+
 + (void)postWithText:(NSString *)text image:(UIImage *)image thumbnail:(UIImage *)thumbnail hashtags:(NSArray *)hashtags completion:(INPostCompletionHandler)completionHandler;
 
 + (void)deletePost:(INPost *)post;

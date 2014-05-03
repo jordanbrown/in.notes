@@ -15,6 +15,11 @@
 #define IN_IMAGE_STORE_DEFAULT_JPG_QUALITY 0.7
 #define IN_GENERIC_Q "com.macciti.macciTi.genericQ"
 
+#pragma mark -
+static NSString * const kINBootstrappedInitialData = @"INBootstrappedInitialData";
+static NSString * const kINBootstrapInitialText = @"This is your first post. Slide left to delete. Tap on the image to preview. Tap on the text to share your post with friends. Thank you for downloading in.notes.";
+static NSString * const kINBootstrapInitialImage = @"intro-image";
+static NSString * const kINBootstrapInitialThumbnail = @"intro-image-thumbnail";
 
 #pragma mark - INHomeViewController
 static NSString * const kINHomeViewController = @"INHomeViewController";
