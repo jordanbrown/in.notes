@@ -22,13 +22,11 @@
 @property (weak, nonatomic) id <INImageTableViewCellDelegate> imageCellDelegate;
 @property (weak, nonatomic) INPost *post;
 
-@property (strong, nonatomic) NSIndexPath *indexPath;
-
 + (NSString *)reuseIdentifier;
 + (UINib *)nib;
 + (NSString *)className;
 + (CGFloat)estimateCellHeight;
 
-- (void)setPost:(INPost *)post;
+- (void)setPost:(INPost *)post indexPath:(NSIndexPath *)indexPath;
 
 @end

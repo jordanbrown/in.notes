@@ -45,13 +45,13 @@
     [self.sizeManager registerCellClassName:[INImageTableViewCell className]
                          forReuseIdentifier:[INImageTableViewCell reuseIdentifier]
                      withConfigurationBlock:^(id cell, id object) {
-                         [cell setPost:object];
+                         [cell setPost:object indexPath:[self.tableView indexPathForCell:cell]];
                      }];
     
     [self.sizeManager registerCellClassName:[INTextTableViewCell className]
                          forReuseIdentifier:[INTextTableViewCell reuseIdentifier]
                      withConfigurationBlock:^(id cell, id object) {
-                         [cell setPost:object];
+                         [cell setPost:object indexPath:[self.tableView indexPathForCell:cell]];
                      }];
 }
 
@@ -84,8 +84,7 @@
         
         INImageTableViewCell *imageCell = [tableView dequeueReusableCellWithIdentifier:[INImageTableViewCell reuseIdentifier]];
         
-        [imageCell setIndexPath:indexPath];
-        [imageCell setPost:post];
+        [imageCell setPost:post indexPath:indexPath];
         [imageCell setImageCellDelegate:self];
         
         homeCell = imageCell;
@@ -93,8 +92,7 @@
     } else {
         
         INTextTableViewCell *textCell = [tableView dequeueReusableCellWithIdentifier:[INTextTableViewCell reuseIdentifier]];
-        [textCell setIndexPath:indexPath];
-        [textCell setPost:post];
+        [textCell setPost:post indexPath:indexPath];
         
         homeCell = textCell;
     }

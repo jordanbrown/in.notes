@@ -11,6 +11,7 @@
 
 @interface INTextTableViewCell ()
 
+@property (strong, nonatomic) NSIndexPath *indexPath;
 @property (weak, nonatomic) IBOutlet UILabel *txtLabel;
 
 @end
@@ -47,14 +48,12 @@
 
 #pragma mark - Instance
 
-- (void)setPost:(INPost *)post
+- (void)setPost:(INPost *)post indexPath:(NSIndexPath *)indexPath
 {
-    /**
-     *  The initial font size is set here. However, if the user decides
-     *  to change font size, reloadData on table view is called in the FeedVC.
-     */
-    self.txtLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
-    self.txtLabel.text = post.text;
+    [self.txtLabel setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleBody]];
+    [self.txtLabel setText:post.text];
+    
+    [self setIndexPath:indexPath];
 
     _post = post;
 }

@@ -11,6 +11,7 @@
 
 @interface INImageTableViewCell ()
 
+@property (strong, nonatomic) NSIndexPath *indexPath;
 @property (weak, nonatomic) IBOutlet UILabel *txtLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *thumbnail;
 
@@ -67,19 +68,16 @@
     }
 }
 
-- (void)setPost:(INPost *)post
+- (void)setPost:(INPost *)post indexPath:(NSIndexPath *)indexPath
 {
-    /**
-     *  The initial font size is set here. However, if the user decides
-     *  to change font size, reloadData on table view is called in the FeedVC.
-     */
-    self.txtLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    [self.txtLabel setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleBody]];
+    [self.txtLabel setText:post.text];
     
     [self.thumbnail.layer setMasksToBounds:YES];
     [self.thumbnail.layer setCornerRadius:1.0];
+    [self.thumbnail setImage:[UIImage imageWithData:post.thumbnail]];
     
-    self.txtLabel.text = post.text;
-    self.thumbnail.image = [UIImage imageWithData:post.thumbnail];
+    [self setIndexPath:indexPath];;
 
     _post = post;
 }
