@@ -47,7 +47,7 @@
 
 #pragma mark - Instance
 
-- (void)setData:(INPost *)post
+- (void)setPost:(INPost *)post
 {
     /**
      *  The initial font size is set here. However, if the user decides

@@ -21,6 +21,6 @@
 + (NSString *)className;
 + (CGFloat)estimateCellHeight;
 
-- (void)setData:(INPost *)post;
+- (void)setPost:(INPost *)post;
 
 @end

@@ -8,34 +8,7 @@
 
 #import "INNotesFetchedResultsController.h"
 
-@interface INNotesFetchedResultsController ()
-
-- (void)configureFontSize;
-
-@end
-
 @implementation INNotesFetchedResultsController
-
-#pragma mark - Instance Methods
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    [self configureFontSize];
-}
-
-- (void)configureFontSize
-{
-    [[NSNotificationCenter defaultCenter]addObserver:self
-                                            selector:@selector(preferredContentSizeChanged:)
-                                                name:UIContentSizeCategoryDidChangeNotification
-                                              object:nil];
-}
-
-- (void)preferredContentSizeChanged:(NSNotification *)note
-{
-    [self.tableView reloadData];
-}
 
 #pragma mark - NSFetched Results Controller
 
@@ -98,11 +71,14 @@
     }
     
     /**
+     *  SizeManager is only avalible for subclasses of the INTableViewController. I really dont like this here. Needs rethinking.
      *  Invalidating cell height. This is required is order for new content coming out of CoreData
      *  to work / size properly. Without this, it simply wont size properly due to cached cell height. This also
      *  can use someoptimizing. More information / and the way I made it work, see https://github.com/Raizlabs/RZCellSizeManager
      */
-    [self.sizeManager invalidateCellHeightsForResultsController:controller changeType:type indexPath:indexPath newIndexPath:newIndexPath];
+    if ([self.class isSubclassOfClass:[INTableViewController class]]) {
+        [self.sizeManager invalidateCellHeightsForResultsController:controller changeType:type indexPath:indexPath newIndexPath:newIndexPath];
+    }
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller

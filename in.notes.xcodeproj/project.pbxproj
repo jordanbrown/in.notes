@@ -59,6 +59,7 @@
 		4839968C1914433D0085611D /* INPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839968B1914433D0085611D /* INPost.m */; };
 		4839968F191443D00085611D /* INPost+Manage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839968E191443D00085611D /* INPost+Manage.m */; };
 		48616EDB1916D0810011271A /* INNotesFetchedResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48616EDA1916D0810011271A /* INNotesFetchedResultsController.m */; };
+		48616EE21916D9500011271A /* INTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48616EE11916D9500011271A /* INTableViewController.m */; };
 		48D844AF1915975200567AFA /* intro-image.png in Resources */ = {isa = PBXBuildFile; fileRef = 48D844AD1915975200567AFA /* intro-image.png */; };
 		48D844B219159A2500567AFA /* intro-image-thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 48D844B119159A2500567AFA /* intro-image-thumbnail.png */; };
 		48D844B91915A8F700567AFA /* INAttachmentContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844B61915A8F700567AFA /* INAttachmentContainer.m */; };
@@ -187,6 +188,8 @@
 		4839968E191443D00085611D /* INPost+Manage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "INPost+Manage.m"; sourceTree = "<group>"; };
 		48616ED91916D0810011271A /* INNotesFetchedResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INNotesFetchedResultsController.h; sourceTree = "<group>"; };
 		48616EDA1916D0810011271A /* INNotesFetchedResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INNotesFetchedResultsController.m; sourceTree = "<group>"; };
+		48616EE01916D9500011271A /* INTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INTableViewController.h; sourceTree = "<group>"; };
+		48616EE11916D9500011271A /* INTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INTableViewController.m; sourceTree = "<group>"; };
 		48D844AD1915975200567AFA /* intro-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intro-image.png"; sourceTree = "<group>"; };
 		48D844B119159A2500567AFA /* intro-image-thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intro-image-thumbnail.png"; sourceTree = "<group>"; };
 		48D844B51915A8F700567AFA /* INAttachmentContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAttachmentContainer.h; sourceTree = "<group>"; };
@@ -495,6 +498,8 @@
 		48616EDC1916D0BE0011271A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				48616EE01916D9500011271A /* INTableViewController.h */,
+				48616EE11916D9500011271A /* INTableViewController.m */,
 				48616ED91916D0810011271A /* INNotesFetchedResultsController.h */,
 				48616EDA1916D0810011271A /* INNotesFetchedResultsController.m */,
 				483995B119142CC20085611D /* INHomeViewController.h */,
@@ -753,6 +758,7 @@
 				4839964A191437FA0085611D /* NSString+MagicalDataImport.m in Sources */,
 				48399648191437FA0085611D /* NSObject+MagicalDataImport.m in Sources */,
 				4839965A191437FA0085611D /* MagicalRecord+Options.m in Sources */,
+				48616EE21916D9500011271A /* INTableViewController.m in Sources */,
 				48D844DE1915B8A500567AFA /* INMarkdownTextView.m in Sources */,
 				48399649191437FA0085611D /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
 				4839964B191437FA0085611D /* NSManagedObject+MagicalAggregation.m in Sources */,

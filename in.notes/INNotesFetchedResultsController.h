@@ -6,11 +6,10 @@
 //  Copyright (c) 2014 in.notes. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "INTableViewController.h"
 
-@interface INNotesFetchedResultsController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface INNotesFetchedResultsController : INTableViewController <NSFetchedResultsControllerDelegate>
 
-@property (strong, nonatomic) RZCellSizeManager *sizeManager;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @end

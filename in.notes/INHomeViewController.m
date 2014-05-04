@@ -8,11 +8,12 @@
 
 #import "INHomeViewController.h"
 #import "INPost+Manage.h"
-#import "RZCellSizeManager.h"
+
 #import "INImageTableViewCell.h"
+#import "INTextTableViewCell.h"
+
 #import "INImagePreview.h"
 #import "INComposeViewController.h"
-#import "INTextTableViewCell.h"
 
 @interface INHomeViewController () <INImageTableViewCellDelegate, INImagePreviewDelegate>
 
@@ -44,13 +45,13 @@
     [self.sizeManager registerCellClassName:[INImageTableViewCell className]
                          forReuseIdentifier:[INImageTableViewCell reuseIdentifier]
                      withConfigurationBlock:^(id cell, id object) {
-                         [cell setData:object];
+                         [cell setPost:object];
                      }];
     
     [self.sizeManager registerCellClassName:[INTextTableViewCell className]
                          forReuseIdentifier:[INTextTableViewCell reuseIdentifier]
                      withConfigurationBlock:^(id cell, id object) {
-                         [cell setData:object];
+                         [cell setPost:object];
                      }];
 }
 
@@ -84,7 +85,7 @@
         INImageTableViewCell *imageCell = [tableView dequeueReusableCellWithIdentifier:[INImageTableViewCell reuseIdentifier]];
         
         [imageCell setIndexPath:indexPath];
-        [imageCell setData:post];
+        [imageCell setPost:post];
         [imageCell setImageCellDelegate:self];
         
         homeCell = imageCell;
@@ -93,7 +94,7 @@
         
         INTextTableViewCell *textCell = [tableView dequeueReusableCellWithIdentifier:[INTextTableViewCell reuseIdentifier]];
         [textCell setIndexPath:indexPath];
-        [textCell setData:post];
+        [textCell setPost:post];
         
         homeCell = textCell;
     }
