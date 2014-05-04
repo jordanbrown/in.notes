@@ -29,7 +29,7 @@
                         </constraints>
                     </imageView>
                     <button opaque="NO" alpha="0.49999999999999983" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AwC-g5-cMW">
-                        <rect key="frame" x="149" y="163" width="23" height="23"/>
+                        <rect key="frame" x="149" y="162" width="23" height="23"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="23" id="eCn-rR-t2t"/>
@@ -44,14 +44,14 @@
                     <constraint firstItem="odo-kp-4r0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="17y-dv-SbL"/>
                     <constraint firstItem="DET-CH-8d3" firstAttribute="top" secondItem="odo-kp-4r0" secondAttribute="bottom" constant="8" id="34u-Uy-zZT"/>
                     <constraint firstItem="AwC-g5-cMW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="149" id="4gv-aE-cFb"/>
-                    <constraint firstItem="AwC-g5-cMW" firstAttribute="top" secondItem="DET-CH-8d3" secondAttribute="bottom" id="4jp-HU-xPV"/>
+                    <constraint firstItem="AwC-g5-cMW" firstAttribute="top" secondItem="DET-CH-8d3" secondAttribute="bottom" constant="-1" id="4jp-HU-xPV"/>
                     <constraint firstAttribute="trailing" secondItem="odo-kp-4r0" secondAttribute="trailing" constant="10" id="ABL-jr-RF0"/>
-                    <constraint firstAttribute="bottom" secondItem="AwC-g5-cMW" secondAttribute="bottom" constant="4" id="AeO-1H-AK1"/>
+                    <constraint firstAttribute="bottom" secondItem="AwC-g5-cMW" secondAttribute="bottom" constant="5" id="AeO-1H-AK1"/>
                     <constraint firstItem="DET-CH-8d3" firstAttribute="top" secondItem="odo-kp-4r0" secondAttribute="bottom" constant="8" id="dcW-2o-QIP"/>
                     <constraint firstItem="DET-CH-8d3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="f58-WT-CGe"/>
                     <constraint firstAttribute="trailing" secondItem="DET-CH-8d3" secondAttribute="trailing" constant="10" id="h1l-91-cK2"/>
                     <constraint firstItem="odo-kp-4r0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="oo1-da-gse"/>
-                    <constraint firstItem="AwC-g5-cMW" firstAttribute="top" secondItem="DET-CH-8d3" secondAttribute="bottom" id="pgi-fR-eNv"/>
+                    <constraint firstItem="AwC-g5-cMW" firstAttribute="top" secondItem="DET-CH-8d3" secondAttribute="bottom" constant="-1" id="pgi-fR-eNv"/>
                     <constraint firstAttribute="trailing" secondItem="AwC-g5-cMW" secondAttribute="trailing" constant="148" id="xYc-UF-sP8"/>
                 </constraints>
             </tableViewCellContentView>

@@ -295,6 +295,8 @@
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
+    [self.sizeManager invalidateCellSizeCache];
+    
     NSPredicate *searchPredicate = nil;
     if (searchText.length > 0) {
         searchPredicate = [NSPredicate predicateWithFormat:@"text CONTAINS [cd] %@", searchText];
