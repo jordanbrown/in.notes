@@ -197,10 +197,20 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        
         [INPost deletePost:[self.fetchedResultsController objectAtIndexPath:indexPath]];
-        
     }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    INPost *post = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self presentActivityViewControllerWithItems:@[[UIImage imageWithData:post.image], post.text]];
+}
+
+- (void)presentActivityViewControllerWithItems:(NSArray *)items
+{
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc]initWithActivityItems:items applicationActivities:nil];
+    [self presentViewController:activityViewController animated:YES completion:nil];
 }
 
 #pragma mark - UIScrollViewdelegate methods
