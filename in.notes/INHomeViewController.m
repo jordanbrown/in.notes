@@ -125,13 +125,13 @@
     INPost *post = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     if (post.image) {
-        [self presentActivityViewControllerWithItems:@[[UIImage imageWithData:post.image], post.text]];
+        [self presentActivityViewControllerWithActivityItems:@[[UIImage imageWithData:post.image], post.text]];
     } else {
-        [self presentActivityViewControllerWithItems:@[post.text]];
+        [self presentActivityViewControllerWithActivityItems:@[post.text]];
     }
 }
 
-- (void)presentActivityViewControllerWithItems:(NSArray *)items
+- (void)presentActivityViewControllerWithActivityItems:(NSArray *)items
 {
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc]initWithActivityItems:items applicationActivities:nil];
     [self presentViewController:activityViewController animated:YES completion:nil];
