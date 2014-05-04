@@ -14,16 +14,14 @@
 #import "INComposeViewController.h"
 #import "INTextTableViewCell.h"
 
-@interface INHomeViewController () <NSFetchedResultsControllerDelegate, INImageTableViewCellDelegate, UISearchBarDelegate, INImagePreviewDelegate>
+@interface INHomeViewController () <NSFetchedResultsControllerDelegate, INImageTableViewCellDelegate, INImagePreviewDelegate>
 
 @property (strong, nonatomic) RZCellSizeManager *sizeManager;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (strong, nonatomic) UISearchBar *searchBar;
 
 - (void)configureSizeManager;
 - (void)configureTableView;
 - (void)configureFontSize;
-- (void)configureSearchBar;
 
 - (IBAction)composeNewPostButtonSelected:(id)sender;
 
@@ -37,7 +35,6 @@
     [self configureSizeManager];
     [self configureTableView];
     [self configureFontSize];
-    [self configureSearchBar];
 }
 
 - (void)didReceiveMemoryWarning
@@ -81,21 +78,6 @@
                                             selector:@selector(preferredContentSizeChanged:)
                                                 name:UIContentSizeCategoryDidChangeNotification
                                               object:nil];
-}
-
-- (void)configureSearchBar
-{
-    self.searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0.0, 0.0, 320.0, 44.0)];
-    self.searchBar.delegate = self;
-    self.searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
-    self.searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
-    self.searchBar.barStyle = UISearchBarStyleMinimal;
-
-    [self.searchBar setBackgroundImage:[UIImage imageNamed:@"search-bar-background"]];
-    [self.searchBar setPlaceholder:@"Search"];
-    [self.searchBar setSearchFieldBackgroundImage:[UIImage imageNamed:@"search-bar-background"] forState:UIControlStateNormal];
-    
-    self.tableView.tableHeaderView = self.searchBar;
 }
 
 - (void)preferredContentSizeChanged:(NSNotification *)note
@@ -289,27 +271,6 @@
                          }
                          
                      }];
-}
-
-#pragma mark - UISearchBarDelegate
-
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
-{
-    [self.sizeManager invalidateCellSizeCache];
-    
-    NSPredicate *searchPredicate = nil;
-    if (searchText.length > 0) {
-        searchPredicate = [NSPredicate predicateWithFormat:@"text CONTAINS [cd] %@", searchText];
-    }
-    
-    self.fetchedResultsController.fetchRequest.predicate = searchPredicate;
-    
-    NSError *error = nil;
-    if (![self.fetchedResultsController performFetch:&error]) {
-        // NSLog(@"%@", [error localizedDescription]);
-    }
-    
-    [self.tableView reloadData];
 }
 
 #pragma mark - MCIMagePreviewDelegate
