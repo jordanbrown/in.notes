@@ -116,17 +116,6 @@
     }
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *homeCell = [tableView cellForRowAtIndexPath:indexPath];
-    
-    if ([homeCell isKindOfClass:[INImageTableViewCell class]]) {
-        //
-    } else if ([homeCell isKindOfClass:[INTextTableViewCell class]]) {
-        //
-    }
-}
-
 - (void)presentActivityViewControllerWithActivityItems:(NSArray *)items
 {
     [self presentViewController:[[UIActivityViewController alloc]initWithActivityItems:items applicationActivities:nil] animated:YES completion:nil];

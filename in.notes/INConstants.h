@@ -17,7 +17,7 @@
 
 #pragma mark -
 static NSString * const kINBootstrappedInitialData = @"INBootstrappedInitialData";
-static NSString * const kINBootstrapInitialText = @"This is your first post. Slide left to delete. Tap on the image to preview or tap on the text to share your post with friends.";
+static NSString * const kINBootstrapInitialText = @"Hello. This is your first post. Slide left to delete.";
 static NSString * const kINBootstrapInitialImage = @"intro-image";
 static NSString * const kINBootstrapInitialThumbnail = @"intro-image-thumbnail";
 
