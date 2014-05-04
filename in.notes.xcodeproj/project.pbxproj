@@ -58,6 +58,7 @@
 		48399689191441AF0085611D /* in.notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48399687191441AF0085611D /* in.notes.xcdatamodeld */; };
 		4839968C1914433D0085611D /* INPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839968B1914433D0085611D /* INPost.m */; };
 		4839968F191443D00085611D /* INPost+Manage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839968E191443D00085611D /* INPost+Manage.m */; };
+		48616EDB1916D0810011271A /* INNotesFetchedResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48616EDA1916D0810011271A /* INNotesFetchedResultsController.m */; };
 		48D844AF1915975200567AFA /* intro-image.png in Resources */ = {isa = PBXBuildFile; fileRef = 48D844AD1915975200567AFA /* intro-image.png */; };
 		48D844B219159A2500567AFA /* intro-image-thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 48D844B119159A2500567AFA /* intro-image-thumbnail.png */; };
 		48D844B91915A8F700567AFA /* INAttachmentContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844B61915A8F700567AFA /* INAttachmentContainer.m */; };
@@ -184,6 +185,8 @@
 		4839968B1914433D0085611D /* INPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INPost.m; sourceTree = "<group>"; };
 		4839968D191443D00085611D /* INPost+Manage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "INPost+Manage.h"; sourceTree = "<group>"; };
 		4839968E191443D00085611D /* INPost+Manage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "INPost+Manage.m"; sourceTree = "<group>"; };
+		48616ED91916D0810011271A /* INNotesFetchedResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INNotesFetchedResultsController.h; sourceTree = "<group>"; };
+		48616EDA1916D0810011271A /* INNotesFetchedResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INNotesFetchedResultsController.m; sourceTree = "<group>"; };
 		48D844AD1915975200567AFA /* intro-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intro-image.png"; sourceTree = "<group>"; };
 		48D844B119159A2500567AFA /* intro-image-thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intro-image-thumbnail.png"; sourceTree = "<group>"; };
 		48D844B51915A8F700567AFA /* INAttachmentContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAttachmentContainer.h; sourceTree = "<group>"; };
@@ -275,8 +278,7 @@
 				4839958F191427D20085611D /* INAppDelegate.h */,
 				48399590191427D20085611D /* INAppDelegate.m */,
 				483995AF19142C060085611D /* iPhone568.storyboard */,
-				483995B119142CC20085611D /* INHomeViewController.h */,
-				483995B219142CC20085611D /* INHomeViewController.m */,
+				48616EDC1916D0BE0011271A /* View Controllers */,
 				4839968019143A5F0085611D /* INComposeViewController.h */,
 				4839968119143A5F0085611D /* INComposeViewController.m */,
 				48399690191443D70085611D /* Core Data */,
@@ -488,6 +490,17 @@
 				4839968E191443D00085611D /* INPost+Manage.m */,
 			);
 			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		48616EDC1916D0BE0011271A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				48616ED91916D0810011271A /* INNotesFetchedResultsController.h */,
+				48616EDA1916D0810011271A /* INNotesFetchedResultsController.m */,
+				483995B119142CC20085611D /* INHomeViewController.h */,
+				483995B219142CC20085611D /* INHomeViewController.m */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		48D844AC1915975200567AFA /* INBootsrtapData */ = {
@@ -732,6 +745,7 @@
 				4839966F191437FA0085611D /* RZCellSizeManager+CoreData.m in Sources */,
 				48D844DD1915B8A500567AFA /* INMarkdownSyntaxStorage.m in Sources */,
 				48399655191437FA0085611D /* NSPersistentStore+MagicalRecord.m in Sources */,
+				48616EDB1916D0810011271A /* INNotesFetchedResultsController.m in Sources */,
 				4839965B191437FA0085611D /* MagicalRecord+Setup.m in Sources */,
 				48D844E31915C1BD00567AFA /* INTextTableViewCell.m in Sources */,
 				48399646191437FA0085611D /* NSEntityDescription+MagicalDataImport.m in Sources */,

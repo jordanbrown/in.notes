@@ -1,13 +1,13 @@
 //
-//  INHomeViewController.h
+//  INNotesFetchedResultsController.m
 //  in.notes
 //
-//  Created by iC on 5/2/14.
+//  Created by iC on 5/4/14.
 //  Copyright (c) 2014 in.notes. All rights reserved.
 //
 
 #import "INNotesFetchedResultsController.h"
 
-@interface INHomeViewController : INNotesFetchedResultsController
+@implementation INNotesFetchedResultsController
 
 @end
