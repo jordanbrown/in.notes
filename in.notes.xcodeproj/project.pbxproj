@@ -72,6 +72,8 @@
 		48D844DD1915B8A500567AFA /* INMarkdownSyntaxStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844D71915B8A500567AFA /* INMarkdownSyntaxStorage.m */; };
 		48D844DE1915B8A500567AFA /* INMarkdownTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844D91915B8A500567AFA /* INMarkdownTextView.m */; };
 		48D844DF1915B8A500567AFA /* INMoreButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844DC1915B8A500567AFA /* INMoreButton.m */; };
+		48D844E31915C1BD00567AFA /* INTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844E11915C1BD00567AFA /* INTextTableViewCell.m */; };
+		48D844E41915C1BD00567AFA /* INTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D844E21915C1BD00567AFA /* INTextTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,6 +209,9 @@
 		48D844D91915B8A500567AFA /* INMarkdownTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INMarkdownTextView.m; sourceTree = "<group>"; };
 		48D844DB1915B8A500567AFA /* INMoreButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INMoreButton.h; sourceTree = "<group>"; };
 		48D844DC1915B8A500567AFA /* INMoreButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INMoreButton.m; sourceTree = "<group>"; };
+		48D844E01915C1BD00567AFA /* INTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INTextTableViewCell.h; sourceTree = "<group>"; };
+		48D844E11915C1BD00567AFA /* INTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INTextTableViewCell.m; sourceTree = "<group>"; };
+		48D844E21915C1BD00567AFA /* INTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = INTextTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -533,6 +538,9 @@
 				48D844C01915B0B100567AFA /* INImageTableViewCell.h */,
 				48D844C11915B0B100567AFA /* INImageTableViewCell.m */,
 				48D844C21915B0B100567AFA /* INImageTableViewCell.xib */,
+				48D844E01915C1BD00567AFA /* INTextTableViewCell.h */,
+				48D844E11915C1BD00567AFA /* INTextTableViewCell.m */,
+				48D844E21915C1BD00567AFA /* INTextTableViewCell.xib */,
 			);
 			path = INFeedCell;
 			sourceTree = "<group>";
@@ -669,6 +677,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48D844E41915C1BD00567AFA /* INTextTableViewCell.xib in Resources */,
 				483995B019142C060085611D /* iPhone568.storyboard in Resources */,
 				48D844AF1915975200567AFA /* intro-image.png in Resources */,
 				48D844B219159A2500567AFA /* intro-image-thumbnail.png in Resources */,
@@ -724,6 +733,7 @@
 				48D844DD1915B8A500567AFA /* INMarkdownSyntaxStorage.m in Sources */,
 				48399655191437FA0085611D /* NSPersistentStore+MagicalRecord.m in Sources */,
 				4839965B191437FA0085611D /* MagicalRecord+Setup.m in Sources */,
+				48D844E31915C1BD00567AFA /* INTextTableViewCell.m in Sources */,
 				48399646191437FA0085611D /* NSEntityDescription+MagicalDataImport.m in Sources */,
 				48D844D01915B57C00567AFA /* UIImage+Resize.m in Sources */,
 				4839964A191437FA0085611D /* NSString+MagicalDataImport.m in Sources */,

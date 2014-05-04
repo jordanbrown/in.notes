@@ -12,6 +12,7 @@
 #import "INImageTableViewCell.h"
 #import "INImagePreview.h"
 #import "INComposeViewController.h"
+#import "INTextTableViewCell.h"
 
 @interface INHomeViewController () <NSFetchedResultsControllerDelegate, INImageTableViewCellDelegate, UISearchBarDelegate, INImagePreviewDelegate>
 
@@ -47,12 +48,18 @@
 - (void)configureSizeManager
 {
     self.sizeManager = [[RZCellSizeManager alloc]init];
-    
+
     [self.sizeManager registerCellClassName:[INImageTableViewCell className]
-                             forObjectClass:[INImageTableViewCell class]
-                         configurationBlock:^(INImageTableViewCell *cell, id object) {
-                             [cell setData:object];
-                         }];
+                         forReuseIdentifier:[INImageTableViewCell reuseIdentifier]
+                     withConfigurationBlock:^(id cell, id object) {
+                         [cell setData:object];
+                     }];
+    
+    [self.sizeManager registerCellClassName:[INTextTableViewCell className]
+                         forReuseIdentifier:[INTextTableViewCell reuseIdentifier]
+                     withConfigurationBlock:^(id cell, id object) {
+                         [cell setData:object];
+                     }];
 }
 
 - (void)configureTableView
@@ -65,6 +72,7 @@
                                                     inContext:[NSManagedObjectContext contextForCurrentThread]];
     
     [self.tableView registerNib:[INImageTableViewCell nib] forCellReuseIdentifier:[INImageTableViewCell reuseIdentifier]];
+    [self.tableView registerNib:[INTextTableViewCell nib] forCellReuseIdentifier:[INTextTableViewCell reuseIdentifier]];
 }
 
 - (void)configureFontSize
@@ -117,14 +125,30 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     INPost *post = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    UITableViewCell *homeCell = nil;
     
-    INImageTableViewCell *imageCell = [tableView dequeueReusableCellWithIdentifier:[INImageTableViewCell reuseIdentifier]];
+    if (post.image) {
+        
+        INImageTableViewCell *imageCell = [tableView dequeueReusableCellWithIdentifier:[INImageTableViewCell reuseIdentifier]];
+        
+        [imageCell setIndexPath:indexPath];
+        [imageCell setData:post];
+        [imageCell setImageCellDelegate:self];
+        
+        homeCell = imageCell;
+        
+    } else {
+        
+        INTextTableViewCell *textCell = [tableView dequeueReusableCellWithIdentifier:[INTextTableViewCell reuseIdentifier]];
+        [textCell setIndexPath:indexPath];
+        [textCell setData:post];
+        
+        homeCell = textCell;
+    }
     
-    [imageCell setIndexPath:indexPath];
-    [imageCell setData:post];
-    [imageCell setImageCellDelegate:self];
     
-    return imageCell;
+    
+    return homeCell;
 }
 
 #pragma mark - Fetched Results Controller Delegate
@@ -191,7 +215,12 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     INPost *post = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    return [self.sizeManager cellHeightForObject:post indexPath:indexPath];
+    
+    if (post.image) {
+        return [self.sizeManager cellHeightForObject:post indexPath:indexPath cellReuseIdentifier:[INImageTableViewCell reuseIdentifier]];
+    } else {
+        return [self.sizeManager cellHeightForObject:post indexPath:indexPath cellReuseIdentifier:[INTextTableViewCell reuseIdentifier]];
+    }
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -204,7 +233,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     INPost *post = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    [self presentActivityViewControllerWithItems:@[[UIImage imageWithData:post.image], post.text]];
+    
+    if (post.image) {
+        [self presentActivityViewControllerWithItems:@[[UIImage imageWithData:post.image], post.text]];
+    } else {
+        [self presentActivityViewControllerWithItems:@[post.text]];
+    }
 }
 
 - (void)presentActivityViewControllerWithItems:(NSArray *)items
