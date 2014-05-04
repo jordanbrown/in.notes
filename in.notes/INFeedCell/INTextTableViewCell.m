@@ -9,13 +9,6 @@
 #import "INTextTableViewCell.h"
 #import "INPost.h"
 
-@interface INTextTableViewCell ()
-
-@property (strong, nonatomic) NSIndexPath *indexPath;
-@property (weak, nonatomic) IBOutlet UILabel *txtLabel;
-
-@end
-
 @implementation INTextTableViewCell
 
 + (NSString *)reuseIdentifier
@@ -46,14 +39,12 @@
     return 100.0f;
 }
 
-#pragma mark - Instance
+#pragma mark - Instance Methods
 
-- (void)setPost:(INPost *)post indexPath:(NSIndexPath *)indexPath
+- (void)setPost:(INPost *)post
 {
     [self.txtLabel setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleBody]];
     [self.txtLabel setText:post.text];
-    
-    [self setIndexPath:indexPath];
 
     _post = post;
 }

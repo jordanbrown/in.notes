@@ -14,11 +14,13 @@
 
 @property (weak, nonatomic) INPost *post;
 
+@property (weak, nonatomic) IBOutlet UILabel *txtLabel;
+
 + (NSString *)reuseIdentifier;
 + (UINib *)nib;
 + (NSString *)className;
 + (CGFloat)estimateCellHeight;
 
-- (void)setPost:(INPost *)post indexPath:(NSIndexPath *)indexPath;
+- (void)setPost:(INPost *)post;
 
 @end

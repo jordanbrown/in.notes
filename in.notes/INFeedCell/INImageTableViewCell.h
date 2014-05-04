@@ -12,21 +12,21 @@
 
 @protocol INImageTableViewCellDelegate <NSObject>
 
-@optional
-- (void)userDidSelectImageView:(UIImageView *)imageView indexPath:(NSIndexPath *)indexPath;
-
 @end
 
 @interface INImageTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) id <INImageTableViewCellDelegate> imageCellDelegate;
 @property (weak, nonatomic) INPost *post;
+@property (strong, nonatomic) NSIndexPath *indexPath;
+
+@property (weak, nonatomic) IBOutlet UIImageView *thumbnail;
+@property (weak, nonatomic) IBOutlet UILabel *txtLabel;
 
 + (NSString *)reuseIdentifier;
 + (UINib *)nib;
 + (NSString *)className;
 + (CGFloat)estimateCellHeight;
 
-- (void)setPost:(INPost *)post indexPath:(NSIndexPath *)indexPath;
+- (void)setPost:(INPost *)post;
 
 @end

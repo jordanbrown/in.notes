@@ -18,8 +18,6 @@ typedef void(^INImagePreviewCompletionHandler)();
 
 @interface INImagePreview : UIView
 
-- (instancetype)initWithImage:(UIImage *)image;
-- (instancetype)initWithImage:(UIImage *)image completion:(INImagePreviewCompletionHandler)completion;
 - (instancetype)initWithImage:(UIImage *)image view:(UIView *)view completion:(INImagePreviewCompletionHandler)completion;
 
 - (void)previewImage;

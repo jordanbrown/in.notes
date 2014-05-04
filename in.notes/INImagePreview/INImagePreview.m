@@ -23,21 +23,6 @@
 
 @implementation INImagePreview
 
-- (id)initWithFrame:(CGRect)frame
-{
-    return [self initWithImage:nil view:nil completion:nil];
-}
-
-- (instancetype)initWithImage:(UIImage *)image
-{
-    return [self initWithImage:image view:nil completion:nil];
-}
-
-- (instancetype)initWithImage:(UIImage *)image completion:(INImagePreviewCompletionHandler)completion
-{
-    return [self initWithImage:image view:nil completion:completion];
-}
-
 - (instancetype)initWithImage:(UIImage *)image view:(UIView *)view completion:(INImagePreviewCompletionHandler)completion
 {
     self = [super initWithFrame:[[UIScreen mainScreen]bounds]];

@@ -44,14 +44,14 @@
 
     [self.sizeManager registerCellClassName:[INImageTableViewCell className]
                          forReuseIdentifier:[INImageTableViewCell reuseIdentifier]
-                     withConfigurationBlock:^(id cell, id object) {
-                         [cell setPost:object indexPath:[self.tableView indexPathForCell:cell]];
+                     withConfigurationBlock:^(INImageTableViewCell *imageCell, INPost *post) {
+                         [imageCell setPost:post];
                      }];
     
     [self.sizeManager registerCellClassName:[INTextTableViewCell className]
                          forReuseIdentifier:[INTextTableViewCell reuseIdentifier]
-                     withConfigurationBlock:^(id cell, id object) {
-                         [cell setPost:object indexPath:[self.tableView indexPathForCell:cell]];
+                     withConfigurationBlock:^(INTextTableViewCell *textCell, INPost *post) {
+                         [textCell setPost:post];
                      }];
 }
 
@@ -83,20 +83,16 @@
     if (post.image) {
         
         INImageTableViewCell *imageCell = [tableView dequeueReusableCellWithIdentifier:[INImageTableViewCell reuseIdentifier]];
-        
-        [imageCell setPost:post indexPath:indexPath];
-        [imageCell setImageCellDelegate:self];
-        
+        imageCell.post = post;
         homeCell = imageCell;
         
     } else {
         
         INTextTableViewCell *textCell = [tableView dequeueReusableCellWithIdentifier:[INTextTableViewCell reuseIdentifier]];
-        [textCell setPost:post indexPath:indexPath];
-        
+        textCell.post = post;
         homeCell = textCell;
+
     }
-    
     return homeCell;
 }
 
@@ -122,19 +118,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    INPost *post = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    UITableViewCell *homeCell = [tableView cellForRowAtIndexPath:indexPath];
     
-    if (post.image) {
-        [self presentActivityViewControllerWithActivityItems:@[[UIImage imageWithData:post.image], post.text]];
-    } else {
-        [self presentActivityViewControllerWithActivityItems:@[post.text]];
+    if ([homeCell isKindOfClass:[INImageTableViewCell class]]) {
+        //
+    } else if ([homeCell isKindOfClass:[INTextTableViewCell class]]) {
+        //
     }
 }
 
 - (void)presentActivityViewControllerWithActivityItems:(NSArray *)items
 {
-    UIActivityViewController *activityViewController = [[UIActivityViewController alloc]initWithActivityItems:items applicationActivities:nil];
-    [self presentViewController:activityViewController animated:YES completion:nil];
+    [self presentViewController:[[UIActivityViewController alloc]initWithActivityItems:items applicationActivities:nil] animated:YES completion:nil];
 }
 
 #pragma mark - UIScrollViewdelegate methods
@@ -142,43 +137,6 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     [self.view endEditing:YES];
-}
-
-#pragma mark - MCImageTableViewCellDelegate
-
-- (void)userDidSelectImageView:(UIImageView *)imageView indexPath:(NSIndexPath *)indexPath
-{
-    SProgressHUD *progressHUD = [[SProgressHUD alloc]initForViewType:kMCViewTypeImageThumbnailView];
-    progressHUD.alpha = 0.0;
-    
-    __block INImagePreview *imagePreview = nil;
-    
-    [imageView addSubview:progressHUD];
-    [UIView animateWithDuration:0.4
-                     animations:^{
-                         
-                         progressHUD.alpha = 1.0;
-                         
-                     } completion:^(BOOL finished) {
-                         
-                         if (finished) {
-                             
-                             INPost *post = [self.fetchedResultsController objectAtIndexPath:indexPath];
-                             imagePreview = [[INImagePreview alloc]initWithImage:[UIImage imageWithData:post.image]
-                                                                            view:self.navigationController.view
-                                                                      completion:^{
-                                                                          
-                                                                          [imagePreview removeFromSuperview];
-                                                                          imagePreview = nil;
-                                                                          
-                                                                      }];
-                             imagePreview.delegate = self;
-                             [self.navigationController.view addSubview:imagePreview];
-                             [imagePreview previewImage];
-                             [progressHUD removeFromSuperview];
-                         }
-                         
-                     }];
 }
 
 #pragma mark - MCIMagePreviewDelegate

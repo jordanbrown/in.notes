@@ -9,14 +9,6 @@
 #import "INImageTableViewCell.h"
 #import "INPost.h"
 
-@interface INImageTableViewCell ()
-
-@property (strong, nonatomic) NSIndexPath *indexPath;
-@property (weak, nonatomic) IBOutlet UILabel *txtLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *thumbnail;
-
-@end
-
 @implementation INImageTableViewCell
 
 + (NSString *)reuseIdentifier
@@ -49,26 +41,7 @@
 
 #pragma mark - Instance
 
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-    [self configureTapGestureRecognizer];
-}
-
-- (void)configureTapGestureRecognizer
-{
-    UITapGestureRecognizer *tapGesture = nil;
-    if (!tapGesture) {
-        tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleTapGesture:)];
-        tapGesture.numberOfTapsRequired = 1;
-        tapGesture.numberOfTouchesRequired = 1;
-        self.thumbnail.userInteractionEnabled = YES;
-        
-        [self.thumbnail addGestureRecognizer:tapGesture];
-    }
-}
-
-- (void)setPost:(INPost *)post indexPath:(NSIndexPath *)indexPath
+- (void)setPost:(INPost *)post
 {
     [self.txtLabel setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleBody]];
     [self.txtLabel setText:post.text];
@@ -77,16 +50,7 @@
     [self.thumbnail.layer setCornerRadius:1.0];
     [self.thumbnail setImage:[UIImage imageWithData:post.thumbnail]];
     
-    [self setIndexPath:indexPath];;
-
     _post = post;
-}
-
-- (void)handleTapGesture:(UITapGestureRecognizer *)gesture
-{
-    if (gesture.state == UIGestureRecognizerStateEnded) {
-        [self.imageCellDelegate userDidSelectImageView:self.thumbnail indexPath:self.indexPath];
-    }
 }
 
 @end
