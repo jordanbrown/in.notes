@@ -32,20 +32,6 @@
     [super viewDidLoad];
     [self configureSizeManager];
     [self configureTableView];
-    
-    // COnfiguring the Edit button.
-    [self.editButtonItem setImage:[UIImage imageNamed:@"more-button"]];
-    [self.editButtonItem setTitle:nil];
-    [self.navigationItem setLeftBarButtonItem:self.editButtonItem];
-}
-
-- (void)setEditing:(BOOL)editing animated:(BOOL)animated
-{
-    if (self.tableView.isEditing) {
-        [self.tableView setEditing:NO animated:YES];
-    } else {
-        [self.tableView setEditing:YES animated:YES];
-    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
