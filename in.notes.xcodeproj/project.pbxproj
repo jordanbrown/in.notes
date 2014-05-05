@@ -286,9 +286,7 @@
 				4839958F191427D20085611D /* INAppDelegate.h */,
 				48399590191427D20085611D /* INAppDelegate.m */,
 				483995AF19142C060085611D /* iPhone568.storyboard */,
-				48616EDC1916D0BE0011271A /* View Controllers */,
-				4839968019143A5F0085611D /* INComposeViewController.h */,
-				4839968119143A5F0085611D /* INComposeViewController.m */,
+				48B4A8DB191767BE00DDD642 /* ViewControllers */,
 				48399690191443D70085611D /* Core Data */,
 				48399592191427D20085611D /* Images.xcassets */,
 				48399587191427D20085611D /* Supporting Files */,
@@ -500,7 +498,7 @@
 			name = "Core Data";
 			sourceTree = "<group>";
 		};
-		48616EDC1916D0BE0011271A /* View Controllers */ = {
+		48616EDC1916D0BE0011271A /* HomeViewController */ = {
 			isa = PBXGroup;
 			children = (
 				48616EE01916D9500011271A /* INTableViewController.h */,
@@ -510,7 +508,25 @@
 				483995B119142CC20085611D /* INHomeViewController.h */,
 				483995B219142CC20085611D /* INHomeViewController.m */,
 			);
-			name = "View Controllers";
+			name = HomeViewController;
+			sourceTree = "<group>";
+		};
+		48B4A8DA191767AC00DDD642 /* ComposeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4839968019143A5F0085611D /* INComposeViewController.h */,
+				4839968119143A5F0085611D /* INComposeViewController.m */,
+			);
+			name = ComposeViewController;
+			sourceTree = "<group>";
+		};
+		48B4A8DB191767BE00DDD642 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				48616EDC1916D0BE0011271A /* HomeViewController */,
+				48B4A8DA191767AC00DDD642 /* ComposeViewController */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		48D844AC1915975200567AFA /* INBootsrtapData */ = {
