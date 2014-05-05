@@ -38,6 +38,7 @@
 {
     [super viewWillAppear:animated];
     [self configureNotifications];
+    [self showFavoriteQuote];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -88,7 +89,37 @@
 
 - (void)showFavoriteQuote
 {
-    NSLog(@"%@", [[INQuotes sharedQuotes]quote]);
+    if ([[INPost findAll]count] == 0) {
+        NSString *quote = [[INQuotes sharedQuotes]quote];
+        
+        NSStringDrawingContext *drawingContext = [[NSStringDrawingContext alloc]init];
+        NSDictionary *attributes = @{NSFontAttributeName : [UIFont preferredFontForTextStyle:UIFontTextStyleBody]};
+        
+        CGRect quoteRect = [quote boundingRectWithSize:CGSizeMake(260, 260)
+                                               options:NSStringDrawingUsesLineFragmentOrigin
+                                            attributes:attributes context:drawingContext];
+        
+        CGRect labelFrame = CGRectMake((self.tableView.frame.size.width / 2) - (quoteRect.size.width / 2),
+                                       (self.tableView.frame.size.height / 2) - quoteRect.size.height * 2.2,
+                                       quoteRect.size.width,
+                                       quoteRect.size.height);
+        
+        UILabel *quoteLabel = [[UILabel alloc]initWithFrame:labelFrame];
+        quoteLabel.alpha = 0.0;
+        quoteLabel.numberOfLines = 0;
+        quoteLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+        quoteLabel.textColor = [UIColor lightGrayColor];
+        quoteLabel.text = quote;
+        
+        [self.view addSubview:quoteLabel];
+        
+        [UIView animateWithDuration:0.4
+                         animations:^{
+                             
+                             quoteLabel.alpha = 1.0;
+                             
+                         }];
+    }
 }
 
 - (IBAction)composeNewPostButtonSelected:(id)sender
