@@ -10,6 +10,14 @@
 
 typedef void(^INPostCompletionHandler)(NSError *error);
 
+typedef enum : NSUInteger {
+    
+    kINPostTypeComplete = 1,
+    kINPostTypeText = 2,
+    kINPostTypeImage = 3,
+    
+} kINPostType;
+
 @interface INPost (Manage)
 
 + (void)bootstrapInitialPostData;

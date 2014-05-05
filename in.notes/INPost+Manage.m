@@ -36,6 +36,7 @@
         post.date = [NSDate date];
         post.uuid = [[NSUUID UUID]UUIDString];
         post.hashtags = [NSKeyedArchiver archivedDataWithRootObject:hashtags];
+        post.type = [self postTypeForText:text image:image];
         
     } completion:^(BOOL success, NSError *error) {
         if (!error) {
@@ -65,6 +66,23 @@
         }
         
     }];
+}
+
+#pragma mark - Helper Methods 
+
++ (NSNumber *)postTypeForText:(NSString *)text image:(UIImage *)image
+{
+    NSNumber *kind = nil;
+    
+    if (image && [text length] > 0) {
+        kind = @1; NSLog(@"Both.");
+    } else if ([text length] > 0 && !image) {
+        kind = @2; NSLog(@"Text.");
+    } else if ([text length] == 0 && image) {
+        kind = @3; NSLog(@"Image");
+    }
+    
+    return kind;
 }
 
 @end

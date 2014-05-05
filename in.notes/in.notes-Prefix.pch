@@ -25,6 +25,5 @@
     #import "RZCellSizeManager+CoreData.h"
     #import "SProgressHUD.h"
     #import "REDActionSheet.h"
-    #import "INQuotes.h"
 
 #endif

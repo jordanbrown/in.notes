@@ -1,5 +1,5 @@
 //
-//  INImageTableViewCell.h
+//  INTableViewCell.h
 //  FakeModel
 //
 //  Created by iC on 4/3/14.
@@ -10,12 +10,13 @@
 
 @class INPost;
 
-@interface INImageTableViewCell : UITableViewCell
+@interface INTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) INPost *post;
 @property (strong, nonatomic) NSIndexPath *indexPath;
 
 @property (weak, nonatomic) IBOutlet UIImageView *thumbnail;
+@property (weak, nonatomic) IBOutlet UILabel *txtLabel;
 
 + (NSString *)reuseIdentifier;
 + (UINib *)nib;

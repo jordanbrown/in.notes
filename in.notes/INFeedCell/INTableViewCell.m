@@ -1,15 +1,15 @@
 //
-//  INImageTableViewCell.m
+//  INTableViewCell.m
 //  FakeModel
 //
 //  Created by iC on 4/3/14.
 //  Copyright (c) 2014 in.notes. All rights reserved.
 //
 
-#import "INImageTableViewCell.h"
+#import "INTableViewCell.h"
 #import "INPost.h"
 
-@implementation INImageTableViewCell
+@implementation INTableViewCell
 
 + (NSString *)reuseIdentifier
 {
@@ -43,6 +43,9 @@
 
 - (void)setPost:(INPost *)post
 {
+    [self.txtLabel setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleBody]];
+    [self.txtLabel setText:post.text];
+    
     [self.thumbnail.layer setMasksToBounds:YES];
     [self.thumbnail.layer setCornerRadius:1.0];
     [self.thumbnail setImage:[UIImage imageWithData:post.thumbnail]];
