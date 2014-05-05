@@ -19,7 +19,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Notes" id="GYl-Uc-xab">
-                        <barButtonItem key="leftBarButtonItem" image="more-button" id="3KV-FE-lSj"/>
                         <barButtonItem key="rightBarButtonItem" image="compose-button" id="Wpc-Xo-5c9">
                             <connections>
                                 <action selector="composeNewPostButtonSelected:" destination="Igx-uW-31B" id="pJR-sz-3hS"/>
@@ -78,7 +77,6 @@
     <resources>
         <image name="compose-button" width="23" height="23"/>
         <image name="done-button" width="23" height="23"/>
-        <image name="more-button" width="23" height="23"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
