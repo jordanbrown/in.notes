@@ -43,7 +43,7 @@ static NSString * const kEmptyString = @"";
     self = [super initWithFrame:frame textContainer:container];
     if (self) {
         self.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
-        self.keyboardType = UIKeyboardTypeTwitter;
+        self.keyboardType = UIKeyboardTypeDefault;
         self.delegate = self;
     }
     return self;
