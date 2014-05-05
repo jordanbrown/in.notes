@@ -20,7 +20,7 @@
 {
     self = [super init];
     if (self) {
-        _backingStore = [NSMutableAttributedString new];
+        _backingStore = [[NSMutableAttributedString alloc]init];
     }
     return self;
 }

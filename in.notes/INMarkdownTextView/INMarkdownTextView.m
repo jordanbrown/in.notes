@@ -23,6 +23,17 @@ static NSString * const kEmptyString = @"";
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
+    self = [super initWithFrame:frame textContainer:[self textContainerWithFrame:frame]];
+    if (self) {
+        self.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+        self.keyboardType = UIKeyboardTypeDefault;
+        self.delegate = self;
+    }
+    return self;
+}
+
+- (NSTextContainer *)textContainerWithFrame:(CGRect)frame
+{
     NSDictionary *attributes = @{NSFontAttributeName : [UIFont preferredFontForTextStyle:UIFontTextStyleBody]};
     NSAttributedString *attributedString = [[NSAttributedString alloc]initWithString:kEmptyString attributes:attributes];
     
@@ -40,13 +51,7 @@ static NSString * const kEmptyString = @"";
     [manager addTextContainer:container];
     [_syntaxStorage addLayoutManager:manager];
     
-    self = [super initWithFrame:frame textContainer:container];
-    if (self) {
-        self.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
-        self.keyboardType = UIKeyboardTypeDefault;
-        self.delegate = self;
-    }
-    return self;
+    return container;
 }
 
 #pragma mark - Delegate
