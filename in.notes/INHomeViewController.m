@@ -19,6 +19,7 @@
 
 - (void)configureSizeManager;
 - (void)configureTableView;
+- (void)configureNotifications;
 
 - (IBAction)composeNewPostButtonSelected:(id)sender;
 
@@ -31,6 +32,18 @@
     [super viewDidLoad];
     [self configureSizeManager];
     [self configureTableView];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self configureNotifications];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,6 +79,16 @@
     
     [self.tableView registerNib:[INImageTableViewCell nib] forCellReuseIdentifier:[INImageTableViewCell reuseIdentifier]];
     [self.tableView registerNib:[INTextTableViewCell nib] forCellReuseIdentifier:[INTextTableViewCell reuseIdentifier]];
+}
+
+- (void)configureNotifications
+{
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(showFavoriteQuote) name:kINManagedObjectContextDidDeleteLastItem object:nil];
+}
+
+- (void)showFavoriteQuote
+{
+    NSLog(@"%@", [[INQuotes sharedQuotes]quote]);
 }
 
 - (IBAction)composeNewPostButtonSelected:(id)sender

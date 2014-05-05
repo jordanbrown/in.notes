@@ -56,7 +56,15 @@
         
         [localContext deleteObject:post];
         
-    } completion:nil];
+    } completion:^(BOOL success, NSError *error) {
+        
+        if (!error && [[INPost findAll]count] == 0) {
+            
+            [[NSNotificationCenter defaultCenter]postNotificationName:kINManagedObjectContextDidDeleteLastItem object:nil];
+            
+        }
+        
+    }];
 }
 
 @end

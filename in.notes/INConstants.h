@@ -15,6 +15,8 @@
 #define IN_IMAGE_STORE_DEFAULT_JPG_QUALITY 0.7
 #define IN_GENERIC_Q "com.macciti.macciTi.genericQ"
 
+static NSString * const kINManagedObjectContextDidDeleteLastItem = @"kINManagedObjectContextDidDeleteLastItem";
+
 #pragma mark -
 static NSString * const kINBootstrappedInitialData = @"INBootstrappedInitialData";
 static NSString * const kINBootstrapInitialText = @"Hello. This is your first post. Slide left to delete.";

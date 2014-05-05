@@ -60,6 +60,8 @@
 		4839968F191443D00085611D /* INPost+Manage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839968E191443D00085611D /* INPost+Manage.m */; };
 		48616EDB1916D0810011271A /* INNotesFetchedResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48616EDA1916D0810011271A /* INNotesFetchedResultsController.m */; };
 		48616EE21916D9500011271A /* INTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48616EE11916D9500011271A /* INTableViewController.m */; };
+		48616EE719171A800011271A /* quotes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48616EE619171A800011271A /* quotes.plist */; };
+		48616EEB19171BD90011271A /* INQuotes.m in Sources */ = {isa = PBXBuildFile; fileRef = 48616EEA19171BD90011271A /* INQuotes.m */; };
 		48D844AF1915975200567AFA /* intro-image.png in Resources */ = {isa = PBXBuildFile; fileRef = 48D844AD1915975200567AFA /* intro-image.png */; };
 		48D844B219159A2500567AFA /* intro-image-thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 48D844B119159A2500567AFA /* intro-image-thumbnail.png */; };
 		48D844B91915A8F700567AFA /* INAttachmentContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844B61915A8F700567AFA /* INAttachmentContainer.m */; };
@@ -190,6 +192,9 @@
 		48616EDA1916D0810011271A /* INNotesFetchedResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INNotesFetchedResultsController.m; sourceTree = "<group>"; };
 		48616EE01916D9500011271A /* INTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INTableViewController.h; sourceTree = "<group>"; };
 		48616EE11916D9500011271A /* INTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INTableViewController.m; sourceTree = "<group>"; };
+		48616EE619171A800011271A /* quotes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = quotes.plist; sourceTree = "<group>"; };
+		48616EE919171BD90011271A /* INQuotes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INQuotes.h; sourceTree = "<group>"; };
+		48616EEA19171BD90011271A /* INQuotes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INQuotes.m; sourceTree = "<group>"; };
 		48D844AD1915975200567AFA /* intro-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intro-image.png"; sourceTree = "<group>"; };
 		48D844B119159A2500567AFA /* intro-image-thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intro-image-thumbnail.png"; sourceTree = "<group>"; };
 		48D844B51915A8F700567AFA /* INAttachmentContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAttachmentContainer.h; sourceTree = "<group>"; };
@@ -304,6 +309,8 @@
 				48D844D11915B69700567AFA /* INImageStore */,
 				48D844D51915B8A500567AFA /* INMarkdownTextView */,
 				48D844DA1915B8A500567AFA /* INMoreButton */,
+				48616EE819171BAE0011271A /* INQuotes */,
+				48616EE619171A800011271A /* quotes.plist */,
 				4839958E191427D20085611D /* in.notes-Prefix.pch */,
 				48399588191427D20085611D /* in.notes-Info.plist */,
 				48399589191427D20085611D /* InfoPlist.strings */,
@@ -508,6 +515,15 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
+		48616EE819171BAE0011271A /* INQuotes */ = {
+			isa = PBXGroup;
+			children = (
+				48616EE919171BD90011271A /* INQuotes.h */,
+				48616EEA19171BD90011271A /* INQuotes.m */,
+			);
+			path = INQuotes;
+			sourceTree = "<group>";
+		};
 		48D844AC1915975200567AFA /* INBootsrtapData */ = {
 			isa = PBXGroup;
 			children = (
@@ -702,6 +718,7 @@
 				4839958B191427D20085611D /* InfoPlist.strings in Resources */,
 				48D844C41915B0B100567AFA /* INImageTableViewCell.xib in Resources */,
 				48399593191427D20085611D /* Images.xcassets in Resources */,
+				48616EE719171A800011271A /* quotes.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -763,6 +780,7 @@
 				48399649191437FA0085611D /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
 				4839964B191437FA0085611D /* NSManagedObject+MagicalAggregation.m in Sources */,
 				48399653191437FA0085611D /* NSManagedObjectContext+MagicalThreading.m in Sources */,
+				48616EEB19171BD90011271A /* INQuotes.m in Sources */,
 				48D844C31915B0B100567AFA /* INImageTableViewCell.m in Sources */,
 				48D844BA1915A8F700567AFA /* INAttachmentView.m in Sources */,
 				4839964C191437FA0085611D /* NSManagedObject+MagicalDataImport.m in Sources */,

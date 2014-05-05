@@ -27,6 +27,16 @@
     }
 }
 
+- (void)writeToFile
+{
+    NSString *quotesFile = [[NSBundle mainBundle]pathForResource:@"quotes" ofType:@"plist"];
+    NSArray *quotes = [[NSArray alloc]initWithContentsOfFile:quotesFile];
+    
+    NSUInteger random = arc4random() % [quotes count];
+    
+    NSLog(@"%@", [quotes objectAtIndex:random]);
+}
+
 - (void)setupAppearance
 {
     [[UINavigationBar appearance]setTintColor:[UIColor darkGrayColor]];
@@ -37,6 +47,8 @@
     [MagicalRecord setupCoreDataStack];
     [self bootstrapInitialData];
     [self setupAppearance];
+    
+    [self writeToFile];
     
     return YES;
 }
