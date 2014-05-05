@@ -75,11 +75,11 @@
     NSNumber *kind = nil;
     
     if (image && [text length] > 0) {
-        kind = @1; NSLog(@"Both.");
+        kind = @1; // Text & Image.
     } else if ([text length] > 0 && !image) {
-        kind = @2; NSLog(@"Text.");
+        kind = @2; // Text only.
     } else if ([text length] == 0 && image) {
-        kind = @3; NSLog(@"Image");
+        kind = @3; // Image only.
     }
     
     return kind;
