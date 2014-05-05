@@ -74,7 +74,7 @@
                                                 withPredicate:nil
                                                      sortedBy:@"date"
                                                     ascending:NO
-                                                     delegate:self
+                                                     delegate:self // super class.
                                                     inContext:[NSManagedObjectContext contextForCurrentThread]];
     
     [self.tableView registerNib:[INTableViewCell nib] forCellReuseIdentifier:[INTableViewCell reuseIdentifier]];
