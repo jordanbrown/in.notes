@@ -82,6 +82,11 @@
 
 - (IBAction)publishButtonSelected:(id)sender
 {
+    if (![self canSavePOSTData]) {
+        
+        return;
+    }
+    
     [INPost postWithText:self.markdownTextView.text
                    image:[[INImageStore sharedStore]imageForKey:kINImageStoreKey]
                thumbnail:[UIImage resizeImage:[[INImageStore sharedStore]imageForKey:kINImageStoreKey]
@@ -96,6 +101,11 @@
                     [self.navigationController popToRootViewControllerAnimated:YES];
                     
                 }];
+}
+
+- (BOOL)canSavePOSTData
+{
+    return [self.markdownTextView.text length] || [[INImageStore sharedStore]imageForKey:kINImageStoreKey] ? YES : NO;
 }
 
 #pragma mark - MCMore Button Delegate
