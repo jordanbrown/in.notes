@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "INThumbnailViewProtocol.h"
 
 @class INPost;
 
@@ -14,6 +15,8 @@
 
 @property (weak, nonatomic) INPost *post;
 @property (strong, nonatomic) NSIndexPath *indexPath;
+
+@property (unsafe_unretained, nonatomic) id <INThumbnailViewDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet UIImageView *thumbnail;
 @property (weak, nonatomic) IBOutlet UILabel *txtLabel;

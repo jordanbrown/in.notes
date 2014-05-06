@@ -8,6 +8,7 @@
 
 #import "INTableViewCell.h"
 #import "INPost.h"
+#import "INHomeViewController.h"
 
 @implementation INTableViewCell
 
@@ -52,7 +53,7 @@
 
 - (void)handleTapGesture:(UITapGestureRecognizer *)tapGestureRecognizer
 {
-    NSLog(@"Method called.");
+    [self.delegate thumbnail:self.thumbnail didSelectThumbnailImageView:tapGestureRecognizer];
 }
 
 - (void)setPost:(INPost *)post

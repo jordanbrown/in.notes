@@ -12,11 +12,12 @@
 #import "INTableViewCell.h"
 #import "INImageTableViewCell.h"
 #import "INTextTableViewCell.h"
+#import "INThumbnailViewProtocol.h"
 
 #import "INImagePreview.h"
 #import "INComposeViewController.h"
 
-@interface INHomeViewController () <INImagePreviewDelegate>
+@interface INHomeViewController () <INImagePreviewDelegate, INThumbnailViewDelegate>
 
 - (void)configureSizeManager;
 - (void)configureTableView;
@@ -98,6 +99,8 @@
         case kINPostTypeComplete: {
             INTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[INTableViewCell reuseIdentifier]];
             cell.post = post;
+            cell.indexPath = indexPath;
+            cell.delegate = self;
             homeCell = cell;
         }
             break;
@@ -110,6 +113,8 @@
         case kINPostTypeImage: {
             INImageTableViewCell *imageCell = [tableView dequeueReusableCellWithIdentifier:[INImageTableViewCell reuseIdentifier]];
             imageCell.post = post;
+            imageCell.indexPath = indexPath;
+            imageCell.delegate = self;
             homeCell = imageCell;
         }
             break;
@@ -184,6 +189,36 @@
             [self presentViewController:activityViewController animated:YES completion:nil];
         });
     });
+}
+
+#pragma mark - INThumbnailViewDelegate
+
+- (void)thumbnail:(UIImageView *)thumbnail didSelectThumbnailImageView:(UITapGestureRecognizer *)tapGestureRecognizer
+{
+    SProgressHUD *progressHUD = [[SProgressHUD alloc]initForViewType:kMCViewTypeImageThumbnailView];
+	progressHUD.alpha = 0.0;
+    
+    __block INImagePreview *imagePreview = nil;
+    
+    CGPoint locationInView = [tapGestureRecognizer locationInView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:locationInView];
+    INPost *post = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    [thumbnail addSubview:progressHUD];
+	[UIView animateWithDuration:0.6 animations:^{
+        progressHUD.alpha = 1.0;
+    } completion:^(BOOL finished) {
+        if (finished) {
+            imagePreview = [[INImagePreview alloc]initWithImage:[UIImage imageWithData:post.image] view:self.navigationController.view completion:^{
+                                                         [imagePreview removeFromSuperview];
+                                                         imagePreview = nil;
+                                                     }];
+            imagePreview.delegate = self;
+            [self.navigationController.view addSubview:imagePreview];
+            [imagePreview previewImage];
+            [progressHUD removeFromSuperview];
+        }
+    }];
 }
 
 @end
