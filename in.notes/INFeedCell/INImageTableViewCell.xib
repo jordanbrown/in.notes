@@ -24,7 +24,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="odo-kp-4r0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="adq-mp-3Vr"/>
-                    <constraint firstAttribute="bottom" secondItem="odo-kp-4r0" secondAttribute="bottom" constant="10" id="aqN-XM-nG6"/>
+                    <constraint firstAttribute="bottom" secondItem="odo-kp-4r0" secondAttribute="bottom" priority="750" constant="10" id="aqN-XM-nG6"/>
                     <constraint firstAttribute="trailing" secondItem="odo-kp-4r0" secondAttribute="trailing" constant="10" id="cQq-4P-aA9"/>
                     <constraint firstItem="odo-kp-4r0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="rgU-94-hpK"/>
                 </constraints>

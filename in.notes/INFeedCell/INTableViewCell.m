@@ -41,6 +41,20 @@
 
 #pragma mark - Instance
 
+- (UITapGestureRecognizer *)tapGestureRecognizer
+{
+    [self.thumbnail.gestureRecognizers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [self.thumbnail removeGestureRecognizer:(UITapGestureRecognizer *)obj];
+    }];
+    
+    return [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleTapGesture:)];
+}
+
+- (void)handleTapGesture:(UITapGestureRecognizer *)tapGestureRecognizer
+{
+    NSLog(@"Method called.");
+}
+
 - (void)setPost:(INPost *)post
 {
     [self.txtLabel setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleBody]];
@@ -49,6 +63,8 @@
     [self.thumbnail.layer setMasksToBounds:YES];
     [self.thumbnail.layer setCornerRadius:1.0];
     [self.thumbnail setImage:[UIImage imageWithData:post.thumbnail]];
+    [self.thumbnail setUserInteractionEnabled:YES];
+    [self.thumbnail addGestureRecognizer:[self tapGestureRecognizer]];
     
     _post = post;
 }
