@@ -78,6 +78,7 @@
 		48D844DF1915B8A500567AFA /* INMoreButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844DC1915B8A500567AFA /* INMoreButton.m */; };
 		48D844E31915C1BD00567AFA /* INTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844E11915C1BD00567AFA /* INTextTableViewCell.m */; };
 		48D844E41915C1BD00567AFA /* INTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D844E21915C1BD00567AFA /* INTextTableViewCell.xib */; };
+		48DD03E5191AC68300012184 /* INPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DD03E4191AC68300012184 /* INPlaceholderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -224,6 +225,8 @@
 		48D844E01915C1BD00567AFA /* INTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INTextTableViewCell.h; sourceTree = "<group>"; };
 		48D844E11915C1BD00567AFA /* INTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INTextTableViewCell.m; sourceTree = "<group>"; };
 		48D844E21915C1BD00567AFA /* INTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = INTextTableViewCell.xib; sourceTree = "<group>"; };
+		48DD03E3191AC68300012184 /* INPlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INPlaceholderView.h; sourceTree = "<group>"; };
+		48DD03E4191AC68300012184 /* INPlaceholderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INPlaceholderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,7 +320,8 @@
 				48D844D11915B69700567AFA /* INImageStore */,
 				48D844D51915B8A500567AFA /* INMarkdownTextView */,
 				48D844DA1915B8A500567AFA /* INMoreButton */,
-				48D844B31915A82400567AFA /* Other */,
+				48DD03E2191AC65A00012184 /* INPlaceholderView */,
+				48D844B31915A82400567AFA /* xOther */,
 				4839958E191427D20085611D /* in.notes-Prefix.pch */,
 				48399588191427D20085611D /* in.notes-Info.plist */,
 				48399589191427D20085611D /* InfoPlist.strings */,
@@ -539,7 +543,7 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		48D844B31915A82400567AFA /* Other */ = {
+		48D844B31915A82400567AFA /* xOther */ = {
 			isa = PBXGroup;
 			children = (
 				4839968319143C360085611D /* KHFlatButton */,
@@ -549,7 +553,7 @@
 				4839961E191437FA0085611D /* RZCellSizeManager */,
 				48399641191437FA0085611D /* SProgressHUD */,
 			);
-			name = Other;
+			name = xOther;
 			sourceTree = "<group>";
 		};
 		48D844B41915A8F700567AFA /* INAttachmentContainer */ = {
@@ -643,6 +647,15 @@
 				48D844DC1915B8A500567AFA /* INMoreButton.m */,
 			);
 			path = INMoreButton;
+			sourceTree = "<group>";
+		};
+		48DD03E2191AC65A00012184 /* INPlaceholderView */ = {
+			isa = PBXGroup;
+			children = (
+				48DD03E3191AC68300012184 /* INPlaceholderView.h */,
+				48DD03E4191AC68300012184 /* INPlaceholderView.m */,
+			);
+			path = INPlaceholderView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -790,6 +803,7 @@
 				48399649191437FA0085611D /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
 				4839964B191437FA0085611D /* NSManagedObject+MagicalAggregation.m in Sources */,
 				48399653191437FA0085611D /* NSManagedObjectContext+MagicalThreading.m in Sources */,
+				48DD03E5191AC68300012184 /* INPlaceholderView.m in Sources */,
 				48D844C31915B0B100567AFA /* INImageTableViewCell.m in Sources */,
 				48D844BA1915A8F700567AFA /* INAttachmentView.m in Sources */,
 				4839964C191437FA0085611D /* NSManagedObject+MagicalDataImport.m in Sources */,
