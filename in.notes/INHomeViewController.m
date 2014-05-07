@@ -114,10 +114,16 @@
 
 - (void)configureINPlaceholderView:(NSNotification *)note
 {
-    NSLog(@"%@", note.name);
-    
-//    [self.view addSubview:[[INPlaceholderView alloc]initWithFrame:self.view.frame image:[UIImage imageNamed:@"in-notes-logo"]]];
-//    [self.tableView setUserInteractionEnabled:NO];
+    if ([note.name isEqualToString:kINManagedObjectContextDidAddNewItem]) {
+        
+        if ([[self.view.subviews lastObject] isKindOfClass:[INPlaceholderView class]]) {
+            [self.view.subviews.lastObject removeFromSuperview];
+        }
+        
+    } else if ([note.name isEqualToString:kINManagedObjectContextDidDeleteLastItem]) {
+        
+        [self.view addSubview:[[INPlaceholderView alloc]initWithFrame:self.view.frame image:[UIImage imageNamed:@"in-notes-logo"]]];
+    }
 }
 
 - (IBAction)composeNewPostButtonSelected:(id)sender
