@@ -83,7 +83,6 @@
 - (IBAction)publishButtonSelected:(id)sender
 {
     if (![self canSavePOSTData]) {
-        
         return;
     }
     
