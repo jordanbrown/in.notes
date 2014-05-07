@@ -61,6 +61,7 @@
         <!--Navigation Controller-->
         <scene sceneID="5A3-3G-77k">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Oh-Vc-FPr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="CVc-Uj-uHb" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Uvs-hm-1ko">
                         <autoresizingMask key="autoresizingMask"/>
@@ -69,7 +70,6 @@
                         <segue destination="Igx-uW-31B" kind="relationship" relationship="rootViewController" id="I0s-Yu-Z3H"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3Oh-Vc-FPr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-558" y="47"/>
         </scene>
