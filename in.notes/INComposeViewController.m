@@ -45,6 +45,12 @@
     [self.moreButton moveToPoint:IN_MORE_BUTTON_ABOVE_KEYBOARD_POINT];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [[INImageStore sharedStore]deleteImageForKey:kINImageStoreKey];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
