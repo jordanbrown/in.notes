@@ -16,11 +16,13 @@
 
 #import "INImagePreview.h"
 #import "INComposeViewController.h"
+#import "INPlaceholderView.h"
 
 @interface INHomeViewController () <INImagePreviewDelegate, INThumbnailViewDelegate>
 
 - (void)configureSizeManager;
 - (void)configureTableView;
+- (void)configureINPlaceholderView:(NSNotification *)note;
 
 - (IBAction)composeNewPostButtonSelected:(id)sender;
 
@@ -33,6 +35,33 @@
     [super viewDidLoad];
     [self configureSizeManager];
     [self configureTableView];
+    [self configureObservers];
+
+}
+
+- (void)configureObservers
+{
+    __weak typeof(self) weakSelf = self;
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:kINManagedObjectContextDidAddNewItem
+                                                      object:nil
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:^(NSNotification *note) {
+                                                      [weakSelf configureINPlaceholderView:note];
+                                                  }];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:kINManagedObjectContextDidDeleteLastItem
+                                                      object:nil
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:^(NSNotification *note) {
+                                                      [weakSelf configureINPlaceholderView:note];
+                                                  }];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -75,12 +104,20 @@
                                                 withPredicate:nil
                                                      sortedBy:@"date"
                                                     ascending:NO
-                                                     delegate:self // super class.
+                                                     delegate:self // super class, since THIS VC inherits from FRC.
                                                     inContext:[NSManagedObjectContext contextForCurrentThread]];
     
     [self.tableView registerNib:[INTableViewCell nib] forCellReuseIdentifier:[INTableViewCell reuseIdentifier]];
     [self.tableView registerNib:[INTextTableViewCell nib] forCellReuseIdentifier:[INTextTableViewCell reuseIdentifier]];
     [self.tableView registerNib:[INImageTableViewCell nib] forCellReuseIdentifier:[INImageTableViewCell reuseIdentifier]];
+}
+
+- (void)configureINPlaceholderView:(NSNotification *)note
+{
+    NSLog(@"%@", note.name);
+    
+//    [self.view addSubview:[[INPlaceholderView alloc]initWithFrame:self.view.frame image:[UIImage imageNamed:@"in-notes-logo"]]];
+//    [self.tableView setUserInteractionEnabled:NO];
 }
 
 - (IBAction)composeNewPostButtonSelected:(id)sender

@@ -25,5 +25,6 @@
     #import "RZCellSizeManager+CoreData.h"
     #import "SProgressHUD.h"
     #import "REDActionSheet.h"
+    #import "UIColor+Crayola.h" 
 
 #endif

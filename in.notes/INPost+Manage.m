@@ -41,6 +41,11 @@
     } completion:^(BOOL success, NSError *error) {
         if (!error) {
             
+            // At this point I am only intersted in being notified when the first item is added.
+            if ([[INPost findAll]count] == 1) {
+                [[NSNotificationCenter defaultCenter]postNotificationName:kINManagedObjectContextDidAddNewItem object:nil];
+            }
+            
             completionHandler (nil);
             
         } else {
@@ -54,11 +59,10 @@
 + (void)deletePost:(INPost *)post
 {
     [MagicalRecord saveUsingCurrentThreadContextWithBlock:^(NSManagedObjectContext *localContext) {
-        
         [localContext deleteObject:post];
-        
     } completion:^(BOOL success, NSError *error) {
         
+        // At this point I am only interested in being notified when the last item is deleted.
         if (!error && [[INPost findAll]count] == 0) {
             
             [[NSNotificationCenter defaultCenter]postNotificationName:kINManagedObjectContextDidDeleteLastItem object:nil];

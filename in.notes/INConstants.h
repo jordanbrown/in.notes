@@ -16,6 +16,7 @@
 #define IN_GENERIC_Q "com.macciti.macciTi.genericQ"
 
 static NSString * const kINManagedObjectContextDidDeleteLastItem = @"kINManagedObjectContextDidDeleteLastItem";
+static NSString * const kINManagedObjectContextDidAddNewItem = @"kINManagedObjectContextDidAddNewItem";
 
 #pragma mark -
 static NSString * const kINBootstrappedInitialData = @"INBootstrappedInitialData";

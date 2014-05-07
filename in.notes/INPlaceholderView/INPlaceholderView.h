@@ -10,4 +10,6 @@
 
 @interface INPlaceholderView : UIView
 
+- (instancetype)initWithFrame:(CGRect)frame image:(UIImage *)image;
+
 @end

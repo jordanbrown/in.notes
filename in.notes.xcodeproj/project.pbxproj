@@ -79,6 +79,7 @@
 		48D844E31915C1BD00567AFA /* INTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844E11915C1BD00567AFA /* INTextTableViewCell.m */; };
 		48D844E41915C1BD00567AFA /* INTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D844E21915C1BD00567AFA /* INTextTableViewCell.xib */; };
 		48DD03E5191AC68300012184 /* INPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DD03E4191AC68300012184 /* INPlaceholderView.m */; };
+		48DD03E9191AD96000012184 /* UIColor+Crayola.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DD03E8191AD96000012184 /* UIColor+Crayola.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -227,6 +228,8 @@
 		48D844E21915C1BD00567AFA /* INTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = INTextTableViewCell.xib; sourceTree = "<group>"; };
 		48DD03E3191AC68300012184 /* INPlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INPlaceholderView.h; sourceTree = "<group>"; };
 		48DD03E4191AC68300012184 /* INPlaceholderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INPlaceholderView.m; sourceTree = "<group>"; };
+		48DD03E7191AD96000012184 /* UIColor+Crayola.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Crayola.h"; sourceTree = "<group>"; };
+		48DD03E8191AD96000012184 /* UIColor+Crayola.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Crayola.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -546,6 +549,7 @@
 		48D844B31915A82400567AFA /* xOther */ = {
 			isa = PBXGroup;
 			children = (
+				48DD03E6191AD96000012184 /* UIColor+Crayola */,
 				4839968319143C360085611D /* KHFlatButton */,
 				483995B5191437FA0085611D /* MagicalRecord */,
 				48399615191437FA0085611D /* MSCMoreOptionTableViewCell */,
@@ -656,6 +660,15 @@
 				48DD03E4191AC68300012184 /* INPlaceholderView.m */,
 			);
 			path = INPlaceholderView;
+			sourceTree = "<group>";
+		};
+		48DD03E6191AD96000012184 /* UIColor+Crayola */ = {
+			isa = PBXGroup;
+			children = (
+				48DD03E7191AD96000012184 /* UIColor+Crayola.h */,
+				48DD03E8191AD96000012184 /* UIColor+Crayola.m */,
+			);
+			path = "UIColor+Crayola";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -794,6 +807,7 @@
 				4839965B191437FA0085611D /* MagicalRecord+Setup.m in Sources */,
 				48D844E31915C1BD00567AFA /* INTextTableViewCell.m in Sources */,
 				48399646191437FA0085611D /* NSEntityDescription+MagicalDataImport.m in Sources */,
+				48DD03E9191AD96000012184 /* UIColor+Crayola.m in Sources */,
 				48D844D01915B57C00567AFA /* UIImage+Resize.m in Sources */,
 				4839964A191437FA0085611D /* NSString+MagicalDataImport.m in Sources */,
 				48399648191437FA0085611D /* NSObject+MagicalDataImport.m in Sources */,
