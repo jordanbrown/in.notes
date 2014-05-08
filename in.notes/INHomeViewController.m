@@ -114,15 +114,15 @@
 
 - (void)configureINPlaceholderView:(NSNotification *)note
 {
-    if ([note.name isEqualToString:kINManagedObjectContextDidAddNewItem] || [[INPost findAll]count] > 0) {
+    if ([note.name isEqualToString:kINManagedObjectContextDidAddNewItem] || [[INPost findAll]count] > IN_ZERO) {
         
         if ([[self.view.subviews lastObject] isKindOfClass:[INPlaceholderView class]]) {
             [self.view.subviews.lastObject removeFromSuperview];
         }
         
-    } else if ([note.name isEqualToString:kINManagedObjectContextDidDeleteLastItem] || [[INPost findAll]count] == 0) {
+    } else if ([note.name isEqualToString:kINManagedObjectContextDidDeleteLastItem] || [[INPost findAll]count] == IN_ZERO) {
         
-        [self.view addSubview:[[INPlaceholderView alloc]initWithFrame:self.view.frame image:[UIImage imageNamed:@"in-notes-logo"]]];
+        [self.view addSubview:[[INPlaceholderView alloc]initWithFrame:self.view.frame image:[UIImage imageNamed:kINNotesLogo]]];
     }
 }
 

@@ -18,11 +18,13 @@
 static NSString * const kINManagedObjectContextDidDeleteLastItem = @"kINManagedObjectContextDidDeleteLastItem";
 static NSString * const kINManagedObjectContextDidAddNewItem = @"kINManagedObjectContextDidAddNewItem";
 
-#pragma mark -
+#pragma mark - Bootstrap Data
 static NSString * const kINBootstrappedInitialData = @"INBootstrappedInitialData";
 static NSString * const kINBootstrapInitialText = @"This is your first post. Slide left to delete. Tap on the image to preview it.";
 static NSString * const kINBootstrapInitialImage = @"intro-image";
 static NSString * const kINBootstrapInitialThumbnail = @"intro-image-thumbnail";
+
+static NSString * const kINNotesLogo = @"in-notes-logo";
 
 #pragma mark - INHomeViewController
 static NSString * const kINHomeViewController = @"INHomeViewController";
