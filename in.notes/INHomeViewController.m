@@ -36,6 +36,7 @@
     [super viewDidLoad];
     [self configureSizeManager];
     [self configureTableView];
+    // [self setNeedsStatusBarAppearanceUpdate];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -54,6 +55,11 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)configureSizeManager
@@ -91,6 +97,9 @@
     [self.tableView registerNib:[INTableViewCell nib] forCellReuseIdentifier:[INTableViewCell reuseIdentifier]];
     [self.tableView registerNib:[INTextTableViewCell nib] forCellReuseIdentifier:[INTextTableViewCell reuseIdentifier]];
     [self.tableView registerNib:[INImageTableViewCell nib] forCellReuseIdentifier:[INImageTableViewCell reuseIdentifier]];
+    
+    // Setting footer to CGRectZero assure there are only separators for specific / added rows.
+    [self.tableView setTableFooterView:[[UIView alloc]initWithFrame:CGRectZero]];
 }
 
 - (void)configureObservers
@@ -113,12 +122,14 @@
 }
 
 - (void)configureINPlaceholderView:(NSNotification *)note
-{
+{    
     if ([note.name isEqualToString:kINManagedObjectContextDidAddNewItem] || [[INPost findAll]count] > IN_ZERO) {
         
         if ([[self.view.subviews lastObject] isKindOfClass:[INPlaceholderView class]]) {
             [self.view.subviews.lastObject removeFromSuperview];
             [self.tableView setUserInteractionEnabled:YES];
+            
+            
         }
         
     } else if ([note.name isEqualToString:kINManagedObjectContextDidDeleteLastItem] || [[INPost findAll]count] == IN_ZERO) {

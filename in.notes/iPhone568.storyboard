@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller - NOTES-->
+        <!--Home View Controller - Notes-->
         <scene sceneID="bMa-5N-9P2">
             <objects>
                 <tableViewController storyboardIdentifier="INHomeViewController" id="Igx-uW-31B" customClass="INHomeViewController" sceneMemberID="viewController">
@@ -18,7 +18,7 @@
                             <outlet property="delegate" destination="Igx-uW-31B" id="xZR-Wc-Xtf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="NOTES" id="GYl-Uc-xab">
+                    <navigationItem key="navigationItem" title="Notes" id="GYl-Uc-xab">
                         <barButtonItem key="rightBarButtonItem" image="compose-button" id="Wpc-Xo-5c9">
                             <connections>
                                 <action selector="composeNewPostButtonSelected:" destination="Igx-uW-31B" id="pJR-sz-3hS"/>
@@ -33,7 +33,7 @@
             </objects>
             <point key="canvasLocation" x="-169" y="47"/>
         </scene>
-        <!--Compose View Controller - NEW-->
+        <!--Compose View Controller - New-->
         <scene sceneID="yh9-uf-o3H">
             <objects>
                 <viewController storyboardIdentifier="INComposeViewController" id="3GC-kK-GRH" customClass="INComposeViewController" sceneMemberID="viewController">
@@ -46,7 +46,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="NEW" id="gsQ-Y0-9I7">
+                    <navigationItem key="navigationItem" title="New" id="gsQ-Y0-9I7">
                         <barButtonItem key="rightBarButtonItem" image="done-button" id="6sx-aS-1bn">
                             <connections>
                                 <action selector="publishButtonSelected:" destination="3GC-kK-GRH" id="3ai-TO-iJd"/>
@@ -61,7 +61,6 @@
         <!--Navigation Controller-->
         <scene sceneID="5A3-3G-77k">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3Oh-Vc-FPr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="CVc-Uj-uHb" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Uvs-hm-1ko">
                         <autoresizingMask key="autoresizingMask"/>
@@ -70,6 +69,7 @@
                         <segue destination="Igx-uW-31B" kind="relationship" relationship="rootViewController" id="I0s-Yu-Z3H"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Oh-Vc-FPr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-558" y="47"/>
         </scene>
