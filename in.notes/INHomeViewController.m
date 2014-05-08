@@ -22,6 +22,7 @@
 
 - (void)configureSizeManager;
 - (void)configureTableView;
+- (void)configureObservers;
 - (void)configureINPlaceholderView:(NSNotification *)note;
 
 - (IBAction)composeNewPostButtonSelected:(id)sender;
@@ -35,33 +36,12 @@
     [super viewDidLoad];
     [self configureSizeManager];
     [self configureTableView];
-    [self configureObservers];
-
-}
-
-- (void)configureObservers
-{
-    __weak typeof(self) weakSelf = self;
-    
-    [[NSNotificationCenter defaultCenter] addObserverForName:kINManagedObjectContextDidAddNewItem
-                                                      object:nil
-                                                       queue:[NSOperationQueue mainQueue]
-                                                  usingBlock:^(NSNotification *note) {
-                                                      [weakSelf configureINPlaceholderView:note];
-                                                  }];
-    
-    [[NSNotificationCenter defaultCenter] addObserverForName:kINManagedObjectContextDidDeleteLastItem
-                                                      object:nil
-                                                       queue:[NSOperationQueue mainQueue]
-                                                  usingBlock:^(NSNotification *note) {
-                                                      [weakSelf configureINPlaceholderView:note];
-                                                  }];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
+    [self configureObservers];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -110,6 +90,25 @@
     [self.tableView registerNib:[INTableViewCell nib] forCellReuseIdentifier:[INTableViewCell reuseIdentifier]];
     [self.tableView registerNib:[INTextTableViewCell nib] forCellReuseIdentifier:[INTextTableViewCell reuseIdentifier]];
     [self.tableView registerNib:[INImageTableViewCell nib] forCellReuseIdentifier:[INImageTableViewCell reuseIdentifier]];
+}
+
+- (void)configureObservers
+{
+    __weak typeof(self) weakSelf = self;
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:kINManagedObjectContextDidAddNewItem
+                                                      object:nil
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:^(NSNotification *note) {
+                                                      [weakSelf configureINPlaceholderView:note];
+                                                  }];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:kINManagedObjectContextDidDeleteLastItem
+                                                      object:nil
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:^(NSNotification *note) {
+                                                      [weakSelf configureINPlaceholderView:note];
+                                                  }];
 }
 
 - (void)configureINPlaceholderView:(NSNotification *)note
