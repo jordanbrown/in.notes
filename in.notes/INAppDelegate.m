@@ -31,8 +31,8 @@
 {
     [[UINavigationBar appearance]setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance]setBarTintColor:[UIColor colorWithRed:0.44 green:0.51 blue:0.6 alpha:1]];
-    
-    NSDictionary *attributes = @{NSFontAttributeName : [UIFont systemFontOfSize:16], NSForegroundColorAttributeName : [UIColor whiteColor]};
+        
+    NSDictionary *attributes = @{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Light" size:18], NSForegroundColorAttributeName : [UIColor whiteColor]};
     [[UINavigationBar appearance] setTitleTextAttributes:attributes];
 }
 
