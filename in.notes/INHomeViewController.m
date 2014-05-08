@@ -42,6 +42,7 @@
 {
     [super viewDidAppear:animated];
     [self configureObservers];
+    [self configureINPlaceholderView:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -113,13 +114,13 @@
 
 - (void)configureINPlaceholderView:(NSNotification *)note
 {
-    if ([note.name isEqualToString:kINManagedObjectContextDidAddNewItem]) {
+    if ([note.name isEqualToString:kINManagedObjectContextDidAddNewItem] || [[INPost findAll]count] > 0) {
         
         if ([[self.view.subviews lastObject] isKindOfClass:[INPlaceholderView class]]) {
             [self.view.subviews.lastObject removeFromSuperview];
         }
         
-    } else if ([note.name isEqualToString:kINManagedObjectContextDidDeleteLastItem]) {
+    } else if ([note.name isEqualToString:kINManagedObjectContextDidDeleteLastItem] || [[INPost findAll]count] == 0) {
         
         [self.view addSubview:[[INPlaceholderView alloc]initWithFrame:self.view.frame image:[UIImage imageNamed:@"in-notes-logo"]]];
     }
