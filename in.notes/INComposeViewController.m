@@ -173,6 +173,8 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark - UINavigationControllerDelegate
+
 /**
  *  Since I am setting my status bar style to light content in .plist by 
  *  setting "Status bar style" to UIStatusBarStyleLightContent and 
