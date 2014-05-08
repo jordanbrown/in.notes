@@ -173,6 +173,20 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+/**
+ *  Since I am setting my status bar style to light content in .plist by 
+ *  setting "Status bar style" to UIStatusBarStyleLightContent and 
+ *  "View controller-based status bar appearance" to "NO", when presenting 
+ *  another uinavigation controller such as imagePicker, settings on the controller
+ *  overwrites my settings by making status bar content dark. Implementing 
+ *  the navigation controller delegate here assures that doesnt happen. This is required
+ *  for it to work properly.
+ */
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+}
+
 #pragma mark - Markdown Text View Delegate
 
 - (void)markdownTextViewDidUpdateCharactersCount:(int)count
