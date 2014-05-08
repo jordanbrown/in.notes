@@ -118,11 +118,12 @@
         
         if ([[self.view.subviews lastObject] isKindOfClass:[INPlaceholderView class]]) {
             [self.view.subviews.lastObject removeFromSuperview];
+            [self.tableView setUserInteractionEnabled:YES];
         }
         
     } else if ([note.name isEqualToString:kINManagedObjectContextDidDeleteLastItem] || [[INPost findAll]count] == IN_ZERO) {
-        
         [self.view addSubview:[[INPlaceholderView alloc]initWithFrame:self.view.frame image:[UIImage imageNamed:kINNotesLogo]]];
+        [self.tableView setUserInteractionEnabled:NO];
     }
 }
 
