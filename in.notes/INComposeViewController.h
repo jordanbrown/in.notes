@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+
 @class INPost;
 
 @interface INComposeViewController : UIViewController

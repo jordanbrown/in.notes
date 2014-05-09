@@ -22,8 +22,6 @@
 @property (strong, nonatomic) INCharacterCounter *characterCounter;
 @property (strong, nonatomic) INAttachmentContainer *attachmentContainer;
 
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *publishButton;
-
 - (void)setup;
 - (void)presentImagePicker;
 - (IBAction)publishButtonSelected:(id)sender;
@@ -186,7 +184,7 @@
  */
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
 }
 
 #pragma mark - Markdown Text View Delegate

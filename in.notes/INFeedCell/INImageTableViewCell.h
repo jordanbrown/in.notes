@@ -14,8 +14,6 @@
 @interface INImageTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) INPost *post;
-@property (strong, nonatomic) NSIndexPath *indexPath;
-
 @property (unsafe_unretained, nonatomic) id <INThumbnailViewDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet UIImageView *thumbnail;

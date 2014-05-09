@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>B53F395A-FFA0-4881-9934-10B51DEB5547</string>
+	<string>E466F4DF-B654-4FB4-98CA-62CCC3A126E5</string>
 	<key>IDESourceControlProjectName</key>
 	<string>in.notes</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>F6B0F0B6-8CBF-48CF-95D4-58D45F940B83</key>
+		<key>1FD8E5A2-5146-408C-851C-E45A5267E891</key>
 		<string>https://github.com/michaelbabiy/in.notes.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>in.notes.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>F6B0F0B6-8CBF-48CF-95D4-58D45F940B83</key>
+		<key>1FD8E5A2-5146-408C-851C-E45A5267E891</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>F6B0F0B6-8CBF-48CF-95D4-58D45F940B83</string>
+	<string>1FD8E5A2-5146-408C-851C-E45A5267E891</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>F6B0F0B6-8CBF-48CF-95D4-58D45F940B83</string>
+			<string>1FD8E5A2-5146-408C-851C-E45A5267E891</string>
 			<key>IDESourceControlWCCName</key>
 			<string>in.notes</string>
 		</dict>

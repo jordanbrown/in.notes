@@ -122,8 +122,6 @@
         if ([[self.view.subviews lastObject] isKindOfClass:[INPlaceholderView class]]) {
             [self.view.subviews.lastObject removeFromSuperview];
             [self.tableView setUserInteractionEnabled:YES];
-            
-            
         }
         
     } else if ([note.name isEqualToString:kINManagedObjectContextDidDeleteLastItem] || [[INPost findAll]count] == IN_ZERO) {
@@ -148,7 +146,6 @@
         case kINPostTypeComplete: {
             INTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[INTableViewCell reuseIdentifier]];
             cell.post = post;
-            cell.indexPath = indexPath;
             cell.delegate = self;
             homeCell = cell;
         }
@@ -162,7 +159,6 @@
         case kINPostTypeImage: {
             INImageTableViewCell *imageCell = [tableView dequeueReusableCellWithIdentifier:[INImageTableViewCell reuseIdentifier]];
             imageCell.post = post;
-            imageCell.indexPath = indexPath;
             imageCell.delegate = self;
             homeCell = imageCell;
         }
@@ -194,6 +190,7 @@
             break;
     }
     
+    // Making sure the cell height is at least 44 points.
     return height < 44 ? 44 : height;
 }
 
@@ -203,6 +200,12 @@
         
         [tableView setEditing:NO animated:YES];
         
+        /**
+         *  Default animation fades out cell deletion from isEditing state.
+         *  Performing 0.4 second sleep, returns cell into !isEditing state and
+         *  then allows deletion to take over and perform animaion. 100% optional
+         *  and honeslty a personal preference on how the animation should happen.
+         */
         dispatch_queue_t waitQ = dispatch_queue_create(IN_GENERIC_Q, NULL);
         dispatch_async(waitQ, ^{
             usleep(400000);
