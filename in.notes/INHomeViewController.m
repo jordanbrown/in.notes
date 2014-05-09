@@ -247,30 +247,21 @@
 
 - (void)thumbnail:(UIImageView *)thumbnail didSelectThumbnailImageView:(UITapGestureRecognizer *)tapGestureRecognizer
 {
-    SProgressHUD *progressHUD = [[SProgressHUD alloc]initForViewType:kMCViewTypeImageThumbnailView];
-	progressHUD.alpha = 0.0;
-    
-    __block INImagePreview *imagePreview = nil;
-    
     CGPoint locationInView = [tapGestureRecognizer locationInView:self.tableView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:locationInView];
     INPost *post = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    [thumbnail addSubview:progressHUD];
-	[UIView animateWithDuration:0.6 animations:^{
-        progressHUD.alpha = 1.0;
-    } completion:^(BOOL finished) {
-        if (finished) {
-            imagePreview = [[INImagePreview alloc]initWithImage:[UIImage imageWithData:post.image] view:self.navigationController.view completion:^{
-                                                         [imagePreview removeFromSuperview];
-                                                         imagePreview = nil;
-                                                     }];
-            imagePreview.delegate = self;
-            [self.navigationController.view addSubview:imagePreview];
-            [imagePreview previewImage];
-            [progressHUD removeFromSuperview];
-        }
+    __block INImagePreview *imagePreview = [[INImagePreview alloc]initWithImage:[UIImage imageWithData:post.image]
+                                                                           view:self.navigationController.view completion:^{
+        [imagePreview removeFromSuperview];
+        imagePreview = nil;
+                                                                               
     }];
+    
+    imagePreview.delegate = self;
+    
+    [self.navigationController.view addSubview:imagePreview];
+    [imagePreview previewImage];
 }
 
 @end

@@ -49,14 +49,11 @@
 {
     switch (viewType) {
         case kMCViewTypeFullView: {
-            
             return [self initWithFrame:[[UIScreen mainScreen]bounds] withPointDiameter:10 withInterval:0.15];
-            
         }
             break;
             
         case kMCViewTypeImageThumbnailView: {
-            
             CGRect progressHUDFrame = (CGRect) {
                 .size.width = 300.0f,
                 .size.height = 129.0f,
@@ -65,7 +62,6 @@
             };
             
             return [self initWithFrame:progressHUDFrame withPointDiameter:10 withInterval:0.15];
-            
         }
             break;
             

@@ -14,6 +14,7 @@
 #define IN_DEFAULT_DELAY 0.5
 #define IN_IMAGE_STORE_DEFAULT_JPG_QUALITY 0.7
 #define IN_GENERIC_Q "com.macciti.macciTi.genericQ"
+#define IN_NOTES_DEFAULT_APP_COLOR [UIColor colorWithRed:0.44 green:0.51 blue:0.6 alpha:1]
 
 static NSString * const kINManagedObjectContextDidDeleteLastItem = @"kINManagedObjectContextDidDeleteLastItem";
 static NSString * const kINManagedObjectContextDidAddNewItem = @"kINManagedObjectContextDidAddNewItem";

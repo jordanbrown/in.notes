@@ -42,7 +42,7 @@
         
         KHFlatButton *shareButton = [KHFlatButton buttonWithFrame:CGRectMake(0.0, self.frame.size.height - 44.0, self.frame.size.width, 44.0)
                                                         withTitle:@"Share This Photo"
-                                                  backgroundColor:[UIColor redColor]
+                                                  backgroundColor:IN_NOTES_DEFAULT_APP_COLOR
                                                      cornerRadius:0.0];
         
         [shareButton addTarget:self action:@selector(shareButtonSelected:) forControlEvents:UIControlEventTouchUpInside];
