@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Home View Controller - NOTES-->
         <scene sceneID="bMa-5N-9P2">
             <objects>
                 <tableViewController storyboardIdentifier="INHomeViewController" id="Igx-uW-31B" customClass="INHomeViewController" sceneMemberID="viewController">
@@ -18,7 +18,7 @@
                             <outlet property="delegate" destination="Igx-uW-31B" id="xZR-Wc-Xtf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="GYl-Uc-xab">
+                    <navigationItem key="navigationItem" title="NOTES" id="GYl-Uc-xab">
                         <barButtonItem key="backBarButtonItem" title=" " id="5Vu-8c-q9w"/>
                         <barButtonItem key="rightBarButtonItem" image="compose-button" id="Wpc-Xo-5c9">
                             <connections>
@@ -34,7 +34,7 @@
             </objects>
             <point key="canvasLocation" x="-169" y="47"/>
         </scene>
-        <!--Compose View Controller - New-->
+        <!--Compose View Controller - NEW-->
         <scene sceneID="yh9-uf-o3H">
             <objects>
                 <viewController storyboardIdentifier="INComposeViewController" id="3GC-kK-GRH" customClass="INComposeViewController" sceneMemberID="viewController">
@@ -47,7 +47,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="New" id="gsQ-Y0-9I7">
+                    <navigationItem key="navigationItem" title="NEW" id="gsQ-Y0-9I7">
                         <barButtonItem key="rightBarButtonItem" image="done-button" id="6sx-aS-1bn">
                             <connections>
                                 <action selector="publishButtonSelected:" destination="3GC-kK-GRH" id="3ai-TO-iJd"/>

@@ -35,6 +35,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="intro-image-thumbnail.png" width="598" height="256"/>
+        <image name="intro-image-thumbnail.png" width="600" height="258"/>
     </resources>
 </document>

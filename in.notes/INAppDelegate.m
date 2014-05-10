@@ -31,11 +31,13 @@
 {
     [[UINavigationBar appearance]setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance]setBarTintColor:IN_NOTES_DEFAULT_APP_COLOR];
-        
-//    NSDictionary *attributes = @{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Light" size:18], NSForegroundColorAttributeName : [UIColor whiteColor], NSUnderlineStyleAttributeName : @3};
     
-    NSDictionary *attributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    NSDictionary *attributes = @{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-CondensedBold" size:20],
+                                 NSForegroundColorAttributeName : [UIColor whiteColor], NSUnderlineStyleAttributeName : @3};
+    
     [[UINavigationBar appearance] setTitleTextAttributes:attributes];
+    [[UINavigationBar appearance]setBackIndicatorImage:[UIImage imageNamed:@"back-button-alt"]];
+    [[UINavigationBar appearance]setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"back-button-alt"]];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
