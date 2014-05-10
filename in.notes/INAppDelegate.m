@@ -32,7 +32,9 @@
     [[UINavigationBar appearance]setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance]setBarTintColor:IN_NOTES_DEFAULT_APP_COLOR];
         
-    NSDictionary *attributes = @{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Light" size:19], NSForegroundColorAttributeName : [UIColor whiteColor]};
+//    NSDictionary *attributes = @{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Light" size:18], NSForegroundColorAttributeName : [UIColor whiteColor], NSUnderlineStyleAttributeName : @3};
+    
+    NSDictionary *attributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
     [[UINavigationBar appearance] setTitleTextAttributes:attributes];
 }
 

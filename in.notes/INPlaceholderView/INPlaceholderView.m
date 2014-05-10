@@ -25,7 +25,7 @@
         
         CGRect imageViewFrame = {
             .origin.x = frame.size.width / 2 - image.size.width / 2,
-            .origin.y = frame.size.height / 2 - image.size.height / 2 - 66.0, // 2 points offset + 364 is the height of the navigation bar. Refactor for auto check?
+            .origin.y = frame.size.height / 2 - image.size.height / 2 - 64.0,
             .size.width = image.size.width,
             .size.height = image.size.height
         };

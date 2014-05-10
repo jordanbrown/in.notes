@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller - All Notes-->
+        <!--Home View Controller-->
         <scene sceneID="bMa-5N-9P2">
             <objects>
                 <tableViewController storyboardIdentifier="INHomeViewController" id="Igx-uW-31B" customClass="INHomeViewController" sceneMemberID="viewController">
@@ -18,7 +18,7 @@
                             <outlet property="delegate" destination="Igx-uW-31B" id="xZR-Wc-Xtf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="All Notes" id="GYl-Uc-xab">
+                    <navigationItem key="navigationItem" id="GYl-Uc-xab">
                         <barButtonItem key="backBarButtonItem" title=" " id="5Vu-8c-q9w"/>
                         <barButtonItem key="rightBarButtonItem" image="compose-button" id="Wpc-Xo-5c9">
                             <connections>
