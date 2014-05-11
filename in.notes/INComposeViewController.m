@@ -36,6 +36,15 @@
     [self setup];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    // This is required to fixt UIIMagePicker status bar change in an edge case
+    // when the user performs partial swipe back and then forward on image picker.
+    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
