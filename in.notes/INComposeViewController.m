@@ -40,7 +40,7 @@
 {
     [super viewWillAppear:animated];
     
-    // This is required to fixt UIIMagePicker status bar change in an edge case
+    // This is required to fix UIImagePicker status bar change in an edge case
     // when the user performs partial swipe back and then forward on image picker.
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
 }
