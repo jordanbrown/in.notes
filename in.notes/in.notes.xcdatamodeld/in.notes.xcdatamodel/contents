@@ -4,12 +4,13 @@
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="hashtags" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" storedInTruthFile="YES" syncable="YES"/>
+        <attribute name="isArchived" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="thumbnail" optional="YES" attributeType="Binary" storedInTruthFile="YES" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="INPost" positionX="-4428" positionY="-2547" width="128" height="148"/>
+        <element name="INPost" positionX="-4428" positionY="-2547" width="128" height="165"/>
     </elements>
 </model>

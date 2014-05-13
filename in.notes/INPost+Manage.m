@@ -36,6 +36,7 @@
         post.date = [NSDate date];
         post.uuid = [[NSUUID UUID]UUIDString];
         post.hashtags = [NSKeyedArchiver archivedDataWithRootObject:hashtags];
+        post.isArchived = @NO;
         post.type = [self postTypeForText:text image:image];
         
     } completion:^(BOOL success, NSError *error) {
@@ -47,11 +48,8 @@
             }
             
             completionHandler (nil);
-            
         } else {
-            
             completionHandler(error);
-            
         }
     }];
 }

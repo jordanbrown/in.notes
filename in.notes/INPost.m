@@ -2,7 +2,7 @@
 //  INPost.m
 //  in.notes
 //
-//  Created by iC on 5/4/14.
+//  Created by iC on 5/12/14.
 //  Copyright (c) 2014 in.notes. All rights reserved.
 //
 
@@ -16,7 +16,8 @@
 @dynamic image;
 @dynamic text;
 @dynamic thumbnail;
-@dynamic uuid;
 @dynamic type;
+@dynamic uuid;
+@dynamic isArchived;
 
 @end
