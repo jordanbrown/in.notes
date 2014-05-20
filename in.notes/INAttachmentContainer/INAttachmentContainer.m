@@ -73,6 +73,16 @@
                      }];
 }
 
+- (void)setAttachmentImage:(UIImage *)image usingSpringWithDamping:(BOOL)usingSpring
+{
+    if (usingSpring) {
+        [self setAttachmentImage:image];
+    } else {
+        [self.attachmentView setImage:[UIImage resizeImage:image toSize:IN_ATTACHMENT_VIEW_SIZE cornerRadius:1.0f]];
+        [self.attachmentView setFrame:IN_ATTACHMENT_VIEW_VISIBLE_FRAME];
+    }
+}
+
 - (void)addMotionEffectToView:(UIView *)view magnitude:(CGFloat)magnitude
 {
     UIInterpolatingMotionEffect *xMotion = [[UIInterpolatingMotionEffect alloc]initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];

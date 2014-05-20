@@ -21,6 +21,7 @@
 @property (strong, nonatomic) INAttachmentContainer *attachmentContainer;
 
 - (void)setup;
+- (void)setupData;
 - (void)presentImagePicker;
 - (IBAction)publishButtonSelected:(id)sender;
 
@@ -54,6 +55,15 @@
     [self.view addSubview:self.moreButton];
     [self.view addSubview:self.characterCounter];
     [self.view addSubview:self.attachmentContainer];
+    
+    // Setup / populate views with data.
+    [self setupData];
+}
+
+- (void)setupData
+{
+    [self.markdownTextView setText:self.post.text];
+    [self.attachmentContainer setAttachmentImage:[UIImage imageWithData:self.post.image] usingSpringWithDamping:NO];
 }
 
 - (void)presentImagePicker

@@ -32,6 +32,7 @@
  *  @param image selected by the user that should be set.
  */
 - (void)setAttachmentImage:(UIImage *)image;
+- (void)setAttachmentImage:(UIImage *)image usingSpringWithDamping:(BOOL)usingSpring;
 
 /**
  *  Methods for animating "location" of the attachment on the screen.
