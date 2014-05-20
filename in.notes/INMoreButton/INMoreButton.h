@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #define IN_MORE_BUTTON_INIT_FRAME CGRectMake(self.view.frame.size.width / 2 - 30.0f, self.view.frame.size.height + 26.0f, 60.0f, 26.0f)
+#define IN_MORE_BUTTON_INIT_FRAME_EDIT CGRectMake(130.0f, self.markdownTextView.frame.origin.y + self.markdownTextView.frame.size.height - 26.0f, 60.0f, 26.0f)
 #define IN_MORE_BUTTON_ABOVE_KEYBOARD_POINT CGPointMake(130.0f, (self.markdownTextView.frame.origin.y + self.markdownTextView.frame.size.height))
 
 @protocol INMoreButtonDelegate <NSObject>
