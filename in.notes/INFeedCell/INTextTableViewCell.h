@@ -10,7 +10,7 @@
 
 @class INPost;
 
-@interface INTextTableViewCell : UITableViewCell
+@interface INTextTableViewCell : MSCMoreOptionTableViewCell
 
 @property (weak, nonatomic) INPost *post;
 

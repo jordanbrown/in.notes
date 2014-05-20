@@ -18,7 +18,7 @@
 #import "INComposeViewController.h"
 #import "INPlaceholderView.h"
 
-@interface INHomeViewController () <INImagePreviewDelegate, INThumbnailViewDelegate>
+@interface INHomeViewController () <INImagePreviewDelegate, INThumbnailViewDelegate, MSCMoreOptionTableViewCellDelegate>
 
 - (void)configureSizeManager;
 - (void)configureTableView;
@@ -146,20 +146,23 @@
         case kINPostTypeComplete: {
             INTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[INTableViewCell reuseIdentifier]];
             cell.post = post;
-            cell.delegate = self;
+            cell.incellDelegate = self;
+            cell.delegate = self; // MoreButton delegate.
             homeCell = cell;
         }
             break;
         case kINPostTypeText: {
             INTextTableViewCell *textCell = [tableView dequeueReusableCellWithIdentifier:[INTextTableViewCell reuseIdentifier]];
             textCell.post = post;
+            textCell.delegate = self;
             homeCell = textCell;
         }
             break;
         case kINPostTypeImage: {
             INImageTableViewCell *imageCell = [tableView dequeueReusableCellWithIdentifier:[INImageTableViewCell reuseIdentifier]];
             imageCell.post = post;
-            imageCell.delegate = self;
+            imageCell.incellDelegate = self;
+            imageCell.delegate = self; // MoreButton delegate.
             homeCell = imageCell;
         }
             break;
@@ -262,6 +265,28 @@
     
     [self.navigationController.view addSubview:imagePreview];
     [imagePreview previewImage];
+}
+
+#pragma mark - MSCMoreOptionTableViewCellDelegate
+
+- (UIColor *)tableView:(UITableView *)tableView backgroundColorForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [UIColor redColor];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForMoreOptionButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"Edit";
+}
+
+- (UIColor *)tableView:(UITableView *)tableView backgroundColorForMoreOptionButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return IN_NOTES_DEFAULT_APP_COLOR_SECONDARY;
+}
+
+- (void)tableView:(UITableView *)tableView moreOptionButtonPressedInRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"%li", indexPath.row);
 }
 
 @end

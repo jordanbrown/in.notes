@@ -50,7 +50,6 @@
 		4839965B191437FA0085611D /* MagicalRecord+Setup.m in Sources */ = {isa = PBXBuildFile; fileRef = 483995EA191437FA0085611D /* MagicalRecord+Setup.m */; };
 		4839965C191437FA0085611D /* MagicalRecord+ShorthandSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 483995EC191437FA0085611D /* MagicalRecord+ShorthandSupport.m */; };
 		4839965D191437FA0085611D /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 483995EE191437FA0085611D /* MagicalRecord.m */; };
-		4839966C191437FA0085611D /* MSCMoreOptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48399617191437FA0085611D /* MSCMoreOptionTableViewCell.m */; };
 		4839966D191437FA0085611D /* REDActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839961B191437FA0085611D /* REDActionSheet.m */; };
 		4839966E191437FA0085611D /* REDActionSheetButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839961D191437FA0085611D /* REDActionSheetButton.m */; };
 		4839966F191437FA0085611D /* RZCellSizeManager+CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 48399620191437FA0085611D /* RZCellSizeManager+CoreData.m */; };
@@ -65,6 +64,7 @@
 		48616EE21916D9500011271A /* INTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48616EE11916D9500011271A /* INTableViewController.m */; };
 		48AC1283192BE969001E45A4 /* in.notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48AC1281192BE969001E45A4 /* in.notes.xcdatamodeld */; };
 		48B10E43192BECF400747B9C /* INEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B10E42192BECF400747B9C /* INEditViewController.m */; };
+		48B10E4E192BF34500747B9C /* MSCMoreOptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B10E4C192BF34500747B9C /* MSCMoreOptionTableViewCell.m */; };
 		48D844B91915A8F700567AFA /* INAttachmentContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844B61915A8F700567AFA /* INAttachmentContainer.m */; };
 		48D844BA1915A8F700567AFA /* INAttachmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844B81915A8F700567AFA /* INAttachmentView.m */; };
 		48D844BE1915AAB200567AFA /* INCharacterCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844BD1915AAB200567AFA /* INCharacterCounter.m */; };
@@ -173,9 +173,6 @@
 		483995EF191437FA0085611D /* MagicalRecordShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordShorthand.h; sourceTree = "<group>"; };
 		483995F0191437FA0085611D /* CoreData+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreData+MagicalRecord.h"; sourceTree = "<group>"; };
 		483995F1191437FA0085611D /* MagicalRecordVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordVersion.h; sourceTree = "<group>"; };
-		48399616191437FA0085611D /* MSCMoreOptionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCMoreOptionTableViewCell.h; sourceTree = "<group>"; };
-		48399617191437FA0085611D /* MSCMoreOptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCMoreOptionTableViewCell.m; sourceTree = "<group>"; };
-		48399618191437FA0085611D /* MSCMoreOptionTableViewCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCMoreOptionTableViewCellDelegate.h; sourceTree = "<group>"; };
 		4839961A191437FA0085611D /* REDActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REDActionSheet.h; sourceTree = "<group>"; };
 		4839961B191437FA0085611D /* REDActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REDActionSheet.m; sourceTree = "<group>"; };
 		4839961C191437FA0085611D /* REDActionSheetButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REDActionSheetButton.h; sourceTree = "<group>"; };
@@ -203,6 +200,9 @@
 		48AC1282192BE969001E45A4 /* in.notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = in.notes.xcdatamodel; sourceTree = "<group>"; };
 		48B10E41192BECF400747B9C /* INEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INEditViewController.h; sourceTree = "<group>"; };
 		48B10E42192BECF400747B9C /* INEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INEditViewController.m; sourceTree = "<group>"; };
+		48B10E4B192BF34500747B9C /* MSCMoreOptionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCMoreOptionTableViewCell.h; sourceTree = "<group>"; };
+		48B10E4C192BF34500747B9C /* MSCMoreOptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCMoreOptionTableViewCell.m; sourceTree = "<group>"; };
+		48B10E4D192BF34500747B9C /* MSCMoreOptionTableViewCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCMoreOptionTableViewCellDelegate.h; sourceTree = "<group>"; };
 		48D844B51915A8F700567AFA /* INAttachmentContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAttachmentContainer.h; sourceTree = "<group>"; };
 		48D844B61915A8F700567AFA /* INAttachmentContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INAttachmentContainer.m; sourceTree = "<group>"; };
 		48D844B71915A8F700567AFA /* INAttachmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAttachmentView.h; sourceTree = "<group>"; };
@@ -456,16 +456,6 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		48399615191437FA0085611D /* MSCMoreOptionTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				48399616191437FA0085611D /* MSCMoreOptionTableViewCell.h */,
-				48399617191437FA0085611D /* MSCMoreOptionTableViewCell.m */,
-				48399618191437FA0085611D /* MSCMoreOptionTableViewCellDelegate.h */,
-			);
-			path = MSCMoreOptionTableViewCell;
-			sourceTree = "<group>";
-		};
 		48399619191437FA0085611D /* REDActionSheet */ = {
 			isa = PBXGroup;
 			children = (
@@ -540,6 +530,16 @@
 			name = EditViewController;
 			sourceTree = "<group>";
 		};
+		48B10E4A192BF34500747B9C /* MSCMoreOptionTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				48B10E4B192BF34500747B9C /* MSCMoreOptionTableViewCell.h */,
+				48B10E4C192BF34500747B9C /* MSCMoreOptionTableViewCell.m */,
+				48B10E4D192BF34500747B9C /* MSCMoreOptionTableViewCellDelegate.h */,
+			);
+			path = MSCMoreOptionTableViewCell;
+			sourceTree = "<group>";
+		};
 		48B4A8DA191767AC00DDD642 /* ComposeViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -565,7 +565,7 @@
 				48DD03E6191AD96000012184 /* UIColor+Crayola */,
 				4839968319143C360085611D /* KHFlatButton */,
 				483995B5191437FA0085611D /* MagicalRecord */,
-				48399615191437FA0085611D /* MSCMoreOptionTableViewCell */,
+				48B10E4A192BF34500747B9C /* MSCMoreOptionTableViewCell */,
 				48399619191437FA0085611D /* REDActionSheet */,
 				4839961E191437FA0085611D /* RZCellSizeManager */,
 				48399641191437FA0085611D /* SProgressHUD */,
@@ -787,7 +787,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4839958D191427D20085611D /* main.m in Sources */,
-				4839966C191437FA0085611D /* MSCMoreOptionTableViewCell.m in Sources */,
 				48D844DF1915B8A500567AFA /* INMoreButton.m in Sources */,
 				4839964F191437FA0085611D /* NSManagedObject+MagicalRequests.m in Sources */,
 				48399657191437FA0085611D /* MagicalRecord+Actions.m in Sources */,
@@ -804,6 +803,7 @@
 				4839964D191437FA0085611D /* NSManagedObject+MagicalFinders.m in Sources */,
 				48AC1283192BE969001E45A4 /* in.notes.xcdatamodeld in Sources */,
 				4839968F191443D00085611D /* INPost+Manage.m in Sources */,
+				48B10E4E192BF34500747B9C /* MSCMoreOptionTableViewCell.m in Sources */,
 				48399650191437FA0085611D /* NSManagedObjectContext+MagicalObserving.m in Sources */,
 				4839964E191437FA0085611D /* NSManagedObject+MagicalRecord.m in Sources */,
 				4839967F191437FA0085611D /* SProgressHUD.m in Sources */,

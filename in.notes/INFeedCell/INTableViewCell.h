@@ -11,10 +11,10 @@
 
 @class INPost;
 
-@interface INTableViewCell : UITableViewCell
+@interface INTableViewCell : MSCMoreOptionTableViewCell
 
 @property (weak, nonatomic) INPost *post;
-@property (unsafe_unretained, nonatomic) id <INThumbnailViewDelegate> delegate;
+@property (unsafe_unretained, nonatomic) id <INThumbnailViewDelegate> incellDelegate;
 
 @property (weak, nonatomic) IBOutlet UIImageView *thumbnail;
 @property (weak, nonatomic) IBOutlet UILabel *txtLabel;

@@ -52,7 +52,7 @@
 
 - (void)handleTapGesture:(UITapGestureRecognizer *)tapGestureRecognizer
 {
-    [self.delegate thumbnail:self.thumbnail didSelectThumbnailImageView:tapGestureRecognizer];
+    [self.incellDelegate thumbnail:self.thumbnail didSelectThumbnailImageView:tapGestureRecognizer];
 }
 
 - (void)setPost:(INPost *)post
