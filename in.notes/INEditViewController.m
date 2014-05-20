@@ -12,6 +12,7 @@
 #import "INMoreButton.h"
 #import "INCharacterCounter.h"
 #import "INAttachmentContainer.h"
+#import "INImageStore.h"
 
 @interface INEditViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, INMoreButtonDelegate, INAttachmentContainerDelegate, INMarkdownTextViewDelegate>
 
@@ -69,12 +70,37 @@
 
 - (void)presentImagePicker
 {
-    //
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
+    imagePicker.delegate = self;
+    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
 - (IBAction)publishButtonSelected:(id)sender
 {
     //
+}
+
+- (BOOL)canSavePOSTData
+{
+    return [self.markdownTextView.text length] || [[INImageStore sharedStore]imageForKey:kINImageStoreKey] ? YES : NO;
+}
+
+#pragma mark - MCMore Button Delegate
+
+- (void)moreButtonSelected:(id)sender
+{
+    if (self.attachmentContainer.attachmentView.image) {
+        if (self.markdownTextView.isFirstResponder) {
+            [self.markdownTextView resignFirstResponder];
+        } else {
+            [self.markdownTextView becomeFirstResponder];
+        }
+        return;
+    }
+    [self.markdownTextView resignFirstResponder];
+    [self.attachmentContainer setFrame:IN_MARKDOWN_TEXT_VIEW_BEHIND_KEYBOARD_FRAME];
+    [self performSelector:@selector(presentImagePicker) withObject:nil afterDelay:IN_DEFAULT_DELAY];
 }
 
 #pragma mark - Markdown Text View Delegate
