@@ -74,7 +74,9 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="EDIT" id="wx8-3w-Igf"/>
+                    <navigationItem key="navigationItem" title="EDIT" id="wx8-3w-Igf">
+                        <barButtonItem key="rightBarButtonItem" image="done-button" id="rpA-VJ-gii"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1zW-zJ-gpt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

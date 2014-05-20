@@ -286,7 +286,21 @@
 
 - (void)tableView:(UITableView *)tableView moreOptionButtonPressedInRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"%li", indexPath.row);
+    if (tableView.isEditing) {
+        
+        [tableView setEditing:NO animated:YES];
+        
+        dispatch_queue_t waitQ = dispatch_queue_create(IN_GENERIC_Q, NULL);
+        dispatch_async(waitQ, ^{
+            usleep(500000);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [self performSegueWithIdentifier:kINEditViewController sender:nil];
+                
+            });
+        });
+        
+    }
 }
 
 @end
