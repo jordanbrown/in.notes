@@ -64,6 +64,7 @@
 {
     [self.markdownTextView setText:self.post.text];
     [self.attachmentContainer setAttachmentImage:[UIImage imageWithData:self.post.image] usingSpringWithDamping:NO];
+    [self.characterCounter setText:[NSString stringWithFormat:@"%i", 240 - (int)self.markdownTextView.text.length]];
 }
 
 - (void)presentImagePicker
