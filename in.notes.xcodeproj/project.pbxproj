@@ -64,6 +64,7 @@
 		48616EDB1916D0810011271A /* INNotesFetchedResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48616EDA1916D0810011271A /* INNotesFetchedResultsController.m */; };
 		48616EE21916D9500011271A /* INTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48616EE11916D9500011271A /* INTableViewController.m */; };
 		48AC1283192BE969001E45A4 /* in.notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48AC1281192BE969001E45A4 /* in.notes.xcdatamodeld */; };
+		48B10E43192BECF400747B9C /* INEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B10E42192BECF400747B9C /* INEditViewController.m */; };
 		48D844B91915A8F700567AFA /* INAttachmentContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844B61915A8F700567AFA /* INAttachmentContainer.m */; };
 		48D844BA1915A8F700567AFA /* INAttachmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844B81915A8F700567AFA /* INAttachmentView.m */; };
 		48D844BE1915AAB200567AFA /* INCharacterCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844BD1915AAB200567AFA /* INCharacterCounter.m */; };
@@ -200,6 +201,8 @@
 		48616EE11916D9500011271A /* INTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INTableViewController.m; sourceTree = "<group>"; };
 		487E2483191864B200B032BE /* INThumbnailViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INThumbnailViewProtocol.h; sourceTree = "<group>"; };
 		48AC1282192BE969001E45A4 /* in.notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = in.notes.xcdatamodel; sourceTree = "<group>"; };
+		48B10E41192BECF400747B9C /* INEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INEditViewController.h; sourceTree = "<group>"; };
+		48B10E42192BECF400747B9C /* INEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INEditViewController.m; sourceTree = "<group>"; };
 		48D844B51915A8F700567AFA /* INAttachmentContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAttachmentContainer.h; sourceTree = "<group>"; };
 		48D844B61915A8F700567AFA /* INAttachmentContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INAttachmentContainer.m; sourceTree = "<group>"; };
 		48D844B71915A8F700567AFA /* INAttachmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAttachmentView.h; sourceTree = "<group>"; };
@@ -528,6 +531,15 @@
 			name = HomeViewController;
 			sourceTree = "<group>";
 		};
+		48B10E44192BECF800747B9C /* EditViewController */ = {
+			isa = PBXGroup;
+			children = (
+				48B10E41192BECF400747B9C /* INEditViewController.h */,
+				48B10E42192BECF400747B9C /* INEditViewController.m */,
+			);
+			name = EditViewController;
+			sourceTree = "<group>";
+		};
 		48B4A8DA191767AC00DDD642 /* ComposeViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -542,6 +554,7 @@
 			children = (
 				48616EDC1916D0BE0011271A /* HomeViewController */,
 				48B4A8DA191767AC00DDD642 /* ComposeViewController */,
+				48B10E44192BECF800747B9C /* EditViewController */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -798,6 +811,7 @@
 				4814486D1921C01200BCB519 /* INPost.m in Sources */,
 				48399670191437FA0085611D /* RZCellSizeManager.m in Sources */,
 				4839968219143A5F0085611D /* INComposeViewController.m in Sources */,
+				48B10E43192BECF400747B9C /* INEditViewController.m in Sources */,
 				48399652191437FA0085611D /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				48D844C81915B31D00567AFA /* INHashtagContainer.m in Sources */,
 				4839966F191437FA0085611D /* RZCellSizeManager+CoreData.m in Sources */,
