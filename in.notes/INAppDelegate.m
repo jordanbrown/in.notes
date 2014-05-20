@@ -42,7 +42,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [MagicalRecord setupCoreDataStack];
+    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:INMigratingSqliteStoreName];
     [self bootstrapInitialData];
     [self setupAppearance];
     

@@ -58,12 +58,12 @@
 		4839967F191437FA0085611D /* SProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 48399643191437FA0085611D /* SProgressHUD.m */; };
 		4839968219143A5F0085611D /* INComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839968119143A5F0085611D /* INComposeViewController.m */; };
 		4839968619143C360085611D /* KHFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839968519143C360085611D /* KHFlatButton.m */; };
-		48399689191441AF0085611D /* in.notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48399687191441AF0085611D /* in.notes.xcdatamodeld */; };
 		4839968F191443D00085611D /* INPost+Manage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839968E191443D00085611D /* INPost+Manage.m */; };
 		484994B9191749370023B8AB /* INTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 484994B7191749370023B8AB /* INTableViewCell.m */; };
 		484994BA191749370023B8AB /* INTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 484994B8191749370023B8AB /* INTableViewCell.xib */; };
 		48616EDB1916D0810011271A /* INNotesFetchedResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48616EDA1916D0810011271A /* INNotesFetchedResultsController.m */; };
 		48616EE21916D9500011271A /* INTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48616EE11916D9500011271A /* INTableViewController.m */; };
+		48AC1283192BE969001E45A4 /* in.notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48AC1281192BE969001E45A4 /* in.notes.xcdatamodeld */; };
 		48D844B91915A8F700567AFA /* INAttachmentContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844B61915A8F700567AFA /* INAttachmentContainer.m */; };
 		48D844BA1915A8F700567AFA /* INAttachmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844B81915A8F700567AFA /* INAttachmentView.m */; };
 		48D844BE1915AAB200567AFA /* INCharacterCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844BD1915AAB200567AFA /* INCharacterCounter.m */; };
@@ -189,7 +189,6 @@
 		4839968119143A5F0085611D /* INComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INComposeViewController.m; sourceTree = "<group>"; };
 		4839968419143C360085611D /* KHFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHFlatButton.h; sourceTree = "<group>"; };
 		4839968519143C360085611D /* KHFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHFlatButton.m; sourceTree = "<group>"; };
-		48399688191441AF0085611D /* in.notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = in.notes.xcdatamodel; sourceTree = "<group>"; };
 		4839968D191443D00085611D /* INPost+Manage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "INPost+Manage.h"; sourceTree = "<group>"; };
 		4839968E191443D00085611D /* INPost+Manage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "INPost+Manage.m"; sourceTree = "<group>"; };
 		484994B6191749370023B8AB /* INTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INTableViewCell.h; sourceTree = "<group>"; };
@@ -200,6 +199,7 @@
 		48616EE01916D9500011271A /* INTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INTableViewController.h; sourceTree = "<group>"; };
 		48616EE11916D9500011271A /* INTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INTableViewController.m; sourceTree = "<group>"; };
 		487E2483191864B200B032BE /* INThumbnailViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INThumbnailViewProtocol.h; sourceTree = "<group>"; };
+		48AC1282192BE969001E45A4 /* in.notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = in.notes.xcdatamodel; sourceTree = "<group>"; };
 		48D844B51915A8F700567AFA /* INAttachmentContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAttachmentContainer.h; sourceTree = "<group>"; };
 		48D844B61915A8F700567AFA /* INAttachmentContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INAttachmentContainer.m; sourceTree = "<group>"; };
 		48D844B71915A8F700567AFA /* INAttachmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAttachmentView.h; sourceTree = "<group>"; };
@@ -506,7 +506,7 @@
 		48399690191443D70085611D /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				48399687191441AF0085611D /* in.notes.xcdatamodeld */,
+				48AC1281192BE969001E45A4 /* in.notes.xcdatamodeld */,
 				4814486B1921C01200BCB519 /* INPost.h */,
 				4814486C1921C01200BCB519 /* INPost.m */,
 				4839968D191443D00085611D /* INPost+Manage.h */,
@@ -785,11 +785,11 @@
 				48399659191437FA0085611D /* MagicalRecord+iCloud.m in Sources */,
 				48399651191437FA0085611D /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				48399654191437FA0085611D /* NSManagedObjectModel+MagicalRecord.m in Sources */,
-				48399689191441AF0085611D /* in.notes.xcdatamodeld in Sources */,
 				483995B319142CC20085611D /* INHomeViewController.m in Sources */,
 				48D844D41915B69700567AFA /* INImageStore.m in Sources */,
 				4839965C191437FA0085611D /* MagicalRecord+ShorthandSupport.m in Sources */,
 				4839964D191437FA0085611D /* NSManagedObject+MagicalFinders.m in Sources */,
+				48AC1283192BE969001E45A4 /* in.notes.xcdatamodeld in Sources */,
 				4839968F191443D00085611D /* INPost+Manage.m in Sources */,
 				48399650191437FA0085611D /* NSManagedObjectContext+MagicalObserving.m in Sources */,
 				4839964E191437FA0085611D /* NSManagedObject+MagicalRecord.m in Sources */,
@@ -1042,12 +1042,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		48399687191441AF0085611D /* in.notes.xcdatamodeld */ = {
+		48AC1281192BE969001E45A4 /* in.notes.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				48399688191441AF0085611D /* in.notes.xcdatamodel */,
+				48AC1282192BE969001E45A4 /* in.notes.xcdatamodel */,
 			);
-			currentVersion = 48399688191441AF0085611D /* in.notes.xcdatamodel */;
+			currentVersion = 48AC1282192BE969001E45A4 /* in.notes.xcdatamodel */;
 			path = in.notes.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
