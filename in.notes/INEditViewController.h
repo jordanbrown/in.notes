@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class INPost;
+
 @interface INEditViewController : UIViewController
+
+@property (strong, nonatomic) INPost *post;
 
 @end

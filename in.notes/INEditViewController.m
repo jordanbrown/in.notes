@@ -7,6 +7,7 @@
 //
 
 #import "INEditViewController.h"
+#import "INPost+Manage.h"
 
 @interface INEditViewController ()
 
@@ -17,6 +18,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSLog(@"%@", self.post.text);
 }
 
 - (void)didReceiveMemoryWarning

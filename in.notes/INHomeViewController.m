@@ -18,6 +18,8 @@
 #import "INComposeViewController.h"
 #import "INPlaceholderView.h"
 
+#import "INEditViewController.h"
+
 @interface INHomeViewController () <INImagePreviewDelegate, INThumbnailViewDelegate, MSCMoreOptionTableViewCellDelegate>
 
 - (void)configureSizeManager;
@@ -127,6 +129,20 @@
     } else if ([note.name isEqualToString:kINManagedObjectContextDidDeleteLastItem] || [[INPost findAll]count] == IN_ZERO) {
         [self.view addSubview:[[INPlaceholderView alloc]initWithFrame:self.view.frame image:[UIImage imageNamed:kINNotesLogo]]];
         [self.tableView setUserInteractionEnabled:NO];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:kINEditViewController]) {
+        if ([sender isKindOfClass:[NSIndexPath class]]) {
+            
+            NSIndexPath *indexPath = (NSIndexPath *)sender;
+            INPost *post = [self.fetchedResultsController objectAtIndexPath:indexPath];
+            
+            INEditViewController *editViewController = (INEditViewController *)segue.destinationViewController;
+            editViewController.post = post;
+        }
     }
 }
 
@@ -295,7 +311,7 @@
             usleep(500000);
             dispatch_async(dispatch_get_main_queue(), ^{
                 
-                [self performSegueWithIdentifier:kINEditViewController sender:nil];
+                [self performSegueWithIdentifier:kINEditViewController sender:indexPath];
                 
             });
         });
