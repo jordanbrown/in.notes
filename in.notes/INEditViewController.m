@@ -11,6 +11,8 @@
 
 @interface INEditViewController ()
 
+- (void)setup;
+
 @end
 
 @implementation INEditViewController
@@ -18,13 +20,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    NSLog(@"%@", self.post.text);
+    [self setup];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+- (void)setup
+{
+    NSLog(@"%@", self.post.text);
 }
 
 @end
