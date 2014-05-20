@@ -77,4 +77,11 @@
     //
 }
 
+#pragma mark - Markdown Text View Delegate
+
+- (void)markdownTextViewDidUpdateCharactersCount:(int)count
+{
+    self.characterCounter.text = [NSString stringWithFormat:@"%i", count];
+}
+
 @end
