@@ -36,6 +36,21 @@
     [self setup];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    // This is required to fix UIImagePicker status bar change in an edge case
+    // when the user performs partial swipe back and then forward on image picker.
+    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [[INImageStore sharedStore]deleteImageForKey:kINImageStoreKey];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -66,6 +81,11 @@
     [self.markdownTextView setText:self.post.text];
     [self.attachmentContainer setAttachmentImage:[UIImage imageWithData:self.post.image] usingSpringWithDamping:NO];
     [self.characterCounter setText:[NSString stringWithFormat:@"%i", 240 - (int)self.markdownTextView.text.length]];
+}
+
+- (void)setMarkdownTextViewAsFirstResponder
+{
+    [self.markdownTextView becomeFirstResponder];
 }
 
 - (void)presentImagePicker
@@ -99,8 +119,34 @@
         return;
     }
     [self.markdownTextView resignFirstResponder];
-    [self.attachmentContainer setFrame:IN_MARKDOWN_TEXT_VIEW_BEHIND_KEYBOARD_FRAME];
     [self performSelector:@selector(presentImagePicker) withObject:nil afterDelay:IN_DEFAULT_DELAY];
+}
+
+#pragma mark - Attachemnt Container Delegate
+
+- (void)attachmentContainerDidRemoveImageWithRequest:(kINAttachmentRequest)request
+{
+    if (request == kINAttachmentRequestRemoveImage) {
+        [self performSelector:@selector(setMarkdownTextViewAsFirstResponder) withObject:nil afterDelay:0.9];
+    } else if (request == kINAttachmentRequestReplaceImage) {
+        [self performSelector:@selector(moreButtonSelected:) withObject:nil afterDelay:IN_DEFAULT_DELAY];
+    }
+}
+
+#pragma mark - UINavigationControllerDelegate
+
+/**
+ *  Since I am setting my status bar style to light content in .plist by
+ *  setting "Status bar style" to UIStatusBarStyleLightContent and
+ *  "View controller-based status bar appearance" to "NO", when presenting
+ *  another uinavigation controller such as imagePicker, settings on the controller
+ *  overwrites my settings by making status bar content dark. Implementing
+ *  the navigation controller delegate here assures that doesnt happen. This is required
+ *  for it to work properly.
+ */
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
 }
 
 #pragma mark - Markdown Text View Delegate
