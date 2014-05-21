@@ -133,16 +133,31 @@
     }
 }
 
+#pragma mark - Image Picker Delegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    [[INImageStore sharedStore]deleteImageForKey:kINImageStoreKey];
+    [[INImageStore sharedStore]setImage:[info objectForKey:UIImagePickerControllerOriginalImage]forKey:kINImageStoreKey];
+    [self dismissViewControllerAnimated:YES completion: ^{
+        [self.markdownTextView resignFirstResponder];
+        [self.attachmentContainer setAttachmentImage:[[INImageStore sharedStore]imageForKey:kINImageStoreKey]];
+    }];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+        if (!self.attachmentContainer.attachmentView.image) {
+            [self.markdownTextView becomeFirstResponder];
+        }
+    }];
+}
+
 #pragma mark - UINavigationControllerDelegate
 
 /**
- *  Since I am setting my status bar style to light content in .plist by
- *  setting "Status bar style" to UIStatusBarStyleLightContent and
- *  "View controller-based status bar appearance" to "NO", when presenting
- *  another uinavigation controller such as imagePicker, settings on the controller
- *  overwrites my settings by making status bar content dark. Implementing
- *  the navigation controller delegate here assures that doesnt happen. This is required
- *  for it to work properly.
+ *  See the INComposeViewController for more information.
  */
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
