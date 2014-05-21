@@ -107,7 +107,20 @@
 
 - (IBAction)publishButtonSelected:(id)sender
 {
-    //
+    [INPost editPostWithText:self.markdownTextView.text
+                       image:[[INImageStore sharedStore]imageForKey:kINImageStoreKey]
+                   thumbnail:[UIImage resizeImage:[[INImageStore sharedStore]imageForKey:kINImageStoreKey]
+                                           toSize:CGSizeMake(300.0f, 129.0f) cornerRadius:0.0]
+                    hashtags:[INHashtagContainer hashtagArrayFromString:self.markdownTextView.text] completion:^(NSError *error) {
+                        
+                        /**
+                         *  It is important to clear the cache because "image" is still in memory.
+                         *  User can post "empty" posts if not cleared.
+                         */
+                        [[INImageStore sharedStore]deleteImageForKey:kINImageStoreKey];
+                        [self.navigationController popToRootViewControllerAnimated:YES];
+                        
+                    }];
 }
 
 - (BOOL)canSavePOSTData
