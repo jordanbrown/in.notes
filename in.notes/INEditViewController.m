@@ -78,9 +78,18 @@
 
 - (void)setupData
 {
-    [self.markdownTextView setText:self.post.text];
-    [self.attachmentContainer setAttachmentImage:[UIImage imageWithData:self.post.image] usingSpringWithDamping:NO];
-    [self.characterCounter setText:[NSString stringWithFormat:@"%i", 240 - (int)self.markdownTextView.text.length]];
+    if (self.post.text) {
+        [self.markdownTextView setText:self.post.text];
+        [self.characterCounter setText:[NSString stringWithFormat:@"%i", 240 - (int)self.markdownTextView.text.length]];
+    }
+    
+    /**
+     *  This check is required. If the post does not contain an image, imageWithData: will create an empty image
+     *  and in turn create unexpected behaviour requuring the user to delete a "blank" image before adding new one.
+     */
+    if (self.post.image) {
+        [self.attachmentContainer setAttachmentImage:[UIImage imageWithData:self.post.image] usingSpringWithDamping:NO];
+    }
 }
 
 - (void)setMarkdownTextViewAsFirstResponder
