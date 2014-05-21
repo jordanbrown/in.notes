@@ -54,6 +54,11 @@
     }];
 }
 
++ (void)editPostWithText:(NSString *)text image:(UIImage *)image thumbnail:(UIImage *)thumbnail hashtags:(NSArray *)hashtags completion:(INPostCompletionHandler)completionHandler
+{
+    //
+}
+
 + (void)deletePost:(INPost *)post
 {
     [MagicalRecord saveUsingCurrentThreadContextWithBlock:^(NSManagedObjectContext *localContext) {
