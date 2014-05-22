@@ -56,7 +56,21 @@
 
 + (void)editPost:(INPost *)post withText:(NSString *)text image:(UIImage *)image thumbnail:(UIImage *)thumbnail hashtags:(NSArray *)hashtags completion:(INPostCompletionHandler)completionHandler
 {
-    
+    [MagicalRecord saveUsingCurrentThreadContextWithBlock:^(NSManagedObjectContext *localContext) {
+        
+        post.text = text;
+        
+    } completion:^(BOOL success, NSError *error) {
+        if (!error) {
+            
+            completionHandler(nil);
+            
+        } else {
+            
+            completionHandler(error);
+            
+        }
+    }];
 }
 
 + (void)deletePost:(INPost *)post completion:(INPostCompletionHandler)completionHandler

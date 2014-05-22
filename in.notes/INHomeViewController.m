@@ -115,6 +115,13 @@
                                                   usingBlock:^(NSNotification *note) {
                                                       [weakSelf configureINPlaceholderView:note];
                                                   }];
+    
+    [[NSNotificationCenter defaultCenter]addObserverForName:NSManagedObjectContextDidSaveNotification
+                                                     object:nil
+                                                      queue:[NSOperationQueue mainQueue]
+                                                 usingBlock:^(NSNotification *note) {
+                                                     [weakSelf.tableView reloadData];
+                                                 }];
 }
 
 - (void)configureINPlaceholderView:(NSNotification *)note
