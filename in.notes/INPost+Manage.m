@@ -56,50 +56,10 @@
 
 + (void)editPost:(INPost *)post withText:(NSString *)text image:(UIImage *)image thumbnail:(UIImage *)thumbnail hashtags:(NSArray *)hashtags completion:(INPostCompletionHandler)completionHandler
 {
-    INPost *savedPost = post;
     
-    if (!image && savedPost.image) {
-        NSLog(@"No new image but there was previously saved one.");
-    } else if (image) {
-        NSLog(@"New image was selected by the user.");
-    } else if (!image && !savedPost.image) {
-        NSLog(@"No image was added. No image was previously saved.");
-    }
-    
-    // Right now, post isnt being deleted...
-    
-    [MagicalRecord saveUsingCurrentThreadContextWithBlock:^(NSManagedObjectContext *localContext) {
-        
-        [INPost deleteAllMatchingPredicate:[NSPredicate predicateWithFormat:@"uuid == %@", savedPost.uuid]];
-        
-        INPost *editedPost = [INPost createInContext:localContext];
-        
-        editedPost.text = text;
-        
-        editedPost.image = image ? UIImageJPEGRepresentation(image, IN_IMAGE_STORE_DEFAULT_JPG_QUALITY) : savedPost.image;
-        editedPost.thumbnail = thumbnail ? UIImageJPEGRepresentation(thumbnail, IN_IMAGE_STORE_DEFAULT_JPG_QUALITY) : savedPost.thumbnail;
-        
-        editedPost.date = savedPost.date;
-        editedPost.uuid = savedPost.uuid;
-        editedPost.hashtags = [NSKeyedArchiver archivedDataWithRootObject:hashtags];
-        editedPost.isArchived = @NO;
-        
-        // See if this works...
-        
-        editedPost.type = [self postTypeForText:text ? text : savedPost.text image:image ? image : savedPost.image];
-        
-    } completion:^(BOOL success, NSError *error) {
-        
-        if (!error) {
-            completionHandler(nil);
-        } else {
-            completionHandler(error);
-        }
-        
-    }];
 }
 
-+ (void)deletePost:(INPost *)post
++ (void)deletePost:(INPost *)post completion:(INPostCompletionHandler)completionHandler
 {
     [MagicalRecord saveUsingCurrentThreadContextWithBlock:^(NSManagedObjectContext *localContext) {
         [localContext deleteObject:post];
@@ -109,6 +69,12 @@
         if (!error && [[INPost findAll]count] == 0) {
             
             [[NSNotificationCenter defaultCenter]postNotificationName:kINManagedObjectContextDidDeleteLastItem object:nil];
+            
+            completionHandler(nil);
+            
+        } else if (!error) {
+            
+            completionHandler(nil);
             
         }
         
@@ -130,6 +96,23 @@
     }
     
     return kind;
+}
+
+// Creating a "pointer" copy and then deleting "original" post will nill out the pointer.
+// Hard copy / manual copy / is required in order to be able to pull relevant data.
++ (INPost *)copy:(INPost *)post
+{
+    INPost *copyPost = [INPost createEntity];
+    copyPost.date = post.date;
+    copyPost.hashtags = post.hashtags;
+    copyPost.image = post.image;
+    copyPost.text = post.text;
+    copyPost.thumbnail = post.thumbnail;
+    copyPost.type = post.type;
+    copyPost.uuid = post.uuid;
+    copyPost.isArchived = post.isArchived;
+    
+    return copyPost;
 }
 
 @end

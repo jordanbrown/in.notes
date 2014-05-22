@@ -229,7 +229,9 @@
         dispatch_async(waitQ, ^{
             usleep(400000);
             dispatch_async(dispatch_get_main_queue(), ^{
-                [INPost deletePost:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+                [INPost deletePost:[self.fetchedResultsController objectAtIndexPath:indexPath] completion:^(NSError *error) {
+                    // Post deleted.
+                }];
             });
         });
     }

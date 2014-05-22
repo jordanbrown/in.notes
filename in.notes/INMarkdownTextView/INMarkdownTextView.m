@@ -27,6 +27,7 @@ static NSString * const kEmptyString = @"";
     if (self) {
         self.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
         self.keyboardType = UIKeyboardTypeDefault;
+        self.textColor = [UIColor darkGrayColor];
         self.delegate = self;
     }
     return self;
