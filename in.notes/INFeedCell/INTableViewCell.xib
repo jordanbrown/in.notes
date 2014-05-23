@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13D45a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -33,7 +33,7 @@
                     <constraint firstAttribute="trailing" secondItem="odo-kp-4r0" secondAttribute="trailing" constant="10" id="1mx-H4-upp"/>
                     <constraint firstItem="DET-CH-8d3" firstAttribute="top" secondItem="odo-kp-4r0" secondAttribute="bottom" constant="8" id="59a-1X-enU"/>
                     <constraint firstAttribute="trailing" secondItem="DET-CH-8d3" secondAttribute="trailing" constant="10" id="90D-Sv-pAs"/>
-                    <constraint firstItem="odo-kp-4r0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="AZL-mq-hdl"/>
+                    <constraint firstItem="odo-kp-4r0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" priority="750" constant="10" id="AZL-mq-hdl"/>
                     <constraint firstItem="DET-CH-8d3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Gyb-5w-cK7"/>
                     <constraint firstItem="odo-kp-4r0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Ph8-26-He1"/>
                     <constraint firstAttribute="bottom" secondItem="DET-CH-8d3" secondAttribute="bottom" constant="8" id="QBF-5J-hdB"/>
