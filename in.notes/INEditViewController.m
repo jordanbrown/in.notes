@@ -107,7 +107,7 @@
 
 - (IBAction)publishButtonSelected:(id)sender
 {
-    [INPost editPost:(INPost *)self.post
+    [INPost editPost:self.post
             withText:self.markdownTextView.text
                image:[[INImageStore sharedStore]imageForKey:kINImageStoreKey]
            thumbnail:[UIImage resizeImage:[[INImageStore sharedStore]imageForKey:kINImageStoreKey]

@@ -56,9 +56,19 @@
 
 + (void)editPost:(INPost *)post withText:(NSString *)text image:(UIImage *)image thumbnail:(UIImage *)thumbnail hashtags:(NSArray *)hashtags completion:(INPostCompletionHandler)completionHandler
 {
+    
+    // id imageData = image ? image : post.image;
+    
     [MagicalRecord saveUsingCurrentThreadContextWithBlock:^(NSManagedObjectContext *localContext) {
         
+        if (image) {
+            post.image = UIImageJPEGRepresentation(image, IN_IMAGE_STORE_DEFAULT_JPG_QUALITY);
+        }
+        
         post.text = text;
+        // post.thumbnail = thumbnail ?  UIImageJPEGRepresentation(thumbnail, IN_IMAGE_STORE_DEFAULT_JPG_QUALITY) : post.thumbnail;
+        post.hashtags = [NSKeyedArchiver archivedDataWithRootObject:hashtags];
+        post.type = [self postTypeForText:text image:image];
         
     } completion:^(BOOL success, NSError *error) {
         if (!error) {
