@@ -88,7 +88,9 @@
      *  and in turn create unexpected behaviour requuring the user to delete a "blank" image before adding new one.
      */
     if (self.post.image) {
-        [self.attachmentContainer setAttachmentImage:[UIImage imageWithData:self.post.image] usingSpringWithDamping:NO];
+        [[INImageStore sharedStore]deleteImageForKey:kINImageStoreKey];
+        [[INImageStore sharedStore]setImage:[UIImage imageWithData:self.post.image]forKey:kINImageStoreKey];
+        [self.attachmentContainer setAttachmentImage:[[INImageStore sharedStore]imageForKey:kINImageStoreKey] usingSpringWithDamping:NO];
     }
 }
 
@@ -107,6 +109,9 @@
 
 - (IBAction)publishButtonSelected:(id)sender
 {
+    if (![[INImageStore sharedStore]imageForKey:kINImageStoreKey]) { self.post.image = nil; }
+    if (![self canSavePOSTData]) { return; }
+    
     [INPost editPost:self.post
             withText:self.markdownTextView.text
                image:[[INImageStore sharedStore]imageForKey:kINImageStoreKey]
@@ -151,6 +156,10 @@
 {
     if (request == kINAttachmentRequestRemoveImage) {
         [self performSelector:@selector(setMarkdownTextViewAsFirstResponder) withObject:nil afterDelay:0.9];
+        
+        [[INImageStore sharedStore]deleteImageForKey:kINImageStoreKey];
+        [self.attachmentContainer.attachmentView setImage:nil];
+        
     } else if (request == kINAttachmentRequestReplaceImage) {
         [self performSelector:@selector(moreButtonSelected:) withObject:nil afterDelay:IN_DEFAULT_DELAY];
     }
