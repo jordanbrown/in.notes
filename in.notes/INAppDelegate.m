@@ -51,7 +51,7 @@
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-    // ...
+    // ... Persist data.
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
