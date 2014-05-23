@@ -51,7 +51,8 @@
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-    // ... Persist data.
+    [[NSManagedObjectContext defaultContext]save:nil];
+    [[NSManagedObjectContext rootSavingContext]save:nil];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
