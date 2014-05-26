@@ -25,7 +25,7 @@ static NSString * const kINManagedObjectContextDidAddNewItem = @"kINManagedObjec
 
 #pragma mark - Bootstrap Data
 static NSString * const kINBootstrappedInitialData = @"INBootstrappedInitialData";
-static NSString * const kINBootstrapInitialText = @"This is your first post. Slide left to delete. Tap on the image to preview it.";
+static NSString * const kINBootstrapInitialText = @"This is your first post. Slide left to edit or delete. Tap on the image to preview.";
 static NSString * const kINBootstrapInitialImage = @"intro-image";
 static NSString * const kINBootstrapInitialThumbnail = @"intro-image-thumbnail";
 
