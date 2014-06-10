@@ -145,6 +145,8 @@
         }
         return;
     }
+    
+    [self.attachmentContainer setFrame:IN_ATTACHMENT_CONTAINER_INIT_FRAME_EDIT];
     [self.markdownTextView resignFirstResponder];
     [self performSelector:@selector(presentImagePicker) withObject:nil afterDelay:IN_DEFAULT_DELAY];
 }
