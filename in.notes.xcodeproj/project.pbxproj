@@ -54,7 +54,6 @@
 		4839966E191437FA0085611D /* REDActionSheetButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839961D191437FA0085611D /* REDActionSheetButton.m */; };
 		4839966F191437FA0085611D /* RZCellSizeManager+CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 48399620191437FA0085611D /* RZCellSizeManager+CoreData.m */; };
 		48399670191437FA0085611D /* RZCellSizeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48399622191437FA0085611D /* RZCellSizeManager.m */; };
-		4839967F191437FA0085611D /* SProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 48399643191437FA0085611D /* SProgressHUD.m */; };
 		4839968219143A5F0085611D /* INComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839968119143A5F0085611D /* INComposeViewController.m */; };
 		4839968619143C360085611D /* KHFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839968519143C360085611D /* KHFlatButton.m */; };
 		4839968F191443D00085611D /* INPost+Manage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839968E191443D00085611D /* INPost+Manage.m */; };
@@ -65,7 +64,6 @@
 		48616EE21916D9500011271A /* INTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48616EE11916D9500011271A /* INTableViewController.m */; };
 		48AC1283192BE969001E45A4 /* in.notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48AC1281192BE969001E45A4 /* in.notes.xcdatamodeld */; };
 		48B10E43192BECF400747B9C /* INEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B10E42192BECF400747B9C /* INEditViewController.m */; };
-		48B10E4E192BF34500747B9C /* MSCMoreOptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B10E4C192BF34500747B9C /* MSCMoreOptionTableViewCell.m */; };
 		48D844B91915A8F700567AFA /* INAttachmentContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844B61915A8F700567AFA /* INAttachmentContainer.m */; };
 		48D844BA1915A8F700567AFA /* INAttachmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844B81915A8F700567AFA /* INAttachmentView.m */; };
 		48D844BE1915AAB200567AFA /* INCharacterCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844BD1915AAB200567AFA /* INCharacterCounter.m */; };
@@ -80,7 +78,6 @@
 		48D844E31915C1BD00567AFA /* INTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844E11915C1BD00567AFA /* INTextTableViewCell.m */; };
 		48D844E41915C1BD00567AFA /* INTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D844E21915C1BD00567AFA /* INTextTableViewCell.xib */; };
 		48DD03E5191AC68300012184 /* INPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DD03E4191AC68300012184 /* INPlaceholderView.m */; };
-		48DD03E9191AD96000012184 /* UIColor+Crayola.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DD03E8191AD96000012184 /* UIColor+Crayola.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,8 +179,6 @@
 		48399620191437FA0085611D /* RZCellSizeManager+CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RZCellSizeManager+CoreData.m"; sourceTree = "<group>"; };
 		48399621191437FA0085611D /* RZCellSizeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZCellSizeManager.h; sourceTree = "<group>"; };
 		48399622191437FA0085611D /* RZCellSizeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZCellSizeManager.m; sourceTree = "<group>"; };
-		48399642191437FA0085611D /* SProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SProgressHUD.h; sourceTree = "<group>"; };
-		48399643191437FA0085611D /* SProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SProgressHUD.m; sourceTree = "<group>"; };
 		4839968019143A5F0085611D /* INComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INComposeViewController.h; sourceTree = "<group>"; };
 		4839968119143A5F0085611D /* INComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INComposeViewController.m; sourceTree = "<group>"; };
 		4839968419143C360085611D /* KHFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHFlatButton.h; sourceTree = "<group>"; };
@@ -202,9 +197,6 @@
 		48AC1282192BE969001E45A4 /* in.notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = in.notes.xcdatamodel; sourceTree = "<group>"; };
 		48B10E41192BECF400747B9C /* INEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INEditViewController.h; sourceTree = "<group>"; };
 		48B10E42192BECF400747B9C /* INEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INEditViewController.m; sourceTree = "<group>"; };
-		48B10E4B192BF34500747B9C /* MSCMoreOptionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCMoreOptionTableViewCell.h; sourceTree = "<group>"; };
-		48B10E4C192BF34500747B9C /* MSCMoreOptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCMoreOptionTableViewCell.m; sourceTree = "<group>"; };
-		48B10E4D192BF34500747B9C /* MSCMoreOptionTableViewCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCMoreOptionTableViewCellDelegate.h; sourceTree = "<group>"; };
 		48D844B51915A8F700567AFA /* INAttachmentContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAttachmentContainer.h; sourceTree = "<group>"; };
 		48D844B61915A8F700567AFA /* INAttachmentContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INAttachmentContainer.m; sourceTree = "<group>"; };
 		48D844B71915A8F700567AFA /* INAttachmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAttachmentView.h; sourceTree = "<group>"; };
@@ -231,8 +223,6 @@
 		48D844E21915C1BD00567AFA /* INTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = INTextTableViewCell.xib; sourceTree = "<group>"; };
 		48DD03E3191AC68300012184 /* INPlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INPlaceholderView.h; sourceTree = "<group>"; };
 		48DD03E4191AC68300012184 /* INPlaceholderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INPlaceholderView.m; sourceTree = "<group>"; };
-		48DD03E7191AD96000012184 /* UIColor+Crayola.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Crayola.h"; sourceTree = "<group>"; };
-		48DD03E8191AD96000012184 /* UIColor+Crayola.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Crayola.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -479,15 +469,6 @@
 			path = RZCellSizeManager;
 			sourceTree = "<group>";
 		};
-		48399641191437FA0085611D /* SProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				48399642191437FA0085611D /* SProgressHUD.h */,
-				48399643191437FA0085611D /* SProgressHUD.m */,
-			);
-			path = SProgressHUD;
-			sourceTree = "<group>";
-		};
 		4839968319143C360085611D /* KHFlatButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -531,16 +512,6 @@
 			name = EditViewController;
 			sourceTree = "<group>";
 		};
-		48B10E4A192BF34500747B9C /* MSCMoreOptionTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				48B10E4B192BF34500747B9C /* MSCMoreOptionTableViewCell.h */,
-				48B10E4C192BF34500747B9C /* MSCMoreOptionTableViewCell.m */,
-				48B10E4D192BF34500747B9C /* MSCMoreOptionTableViewCellDelegate.h */,
-			);
-			path = MSCMoreOptionTableViewCell;
-			sourceTree = "<group>";
-		};
 		48B4A8DA191767AC00DDD642 /* ComposeViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -563,13 +534,10 @@
 		48D844B31915A82400567AFA /* xOther */ = {
 			isa = PBXGroup;
 			children = (
-				48DD03E6191AD96000012184 /* UIColor+Crayola */,
 				4839968319143C360085611D /* KHFlatButton */,
 				483995B5191437FA0085611D /* MagicalRecord */,
-				48B10E4A192BF34500747B9C /* MSCMoreOptionTableViewCell */,
 				48399619191437FA0085611D /* REDActionSheet */,
 				4839961E191437FA0085611D /* RZCellSizeManager */,
-				48399641191437FA0085611D /* SProgressHUD */,
 			);
 			name = xOther;
 			sourceTree = "<group>";
@@ -673,15 +641,6 @@
 				48DD03E4191AC68300012184 /* INPlaceholderView.m */,
 			);
 			path = INPlaceholderView;
-			sourceTree = "<group>";
-		};
-		48DD03E6191AD96000012184 /* UIColor+Crayola */ = {
-			isa = PBXGroup;
-			children = (
-				48DD03E7191AD96000012184 /* UIColor+Crayola.h */,
-				48DD03E8191AD96000012184 /* UIColor+Crayola.m */,
-			);
-			path = "UIColor+Crayola";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -803,10 +762,8 @@
 				4839964D191437FA0085611D /* NSManagedObject+MagicalFinders.m in Sources */,
 				48AC1283192BE969001E45A4 /* in.notes.xcdatamodeld in Sources */,
 				4839968F191443D00085611D /* INPost+Manage.m in Sources */,
-				48B10E4E192BF34500747B9C /* MSCMoreOptionTableViewCell.m in Sources */,
 				48399650191437FA0085611D /* NSManagedObjectContext+MagicalObserving.m in Sources */,
 				4839964E191437FA0085611D /* NSManagedObject+MagicalRecord.m in Sources */,
-				4839967F191437FA0085611D /* SProgressHUD.m in Sources */,
 				4839966E191437FA0085611D /* REDActionSheetButton.m in Sources */,
 				4814486D1921C01200BCB519 /* INPost.m in Sources */,
 				48399670191437FA0085611D /* RZCellSizeManager.m in Sources */,
@@ -821,7 +778,6 @@
 				4839965B191437FA0085611D /* MagicalRecord+Setup.m in Sources */,
 				48D844E31915C1BD00567AFA /* INTextTableViewCell.m in Sources */,
 				48399646191437FA0085611D /* NSEntityDescription+MagicalDataImport.m in Sources */,
-				48DD03E9191AD96000012184 /* UIColor+Crayola.m in Sources */,
 				48D844D01915B57C00567AFA /* UIImage+Resize.m in Sources */,
 				4839964A191437FA0085611D /* NSString+MagicalDataImport.m in Sources */,
 				48399648191437FA0085611D /* NSObject+MagicalDataImport.m in Sources */,
