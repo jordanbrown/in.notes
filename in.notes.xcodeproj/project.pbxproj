@@ -94,7 +94,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		480A88C819478AC5006684C6 /* in.notes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "in.notes-Bridging-Header.h"; sourceTree = "<group>"; };
+		480A88C819478AC5006684C6 /* in.notes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "in.notes-Bridging-Header.h"; path = "INMarkdownTextView/in.notes-Bridging-Header.h"; sourceTree = "<group>"; };
 		4814486B1921C01200BCB519 /* INPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INPost.h; sourceTree = "<group>"; };
 		4814486C1921C01200BCB519 /* INPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INPost.m; sourceTree = "<group>"; };
 		48224A58191930F700514A86 /* intro-image-thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intro-image-thumbnail.png"; sourceTree = "<group>"; };
@@ -328,6 +328,7 @@
 				48D844DA1915B8A500567AFA /* INMoreButton */,
 				48DD03E2191AC65A00012184 /* INPlaceholderView */,
 				48D844B31915A82400567AFA /* xOther */,
+				480A88C819478AC5006684C6 /* in.notes-Bridging-Header.h */,
 				4839958E191427D20085611D /* in.notes-Prefix.pch */,
 				48399588191427D20085611D /* in.notes-Info.plist */,
 				48399589191427D20085611D /* InfoPlist.strings */,
@@ -651,7 +652,6 @@
 			children = (
 				48D844D61915B8A500567AFA /* INMarkdownSyntaxStorage.h */,
 				48D844D71915B8A500567AFA /* INMarkdownSyntaxStorage.m */,
-				480A88C819478AC5006684C6 /* in.notes-Bridging-Header.h */,
 				48580D071947AB7B00867968 /* NotesTextView.swift */,
 			);
 			path = INMarkdownTextView;
