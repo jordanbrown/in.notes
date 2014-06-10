@@ -26,6 +26,5 @@
     #import "SProgressHUD.h"
     #import "REDActionSheet.h"
     #import "UIColor+Crayola.h" 
-    #import "MSCMoreOptionTableViewCell.h"
 
 #endif
