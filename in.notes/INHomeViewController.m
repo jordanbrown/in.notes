@@ -20,7 +20,7 @@
 
 #import "INEditViewController.h"
 
-@interface INHomeViewController () <INImagePreviewDelegate, INThumbnailViewDelegate, MSCMoreOptionTableViewCellDelegate>
+@interface INHomeViewController () <INImagePreviewDelegate, INThumbnailViewDelegate>
 
 - (void)configureSizeManager;
 - (void)configureTableView;
@@ -170,14 +170,12 @@
             INTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[INTableViewCell reuseIdentifier]];
             cell.post = post;
             cell.incellDelegate = self;
-            cell.delegate = self; // MoreButton delegate.
             homeCell = cell;
         }
             break;
         case kINPostTypeText: {
             INTextTableViewCell *textCell = [tableView dequeueReusableCellWithIdentifier:[INTextTableViewCell reuseIdentifier]];
             textCell.post = post;
-            textCell.delegate = self;
             homeCell = textCell;
         }
             break;
@@ -185,7 +183,6 @@
             INImageTableViewCell *imageCell = [tableView dequeueReusableCellWithIdentifier:[INImageTableViewCell reuseIdentifier]];
             imageCell.post = post;
             imageCell.incellDelegate = self;
-            imageCell.delegate = self; // MoreButton delegate.
             homeCell = imageCell;
         }
             break;
@@ -195,6 +192,11 @@
 }
 
 #pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:kINEditViewController sender:indexPath];
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -290,42 +292,6 @@
     
     [self.navigationController.view addSubview:imagePreview];
     [imagePreview previewImage];
-}
-
-#pragma mark - MSCMoreOptionTableViewCellDelegate
-
-- (UIColor *)tableView:(UITableView *)tableView backgroundColorForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return [UIColor redColor];
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForMoreOptionButtonForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return @"Edit";
-}
-
-- (UIColor *)tableView:(UITableView *)tableView backgroundColorForMoreOptionButtonForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return IN_NOTES_DEFAULT_APP_COLOR_SECONDARY;
-}
-
-- (void)tableView:(UITableView *)tableView moreOptionButtonPressedInRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (tableView.isEditing) {
-        
-        [tableView setEditing:NO animated:YES];
-        
-        dispatch_queue_t waitQ = dispatch_queue_create(IN_GENERIC_Q, NULL);
-        dispatch_async(waitQ, ^{
-            usleep(500000);
-            dispatch_async(dispatch_get_main_queue(), ^{
-                
-                [self performSegueWithIdentifier:kINEditViewController sender:indexPath];
-                
-            });
-        });
-        
-    }
 }
 
 @end
