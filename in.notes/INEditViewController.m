@@ -8,14 +8,14 @@
 
 #import "INEditViewController.h"
 #import "INPost+Manage.h"
-#import "INMarkdownTextView.h"
 #import "INCharacterCounter.h"
 #import "INAttachmentContainer.h"
 #import "INImageStore.h"
+#import "in_notes-Swift.h"
 
-@interface INEditViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, INAttachmentContainerDelegate, INMarkdownTextViewDelegate>
+@interface INEditViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, INAttachmentContainerDelegate, NotesTextViewDelegate>
 
-@property (strong, nonatomic) INMarkdownTextView *markdownTextView;
+@property (strong, nonatomic) NotesTextView *notesTextView;
 @property (strong, nonatomic) INCharacterCounter *characterCounter;
 @property (strong, nonatomic) INAttachmentContainer *attachmentContainer;
 
@@ -60,14 +60,14 @@
     UIBarButtonItem *publishButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"done-button"] style:UIBarButtonItemStylePlain target:self action:@selector(publishButtonSelected:)];
     UIBarButtonItem *moreButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"more-button"] style:UIBarButtonItemStylePlain target:self action:@selector(moreButtonSelected:)];
     self.navigationItem.rightBarButtonItems = @[publishButton, moreButton];
-    self.markdownTextView = [[INMarkdownTextView alloc]initWithFrame:IN_MARKDOWN_TEXT_VIEW_INIT_FRAME];
-    self.markdownTextView.markdownDelegate = self;
+    self.notesTextView = [[NotesTextView alloc]initWithView:self.view];
+    self.notesTextView.markdownDelegate = self;
     self.characterCounter = [[INCharacterCounter alloc]initWithFrame:IN_CHARACTER_COUNTER_INIT_FRAME];
     self.attachmentContainer = [[INAttachmentContainer alloc]initWithFrame:IN_ATTACHMENT_CONTAINER_INIT_FRAME_EDIT];
     self.attachmentContainer.delegate = self;
     
     // Subviews setup.
-    [self.view addSubview:self.markdownTextView];
+    [self.view addSubview:self.notesTextView];
     [self.view addSubview:self.characterCounter];
     [self.view addSubview:self.attachmentContainer];
     
@@ -78,8 +78,8 @@
 - (void)setupData
 {
     if (self.post.text) {
-        [self.markdownTextView setText:self.post.text];
-        [self.characterCounter setText:[NSString stringWithFormat:@"%i", 240 - (int)self.markdownTextView.text.length]];
+        [self.notesTextView setText:self.post.text];
+        [self.characterCounter setText:[NSString stringWithFormat:@"%i", 240 - (int)self.notesTextView.text.length]];
     }
     
     /**
@@ -95,7 +95,7 @@
 
 - (void)setMarkdownTextViewAsFirstResponder
 {
-    [self.markdownTextView becomeFirstResponder];
+    [self.notesTextView becomeFirstResponder];
 }
 
 - (void)presentImagePicker
@@ -112,11 +112,11 @@
     if (![self canSavePOSTData]) { return; }
     
     [INPost editPost:self.post
-            withText:self.markdownTextView.text
+            withText:self.notesTextView.text
                image:[[INImageStore sharedStore]imageForKey:kINImageStoreKey]
            thumbnail:[UIImage resizeImage:[[INImageStore sharedStore]imageForKey:kINImageStoreKey]
                                    toSize:CGSizeMake(300.0f, 129.0f) cornerRadius:0.0]
-            hashtags:[INHashtagContainer hashtagArrayFromString:self.markdownTextView.text] completion:^(NSError *error) {
+            hashtags:[INHashtagContainer hashtagArrayFromString:self.notesTextView.text] completion:^(NSError *error) {
                 
                 /**
                  *  It is important to clear the cache because "image" is still in memory.
@@ -130,7 +130,7 @@
 
 - (BOOL)canSavePOSTData
 {
-    return [self.markdownTextView.text length] || [[INImageStore sharedStore]imageForKey:kINImageStoreKey] ? YES : NO;
+    return [self.notesTextView.text length] || [[INImageStore sharedStore]imageForKey:kINImageStoreKey] ? YES : NO;
 }
 
 #pragma mark - MCMore Button Delegate
@@ -138,16 +138,16 @@
 - (void)moreButtonSelected:(id)sender
 {
     if (self.attachmentContainer.attachmentView.image) {
-        if (self.markdownTextView.isFirstResponder) {
-            [self.markdownTextView resignFirstResponder];
+        if (self.notesTextView.isFirstResponder) {
+            [self.notesTextView resignFirstResponder];
         } else {
-            [self.markdownTextView becomeFirstResponder];
+            [self.notesTextView becomeFirstResponder];
         }
         return;
     }
     
     [self.attachmentContainer setFrame:IN_ATTACHMENT_CONTAINER_INIT_FRAME_EDIT];
-    [self.markdownTextView resignFirstResponder];
+    [self.notesTextView resignFirstResponder];
     [self performSelector:@selector(presentImagePicker) withObject:nil afterDelay:IN_DEFAULT_DELAY];
 }
 
@@ -173,7 +173,7 @@
     [[INImageStore sharedStore]deleteImageForKey:kINImageStoreKey];
     [[INImageStore sharedStore]setImage:[info objectForKey:UIImagePickerControllerOriginalImage]forKey:kINImageStoreKey];
     [self dismissViewControllerAnimated:YES completion: ^{
-        [self.markdownTextView resignFirstResponder];
+        [self.notesTextView resignFirstResponder];
         [self.attachmentContainer setAttachmentImage:[[INImageStore sharedStore]imageForKey:kINImageStoreKey]];
     }];
 }
@@ -182,7 +182,7 @@
 {
     [self dismissViewControllerAnimated:YES completion:^{
         if (!self.attachmentContainer.attachmentView.image) {
-            [self.markdownTextView becomeFirstResponder];
+            [self.notesTextView becomeFirstResponder];
         }
     }];
 }
@@ -197,11 +197,11 @@
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
 }
 
-#pragma mark - Markdown Text View Delegate
+#pragma mark - Text View Delegate
 
-- (void)markdownTextViewDidUpdateCharactersCount:(int)count
+- (void)notesTextViewDidUpdateCharactersCount:(NSInteger)count
 {
-    self.characterCounter.text = [NSString stringWithFormat:@"%i", count];
+    self.characterCounter.text = [NSString stringWithFormat:@"%i", (int)count];
 }
 
 @end

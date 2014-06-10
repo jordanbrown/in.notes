@@ -60,6 +60,7 @@
 		4839968F191443D00085611D /* INPost+Manage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839968E191443D00085611D /* INPost+Manage.m */; };
 		484994B9191749370023B8AB /* INTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 484994B7191749370023B8AB /* INTableViewCell.m */; };
 		484994BA191749370023B8AB /* INTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 484994B8191749370023B8AB /* INTableViewCell.xib */; };
+		48580D081947AB7B00867968 /* NotesTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48580D071947AB7B00867968 /* NotesTextView.swift */; };
 		48616EDB1916D0810011271A /* INNotesFetchedResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48616EDA1916D0810011271A /* INNotesFetchedResultsController.m */; };
 		48616EE21916D9500011271A /* INTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48616EE11916D9500011271A /* INTableViewController.m */; };
 		48AC1283192BE969001E45A4 /* in.notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48AC1281192BE969001E45A4 /* in.notes.xcdatamodeld */; };
@@ -75,7 +76,6 @@
 		48D844D01915B57C00567AFA /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844CF1915B57C00567AFA /* UIImage+Resize.m */; };
 		48D844D41915B69700567AFA /* INImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844D31915B69700567AFA /* INImageStore.m */; };
 		48D844DD1915B8A500567AFA /* INMarkdownSyntaxStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844D71915B8A500567AFA /* INMarkdownSyntaxStorage.m */; };
-		48D844DE1915B8A500567AFA /* INMarkdownTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844D91915B8A500567AFA /* INMarkdownTextView.m */; };
 		48D844DF1915B8A500567AFA /* INMoreButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844DC1915B8A500567AFA /* INMoreButton.m */; };
 		48D844E31915C1BD00567AFA /* INTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844E11915C1BD00567AFA /* INTextTableViewCell.m */; };
 		48D844E41915C1BD00567AFA /* INTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D844E21915C1BD00567AFA /* INTextTableViewCell.xib */; };
@@ -94,6 +94,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		480A88C819478AC5006684C6 /* in.notes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "in.notes-Bridging-Header.h"; sourceTree = "<group>"; };
 		4814486B1921C01200BCB519 /* INPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INPost.h; sourceTree = "<group>"; };
 		4814486C1921C01200BCB519 /* INPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INPost.m; sourceTree = "<group>"; };
 		48224A58191930F700514A86 /* intro-image-thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intro-image-thumbnail.png"; sourceTree = "<group>"; };
@@ -192,6 +193,7 @@
 		484994B6191749370023B8AB /* INTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INTableViewCell.h; sourceTree = "<group>"; };
 		484994B7191749370023B8AB /* INTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INTableViewCell.m; sourceTree = "<group>"; };
 		484994B8191749370023B8AB /* INTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = INTableViewCell.xib; sourceTree = "<group>"; };
+		48580D071947AB7B00867968 /* NotesTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesTextView.swift; sourceTree = "<group>"; };
 		48616ED91916D0810011271A /* INNotesFetchedResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INNotesFetchedResultsController.h; sourceTree = "<group>"; };
 		48616EDA1916D0810011271A /* INNotesFetchedResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INNotesFetchedResultsController.m; sourceTree = "<group>"; };
 		48616EE01916D9500011271A /* INTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INTableViewController.h; sourceTree = "<group>"; };
@@ -222,8 +224,6 @@
 		48D844D31915B69700567AFA /* INImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INImageStore.m; sourceTree = "<group>"; };
 		48D844D61915B8A500567AFA /* INMarkdownSyntaxStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INMarkdownSyntaxStorage.h; sourceTree = "<group>"; };
 		48D844D71915B8A500567AFA /* INMarkdownSyntaxStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INMarkdownSyntaxStorage.m; sourceTree = "<group>"; };
-		48D844D81915B8A500567AFA /* INMarkdownTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INMarkdownTextView.h; sourceTree = "<group>"; };
-		48D844D91915B8A500567AFA /* INMarkdownTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INMarkdownTextView.m; sourceTree = "<group>"; };
 		48D844DB1915B8A500567AFA /* INMoreButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INMoreButton.h; sourceTree = "<group>"; };
 		48D844DC1915B8A500567AFA /* INMoreButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INMoreButton.m; sourceTree = "<group>"; };
 		48D844E01915C1BD00567AFA /* INTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INTextTableViewCell.h; sourceTree = "<group>"; };
@@ -651,8 +651,8 @@
 			children = (
 				48D844D61915B8A500567AFA /* INMarkdownSyntaxStorage.h */,
 				48D844D71915B8A500567AFA /* INMarkdownSyntaxStorage.m */,
-				48D844D81915B8A500567AFA /* INMarkdownTextView.h */,
-				48D844D91915B8A500567AFA /* INMarkdownTextView.m */,
+				480A88C819478AC5006684C6 /* in.notes-Bridging-Header.h */,
+				48580D071947AB7B00867968 /* NotesTextView.swift */,
 			);
 			path = INMarkdownTextView;
 			sourceTree = "<group>";
@@ -827,7 +827,6 @@
 				48399648191437FA0085611D /* NSObject+MagicalDataImport.m in Sources */,
 				4839965A191437FA0085611D /* MagicalRecord+Options.m in Sources */,
 				48616EE21916D9500011271A /* INTableViewController.m in Sources */,
-				48D844DE1915B8A500567AFA /* INMarkdownTextView.m in Sources */,
 				48399649191437FA0085611D /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
 				4839964B191437FA0085611D /* NSManagedObject+MagicalAggregation.m in Sources */,
 				48399653191437FA0085611D /* NSManagedObjectContext+MagicalThreading.m in Sources */,
@@ -844,6 +843,7 @@
 				48D844B91915A8F700567AFA /* INAttachmentContainer.m in Sources */,
 				484994B9191749370023B8AB /* INTableViewCell.m in Sources */,
 				48399658191437FA0085611D /* MagicalRecord+ErrorHandling.m in Sources */,
+				48580D081947AB7B00867968 /* NotesTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -960,11 +960,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "in.notes/in.notes-Prefix.pch";
 				INFOPLIST_FILE = "in.notes/in.notes-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "in.notes/INMarkdownTextView/in.notes-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -974,11 +979,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "in.notes/in.notes-Prefix.pch";
 				INFOPLIST_FILE = "in.notes/in.notes-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "in.notes/INMarkdownTextView/in.notes-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
