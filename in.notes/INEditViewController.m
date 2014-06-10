@@ -9,15 +9,13 @@
 #import "INEditViewController.h"
 #import "INPost+Manage.h"
 #import "INMarkdownTextView.h"
-#import "INMoreButton.h"
 #import "INCharacterCounter.h"
 #import "INAttachmentContainer.h"
 #import "INImageStore.h"
 
-@interface INEditViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, INMoreButtonDelegate, INAttachmentContainerDelegate, INMarkdownTextViewDelegate>
+@interface INEditViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, INAttachmentContainerDelegate, INMarkdownTextViewDelegate>
 
 @property (strong, nonatomic) INMarkdownTextView *markdownTextView;
-@property (strong, nonatomic) INMoreButton *moreButton;
 @property (strong, nonatomic) INCharacterCounter *characterCounter;
 @property (strong, nonatomic) INAttachmentContainer *attachmentContainer;
 
@@ -61,14 +59,12 @@
     // Initialization.
     self.markdownTextView = [[INMarkdownTextView alloc]initWithFrame:IN_MARKDOWN_TEXT_VIEW_INIT_FRAME];
     self.markdownTextView.markdownDelegate = self;
-    self.moreButton = [[INMoreButton alloc]initWithFrame:IN_MORE_BUTTON_INIT_FRAME_EDIT delegate:self];
     self.characterCounter = [[INCharacterCounter alloc]initWithFrame:IN_CHARACTER_COUNTER_INIT_FRAME];
     self.attachmentContainer = [[INAttachmentContainer alloc]initWithFrame:IN_ATTACHMENT_CONTAINER_INIT_FRAME_EDIT];
     self.attachmentContainer.delegate = self;
     
     // Subviews setup.
     [self.view addSubview:self.markdownTextView];
-    [self.view addSubview:self.moreButton];
     [self.view addSubview:self.characterCounter];
     [self.view addSubview:self.attachmentContainer];
     

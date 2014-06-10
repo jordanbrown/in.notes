@@ -8,17 +8,15 @@
 
 #import "INComposeViewController.h"
 #import "INMarkdownTextView.h"
-#import "INMoreButton.h"
 #import "INAttachmentContainer.h"
 #import "INImageStore.h"
 #import "INCharacterCounter.h"
 #import "INHashtagContainer.h"
 #import "INPost+Manage.h"
 
-@interface INComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, INMoreButtonDelegate, INAttachmentContainerDelegate, INMarkdownTextViewDelegate>
+@interface INComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, INAttachmentContainerDelegate, INMarkdownTextViewDelegate>
 
 @property (strong, nonatomic) INMarkdownTextView *markdownTextView;
-@property (strong, nonatomic) INMoreButton *moreButton;
 @property (strong, nonatomic) INCharacterCounter *characterCounter;
 @property (strong, nonatomic) INAttachmentContainer *attachmentContainer;
 
@@ -49,7 +47,6 @@
 {
     [super viewDidAppear:animated];
     [self.markdownTextView becomeFirstResponder];
-    [self.moreButton moveToPoint:IN_MORE_BUTTON_ABOVE_KEYBOARD_POINT];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -66,7 +63,6 @@
 - (void)setup
 {
     // Initialization.
-    self.moreButton = [[INMoreButton alloc]initWithFrame:IN_MORE_BUTTON_INIT_FRAME delegate:self];
     self.markdownTextView = [[INMarkdownTextView alloc]initWithFrame:IN_MARKDOWN_TEXT_VIEW_INIT_FRAME];
     self.markdownTextView.markdownDelegate = self;
     self.characterCounter = [[INCharacterCounter alloc]initWithFrame:IN_CHARACTER_COUNTER_INIT_FRAME];
@@ -75,7 +71,6 @@
     
     // Subviews setup.
     [self.view addSubview:self.markdownTextView];
-    [self.view addSubview:self.moreButton];
     [self.view addSubview:self.characterCounter];
     [self.view addSubview:self.attachmentContainer];
 }
@@ -133,7 +128,6 @@
         return;
     }
     [self.markdownTextView resignFirstResponder];
-    [self.attachmentContainer setFrame:IN_MARKDOWN_TEXT_VIEW_BEHIND_KEYBOARD_FRAME];
     [self performSelector:@selector(presentImagePicker) withObject:nil afterDelay:IN_DEFAULT_DELAY];
 }
 
