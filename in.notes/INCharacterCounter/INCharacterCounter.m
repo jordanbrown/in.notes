@@ -19,7 +19,7 @@
     if (self) {
         self.alpha = 0.0;
         self.text = @"240";
-        self.textColor = [UIColor darkGrayColor];
+        self.textColor = [UIColor lightGrayColor];
         self.font = [UIFont systemFontOfSize:13.0];
         self.textAlignment = NSTextAlignmentRight;
         
