@@ -8,7 +8,6 @@
 
 #import "INEditViewController.h"
 #import "INPost+Manage.h"
-#import "INCharacterCounter.h"
 #import "INAttachmentContainer.h"
 #import "INImageStore.h"
 #import "in_notes-Swift.h"
@@ -16,7 +15,7 @@
 @interface INEditViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, INAttachmentContainerDelegate, NotesTextViewDelegate>
 
 @property (strong, nonatomic) NotesTextView *notesTextView;
-@property (strong, nonatomic) INCharacterCounter *characterCounter;
+@property (strong, nonatomic) CharacterCounter *characterCounter;
 @property (strong, nonatomic) INAttachmentContainer *attachmentContainer;
 
 - (void)setup;
@@ -62,7 +61,7 @@
     self.navigationItem.rightBarButtonItems = @[publishButton, moreButton];
     self.notesTextView = [[NotesTextView alloc]initWithView:self.view];
     self.notesTextView.markdownDelegate = self;
-    self.characterCounter = [[INCharacterCounter alloc]initWithFrame:IN_CHARACTER_COUNTER_INIT_FRAME];
+    self.characterCounter = [[CharacterCounter alloc]initWithFrame:IN_CHARACTER_COUNTER_INIT_FRAME];
     self.attachmentContainer = [[INAttachmentContainer alloc]initWithFrame:IN_ATTACHMENT_CONTAINER_INIT_FRAME_EDIT];
     self.attachmentContainer.delegate = self;
     

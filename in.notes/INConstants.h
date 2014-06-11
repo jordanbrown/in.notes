@@ -18,6 +18,9 @@
 #define IN_NOTES_DEFAULT_APP_COLOR [UIColor colorWithRed:0.44 green:0.51 blue:0.6 alpha:1]
 #define IN_NOTES_DEFAULT_APP_COLOR_SECONDARY [UIColor colorWithRed:0.81 green:0.84 blue:0.87 alpha:1]
 
+#pragma mark - Character Counter
+#define IN_CHARACTER_COUNTER_INIT_FRAME CGRectMake(self.view.frame.size.width - 32.0f, self.view.frame.size.height - 276.0f, 23.0f, 16.0f)
+
 static NSString * const INMigratingSqliteStoreName = @"in.notes";
 
 static NSString * const kINManagedObjectContextDidDeleteLastItem = @"kINManagedObjectContextDidDeleteLastItem";

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		480BE31C19480689003C05E1 /* CharacterCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480BE31B19480689003C05E1 /* CharacterCounter.swift */; };
 		4814486D1921C01200BCB519 /* INPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 4814486C1921C01200BCB519 /* INPost.m */; };
 		48224A5A191930F700514A86 /* intro-image-thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 48224A58191930F700514A86 /* intro-image-thumbnail.png */; };
 		48224A5B191930F700514A86 /* intro-image.png in Resources */ = {isa = PBXBuildFile; fileRef = 48224A59191930F700514A86 /* intro-image.png */; };
@@ -66,7 +67,6 @@
 		48B10E43192BECF400747B9C /* INEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B10E42192BECF400747B9C /* INEditViewController.m */; };
 		48D844B91915A8F700567AFA /* INAttachmentContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844B61915A8F700567AFA /* INAttachmentContainer.m */; };
 		48D844BA1915A8F700567AFA /* INAttachmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844B81915A8F700567AFA /* INAttachmentView.m */; };
-		48D844BE1915AAB200567AFA /* INCharacterCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844BD1915AAB200567AFA /* INCharacterCounter.m */; };
 		48D844C31915B0B100567AFA /* INImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844C11915B0B100567AFA /* INImageTableViewCell.m */; };
 		48D844C41915B0B100567AFA /* INImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D844C21915B0B100567AFA /* INImageTableViewCell.xib */; };
 		48D844C81915B31D00567AFA /* INHashtagContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844C71915B31D00567AFA /* INHashtagContainer.m */; };
@@ -92,6 +92,7 @@
 
 /* Begin PBXFileReference section */
 		480A88C819478AC5006684C6 /* in.notes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "in.notes-Bridging-Header.h"; path = "INMarkdownTextView/in.notes-Bridging-Header.h"; sourceTree = "<group>"; };
+		480BE31B19480689003C05E1 /* CharacterCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCounter.swift; sourceTree = "<group>"; };
 		4814486B1921C01200BCB519 /* INPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INPost.h; sourceTree = "<group>"; };
 		4814486C1921C01200BCB519 /* INPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INPost.m; sourceTree = "<group>"; };
 		48224A58191930F700514A86 /* intro-image-thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intro-image-thumbnail.png"; sourceTree = "<group>"; };
@@ -201,8 +202,6 @@
 		48D844B61915A8F700567AFA /* INAttachmentContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INAttachmentContainer.m; sourceTree = "<group>"; };
 		48D844B71915A8F700567AFA /* INAttachmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAttachmentView.h; sourceTree = "<group>"; };
 		48D844B81915A8F700567AFA /* INAttachmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INAttachmentView.m; sourceTree = "<group>"; };
-		48D844BC1915AAB200567AFA /* INCharacterCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INCharacterCounter.h; sourceTree = "<group>"; };
-		48D844BD1915AAB200567AFA /* INCharacterCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INCharacterCounter.m; sourceTree = "<group>"; };
 		48D844C01915B0B100567AFA /* INImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INImageTableViewCell.h; sourceTree = "<group>"; };
 		48D844C11915B0B100567AFA /* INImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INImageTableViewCell.m; sourceTree = "<group>"; };
 		48D844C21915B0B100567AFA /* INImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = INImageTableViewCell.xib; sourceTree = "<group>"; };
@@ -556,8 +555,7 @@
 		48D844BB1915AAB200567AFA /* INCharacterCounter */ = {
 			isa = PBXGroup;
 			children = (
-				48D844BC1915AAB200567AFA /* INCharacterCounter.h */,
-				48D844BD1915AAB200567AFA /* INCharacterCounter.m */,
+				480BE31B19480689003C05E1 /* CharacterCounter.swift */,
 			);
 			path = INCharacterCounter;
 			sourceTree = "<group>";
@@ -751,6 +749,7 @@
 				48399657191437FA0085611D /* MagicalRecord+Actions.m in Sources */,
 				48399656191437FA0085611D /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				48399644191437FA0085611D /* MagicalImportFunctions.m in Sources */,
+				480BE31C19480689003C05E1 /* CharacterCounter.swift in Sources */,
 				48399645191437FA0085611D /* NSAttributeDescription+MagicalDataImport.m in Sources */,
 				48D844CC1915B42200567AFA /* INImagePreview.m in Sources */,
 				48399659191437FA0085611D /* MagicalRecord+iCloud.m in Sources */,
@@ -793,7 +792,6 @@
 				48399647191437FA0085611D /* NSNumber+MagicalDataImport.m in Sources */,
 				4839965D191437FA0085611D /* MagicalRecord.m in Sources */,
 				4839968619143C360085611D /* KHFlatButton.m in Sources */,
-				48D844BE1915AAB200567AFA /* INCharacterCounter.m in Sources */,
 				4839966D191437FA0085611D /* REDActionSheet.m in Sources */,
 				48399591191427D20085611D /* INAppDelegate.m in Sources */,
 				48D844B91915A8F700567AFA /* INAttachmentContainer.m in Sources */,
