@@ -20,7 +20,7 @@
 #define MR_ENABLE_ACTIVE_RECORD_LOGGING 0
     #import "MagicalRecord/CoreData+MagicalRecord.h"
 
-    #import "INHashtagContainer.h"
+    // #import "INHashtagContainer.h"
     #import "RZCellSizeManager+CoreData.h"
     #import "REDActionSheet.h"
 

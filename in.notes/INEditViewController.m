@@ -115,7 +115,7 @@
                image:[[INImageStore sharedStore]imageForKey:kINImageStoreKey]
            thumbnail:[UIImage resizeImage:[[INImageStore sharedStore]imageForKey:kINImageStoreKey]
                                    toSize:CGSizeMake(300.0f, 129.0f) cornerRadius:0.0]
-            hashtags:[INHashtagContainer hashtagArrayFromString:self.notesTextView.text] completion:^(NSError *error) {
+            hashtags:[HashtagContainer hashtagArrayFromString:self.notesTextView.text] completion:^(NSError *error) {
                 
                 /**
                  *  It is important to clear the cache because "image" is still in memory.

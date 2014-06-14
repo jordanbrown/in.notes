@@ -71,7 +71,6 @@
 		48D844BA1915A8F700567AFA /* INAttachmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844B81915A8F700567AFA /* INAttachmentView.m */; };
 		48D844C31915B0B100567AFA /* INImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844C11915B0B100567AFA /* INImageTableViewCell.m */; };
 		48D844C41915B0B100567AFA /* INImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D844C21915B0B100567AFA /* INImageTableViewCell.xib */; };
-		48D844C81915B31D00567AFA /* INHashtagContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844C71915B31D00567AFA /* INHashtagContainer.m */; };
 		48D844CC1915B42200567AFA /* INImagePreview.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844CB1915B42200567AFA /* INImagePreview.m */; };
 		48D844D41915B69700567AFA /* INImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844D31915B69700567AFA /* INImageStore.m */; };
 		48D844DD1915B8A500567AFA /* INMarkdownSyntaxStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844D71915B8A500567AFA /* INMarkdownSyntaxStorage.m */; };
@@ -208,8 +207,6 @@
 		48D844C01915B0B100567AFA /* INImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INImageTableViewCell.h; sourceTree = "<group>"; };
 		48D844C11915B0B100567AFA /* INImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INImageTableViewCell.m; sourceTree = "<group>"; };
 		48D844C21915B0B100567AFA /* INImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = INImageTableViewCell.xib; sourceTree = "<group>"; };
-		48D844C61915B31D00567AFA /* INHashtagContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INHashtagContainer.h; sourceTree = "<group>"; };
-		48D844C71915B31D00567AFA /* INHashtagContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INHashtagContainer.m; sourceTree = "<group>"; };
 		48D844CA1915B42200567AFA /* INImagePreview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INImagePreview.h; sourceTree = "<group>"; };
 		48D844CB1915B42200567AFA /* INImagePreview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INImagePreview.m; sourceTree = "<group>"; };
 		48D844D21915B69700567AFA /* INImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INImageStore.h; sourceTree = "<group>"; };
@@ -581,8 +578,6 @@
 		48D844C51915B31D00567AFA /* INHashtagContainer */ = {
 			isa = PBXGroup;
 			children = (
-				48D844C61915B31D00567AFA /* INHashtagContainer.h */,
-				48D844C71915B31D00567AFA /* INHashtagContainer.m */,
 				4879C0FC194CBB130029F20D /* HashtagContainer.swift */,
 			);
 			path = INHashtagContainer;
@@ -773,7 +768,6 @@
 				4839968219143A5F0085611D /* INComposeViewController.m in Sources */,
 				48B10E43192BECF400747B9C /* INEditViewController.m in Sources */,
 				48399652191437FA0085611D /* NSManagedObjectContext+MagicalSaves.m in Sources */,
-				48D844C81915B31D00567AFA /* INHashtagContainer.m in Sources */,
 				4839966F191437FA0085611D /* RZCellSizeManager+CoreData.m in Sources */,
 				48D844DD1915B8A500567AFA /* INMarkdownSyntaxStorage.m in Sources */,
 				48399655191437FA0085611D /* NSPersistentStore+MagicalRecord.m in Sources */,
