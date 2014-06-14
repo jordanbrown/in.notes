@@ -26,6 +26,7 @@ static NSString * const kINHashtagSearchPattern = @"(#[A-Za-z0-9]+)";
                                 options:0
                                   range:NSMakeRange(0, [string length])
                              usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
+                                                                  
                                  if ([string substringWithRange:result.range]) {
                                      [hashtags addObject:[string substringWithRange:result.range]];
                                  }
