@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		480BE31C19480689003C05E1 /* CharacterCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480BE31B19480689003C05E1 /* CharacterCounter.swift */; };
+		480BE31E19480D3C003C05E1 /* Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480BE31D19480D3C003C05E1 /* Resize.swift */; };
 		4814486D1921C01200BCB519 /* INPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 4814486C1921C01200BCB519 /* INPost.m */; };
 		48224A5A191930F700514A86 /* intro-image-thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 48224A58191930F700514A86 /* intro-image-thumbnail.png */; };
 		48224A5B191930F700514A86 /* intro-image.png in Resources */ = {isa = PBXBuildFile; fileRef = 48224A59191930F700514A86 /* intro-image.png */; };
@@ -71,7 +72,6 @@
 		48D844C41915B0B100567AFA /* INImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D844C21915B0B100567AFA /* INImageTableViewCell.xib */; };
 		48D844C81915B31D00567AFA /* INHashtagContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844C71915B31D00567AFA /* INHashtagContainer.m */; };
 		48D844CC1915B42200567AFA /* INImagePreview.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844CB1915B42200567AFA /* INImagePreview.m */; };
-		48D844D01915B57C00567AFA /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844CF1915B57C00567AFA /* UIImage+Resize.m */; };
 		48D844D41915B69700567AFA /* INImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844D31915B69700567AFA /* INImageStore.m */; };
 		48D844DD1915B8A500567AFA /* INMarkdownSyntaxStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844D71915B8A500567AFA /* INMarkdownSyntaxStorage.m */; };
 		48D844DF1915B8A500567AFA /* INMoreButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844DC1915B8A500567AFA /* INMoreButton.m */; };
@@ -93,6 +93,7 @@
 /* Begin PBXFileReference section */
 		480A88C819478AC5006684C6 /* in.notes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "in.notes-Bridging-Header.h"; path = "INMarkdownTextView/in.notes-Bridging-Header.h"; sourceTree = "<group>"; };
 		480BE31B19480689003C05E1 /* CharacterCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCounter.swift; sourceTree = "<group>"; };
+		480BE31D19480D3C003C05E1 /* Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resize.swift; sourceTree = "<group>"; };
 		4814486B1921C01200BCB519 /* INPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INPost.h; sourceTree = "<group>"; };
 		4814486C1921C01200BCB519 /* INPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INPost.m; sourceTree = "<group>"; };
 		48224A58191930F700514A86 /* intro-image-thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intro-image-thumbnail.png"; sourceTree = "<group>"; };
@@ -209,8 +210,6 @@
 		48D844C71915B31D00567AFA /* INHashtagContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INHashtagContainer.m; sourceTree = "<group>"; };
 		48D844CA1915B42200567AFA /* INImagePreview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INImagePreview.h; sourceTree = "<group>"; };
 		48D844CB1915B42200567AFA /* INImagePreview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INImagePreview.m; sourceTree = "<group>"; };
-		48D844CE1915B57C00567AFA /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
-		48D844CF1915B57C00567AFA /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		48D844D21915B69700567AFA /* INImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INImageStore.h; sourceTree = "<group>"; };
 		48D844D31915B69700567AFA /* INImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INImageStore.m; sourceTree = "<group>"; };
 		48D844D61915B8A500567AFA /* INMarkdownSyntaxStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INMarkdownSyntaxStorage.h; sourceTree = "<group>"; };
@@ -598,8 +597,7 @@
 		48D844CD1915B57C00567AFA /* INImageResize */ = {
 			isa = PBXGroup;
 			children = (
-				48D844CE1915B57C00567AFA /* UIImage+Resize.h */,
-				48D844CF1915B57C00567AFA /* UIImage+Resize.m */,
+				480BE31D19480D3C003C05E1 /* Resize.swift */,
 			);
 			path = INImageResize;
 			sourceTree = "<group>";
@@ -689,6 +687,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = in.notes;
 				TargetAttributes = {
+					4839957C191427D20085611D = {
+						DevelopmentTeam = VV4VQB3X2M;
+					};
 					48399597191427D20085611D = {
 						TestTargetID = 4839957C191427D20085611D;
 					};
@@ -776,8 +777,8 @@
 				48616EDB1916D0810011271A /* INNotesFetchedResultsController.m in Sources */,
 				4839965B191437FA0085611D /* MagicalRecord+Setup.m in Sources */,
 				48D844E31915C1BD00567AFA /* INTextTableViewCell.m in Sources */,
+				480BE31E19480D3C003C05E1 /* Resize.swift in Sources */,
 				48399646191437FA0085611D /* NSEntityDescription+MagicalDataImport.m in Sources */,
-				48D844D01915B57C00567AFA /* UIImage+Resize.m in Sources */,
 				4839964A191437FA0085611D /* NSString+MagicalDataImport.m in Sources */,
 				48399648191437FA0085611D /* NSObject+MagicalDataImport.m in Sources */,
 				4839965A191437FA0085611D /* MagicalRecord+Options.m in Sources */,
@@ -915,6 +916,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "in.notes/in.notes-Prefix.pch";
@@ -922,6 +925,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "in.notes/INMarkdownTextView/in.notes-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
@@ -934,6 +938,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "in.notes/in.notes-Prefix.pch";
@@ -941,6 +947,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "in.notes/INMarkdownTextView/in.notes-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};

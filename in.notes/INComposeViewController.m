@@ -11,7 +11,6 @@
 #import "INImageStore.h"
 #import "INHashtagContainer.h"
 #import "INPost+Manage.h"
-#import "in_notes-Swift.h"
 
 @interface INComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, INAttachmentContainerDelegate, NotesTextViewDelegate>
 
