@@ -4,4 +4,4 @@
 
 #import "INMarkdownSyntaxStorage.h"
 #import "INPost+Manage.h"
-#import "MagicalRecord/CoreData+MagicalRecord.h"
+#import "CoreData+MagicalRecord.h"
