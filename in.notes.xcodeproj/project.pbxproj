@@ -65,6 +65,7 @@
 		48616EDB1916D0810011271A /* INNotesFetchedResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48616EDA1916D0810011271A /* INNotesFetchedResultsController.m */; };
 		48616EE21916D9500011271A /* INTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48616EE11916D9500011271A /* INTableViewController.m */; };
 		4879C0FD194CBB130029F20D /* HashtagContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4879C0FC194CBB130029F20D /* HashtagContainer.swift */; };
+		48982597194D4B3B00A4E236 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48982596194D4B3B00A4E236 /* ImageStore.swift */; };
 		48AC1283192BE969001E45A4 /* in.notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48AC1281192BE969001E45A4 /* in.notes.xcdatamodeld */; };
 		48B10E43192BECF400747B9C /* INEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B10E42192BECF400747B9C /* INEditViewController.m */; };
 		48D844B91915A8F700567AFA /* INAttachmentContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844B61915A8F700567AFA /* INAttachmentContainer.m */; };
@@ -72,7 +73,6 @@
 		48D844C31915B0B100567AFA /* INImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844C11915B0B100567AFA /* INImageTableViewCell.m */; };
 		48D844C41915B0B100567AFA /* INImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D844C21915B0B100567AFA /* INImageTableViewCell.xib */; };
 		48D844CC1915B42200567AFA /* INImagePreview.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844CB1915B42200567AFA /* INImagePreview.m */; };
-		48D844D41915B69700567AFA /* INImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844D31915B69700567AFA /* INImageStore.m */; };
 		48D844DD1915B8A500567AFA /* INMarkdownSyntaxStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844D71915B8A500567AFA /* INMarkdownSyntaxStorage.m */; };
 		48D844DF1915B8A500567AFA /* INMoreButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844DC1915B8A500567AFA /* INMoreButton.m */; };
 		48D844E31915C1BD00567AFA /* INTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844E11915C1BD00567AFA /* INTextTableViewCell.m */; };
@@ -197,6 +197,7 @@
 		48616EE11916D9500011271A /* INTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INTableViewController.m; sourceTree = "<group>"; };
 		4879C0FC194CBB130029F20D /* HashtagContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashtagContainer.swift; sourceTree = "<group>"; };
 		487E2483191864B200B032BE /* INThumbnailViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INThumbnailViewProtocol.h; sourceTree = "<group>"; };
+		48982596194D4B3B00A4E236 /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 		48AC1282192BE969001E45A4 /* in.notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = in.notes.xcdatamodel; sourceTree = "<group>"; };
 		48B10E41192BECF400747B9C /* INEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INEditViewController.h; sourceTree = "<group>"; };
 		48B10E42192BECF400747B9C /* INEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INEditViewController.m; sourceTree = "<group>"; };
@@ -209,8 +210,6 @@
 		48D844C21915B0B100567AFA /* INImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = INImageTableViewCell.xib; sourceTree = "<group>"; };
 		48D844CA1915B42200567AFA /* INImagePreview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INImagePreview.h; sourceTree = "<group>"; };
 		48D844CB1915B42200567AFA /* INImagePreview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INImagePreview.m; sourceTree = "<group>"; };
-		48D844D21915B69700567AFA /* INImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INImageStore.h; sourceTree = "<group>"; };
-		48D844D31915B69700567AFA /* INImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INImageStore.m; sourceTree = "<group>"; };
 		48D844D61915B8A500567AFA /* INMarkdownSyntaxStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INMarkdownSyntaxStorage.h; sourceTree = "<group>"; };
 		48D844D71915B8A500567AFA /* INMarkdownSyntaxStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INMarkdownSyntaxStorage.m; sourceTree = "<group>"; };
 		48D844DB1915B8A500567AFA /* INMoreButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INMoreButton.h; sourceTree = "<group>"; };
@@ -603,8 +602,7 @@
 		48D844D11915B69700567AFA /* INImageStore */ = {
 			isa = PBXGroup;
 			children = (
-				48D844D21915B69700567AFA /* INImageStore.h */,
-				48D844D31915B69700567AFA /* INImageStore.m */,
+				48982596194D4B3B00A4E236 /* ImageStore.swift */,
 			);
 			path = INImageStore;
 			sourceTree = "<group>";
@@ -755,12 +753,12 @@
 				48399651191437FA0085611D /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				48399654191437FA0085611D /* NSManagedObjectModel+MagicalRecord.m in Sources */,
 				483995B319142CC20085611D /* INHomeViewController.m in Sources */,
-				48D844D41915B69700567AFA /* INImageStore.m in Sources */,
 				4839965C191437FA0085611D /* MagicalRecord+ShorthandSupport.m in Sources */,
 				4839964D191437FA0085611D /* NSManagedObject+MagicalFinders.m in Sources */,
 				48AC1283192BE969001E45A4 /* in.notes.xcdatamodeld in Sources */,
 				4839968F191443D00085611D /* INPost+Manage.m in Sources */,
 				48399650191437FA0085611D /* NSManagedObjectContext+MagicalObserving.m in Sources */,
+				48982597194D4B3B00A4E236 /* ImageStore.swift in Sources */,
 				4839964E191437FA0085611D /* NSManagedObject+MagicalRecord.m in Sources */,
 				4839966E191437FA0085611D /* REDActionSheetButton.m in Sources */,
 				4814486D1921C01200BCB519 /* INPost.m in Sources */,

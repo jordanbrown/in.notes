@@ -40,3 +40,5 @@ static NSString * const kINHomeViewController = @"INHomeViewController";
 #pragma mark - INComposeViewController
 static NSString * const kINComposeViewController = @"INComposeViewController";
 static NSString * const kINEditViewController = @"INEditViewController";
+
+static NSString * const kINImageStoreKey = @"imageStoreKey";

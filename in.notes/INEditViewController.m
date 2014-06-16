@@ -9,7 +9,6 @@
 #import "INEditViewController.h"
 #import "INPost+Manage.h"
 #import "INAttachmentContainer.h"
-#import "INImageStore.h"
 #import "in_notes-Swift.h"
 
 @interface INEditViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, INAttachmentContainerDelegate, NotesTextViewDelegate>
@@ -45,7 +44,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [[INImageStore sharedStore]deleteImageForKey:kINImageStoreKey];
+    [[ImageStore sharedStore]deleteImageForKey:kINImageStoreKey];
 }
 
 - (void)didReceiveMemoryWarning
@@ -86,9 +85,9 @@
      *  and in turn create unexpected behaviour requuring the user to delete a "blank" image before adding new one.
      */
     if (self.post.image) {
-        [[INImageStore sharedStore]deleteImageForKey:kINImageStoreKey];
-        [[INImageStore sharedStore]setImage:[UIImage imageWithData:self.post.image]forKey:kINImageStoreKey];
-        [self.attachmentContainer setAttachmentImage:[[INImageStore sharedStore]imageForKey:kINImageStoreKey] usingSpringWithDamping:NO];
+        [[ImageStore sharedStore]deleteImageForKey:kINImageStoreKey];
+        [[ImageStore sharedStore]setImage:[UIImage imageWithData:self.post.image]forKey:kINImageStoreKey];
+        [self.attachmentContainer setAttachmentImage:[[ImageStore sharedStore]imageForKey:kINImageStoreKey] usingSpringWithDamping:NO];
     }
 }
 
@@ -107,13 +106,13 @@
 
 - (IBAction)publishButtonSelected:(id)sender
 {
-    if (![[INImageStore sharedStore]imageForKey:kINImageStoreKey]) { self.post.image = nil; }
+    if (![[ImageStore sharedStore]imageForKey:kINImageStoreKey]) { self.post.image = nil; }
     if (![self canSavePOSTData]) { return; }
     
     [INPost editPost:self.post
             withText:self.notesTextView.text
-               image:[[INImageStore sharedStore]imageForKey:kINImageStoreKey]
-           thumbnail:[UIImage resizeImage:[[INImageStore sharedStore]imageForKey:kINImageStoreKey]
+               image:[[ImageStore sharedStore]imageForKey:kINImageStoreKey]
+           thumbnail:[UIImage resizeImage:[[ImageStore sharedStore]imageForKey:kINImageStoreKey]
                                    toSize:CGSizeMake(300.0f, 129.0f) cornerRadius:0.0]
             hashtags:[HashtagContainer hashtagArrayFromString:self.notesTextView.text] completion:^(NSError *error) {
                 
@@ -121,7 +120,7 @@
                  *  It is important to clear the cache because "image" is still in memory.
                  *  User can post "empty" posts if not cleared.
                  */
-                [[INImageStore sharedStore]deleteImageForKey:kINImageStoreKey];
+                [[ImageStore sharedStore]deleteImageForKey:kINImageStoreKey];
                 [self.navigationController popToRootViewControllerAnimated:YES];
                 
             }];
@@ -129,7 +128,7 @@
 
 - (BOOL)canSavePOSTData
 {
-    return [self.notesTextView.text length] || [[INImageStore sharedStore]imageForKey:kINImageStoreKey] ? YES : NO;
+    return [self.notesTextView.text length] || [[ImageStore sharedStore]imageForKey:kINImageStoreKey] ? YES : NO;
 }
 
 #pragma mark - MCMore Button Delegate
@@ -157,7 +156,7 @@
     if (request == kINAttachmentRequestRemoveImage) {
         [self performSelector:@selector(setMarkdownTextViewAsFirstResponder) withObject:nil afterDelay:0.9];
         
-        [[INImageStore sharedStore]deleteImageForKey:kINImageStoreKey];
+        [[ImageStore sharedStore]deleteImageForKey:kINImageStoreKey];
         [self.attachmentContainer.attachmentView setImage:nil];
         
     } else if (request == kINAttachmentRequestReplaceImage) {
@@ -169,11 +168,11 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    [[INImageStore sharedStore]deleteImageForKey:kINImageStoreKey];
-    [[INImageStore sharedStore]setImage:[info objectForKey:UIImagePickerControllerOriginalImage]forKey:kINImageStoreKey];
+    [[ImageStore sharedStore]deleteImageForKey:kINImageStoreKey];
+    [[ImageStore sharedStore]setImage:[info objectForKey:UIImagePickerControllerOriginalImage]forKey:kINImageStoreKey];
     [self dismissViewControllerAnimated:YES completion: ^{
         [self.notesTextView resignFirstResponder];
-        [self.attachmentContainer setAttachmentImage:[[INImageStore sharedStore]imageForKey:kINImageStoreKey]];
+        [self.attachmentContainer setAttachmentImage:[[ImageStore sharedStore]imageForKey:kINImageStoreKey]];
     }];
 }
 

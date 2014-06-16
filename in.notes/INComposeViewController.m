@@ -8,7 +8,6 @@
 
 #import "INComposeViewController.h"
 #import "INAttachmentContainer.h"
-#import "INImageStore.h"
 #import "INPost+Manage.h"
 
 @interface INComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, INAttachmentContainerDelegate, NotesTextViewDelegate>
@@ -49,7 +48,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [[INImageStore sharedStore]deleteImageForKey:kINImageStoreKey];
+    [[ImageStore sharedStore]deleteImageForKey:kINImageStoreKey];
 }
 
 - (void)didReceiveMemoryWarning
@@ -95,8 +94,8 @@
     }
     
     [INPost postWithText:self.notesTextView.text
-                   image:[[INImageStore sharedStore]imageForKey:kINImageStoreKey]
-               thumbnail:[UIImage resizeImage:[[INImageStore sharedStore]imageForKey:kINImageStoreKey]
+                   image:[[ImageStore sharedStore]imageForKey:kINImageStoreKey]
+               thumbnail:[UIImage resizeImage:[[ImageStore sharedStore]imageForKey:kINImageStoreKey]
                                        toSize:CGSizeMake(300.0f, 129.0f) cornerRadius:0.0]
                 hashtags:[HashtagContainer hashtagArrayFromString:self.notesTextView.text] completion:^(NSError *error) {
                     
@@ -104,7 +103,7 @@
                      *  It is important to clear the cache because "image" is still in memory.
                      *  User can post "empty" posts if not cleared.
                      */
-                    [[INImageStore sharedStore]deleteImageForKey:kINImageStoreKey];
+                    [[ImageStore sharedStore]deleteImageForKey:kINImageStoreKey];
                     [self.navigationController popToRootViewControllerAnimated:YES];
                     
                 }];
@@ -112,7 +111,7 @@
 
 - (BOOL)canSavePOSTData
 {
-    return [self.notesTextView.text length] || [[INImageStore sharedStore]imageForKey:kINImageStoreKey] ? YES : NO;
+    return [self.notesTextView.text length] || [[ImageStore sharedStore]imageForKey:kINImageStoreKey] ? YES : NO;
 }
 
 #pragma mark - MCMore Button Delegate
@@ -163,11 +162,11 @@
  */
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    [[INImageStore sharedStore]deleteImageForKey:kINImageStoreKey];
-    [[INImageStore sharedStore]setImage:[info objectForKey:UIImagePickerControllerOriginalImage]forKey:kINImageStoreKey];
+    [[ImageStore sharedStore]deleteImageForKey:kINImageStoreKey];
+    [[ImageStore sharedStore]setImage:[info objectForKey:UIImagePickerControllerOriginalImage]forKey:kINImageStoreKey];
     [self dismissViewControllerAnimated:YES completion: ^{
         [self.notesTextView resignFirstResponder];
-        [self.attachmentContainer setAttachmentImage:[[INImageStore sharedStore]imageForKey:kINImageStoreKey]];
+        [self.attachmentContainer setAttachmentImage:[[ImageStore sharedStore]imageForKey:kINImageStoreKey]];
     }];
 }
 
