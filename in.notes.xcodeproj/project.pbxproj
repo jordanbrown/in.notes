@@ -57,7 +57,6 @@
 		4839966F191437FA0085611D /* RZCellSizeManager+CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 48399620191437FA0085611D /* RZCellSizeManager+CoreData.m */; };
 		48399670191437FA0085611D /* RZCellSizeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48399622191437FA0085611D /* RZCellSizeManager.m */; };
 		4839968219143A5F0085611D /* INComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839968119143A5F0085611D /* INComposeViewController.m */; };
-		4839968619143C360085611D /* KHFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839968519143C360085611D /* KHFlatButton.m */; };
 		4839968F191443D00085611D /* INPost+Manage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839968E191443D00085611D /* INPost+Manage.m */; };
 		484994B9191749370023B8AB /* INTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 484994B7191749370023B8AB /* INTableViewCell.m */; };
 		484994BA191749370023B8AB /* INTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 484994B8191749370023B8AB /* INTableViewCell.xib */; };
@@ -73,7 +72,6 @@
 		48D844BA1915A8F700567AFA /* INAttachmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844B81915A8F700567AFA /* INAttachmentView.m */; };
 		48D844C31915B0B100567AFA /* INImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844C11915B0B100567AFA /* INImageTableViewCell.m */; };
 		48D844C41915B0B100567AFA /* INImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D844C21915B0B100567AFA /* INImageTableViewCell.xib */; };
-		48D844CC1915B42200567AFA /* INImagePreview.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844CB1915B42200567AFA /* INImagePreview.m */; };
 		48D844DD1915B8A500567AFA /* INMarkdownSyntaxStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844D71915B8A500567AFA /* INMarkdownSyntaxStorage.m */; };
 		48D844DF1915B8A500567AFA /* INMoreButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844DC1915B8A500567AFA /* INMoreButton.m */; };
 		48D844E31915C1BD00567AFA /* INTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844E11915C1BD00567AFA /* INTextTableViewCell.m */; };
@@ -184,8 +182,6 @@
 		48399622191437FA0085611D /* RZCellSizeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZCellSizeManager.m; sourceTree = "<group>"; };
 		4839968019143A5F0085611D /* INComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INComposeViewController.h; sourceTree = "<group>"; };
 		4839968119143A5F0085611D /* INComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INComposeViewController.m; sourceTree = "<group>"; };
-		4839968419143C360085611D /* KHFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHFlatButton.h; sourceTree = "<group>"; };
-		4839968519143C360085611D /* KHFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHFlatButton.m; sourceTree = "<group>"; };
 		4839968D191443D00085611D /* INPost+Manage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "INPost+Manage.h"; sourceTree = "<group>"; };
 		4839968E191443D00085611D /* INPost+Manage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "INPost+Manage.m"; sourceTree = "<group>"; };
 		484994B6191749370023B8AB /* INTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INTableViewCell.h; sourceTree = "<group>"; };
@@ -210,8 +206,6 @@
 		48D844C01915B0B100567AFA /* INImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INImageTableViewCell.h; sourceTree = "<group>"; };
 		48D844C11915B0B100567AFA /* INImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INImageTableViewCell.m; sourceTree = "<group>"; };
 		48D844C21915B0B100567AFA /* INImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = INImageTableViewCell.xib; sourceTree = "<group>"; };
-		48D844CA1915B42200567AFA /* INImagePreview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INImagePreview.h; sourceTree = "<group>"; };
-		48D844CB1915B42200567AFA /* INImagePreview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INImagePreview.m; sourceTree = "<group>"; };
 		48D844D61915B8A500567AFA /* INMarkdownSyntaxStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INMarkdownSyntaxStorage.h; sourceTree = "<group>"; };
 		48D844D71915B8A500567AFA /* INMarkdownSyntaxStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INMarkdownSyntaxStorage.m; sourceTree = "<group>"; };
 		48D844DB1915B8A500567AFA /* INMoreButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INMoreButton.h; sourceTree = "<group>"; };
@@ -467,15 +461,6 @@
 			path = RZCellSizeManager;
 			sourceTree = "<group>";
 		};
-		4839968319143C360085611D /* KHFlatButton */ = {
-			isa = PBXGroup;
-			children = (
-				4839968419143C360085611D /* KHFlatButton.h */,
-				4839968519143C360085611D /* KHFlatButton.m */,
-			);
-			path = KHFlatButton;
-			sourceTree = "<group>";
-		};
 		48399690191443D70085611D /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -532,7 +517,6 @@
 		48D844B31915A82400567AFA /* xOther */ = {
 			isa = PBXGroup;
 			children = (
-				4839968319143C360085611D /* KHFlatButton */,
 				483995B5191437FA0085611D /* MagicalRecord */,
 				48399619191437FA0085611D /* REDActionSheet */,
 				4839961E191437FA0085611D /* RZCellSizeManager */,
@@ -587,8 +571,6 @@
 		48D844C91915B42200567AFA /* INImagePreview */ = {
 			isa = PBXGroup;
 			children = (
-				48D844CA1915B42200567AFA /* INImagePreview.h */,
-				48D844CB1915B42200567AFA /* INImagePreview.m */,
 				484B8C40194E9E8300C0BDA7 /* ImagePreview.swift */,
 			);
 			path = INImagePreview;
@@ -751,7 +733,6 @@
 				48399644191437FA0085611D /* MagicalImportFunctions.m in Sources */,
 				480BE31C19480689003C05E1 /* CharacterCounter.swift in Sources */,
 				48399645191437FA0085611D /* NSAttributeDescription+MagicalDataImport.m in Sources */,
-				48D844CC1915B42200567AFA /* INImagePreview.m in Sources */,
 				48399659191437FA0085611D /* MagicalRecord+iCloud.m in Sources */,
 				48399651191437FA0085611D /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				48399654191437FA0085611D /* NSManagedObjectModel+MagicalRecord.m in Sources */,
@@ -792,7 +773,6 @@
 				4839964C191437FA0085611D /* NSManagedObject+MagicalDataImport.m in Sources */,
 				48399647191437FA0085611D /* NSNumber+MagicalDataImport.m in Sources */,
 				4839965D191437FA0085611D /* MagicalRecord.m in Sources */,
-				4839968619143C360085611D /* KHFlatButton.m in Sources */,
 				4839966D191437FA0085611D /* REDActionSheet.m in Sources */,
 				48399591191427D20085611D /* INAppDelegate.m in Sources */,
 				48D844B91915A8F700567AFA /* INAttachmentContainer.m in Sources */,
