@@ -14,13 +14,13 @@
 #import "INTextTableViewCell.h"
 #import "INThumbnailViewProtocol.h"
 
-#import "INImagePreview.h"
+// #import "INImagePreview.h"
 #import "INComposeViewController.h"
 #import "INPlaceholderView.h"
 
 #import "INEditViewController.h"
 
-@interface INHomeViewController () <INImagePreviewDelegate, INThumbnailViewDelegate>
+@interface INHomeViewController () <ImagePreviewDelegate, INThumbnailViewDelegate>
 
 - (void)configureSizeManager;
 - (void)configureTableView;
@@ -260,7 +260,20 @@
 
 #pragma mark - MCIMagePreviewDelegate
 
-- (void)imagePreviewDidFinishPreparingImage:(UIImage *)image
+//- (void)imagePreviewDidFinishPreparingImage:(UIImage *)image
+//{
+//    NSArray *activityItems = @[image];
+//    UIActivityViewController *activityViewController = [[UIActivityViewController alloc]initWithActivityItems:activityItems applicationActivities:nil];
+//    dispatch_queue_t waitQ = dispatch_queue_create(IN_GENERIC_Q, NULL);
+//    dispatch_async(waitQ, ^{
+//        usleep(400000);
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [self presentViewController:activityViewController animated:YES completion:nil];
+//        });
+//    });
+//}
+
+- (void)imagePreviewDidFinishPreparingImage:(ImagePreview *)view image:(UIImage *)image
 {
     NSArray *activityItems = @[image];
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc]initWithActivityItems:activityItems applicationActivities:nil];
@@ -281,7 +294,7 @@
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:locationInView];
     INPost *post = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    __block INImagePreview *imagePreview = [[INImagePreview alloc]initWithImage:[UIImage imageWithData:post.image]
+    __block ImagePreview *imagePreview = [[ImagePreview alloc]initWithImage:[UIImage imageWithData:post.image]
                                                                            view:self.navigationController.view completion:^{
         [imagePreview removeFromSuperview];
         imagePreview = nil;
