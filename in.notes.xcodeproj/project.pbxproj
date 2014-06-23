@@ -73,7 +73,6 @@
 		48D844C31915B0B100567AFA /* INImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844C11915B0B100567AFA /* INImageTableViewCell.m */; };
 		48D844C41915B0B100567AFA /* INImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D844C21915B0B100567AFA /* INImageTableViewCell.xib */; };
 		48D844DD1915B8A500567AFA /* INMarkdownSyntaxStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844D71915B8A500567AFA /* INMarkdownSyntaxStorage.m */; };
-		48D844DF1915B8A500567AFA /* INMoreButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844DC1915B8A500567AFA /* INMoreButton.m */; };
 		48D844E31915C1BD00567AFA /* INTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844E11915C1BD00567AFA /* INTextTableViewCell.m */; };
 		48D844E41915C1BD00567AFA /* INTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D844E21915C1BD00567AFA /* INTextTableViewCell.xib */; };
 		48DD03E5191AC68300012184 /* INPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DD03E4191AC68300012184 /* INPlaceholderView.m */; };
@@ -208,8 +207,6 @@
 		48D844C21915B0B100567AFA /* INImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = INImageTableViewCell.xib; sourceTree = "<group>"; };
 		48D844D61915B8A500567AFA /* INMarkdownSyntaxStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INMarkdownSyntaxStorage.h; sourceTree = "<group>"; };
 		48D844D71915B8A500567AFA /* INMarkdownSyntaxStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INMarkdownSyntaxStorage.m; sourceTree = "<group>"; };
-		48D844DB1915B8A500567AFA /* INMoreButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INMoreButton.h; sourceTree = "<group>"; };
-		48D844DC1915B8A500567AFA /* INMoreButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INMoreButton.m; sourceTree = "<group>"; };
 		48D844E01915C1BD00567AFA /* INTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INTextTableViewCell.h; sourceTree = "<group>"; };
 		48D844E11915C1BD00567AFA /* INTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INTextTableViewCell.m; sourceTree = "<group>"; };
 		48D844E21915C1BD00567AFA /* INTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = INTextTableViewCell.xib; sourceTree = "<group>"; };
@@ -307,7 +304,6 @@
 				48D844CD1915B57C00567AFA /* INImageResize */,
 				48D844D11915B69700567AFA /* INImageStore */,
 				48D844D51915B8A500567AFA /* INMarkdownTextView */,
-				48D844DA1915B8A500567AFA /* INMoreButton */,
 				48DD03E2191AC65A00012184 /* INPlaceholderView */,
 				48D844B31915A82400567AFA /* xOther */,
 				480A88C819478AC5006684C6 /* in.notes-Bridging-Header.h */,
@@ -602,15 +598,6 @@
 			path = INMarkdownTextView;
 			sourceTree = "<group>";
 		};
-		48D844DA1915B8A500567AFA /* INMoreButton */ = {
-			isa = PBXGroup;
-			children = (
-				48D844DB1915B8A500567AFA /* INMoreButton.h */,
-				48D844DC1915B8A500567AFA /* INMoreButton.m */,
-			);
-			path = INMoreButton;
-			sourceTree = "<group>";
-		};
 		48DD03E2191AC65A00012184 /* INPlaceholderView */ = {
 			isa = PBXGroup;
 			children = (
@@ -726,7 +713,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4839958D191427D20085611D /* main.m in Sources */,
-				48D844DF1915B8A500567AFA /* INMoreButton.m in Sources */,
 				4839964F191437FA0085611D /* NSManagedObject+MagicalRequests.m in Sources */,
 				48399657191437FA0085611D /* MagicalRecord+Actions.m in Sources */,
 				48399656191437FA0085611D /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
@@ -902,7 +888,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "in.notes/in.notes-Prefix.pch";
 				INFOPLIST_FILE = "in.notes/in.notes-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -924,7 +910,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "in.notes/in.notes-Prefix.pch";
 				INFOPLIST_FILE = "in.notes/in.notes-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

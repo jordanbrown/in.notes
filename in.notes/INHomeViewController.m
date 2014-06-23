@@ -14,7 +14,6 @@
 #import "INTextTableViewCell.h"
 #import "INThumbnailViewProtocol.h"
 
-// #import "INImagePreview.h"
 #import "INComposeViewController.h"
 #import "INPlaceholderView.h"
 
