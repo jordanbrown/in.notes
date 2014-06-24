@@ -64,7 +64,7 @@ class MarkdownSyntaxStorage: NSTextStorage {
         
         if error {println(error!.localizedDescription)}
         
-        let boldAttributes = [NSFontAttributeName : boldFont, NSForegroundColorAttributeName : UIColor.redColor()]
+        let boldAttributes = [NSFontAttributeName : boldFont, NSForegroundColorAttributeName : UIColor.blueColor()]
         let normalAttributes = [NSFontAttributeName : normalFont, NSForegroundColorAttributeName : UIColor.darkGrayColor()]
         
         regex.enumerateMatchesInString(string, options: NSMatchingOptions.ReportProgress, range: range, usingBlock: {

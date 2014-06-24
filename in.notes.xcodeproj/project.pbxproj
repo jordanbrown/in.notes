@@ -73,7 +73,6 @@
 		48D844BA1915A8F700567AFA /* INAttachmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844B81915A8F700567AFA /* INAttachmentView.m */; };
 		48D844C31915B0B100567AFA /* INImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844C11915B0B100567AFA /* INImageTableViewCell.m */; };
 		48D844C41915B0B100567AFA /* INImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D844C21915B0B100567AFA /* INImageTableViewCell.xib */; };
-		48D844DD1915B8A500567AFA /* INMarkdownSyntaxStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844D71915B8A500567AFA /* INMarkdownSyntaxStorage.m */; };
 		48D844E31915C1BD00567AFA /* INTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844E11915C1BD00567AFA /* INTextTableViewCell.m */; };
 		48D844E41915C1BD00567AFA /* INTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D844E21915C1BD00567AFA /* INTextTableViewCell.xib */; };
 		48DD03E5191AC68300012184 /* INPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DD03E4191AC68300012184 /* INPlaceholderView.m */; };
@@ -207,8 +206,6 @@
 		48D844C01915B0B100567AFA /* INImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INImageTableViewCell.h; sourceTree = "<group>"; };
 		48D844C11915B0B100567AFA /* INImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INImageTableViewCell.m; sourceTree = "<group>"; };
 		48D844C21915B0B100567AFA /* INImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = INImageTableViewCell.xib; sourceTree = "<group>"; };
-		48D844D61915B8A500567AFA /* INMarkdownSyntaxStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INMarkdownSyntaxStorage.h; sourceTree = "<group>"; };
-		48D844D71915B8A500567AFA /* INMarkdownSyntaxStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INMarkdownSyntaxStorage.m; sourceTree = "<group>"; };
 		48D844E01915C1BD00567AFA /* INTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INTextTableViewCell.h; sourceTree = "<group>"; };
 		48D844E11915C1BD00567AFA /* INTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INTextTableViewCell.m; sourceTree = "<group>"; };
 		48D844E21915C1BD00567AFA /* INTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = INTextTableViewCell.xib; sourceTree = "<group>"; };
@@ -593,8 +590,6 @@
 		48D844D51915B8A500567AFA /* INMarkdownTextView */ = {
 			isa = PBXGroup;
 			children = (
-				48D844D61915B8A500567AFA /* INMarkdownSyntaxStorage.h */,
-				48D844D71915B8A500567AFA /* INMarkdownSyntaxStorage.m */,
 				1C2A82DD1958F5F70041DD8A /* MarkdownSyntaxStorage.swift */,
 				48580D071947AB7B00867968 /* NotesTextView.swift */,
 			);
@@ -741,7 +736,6 @@
 				48B10E43192BECF400747B9C /* INEditViewController.m in Sources */,
 				48399652191437FA0085611D /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				4839966F191437FA0085611D /* RZCellSizeManager+CoreData.m in Sources */,
-				48D844DD1915B8A500567AFA /* INMarkdownSyntaxStorage.m in Sources */,
 				48399655191437FA0085611D /* NSPersistentStore+MagicalRecord.m in Sources */,
 				48616EDB1916D0810011271A /* INNotesFetchedResultsController.m in Sources */,
 				4839965B191437FA0085611D /* MagicalRecord+Setup.m in Sources */,
