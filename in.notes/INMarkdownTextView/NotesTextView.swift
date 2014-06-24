@@ -19,7 +19,7 @@ let kEmptyString: String = ""
 
 @objc class NotesTextView: UITextView, UITextViewDelegate {
     
-    var syntaxStorage: AnyObject! = INMarkdownSyntaxStorage()
+    var syntaxStorage = MarkdownSyntaxStorage()
     weak var markdownDelegate: NotesTextViewDelegate?
     
     init(view: UIView)

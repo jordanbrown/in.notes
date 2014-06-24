@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C2A82DE1958F5F70041DD8A /* MarkdownSyntaxStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2A82DD1958F5F70041DD8A /* MarkdownSyntaxStorage.swift */; };
 		480BE31C19480689003C05E1 /* CharacterCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480BE31B19480689003C05E1 /* CharacterCounter.swift */; };
 		480BE31E19480D3C003C05E1 /* Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480BE31D19480D3C003C05E1 /* Resize.swift */; };
 		4814486D1921C01200BCB519 /* INPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 4814486C1921C01200BCB519 /* INPost.m */; };
@@ -89,6 +90,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C2A82DD1958F5F70041DD8A /* MarkdownSyntaxStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownSyntaxStorage.swift; sourceTree = "<group>"; };
 		480A88C819478AC5006684C6 /* in.notes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "in.notes-Bridging-Header.h"; path = "INMarkdownTextView/in.notes-Bridging-Header.h"; sourceTree = "<group>"; };
 		480BE31B19480689003C05E1 /* CharacterCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCounter.swift; sourceTree = "<group>"; };
 		480BE31D19480D3C003C05E1 /* Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resize.swift; sourceTree = "<group>"; };
@@ -593,6 +595,7 @@
 			children = (
 				48D844D61915B8A500567AFA /* INMarkdownSyntaxStorage.h */,
 				48D844D71915B8A500567AFA /* INMarkdownSyntaxStorage.m */,
+				1C2A82DD1958F5F70041DD8A /* MarkdownSyntaxStorage.swift */,
 				48580D071947AB7B00867968 /* NotesTextView.swift */,
 			);
 			path = INMarkdownTextView;
@@ -747,6 +750,7 @@
 				48399646191437FA0085611D /* NSEntityDescription+MagicalDataImport.m in Sources */,
 				4839964A191437FA0085611D /* NSString+MagicalDataImport.m in Sources */,
 				4879C0FD194CBB130029F20D /* HashtagContainer.swift in Sources */,
+				1C2A82DE1958F5F70041DD8A /* MarkdownSyntaxStorage.swift in Sources */,
 				48399648191437FA0085611D /* NSObject+MagicalDataImport.m in Sources */,
 				4839965A191437FA0085611D /* MagicalRecord+Options.m in Sources */,
 				48616EE21916D9500011271A /* INTableViewController.m in Sources */,
