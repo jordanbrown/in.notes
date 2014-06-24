@@ -15,8 +15,6 @@
 #import "INThumbnailViewProtocol.h"
 
 #import "INComposeViewController.h"
-#import "INPlaceholderView.h"
-
 #import "INEditViewController.h"
 
 @interface INHomeViewController () <ImagePreviewDelegate, INThumbnailViewDelegate>
@@ -127,13 +125,13 @@
 {    
     if ([note.name isEqualToString:kINManagedObjectContextDidAddNewItem] || [[INPost findAll]count] > IN_ZERO) {
         
-        if ([[self.view.subviews lastObject] isKindOfClass:[INPlaceholderView class]]) {
+        if ([[self.view.subviews lastObject] isKindOfClass:[PlaceholderView class]]) {
             [self.view.subviews.lastObject removeFromSuperview];
             [self.tableView setUserInteractionEnabled:YES];
         }
         
     } else if ([note.name isEqualToString:kINManagedObjectContextDidDeleteLastItem] || [[INPost findAll]count] == IN_ZERO) {
-        [self.view addSubview:[[INPlaceholderView alloc]initWithFrame:self.view.frame image:[UIImage imageNamed:kINNotesLogo]]];
+        [self.view addSubview:[[PlaceholderView alloc]initWithFrame:self.view.frame image:[UIImage imageNamed:kINNotesLogo]]];
         [self.tableView setUserInteractionEnabled:NO];
     }
 }
