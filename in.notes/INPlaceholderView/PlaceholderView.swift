@@ -17,7 +17,7 @@ import UIKit
         alpha = 0.0
         
         let imageViewFrame = CGRectMake(frame.size.width / 2 - image.size.width / 2,
-                                        frame.size.height / 2 - image.size.height / 2,
+                                        frame.size.height / 2 - image.size.height / 2 - 64.0,
                                         image.size.width,
                                         image.size.height)
         
