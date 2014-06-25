@@ -42,3 +42,15 @@ static NSString * const kINComposeViewController = @"INComposeViewController";
 static NSString * const kINEditViewController = @"INEditViewController";
 
 static NSString * const kINImageStoreKey = @"imageStoreKey";
+
+#pragma mark - AttachmentView
+/**
+ *  IMPORTANT: The order of these values in important.
+ *  buttonAtIndex (action sheet) directly connects to value
+ *  of the request.
+ */
+typedef enum : NSUInteger {
+    kINAttachmentRequestRemoveImage = 0,
+    kINAttachmentRequestReplaceImage = 1,
+    kINAttachmentRequestCancel = 2,
+} kINAttachmentRequest;

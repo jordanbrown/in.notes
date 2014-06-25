@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "INAttachmentView.h"
 
 #define IN_ATTACHMENT_CONTAINER_INIT_FRAME CGRectMake(0.0f, self.view.frame.size.height + 216.0f, 320.0f, 216.0f)
 #define IN_ATTACHMENT_CONTAINER_INIT_FRAME_EDIT CGRectMake(0.0f, self.view.frame.size.height - 216.0f, 320.0f, 216.0f)
@@ -23,7 +22,7 @@
 
 @interface INAttachmentContainer : UIImageView
 
-@property (strong, nonatomic, readonly) INAttachmentView *attachmentView;
+@property (strong, nonatomic, readonly) AttachmentView *attachmentView;
 @property (weak, nonatomic) id <INAttachmentContainerDelegate> delegate;
 
 /**

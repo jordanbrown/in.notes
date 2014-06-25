@@ -40,7 +40,7 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithCancelButtonTitle:(NSString *)cancelButtonTitle destructiveButtonTitle:(NSString *)destructiveButtonTitle otherButtonTitlesList:(NSString *)otherButtonsList, ...
+- (instancetype)initWithCancelButtonTitle:(NSString *)cancelButtonTitle destructiveButtonTitle:(NSString *)destructiveButtonTitle otherButtonTitle:(NSString *)otherButtonTitle
 {
     self = [super initWithFrame:CGRectZero];
     if (self)
@@ -53,24 +53,11 @@
 		[self addGestureRecognizer:tapGesture];
 		
 		// Build normal buttons
-        if (otherButtonsList) {
-            va_list args;
-            va_start(args, otherButtonsList);
-            NSString *argString = va_arg(args, NSString *);
+        if (otherButtonTitle) {
             
-            REDActionSheetButton *button = [self buttonWithTitle:otherButtonsList];
+            REDActionSheetButton *button = [self buttonWithTitle:otherButtonTitle];
             [button addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
             [self.buttons addObject:button];
-            
-            while (argString)
-            {
-                REDActionSheetButton *button = [self buttonWithTitle:argString];
-                [button addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
-                [self.buttons addObject:button];
-                
-                argString = va_arg(args, NSString *);
-            }
-            va_end(args);
         }
 		
 		if (destructiveButtonTitle)

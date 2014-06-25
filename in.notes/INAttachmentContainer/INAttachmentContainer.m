@@ -8,9 +8,9 @@
 
 #import "INAttachmentContainer.h"
 
-@interface INAttachmentContainer () <UICollisionBehaviorDelegate, INAttachmentViewDelegate>
+@interface INAttachmentContainer () <UICollisionBehaviorDelegate, AttachmentViewDelegate>
 
-@property (strong, nonatomic, readwrite) INAttachmentView *attachmentView;
+@property (strong, nonatomic, readwrite) AttachmentView *attachmentView;
 @property (strong, nonatomic) UIDynamicAnimator *animator;
 @property (strong, nonatomic) UIGravityBehavior *gravity;
 @property (strong, nonatomic) UIDynamicItemBehavior *itemBehaviour;
@@ -111,10 +111,10 @@
 
 #pragma mark - INAttachment View
 
-- (INAttachmentView *)attachmentView
+- (AttachmentView *)attachmentView
 {
     if (!_attachmentView) {
-        _attachmentView = [[INAttachmentView alloc]initWithFrame:IN_ATTACHMENT_VIEW_INIT_FRAME delegate:self];
+        _attachmentView = [[AttachmentView alloc]initWithFrame:IN_ATTACHMENT_VIEW_INIT_FRAME delegate:self];
     }
     return _attachmentView;
 }

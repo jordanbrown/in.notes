@@ -27,7 +27,7 @@ typedef void(^REDActionSheetTappedButtonAtIndexBlock)(REDActionSheet *actionShee
 @property (copy, nonatomic) REDActionSheetDidDismissWithButtonIndexBlock actionSheetDidDismissWithButtonIndexBlock;
 @property (copy, nonatomic) REDActionSheetTappedButtonAtIndexBlock actionSheetTappedButtonAtIndexBlock;
 
-- (instancetype)initWithCancelButtonTitle:(NSString *)cancelButtonTitle destructiveButtonTitle:(NSString *)destructiveButtonTitle otherButtonTitlesList:(NSString *)otherButtonsList, ...;
+- (instancetype)initWithCancelButtonTitle:(NSString *)cancelButtonTitle destructiveButtonTitle:(NSString *)destructiveButtonTitle otherButtonTitle:(NSString *)otherButtonTitle;
 - (void)showInView:(UIView *)view;
 - (void)addButtonWithTitle:(NSString *)title;
 - (NSString*)titleForButtonAtIndex:(NSUInteger)buttonIndex;
