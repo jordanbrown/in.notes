@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1C254CD7195A418400AA5351 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C254CD6195A418400AA5351 /* PlaceholderView.swift */; };
 		1C254CD9195A467400AA5351 /* AttachmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C254CD8195A467400AA5351 /* AttachmentView.swift */; };
+		1C254CDB195A53E700AA5351 /* AttachmentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C254CDA195A53E700AA5351 /* AttachmentContainer.swift */; };
 		1C2A82DE1958F5F70041DD8A /* MarkdownSyntaxStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2A82DD1958F5F70041DD8A /* MarkdownSyntaxStorage.swift */; };
 		480BE31C19480689003C05E1 /* CharacterCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480BE31B19480689003C05E1 /* CharacterCounter.swift */; };
 		480BE31E19480D3C003C05E1 /* Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480BE31D19480D3C003C05E1 /* Resize.swift */; };
@@ -91,6 +92,7 @@
 /* Begin PBXFileReference section */
 		1C254CD6195A418400AA5351 /* PlaceholderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
 		1C254CD8195A467400AA5351 /* AttachmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentView.swift; sourceTree = "<group>"; };
+		1C254CDA195A53E700AA5351 /* AttachmentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentContainer.swift; sourceTree = "<group>"; };
 		1C2A82DD1958F5F70041DD8A /* MarkdownSyntaxStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownSyntaxStorage.swift; sourceTree = "<group>"; };
 		480A88C819478AC5006684C6 /* in.notes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "in.notes-Bridging-Header.h"; path = "INMarkdownTextView/in.notes-Bridging-Header.h"; sourceTree = "<group>"; };
 		480BE31B19480689003C05E1 /* CharacterCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCounter.swift; sourceTree = "<group>"; };
@@ -522,6 +524,7 @@
 			children = (
 				48D844B51915A8F700567AFA /* INAttachmentContainer.h */,
 				48D844B61915A8F700567AFA /* INAttachmentContainer.m */,
+				1C254CDA195A53E700AA5351 /* AttachmentContainer.swift */,
 				1C254CD8195A467400AA5351 /* AttachmentView.swift */,
 			);
 			path = INAttachmentContainer;
@@ -716,6 +719,7 @@
 				48399659191437FA0085611D /* MagicalRecord+iCloud.m in Sources */,
 				1C254CD7195A418400AA5351 /* PlaceholderView.swift in Sources */,
 				48399651191437FA0085611D /* NSManagedObjectContext+MagicalRecord.m in Sources */,
+				1C254CDB195A53E700AA5351 /* AttachmentContainer.swift in Sources */,
 				48399654191437FA0085611D /* NSManagedObjectModel+MagicalRecord.m in Sources */,
 				483995B319142CC20085611D /* INHomeViewController.m in Sources */,
 				4839965C191437FA0085611D /* MagicalRecord+ShorthandSupport.m in Sources */,

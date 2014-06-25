@@ -7,14 +7,14 @@
 //
 
 #import "INComposeViewController.h"
-#import "INAttachmentContainer.h"
+//#import "INAttachmentContainer.h"
 #import "INPost+Manage.h"
 
-@interface INComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, INAttachmentContainerDelegate, NotesTextViewDelegate>
+@interface INComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, AttachmentContainerDelegate, NotesTextViewDelegate>
 
 @property (strong, nonatomic) NotesTextView *notesTextView;
 @property (strong, nonatomic) CharacterCounter *characterCounter;
-@property (strong, nonatomic) INAttachmentContainer *attachmentContainer;
+@property (strong, nonatomic) AttachmentContainer *attachmentContainer;
 
 - (void)setup;
 - (void)presentImagePicker;
@@ -65,7 +65,7 @@
     self.notesTextView = [[NotesTextView alloc]initWithView:self.view];
     self.notesTextView.markdownDelegate = self;
     self.characterCounter = [[CharacterCounter alloc]initWithFrame:IN_CHARACTER_COUNTER_INIT_FRAME];
-    self.attachmentContainer = [[INAttachmentContainer alloc]initWithFrame:IN_ATTACHMENT_CONTAINER_INIT_FRAME];
+    self.attachmentContainer = [[AttachmentContainer alloc]initWithFrame:IN_ATTACHMENT_CONTAINER_INIT_FRAME];
     self.attachmentContainer.delegate = self;
     
     // Subviews setup.
@@ -134,7 +134,7 @@
 
 #pragma mark - Attachemnt Container Delegate
 
-- (void)attachmentContainerDidRemoveImageWithRequest:(kINAttachmentRequest)request
+- (void)attachmentContainerDidRemoveImageWithRequest:(NSInteger)request
 {
     if (request == kINAttachmentRequestRemoveImage) {
         [self performSelector:@selector(setMarkdownTextViewAsFirstResponder) withObject:nil afterDelay:0.9];

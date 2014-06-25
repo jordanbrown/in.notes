@@ -8,12 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#define IN_ATTACHMENT_CONTAINER_INIT_FRAME CGRectMake(0.0f, self.view.frame.size.height + 216.0f, 320.0f, 216.0f)
-#define IN_ATTACHMENT_CONTAINER_INIT_FRAME_EDIT CGRectMake(0.0f, self.view.frame.size.height - 216.0f, 320.0f, 216.0f)
-#define IN_ATTACHMENT_VIEW_INIT_FRAME CGRectMake(10.0f, self.frame.size.height + 98.0f, 300.0f, 196.0f)
-#define IN_ATTACHMENT_VIEW_SIZE CGSizeMake(300.0f, 196.0f)
-#define IN_ATTACHMENT_VIEW_VISIBLE_FRAME CGRectMake(10.0f, 10.0f, 300.0f, 196.0f)
-
 @protocol INAttachmentContainerDelegate <NSObject>
 
 - (void)attachmentContainerDidRemoveImageWithRequest:(kINAttachmentRequest)request;
