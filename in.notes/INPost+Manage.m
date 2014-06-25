@@ -42,9 +42,7 @@
     
     if ([[INPost findAll]count] == 1) { [[NSNotificationCenter defaultCenter]postNotificationName:kINManagedObjectContextDidAddNewItem object:nil]; }
     if (error) { completionHandler(error); }
-    if (!error) { completionHandler(nil); }
-    
-    // if (!error) ? completionHandler(nil) : completionHandler(error);
+    if (!error) { completionHandler(nil); }    
 }
 
 + (void)editPost:(INPost *)post withText:(NSString *)text image:(UIImage *)image thumbnail:(UIImage *)thumbnail hashtags:(NSArray *)hashtags completion:(INPostCompletionHandler)completionHandler

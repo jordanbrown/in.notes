@@ -8,8 +8,6 @@
 
 #import "INEditViewController.h"
 #import "INPost+Manage.h"
-// #import "INAttachmentContainer.h"
-#import "in_notes-Swift.h"
 
 @interface INEditViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, AttachmentContainerDelegate, NotesTextViewDelegate>
 

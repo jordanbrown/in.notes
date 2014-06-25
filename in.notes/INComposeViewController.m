@@ -7,7 +7,6 @@
 //
 
 #import "INComposeViewController.h"
-//#import "INAttachmentContainer.h"
 #import "INPost+Manage.h"
 
 @interface INComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, AttachmentContainerDelegate, NotesTextViewDelegate>

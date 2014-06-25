@@ -72,7 +72,6 @@
 		48982597194D4B3B00A4E236 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48982596194D4B3B00A4E236 /* ImageStore.swift */; };
 		48AC1283192BE969001E45A4 /* in.notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48AC1281192BE969001E45A4 /* in.notes.xcdatamodeld */; };
 		48B10E43192BECF400747B9C /* INEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B10E42192BECF400747B9C /* INEditViewController.m */; };
-		48D844B91915A8F700567AFA /* INAttachmentContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844B61915A8F700567AFA /* INAttachmentContainer.m */; };
 		48D844C31915B0B100567AFA /* INImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844C11915B0B100567AFA /* INImageTableViewCell.m */; };
 		48D844C41915B0B100567AFA /* INImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D844C21915B0B100567AFA /* INImageTableViewCell.xib */; };
 		48D844E31915C1BD00567AFA /* INTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844E11915C1BD00567AFA /* INTextTableViewCell.m */; };
@@ -203,8 +202,6 @@
 		48AC1282192BE969001E45A4 /* in.notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = in.notes.xcdatamodel; sourceTree = "<group>"; };
 		48B10E41192BECF400747B9C /* INEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INEditViewController.h; sourceTree = "<group>"; };
 		48B10E42192BECF400747B9C /* INEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INEditViewController.m; sourceTree = "<group>"; };
-		48D844B51915A8F700567AFA /* INAttachmentContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAttachmentContainer.h; sourceTree = "<group>"; };
-		48D844B61915A8F700567AFA /* INAttachmentContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INAttachmentContainer.m; sourceTree = "<group>"; };
 		48D844C01915B0B100567AFA /* INImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INImageTableViewCell.h; sourceTree = "<group>"; };
 		48D844C11915B0B100567AFA /* INImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INImageTableViewCell.m; sourceTree = "<group>"; };
 		48D844C21915B0B100567AFA /* INImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = INImageTableViewCell.xib; sourceTree = "<group>"; };
@@ -522,8 +519,6 @@
 		48D844B41915A8F700567AFA /* INAttachmentContainer */ = {
 			isa = PBXGroup;
 			children = (
-				48D844B51915A8F700567AFA /* INAttachmentContainer.h */,
-				48D844B61915A8F700567AFA /* INAttachmentContainer.m */,
 				1C254CDA195A53E700AA5351 /* AttachmentContainer.swift */,
 				1C254CD8195A467400AA5351 /* AttachmentView.swift */,
 			);
@@ -759,7 +754,6 @@
 				1C254CD9195A467400AA5351 /* AttachmentView.swift in Sources */,
 				4839966D191437FA0085611D /* REDActionSheet.m in Sources */,
 				48399591191427D20085611D /* INAppDelegate.m in Sources */,
-				48D844B91915A8F700567AFA /* INAttachmentContainer.m in Sources */,
 				484994B9191749370023B8AB /* INTableViewCell.m in Sources */,
 				48399658191437FA0085611D /* MagicalRecord+ErrorHandling.m in Sources */,
 				48580D081947AB7B00867968 /* NotesTextView.swift in Sources */,

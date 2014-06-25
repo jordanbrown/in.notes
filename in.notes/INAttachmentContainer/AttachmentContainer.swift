@@ -15,8 +15,8 @@ import UIKit
 
 class AttachmentContainer: UIImageView, UICollisionBehaviorDelegate, AttachmentViewDelegate {
     
-    let attachmentView: AttachmentView!
     weak var delegate: AttachmentContainerDelegate?
+    let attachmentView: AttachmentView!
     let animator: UIDynamicAnimator!
     
     init(frame: CGRect)
@@ -30,11 +30,6 @@ class AttachmentContainer: UIImageView, UICollisionBehaviorDelegate, AttachmentV
         animator = UIDynamicAnimator(referenceView: self)
     }
     
-    /**
-    *  Method for setting attachemnt image inside of the container.
-    *
-    *  @param image selected by the user that should be set.
-    */
     func setAttachmentImage(image: UIImage) -> Void
     {
         UIView.animateWithDuration(0.3, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.CurveLinear, animations: {
@@ -53,13 +48,6 @@ class AttachmentContainer: UIImageView, UICollisionBehaviorDelegate, AttachmentV
         }
     }
     
-    /**
-    *  Methods for animating "location" of the attachment on the screen.
-    *  Animation is done using spring damping by default. To move the attachemnt
-    *  container without spring damping, use animateToPoint:usingSpringWithDamping: NO.
-    *
-    *  @param point A point in view to where the view should move.
-    */
     func moveToPoint(point: CGPoint) -> Void
     {
         UIView.animateWithDuration(0.3, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.CurveLinear, animations: {
@@ -82,15 +70,12 @@ class AttachmentContainer: UIImageView, UICollisionBehaviorDelegate, AttachmentV
     {
         let xMotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: UIInterpolatingMotionEffectType.TiltAlongHorizontalAxis)
         let yMotion = UIInterpolatingMotionEffect(keyPath: "center.y", type: UIInterpolatingMotionEffectType.TiltAlongVerticalAxis)
-        
         xMotion.minimumRelativeValue = (-magnitude)
         xMotion.maximumRelativeValue = (magnitude)
         yMotion.minimumRelativeValue = (-magnitude)
         yMotion.maximumRelativeValue = (magnitude)
-        
         let motionGroup = UIMotionEffectGroup()
         motionGroup.motionEffects = [xMotion, yMotion]
-        
         view.addMotionEffect(motionGroup)
     }
     

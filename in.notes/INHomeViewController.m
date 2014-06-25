@@ -257,19 +257,6 @@
 
 #pragma mark - MCIMagePreviewDelegate
 
-//- (void)imagePreviewDidFinishPreparingImage:(UIImage *)image
-//{
-//    NSArray *activityItems = @[image];
-//    UIActivityViewController *activityViewController = [[UIActivityViewController alloc]initWithActivityItems:activityItems applicationActivities:nil];
-//    dispatch_queue_t waitQ = dispatch_queue_create(IN_GENERIC_Q, NULL);
-//    dispatch_async(waitQ, ^{
-//        usleep(400000);
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [self presentViewController:activityViewController animated:YES completion:nil];
-//        });
-//    });
-//}
-
 - (void)imagePreviewDidFinishPreparingImage:(ImagePreview *)view image:(UIImage *)image
 {
     NSArray *activityItems = @[image];
