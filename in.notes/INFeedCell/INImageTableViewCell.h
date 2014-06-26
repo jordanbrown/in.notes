@@ -7,14 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "INThumbnailViewProtocol.h"
 
 @class INPost;
 
 @interface INImageTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) INPost *post;
-@property (unsafe_unretained, nonatomic) id <INThumbnailViewDelegate> incellDelegate;
+@property (unsafe_unretained, nonatomic) id <ThumbnailViewDelegate> incellDelegate;
 
 @property (weak, nonatomic) IBOutlet UIImageView *thumbnail;
 

@@ -12,12 +12,11 @@
 #import "INTableViewCell.h"
 #import "INImageTableViewCell.h"
 #import "INTextTableViewCell.h"
-#import "INThumbnailViewProtocol.h"
 
 #import "INComposeViewController.h"
 #import "INEditViewController.h"
 
-@interface INHomeViewController () <ImagePreviewDelegate, INThumbnailViewDelegate>
+@interface INHomeViewController () <ImagePreviewDelegate, ThumbnailViewDelegate>
 
 - (void)configureSizeManager;
 - (void)configureTableView;
