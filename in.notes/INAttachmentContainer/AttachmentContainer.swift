@@ -8,6 +8,17 @@
 
 import UIKit
 
+let zero: CGFloat = 0.0
+let default_animation_duration = 0.3
+let default_spring_damping: CGFloat = 0.8
+let default_delay = 0.0
+let default_jpg_quality: CGFloat = 0.8
+
+let attachment_container_visible_frame = CGRectMake(10.0, 10.0, 300.0, 196.0)
+let attachment_view_image_size = CGSizeMake(300.0, 196.0)
+var attachment_view_init_frame = CGRectZero
+let attachment_image_corner_radius: CGFloat = 1.0
+
 @objc protocol AttachmentContainerDelegate
 {
     func attachmentContainerDidRemoveImageWithRequest(request: Int)
@@ -22,9 +33,10 @@ class AttachmentContainer: UIImageView, UICollisionBehaviorDelegate, AttachmentV
     init(frame: CGRect)
     {
         super.init(frame: frame)
+        attachment_view_init_frame = CGRectMake(10.0, self.frame.size.height + 98.0, 300.0, 196.0)
         image = UIImage(named: "bg-attachment")
         userInteractionEnabled = true
-        attachmentView = AttachmentView(frame: CGRectMake(10.0, self.frame.size.height + 98.0, 300.0, 196.0), delegate: self)
+        attachmentView = AttachmentView(frame: attachment_view_init_frame, delegate: self)
         addSubview(attachmentView)
         addMotionEffectToView(attachmentView, magnitude: 3.0)
         animator = UIDynamicAnimator(referenceView: self)
@@ -32,9 +44,9 @@ class AttachmentContainer: UIImageView, UICollisionBehaviorDelegate, AttachmentV
     
     func setAttachmentImage(image: UIImage) -> Void
     {
-        UIView.animateWithDuration(0.3, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.CurveLinear, animations: {
-            self.attachmentView.image = UIImage.resizeImage(image, toSize: CGSizeMake(300.0, 196.0), cornerRadius: 1.0)
-            self.attachmentView.frame = CGRectMake(10.0, 10.0, 300.0, 196.0)
+        UIView.animateWithDuration(default_animation_duration, delay: default_delay, usingSpringWithDamping: default_spring_damping, initialSpringVelocity: zero, options: UIViewAnimationOptions.CurveLinear, animations: {
+            self.attachmentView.image = UIImage.resizeImage(image, toSize: attachment_view_image_size, cornerRadius: attachment_image_corner_radius)
+            self.attachmentView.frame = attachment_container_visible_frame
         }, completion: nil)
     }
     
@@ -43,14 +55,14 @@ class AttachmentContainer: UIImageView, UICollisionBehaviorDelegate, AttachmentV
         if usingSpring {
             setAttachmentImage(image)
         } else {
-            self.attachmentView.image = UIImage.resizeImage(image, toSize: CGSizeMake(300.0, 196.0), cornerRadius: 1.0)
-            self.attachmentView.frame = CGRectMake(10.0, 10.0, 300.0, 196.0)
+            self.attachmentView.image = UIImage.resizeImage(image, toSize: attachment_view_image_size, cornerRadius: attachment_image_corner_radius)
+            self.attachmentView.frame = attachment_container_visible_frame
         }
     }
     
     func moveToPoint(point: CGPoint) -> Void
     {
-        UIView.animateWithDuration(0.3, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.CurveLinear, animations: {
+        UIView.animateWithDuration(default_animation_duration, delay: default_delay, usingSpringWithDamping: default_spring_damping, initialSpringVelocity: zero, options: UIViewAnimationOptions.CurveLinear, animations: {
             self.frame = CGRectMake(point.x, point.y, self.frame.size.width, self.frame.size.height)
         }, completion: nil)
     }
@@ -60,7 +72,7 @@ class AttachmentContainer: UIImageView, UICollisionBehaviorDelegate, AttachmentV
         if usingSpring {
             moveToPoint(point)
         } else {
-            UIView.animateWithDuration(0.3, animations: {
+            UIView.animateWithDuration(default_animation_duration, animations: {
                 self.frame = CGRectMake(point.x, point.y, self.frame.size.width, self.frame.size.height)
             })
         }
@@ -81,7 +93,7 @@ class AttachmentContainer: UIImageView, UICollisionBehaviorDelegate, AttachmentV
     
     func imageDataForCurrentImage() -> NSData
     {
-        return UIImageJPEGRepresentation(attachmentView.image, 0.8)
+        return UIImageJPEGRepresentation(attachmentView.image, default_jpg_quality)
     }
     
     func imageNameForParse() -> String
@@ -108,7 +120,8 @@ class AttachmentContainer: UIImageView, UICollisionBehaviorDelegate, AttachmentV
     {
         let intermediateView = attachmentView.snapshotViewAfterScreenUpdates(false)
         insertSubview(intermediateView, aboveSubview: attachmentView)
-        attachmentView.frame = CGRectMake(10.0, self.frame.size.height + 98.0, 300.0, 196.0)
+        let attachmentViewFrame = attachment_view_init_frame
+        attachmentView.frame = attachmentViewFrame
         attachmentView.image = nil
         
         let items = [intermediateView]
