@@ -87,3 +87,7 @@ let kIMageStoreDefaultJPGQuality: CGFloat = 0.7
         return NSUUID.UUID().UUIDString
     }
 }
+
+let _sharedStore = ImageStore()
+
+

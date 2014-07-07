@@ -12,15 +12,9 @@ let kKeyboardHeight: CGFloat = 216.0
 let kPredictStripHeight: CGFloat = 39.0
 let kEmptyString: String = ""
 
-@objc protocol NotesTextViewDelegate
-{
-    func notesTextViewDidUpdateCharactersCount(count: Int)
-}
-
 @objc class NotesTextView: UITextView, UITextViewDelegate {
     
     var syntaxStorage = MarkdownSyntaxStorage()
-    weak var markdownDelegate: NotesTextViewDelegate?
     
     init(view: UIView)
     {
@@ -66,18 +60,4 @@ let kEmptyString: String = ""
         return CGRectMake(0.0, navigationBarOffset, textViewWidth, textViewHeight)
     }
     
-    func textViewDidChange(textView: UITextView!) -> Void
-    {
-        /**
-        *  Only maximum characters allowed in a post. If user tries to add more,
-        *  it simply wont work. Should also mention that the current limit of 240 characters
-        *  looks / works great with the markdown container.
-        */
-        if (textView.text.bridgeToObjectiveC().length > 240) {
-            textView.text = textView.text.substringToIndex(240)
-        }
-        
-        // Updating the delegate interested in knowing the characters count.
-        markdownDelegate?.notesTextViewDidUpdateCharactersCount(240 - textView.text.bridgeToObjectiveC().length)
-    }
 }

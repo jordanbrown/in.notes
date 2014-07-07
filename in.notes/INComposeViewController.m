@@ -9,10 +9,9 @@
 #import "INComposeViewController.h"
 #import "INPost+Manage.h"
 
-@interface INComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, AttachmentContainerDelegate, NotesTextViewDelegate>
+@interface INComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, AttachmentContainerDelegate>
 
 @property (strong, nonatomic) NotesTextView *notesTextView;
-@property (strong, nonatomic) CharacterCounter *characterCounter;
 @property (strong, nonatomic) AttachmentContainer *attachmentContainer;
 
 - (void)setup;
@@ -62,14 +61,11 @@
     UIBarButtonItem *moreButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"more-button"] style:UIBarButtonItemStylePlain target:self action:@selector(moreButtonSelected:)];
     self.navigationItem.rightBarButtonItems = @[publishButton, moreButton];
     self.notesTextView = [[NotesTextView alloc]initWithView:self.view];
-    self.notesTextView.markdownDelegate = self;
-    self.characterCounter = [[CharacterCounter alloc]initWithFrame:IN_CHARACTER_COUNTER_INIT_FRAME];
     self.attachmentContainer = [[AttachmentContainer alloc]initWithFrame:IN_ATTACHMENT_CONTAINER_INIT_FRAME];
     self.attachmentContainer.delegate = self;
     
     // Subviews setup.
     [self.view addSubview:self.notesTextView];
-    [self.view addSubview:self.characterCounter];
     [self.view addSubview:self.attachmentContainer];
 }
 
@@ -188,13 +184,6 @@
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
-}
-
-#pragma mark - Text View Delegate
-
-- (void)notesTextViewDidUpdateCharactersCount:(NSInteger)count
-{
-    self.characterCounter.text = [NSString stringWithFormat:@"%i", (int)count];
 }
 
 @end
