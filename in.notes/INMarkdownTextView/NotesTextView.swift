@@ -57,7 +57,7 @@ let kEmptyString: String = ""
         let textViewWidth: CGFloat = view.frame.size.width
         let textViewHeight: CGFloat = (view.frame.size.height - navigationBarOffset) - (kKeyboardHeight + kPredictStripHeight)
         
-        return CGRectMake(0.0, navigationBarOffset, textViewWidth, textViewHeight)
+        return CGRectMake(0.0, 0.0, textViewWidth, textViewHeight)
     }
     
 }
