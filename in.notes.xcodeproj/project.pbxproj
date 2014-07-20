@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C1E4FA9197C71E500CFBBBA /* INMarkdownSyntaxStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E4FA8197C71E500CFBBBA /* INMarkdownSyntaxStorage.m */; };
 		1C254CD7195A418400AA5351 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C254CD6195A418400AA5351 /* PlaceholderView.swift */; };
 		1C254CD9195A467400AA5351 /* AttachmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C254CD8195A467400AA5351 /* AttachmentView.swift */; };
 		1C254CDB195A53E700AA5351 /* AttachmentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C254CDA195A53E700AA5351 /* AttachmentContainer.swift */; };
-		1C2A82DE1958F5F70041DD8A /* MarkdownSyntaxStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2A82DD1958F5F70041DD8A /* MarkdownSyntaxStorage.swift */; };
 		1C378EFE195B9E060074E304 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C378EFD195B9E060074E304 /* TableViewCell.swift */; };
 		1C378F00195B9E320074E304 /* ThumbnailViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C378EFF195B9E320074E304 /* ThumbnailViewDelegate.swift */; };
 		480BE31C19480689003C05E1 /* CharacterCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480BE31B19480689003C05E1 /* CharacterCounter.swift */; };
@@ -91,10 +91,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C1E4FA7197C71E500CFBBBA /* INMarkdownSyntaxStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INMarkdownSyntaxStorage.h; sourceTree = "<group>"; };
+		1C1E4FA8197C71E500CFBBBA /* INMarkdownSyntaxStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INMarkdownSyntaxStorage.m; sourceTree = "<group>"; };
 		1C254CD6195A418400AA5351 /* PlaceholderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
 		1C254CD8195A467400AA5351 /* AttachmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentView.swift; sourceTree = "<group>"; };
 		1C254CDA195A53E700AA5351 /* AttachmentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentContainer.swift; sourceTree = "<group>"; };
-		1C2A82DD1958F5F70041DD8A /* MarkdownSyntaxStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownSyntaxStorage.swift; sourceTree = "<group>"; };
 		1C378EFD195B9E060074E304 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		1C378EFF195B9E320074E304 /* ThumbnailViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailViewDelegate.swift; sourceTree = "<group>"; };
 		480A88C819478AC5006684C6 /* in.notes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "in.notes-Bridging-Header.h"; path = "INMarkdownTextView/in.notes-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -589,7 +590,8 @@
 		48D844D51915B8A500567AFA /* INMarkdownTextView */ = {
 			isa = PBXGroup;
 			children = (
-				1C2A82DD1958F5F70041DD8A /* MarkdownSyntaxStorage.swift */,
+				1C1E4FA7197C71E500CFBBBA /* INMarkdownSyntaxStorage.h */,
+				1C1E4FA8197C71E500CFBBBA /* INMarkdownSyntaxStorage.m */,
 				48580D071947AB7B00867968 /* NotesTextView.swift */,
 			);
 			path = INMarkdownTextView;
@@ -742,10 +744,10 @@
 				4839965B191437FA0085611D /* MagicalRecord+Setup.m in Sources */,
 				48D844E31915C1BD00567AFA /* INTextTableViewCell.m in Sources */,
 				480BE31E19480D3C003C05E1 /* Resize.swift in Sources */,
+				1C1E4FA9197C71E500CFBBBA /* INMarkdownSyntaxStorage.m in Sources */,
 				48399646191437FA0085611D /* NSEntityDescription+MagicalDataImport.m in Sources */,
 				4839964A191437FA0085611D /* NSString+MagicalDataImport.m in Sources */,
 				4879C0FD194CBB130029F20D /* HashtagContainer.swift in Sources */,
-				1C2A82DE1958F5F70041DD8A /* MarkdownSyntaxStorage.swift in Sources */,
 				48399648191437FA0085611D /* NSObject+MagicalDataImport.m in Sources */,
 				4839965A191437FA0085611D /* MagicalRecord+Options.m in Sources */,
 				1C378EFE195B9E060074E304 /* TableViewCell.swift in Sources */,
@@ -886,7 +888,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "in.notes/in.notes-Prefix.pch";
 				INFOPLIST_FILE = "in.notes/in.notes-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -908,7 +910,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "in.notes/in.notes-Prefix.pch";
 				INFOPLIST_FILE = "in.notes/in.notes-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
