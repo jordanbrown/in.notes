@@ -33,7 +33,7 @@ let kEmptyString: String = ""
         let newFrame = frame
         let manager = NSLayoutManager()
         
-        let containerSize = CGSizeMake(newFrame.size.width, CGFLOAT_MAX)
+        let containerSize = CGSizeMake(newFrame.size.width, CGFloat.max)
         let container = NSTextContainer(size:containerSize)
         container.widthTracksTextView = true
         
@@ -57,7 +57,7 @@ let kEmptyString: String = ""
         let textViewWidth: CGFloat = view.frame.size.width
         let textViewHeight: CGFloat = (view.frame.size.height - navigationBarOffset) - (kKeyboardHeight + kPredictStripHeight)
         
-        return CGRectMake(0.0, 0.0, textViewWidth, textViewHeight)
+        return CGRectMake(0.0, navigationBarOffset, textViewWidth, textViewHeight)
     }
     
 }

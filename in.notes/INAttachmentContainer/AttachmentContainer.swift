@@ -102,7 +102,7 @@ class AttachmentContainer: UIImageView, UICollisionBehaviorDelegate, AttachmentV
     }
     
     // AttachmentViewDelegate
-    func didSelectActionSheetButtonAtIndex(index: Int) -> Void
+    func didSelectActionSheetButtonAtIndex(index: UInt) -> Void
     {
         resetDynamicAnimator()
         if index == 0 {

@@ -10,7 +10,7 @@ import UIKit
 
 @objc protocol AttachmentViewDelegate
 {
-    func didSelectActionSheetButtonAtIndex(index: Int)
+    func didSelectActionSheetButtonAtIndex(index: UInt)
 }
 
 class AttachmentView: UIImageView {
