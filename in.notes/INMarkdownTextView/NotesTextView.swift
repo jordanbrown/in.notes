@@ -16,6 +16,10 @@ let kEmptyString: String = ""
     
     var syntaxStorage = INMarkdownSyntaxStorage()
     
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
     init(view: UIView)
     {
         super.init(frame: frameForView(view), textContainer: textContainerWithFrame(frame))

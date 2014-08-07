@@ -10,24 +10,9 @@
 
 @implementation INPost (Manage)
 
-+ (void)bootstrapInitialPostData
++ (void)postWithText:(NSString *)text image:(UIImage *)image thumbnail:(UIImage *)thumbnail hashtags:(NSArray *)hashtags context:(NSManagedObjectContext *)context completion:(INPostCompletionHandler)completionHandler
 {
-    [self postWithText:kINBootstrapInitialText
-                 image:[UIImage imageNamed:kINBootstrapInitialImage]
-             thumbnail:[UIImage imageNamed:kINBootstrapInitialThumbnail]
-              hashtags:nil
-            completion:^(NSError *error) {
-                
-                if (!error) {
-                    [[NSUserDefaults standardUserDefaults]setBool:YES forKey:kINBootstrappedInitialData];
-                    [[NSUserDefaults standardUserDefaults]synchronize];
-                }
-            }];
-}
-
-+ (void)postWithText:(NSString *)text image:(UIImage *)image thumbnail:(UIImage *)thumbnail hashtags:(NSArray *)hashtags completion:(INPostCompletionHandler)completionHandler
-{
-    INPost *post = [INPost createEntity];
+    INPost *post = [NSEntityDescription insertNewObjectForEntityForName:kINPostEntity inManagedObjectContext:context];
     post.text = text;
     post.image = UIImageJPEGRepresentation(image, IN_IMAGE_STORE_DEFAULT_JPG_QUALITY);
     post.thumbnail = UIImageJPEGRepresentation(thumbnail, IN_IMAGE_STORE_DEFAULT_JPG_QUALITY);
@@ -38,14 +23,22 @@
     post.type = [self postTypeForText:text image:image];
     
     NSError *error = nil;
-    [post.managedObjectContext save:&error];
     
-    if ([[INPost findAll]count] == 1) { [[NSNotificationCenter defaultCenter]postNotificationName:kINManagedObjectContextDidAddNewItem object:nil]; }
+    [post.managedObjectContext save:&error];
+    [post.managedObjectContext.parentContext save:&error];
+    
+    if (![self isEmpty:context]) {
+        [[NSNotificationCenter defaultCenter]postNotificationName:kINManagedObjectContextDidAddNewItem object:nil];
+        NSLog(@"Added new item...");
+    }
+    
+    NSLog(@"%@", error.localizedDescription);
+    
     if (error) { completionHandler(error); }
     if (!error) { completionHandler(nil); }    
 }
 
-+ (void)editPost:(INPost *)post withText:(NSString *)text image:(UIImage *)image thumbnail:(UIImage *)thumbnail hashtags:(NSArray *)hashtags completion:(INPostCompletionHandler)completionHandler
++ (void)editPost:(INPost *)post withText:(NSString *)text image:(UIImage *)image thumbnail:(UIImage *)thumbnail hashtags:(NSArray *)hashtags context:(NSManagedObjectContext *)context completion:(INPostCompletionHandler)completionHandler
 {
     if (image) { post.image = UIImageJPEGRepresentation(image, IN_IMAGE_STORE_DEFAULT_JPG_QUALITY); }
     if (thumbnail) { post.thumbnail = thumbnail ?  UIImageJPEGRepresentation(thumbnail, IN_IMAGE_STORE_DEFAULT_JPG_QUALITY) : post.thumbnail; }
@@ -54,21 +47,44 @@
     post.type = [self postTypeForText:text image:image];
     
     NSError *error = nil;
-    [post.managedObjectContext save:&error];
+    [context save:&error];
+    [context.parentContext save:&error];
     
     if (error) { completionHandler(error); }
     if (!error) { completionHandler(nil); }
 }
 
-+ (void)deletePost:(INPost *)post completion:(INPostCompletionHandler)completionHandler
++ (void)deletePost:(INPost *)post context:(NSManagedObjectContext *)context completion:(INPostCompletionHandler)completionHandler
 {
-    [post.managedObjectContext deleteObject:post];
+    [context deleteObject:post];
+    [context save:nil];
+    [context.parentContext save:nil];
     
-    if ([[INPost findAll]count] == 0) { [[NSNotificationCenter defaultCenter]postNotificationName:kINManagedObjectContextDidDeleteLastItem object:nil]; }
+    if ([self isEmpty:context]) {
+        [[NSNotificationCenter defaultCenter]postNotificationName:kINManagedObjectContextDidDeleteLastItem object:nil];
+    }
+    
     completionHandler(nil);
 }
 
 #pragma mark - Helper Methods 
+
++ (BOOL)isEmpty:(NSManagedObjectContext *)context
+{
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:kINPostEntity];
+    NSError *error = nil;
+    
+    BOOL isEmpty = NO;
+    
+    NSArray *notes = [context executeFetchRequest:request error:&error];
+    if (!error && [notes count] == 0) {
+        isEmpty = YES;
+    } else if (!error && [notes count] > 0) {
+        isEmpty = NO;
+    }
+    
+    return isEmpty;
+}
 
 + (NSNumber *)postTypeForText:(NSString *)text image:(id)image
 {

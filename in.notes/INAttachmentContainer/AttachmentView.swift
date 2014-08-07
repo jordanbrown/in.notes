@@ -17,6 +17,10 @@ class AttachmentView: UIImageView {
     
     weak var delegate: AttachmentViewDelegate?
     
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
     init(frame: CGRect, delegate: AttachmentViewDelegate?)
     {
         super.init(frame: frame)

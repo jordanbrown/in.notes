@@ -31,11 +31,11 @@ let kINHashtagSearchPattern: String = "(#[A-Za-z0-9]+)"
         
         let regex: NSRegularExpression = NSRegularExpression.regularExpressionWithPattern(kINHashtagSearchPattern, options: NSRegularExpressionOptions.CaseInsensitive, error: &error)
         
-        if !error {
+        if error == nil {
             regex.enumerateMatchesInString(string, options: NSMatchingOptions.ReportProgress, range: NSMakeRange(0, countElements(string)), usingBlock: {
                 result, flags, stop in
-                if result {
-                    hashtags += (string.bridgeToObjectiveC().substringWithRange(result!.range))
+                if result != nil {
+                    hashtags.append((string as NSString).substringWithRange(result!.range))
                 }
             })
         }
@@ -48,13 +48,11 @@ let kINHashtagSearchPattern: String = "(#[A-Za-z0-9]+)"
         var error: NSError?
         let regex: NSRegularExpression = NSRegularExpression.regularExpressionWithPattern(kINHashtagSearchPattern, options: NSRegularExpressionOptions.CaseInsensitive, error: &error)
         
-        if !error {
+        if error == nil {
             regex.enumerateMatchesInString(string, options: NSMatchingOptions.ReportProgress, range: NSMakeRange(0, countElements(string)), usingBlock: {
                 result, flags, stop in
-                if result {
-                    let range: NSRange = result!.range
-                    let hashtag: String = string.bridgeToObjectiveC().substringWithRange(range)
-                    hashtags = hashtags.stringByAppendingString(hashtag)
+                if result != nil {
+                    hashtags = hashtags.stringByAppendingString((string as NSString).substringWithRange(result!.range))
                 }
             })
         }

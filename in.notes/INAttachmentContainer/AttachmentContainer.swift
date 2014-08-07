@@ -30,7 +30,11 @@ class AttachmentContainer: UIImageView, UICollisionBehaviorDelegate, AttachmentV
     let attachmentView: AttachmentView!
     let animator: UIDynamicAnimator!
     
-    init(frame: CGRect)
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(frame: CGRect)
     {
         super.init(frame: frame)
         attachment_view_init_frame = CGRectMake(10.0, self.frame.size.height + 98.0, 300.0, 196.0)

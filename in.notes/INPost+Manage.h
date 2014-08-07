@@ -31,12 +31,32 @@ typedef enum : NSUInteger {
 
 @interface INPost (Manage)
 
-+ (void)bootstrapInitialPostData;
++ (void)postWithText:(NSString *)text
+               image:(UIImage *)image
+           thumbnail:(UIImage *)thumbnail
+            hashtags:(NSArray *)hashtags
+             context:(NSManagedObjectContext *)context
+          completion:(INPostCompletionHandler)completionHandler;
 
-+ (void)postWithText:(NSString *)text image:(UIImage *)image thumbnail:(UIImage *)thumbnail hashtags:(NSArray *)hashtags completion:(INPostCompletionHandler)completionHandler;
++ (void)editPost:(INPost *)post
+        withText:(NSString *)text
+           image:(UIImage *)image
+       thumbnail:(UIImage *)thumbnail
+        hashtags:(NSArray *)hashtags
+         context:(NSManagedObjectContext *)context
+      completion:(INPostCompletionHandler)completionHandler;
 
-+ (void)editPost:(INPost *)post withText:(NSString *)text image:(UIImage *)image thumbnail:(UIImage *)thumbnail hashtags:(NSArray *)hashtags completion:(INPostCompletionHandler)completionHandler;
++ (void)deletePost:(INPost *)post
+           context:(NSManagedObjectContext *)context
+        completion:(INPostCompletionHandler)completionHandler;
 
-+ (void)deletePost:(INPost *)post completion:(INPostCompletionHandler)completionHandler;
+/**
+ *  Helper method to return if the INPost entity contain enay objects.
+ *  This is useful to any view controller thats interested in knowing 
+ *  if the Entity contains any entries.
+ *
+ *  @return YES if is EMPTY.
+ */
++ (BOOL)isEmpty:(NSManagedObjectContext *)context;
 
 @end

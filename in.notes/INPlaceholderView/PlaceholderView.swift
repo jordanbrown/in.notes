@@ -10,6 +10,12 @@ import UIKit
 
 @objc class PlaceholderView: UIView {
     
+    let imageView: UIImageView!
+    
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
     init(frame: CGRect, image: UIImage)
     {
         super.init(frame: frame)
@@ -21,7 +27,7 @@ import UIKit
                                         image.size.width,
                                         image.size.height)
         
-        let imageView = UIImageView(frame: imageViewFrame)
+        imageView = UIImageView(frame: imageViewFrame)
         imageView.image = image
         imageView.alpha = 0.2
         

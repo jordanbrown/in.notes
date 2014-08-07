@@ -18,6 +18,9 @@
 
 @interface INHomeViewController () <ImagePreviewDelegate, ThumbnailViewDelegate>
 
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
+- (void)configureFetchedResultsController;
 - (void)configureSizeManager;
 - (void)configureTableView;
 - (void)configureObservers;
@@ -29,9 +32,20 @@
 
 @implementation INHomeViewController
 
+- (NSManagedObjectContext *)managedObjectContext
+{
+    if (!_managedObjectContext) {
+        INAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
+        _managedObjectContext = appDelegate.managedObjectContext;
+    }
+    
+    return _managedObjectContext;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self configureFetchedResultsController];
     [self configureSizeManager];
     [self configureTableView];
 }
@@ -52,6 +66,19 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+- (void)configureFetchedResultsController
+{
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:kINPostEntity];
+    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO];
+    request.sortDescriptors = @[descriptor];
+    self.fetchedResultsController = [[NSFetchedResultsController alloc]initWithFetchRequest:request
+                                                                       managedObjectContext:self.managedObjectContext
+                                                                         sectionNameKeyPath:nil
+                                                                                  cacheName:nil];
+    self.fetchedResultsController.delegate = self;
+    NSError *error = nil; [self.fetchedResultsController performFetch:&error];
 }
 
 - (void)configureSizeManager
@@ -79,13 +106,6 @@
 
 - (void)configureTableView
 {
-    self.fetchedResultsController = [INPost fetchAllGroupedBy:nil
-                                                withPredicate:nil
-                                                     sortedBy:@"date"
-                                                    ascending:NO
-                                                     delegate:self // super class, since THIS VC inherits from FRC.
-                                                    inContext:[NSManagedObjectContext contextForCurrentThread]];
-    
     [self.tableView registerNib:[INTableViewCell nib] forCellReuseIdentifier:[INTableViewCell reuseIdentifier]];
     [self.tableView registerNib:[INTextTableViewCell nib] forCellReuseIdentifier:[INTextTableViewCell reuseIdentifier]];
     [self.tableView registerNib:[INImageTableViewCell nib] forCellReuseIdentifier:[INImageTableViewCell reuseIdentifier]];
@@ -121,15 +141,14 @@
 }
 
 - (void)configureINPlaceholderView:(NSNotification *)note
-{    
-    if ([note.name isEqualToString:kINManagedObjectContextDidAddNewItem] || [[INPost findAll]count] > IN_ZERO) {
-        
+{
+    if ([note.name isEqualToString:kINManagedObjectContextDidAddNewItem] || ![INPost isEmpty:self.managedObjectContext]) {
         if ([[self.view.subviews lastObject] isKindOfClass:[PlaceholderView class]]) {
             [self.view.subviews.lastObject removeFromSuperview];
             [self.tableView setUserInteractionEnabled:YES];
         }
         
-    } else if ([note.name isEqualToString:kINManagedObjectContextDidDeleteLastItem] || [[INPost findAll]count] == IN_ZERO) {
+    } else if ([note.name isEqualToString:kINManagedObjectContextDidDeleteLastItem] || [INPost isEmpty:self.managedObjectContext]) {
         [self.view addSubview:[[PlaceholderView alloc]initWithFrame:self.view.frame image:[UIImage imageNamed:kINNotesLogo]]];
         [self.tableView setUserInteractionEnabled:NO];
     }
@@ -234,7 +253,7 @@
         dispatch_async(waitQ, ^{
             usleep(400000);
             dispatch_async(dispatch_get_main_queue(), ^{
-                [INPost deletePost:[self.fetchedResultsController objectAtIndexPath:indexPath] completion:^(NSError *error) {
+                [INPost deletePost:[self.fetchedResultsController objectAtIndexPath:indexPath] context:self.managedObjectContext completion:^(NSError *error) {
                     // Post deleted.
                 }];
             });

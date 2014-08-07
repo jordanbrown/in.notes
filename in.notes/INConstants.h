@@ -43,6 +43,9 @@ static NSString * const kINEditViewController = @"INEditViewController";
 
 static NSString * const kINImageStoreKey = @"imageStoreKey";
 
+// Core Data
+static NSString * const kINPostEntity = @"INPost";
+
 #pragma mark - AttachmentView
 /**
  *  IMPORTANT: The order of these values in important.

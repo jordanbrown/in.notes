@@ -26,6 +26,10 @@ class ImagePreview: UIView {
     weak var senderView: UIView?
     let completion: ImagePreviewCompletionHandler!
     
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
     init(image: UIImage, view: UIView, completion:() -> ())
     {
         super.init(frame: UIScreen.mainScreen().bounds)

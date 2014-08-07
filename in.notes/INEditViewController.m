@@ -11,6 +11,7 @@
 
 @interface INEditViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, AttachmentContainerDelegate>
 
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) NotesTextView *notesTextView;
 @property (strong, nonatomic) AttachmentContainer *attachmentContainer;
 
@@ -22,6 +23,16 @@
 @end
 
 @implementation INEditViewController
+
+- (NSManagedObjectContext *)managedObjectContext
+{
+    if (!_managedObjectContext) {
+        INAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
+        _managedObjectContext = appDelegate.managedObjectContext;
+    }
+    
+    return _managedObjectContext;
+}
 
 - (void)viewDidLoad
 {
@@ -107,7 +118,8 @@
                image:[[ImageStore sharedStore]imageForKey:kINImageStoreKey]
            thumbnail:[UIImage resizeImage:[[ImageStore sharedStore]imageForKey:kINImageStoreKey]
                                    toSize:CGSizeMake(300.0f, 129.0f) cornerRadius:0.0]
-            hashtags:[HashtagContainer hashtagArrayFromString:self.notesTextView.text] completion:^(NSError *error) {
+            hashtags:[HashtagContainer hashtagArrayFromString:self.notesTextView.text]
+             context:self.managedObjectContext completion:^(NSError *error) {
                 
                 /**
                  *  It is important to clear the cache because "image" is still in memory.
