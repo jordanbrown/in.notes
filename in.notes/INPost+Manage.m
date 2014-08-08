@@ -21,30 +21,27 @@
     post.isArchived = @NO;
     post.type = [self postTypeForText:text image:image];
     
-    
-    [context save:nil];
-//    [context.parentContext save:&error];
-    
     if (![self isEmpty:context]) {
         [[NSNotificationCenter defaultCenter]postNotificationName:kINManagedObjectContextDidAddNewItem object:nil];
     }
 }
 
 + (void)editPost:(INPost *)post withText:(NSString *)text image:(UIImage *)image thumbnail:(UIImage *)thumbnail hashtags:(NSArray *)hashtags context:(NSManagedObjectContext *)context {
-    if (image) { post.image = UIImageJPEGRepresentation(image, IN_IMAGE_STORE_DEFAULT_JPG_QUALITY); }
-    if (thumbnail) { post.thumbnail = thumbnail ?  UIImageJPEGRepresentation(thumbnail, IN_IMAGE_STORE_DEFAULT_JPG_QUALITY) : post.thumbnail; }
+    if (image) {
+        post.image = UIImageJPEGRepresentation(image, IN_IMAGE_STORE_DEFAULT_JPG_QUALITY);
+    }
+    
+    if (thumbnail) {
+        post.thumbnail = thumbnail ?  UIImageJPEGRepresentation(thumbnail, IN_IMAGE_STORE_DEFAULT_JPG_QUALITY) : post.thumbnail;
+    }
+    
     post.text = text;
     post.hashtags = [NSKeyedArchiver archivedDataWithRootObject:hashtags];
     post.type = [self postTypeForText:text image:image];
-    
-    [context save:nil];
-//    [context.parentContext save:&error];
 }
 
 + (void)deletePost:(INPost *)post context:(NSManagedObjectContext *)context {
     [context deleteObject:post];
-    [context save:nil];
-    [context.parentContext save:nil];
     
     if ([self isEmpty:context]) {
         [[NSNotificationCenter defaultCenter]postNotificationName:kINManagedObjectContextDidDeleteLastItem object:nil];

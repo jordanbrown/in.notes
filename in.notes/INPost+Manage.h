@@ -9,15 +9,6 @@
 #import "INPost.h"
 
 /**
- *  CompletionHandler for INPost+Manage. While it only offers a pointer to an
- *  error, checking against it will provide all the info I need to assume
- *  the operation went well.
- *
- *  @param error object containing the error.
- */
-typedef void(^INPostCompletionHandler)(NSError *error);
-
-/**
  *  Enum for INPostType. See postTypeForText:image: implementation
  *  in the .m file for more information.
  */

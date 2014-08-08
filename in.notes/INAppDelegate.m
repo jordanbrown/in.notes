@@ -35,7 +35,7 @@
     [self setupAppearance]; return YES;
 }
 
--(void)applicationWillTerminate:(UIApplication *)application {
+- (void)applicationWillResignActive:(UIApplication *)application {
     [self saveContext];
 }
 
