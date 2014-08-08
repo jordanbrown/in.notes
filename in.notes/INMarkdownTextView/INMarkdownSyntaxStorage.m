@@ -16,8 +16,7 @@
 
 @implementation INMarkdownSyntaxStorage
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         _backingStore = [[NSMutableAttributedString alloc]init];
@@ -25,46 +24,39 @@
     return self;
 }
 
-- (NSString *)string
-{
+- (NSString *)string {
     return [self.backingStore string];
 }
 
-- (NSDictionary *)attributesAtIndex:(NSUInteger)location effectiveRange:(NSRangePointer)range
-{
+- (NSDictionary *)attributesAtIndex:(NSUInteger)location effectiveRange:(NSRangePointer)range {
     return [self.backingStore attributesAtIndex:location effectiveRange:range];
 }
 
-- (void)replaceCharactersInRange:(NSRange)range withString:(NSString *)str
-{
+- (void)replaceCharactersInRange:(NSRange)range withString:(NSString *)str {
     [self beginEditing];
     [self.backingStore replaceCharactersInRange:range withString:str];
     [self edited:NSTextStorageEditedCharacters | NSTextStorageEditedCharacters range:range changeInLength:str.length - range.length];
     [self endEditing];
 }
 
-- (void)setAttributes:(NSDictionary *)attrs range:(NSRange)range
-{
+- (void)setAttributes:(NSDictionary *)attrs range:(NSRange)range {
     [self beginEditing];
     [self.backingStore setAttributes:attrs range:range];
     [self edited:NSTextStorageEditedAttributes range:range changeInLength:0];
     [self endEditing];
 }
 
-- (void)processEditing
-{
+- (void)processEditing {
     [self performReplacementsForRange:[self editedRange]];
     [super processEditing];
 }
 
-- (void)performReplacementsForRange:(NSRange)range
-{
+- (void)performReplacementsForRange:(NSRange)range {
     NSRange extendedRange = NSUnionRange(range, [[self.backingStore string]lineRangeForRange:NSMakeRange(NSMaxRange(range), 0)]);
     [self applyStylesToRange:extendedRange];
 }
 
-- (void)applyStylesToRange:(NSRange)searchRange
-{
+- (void)applyStylesToRange:(NSRange)searchRange {
     // Create some fonts.
     UIFontDescriptor *fontDescriptior = [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleBody];
     UIFontDescriptor *boldFontDescriptor = [fontDescriptior fontDescriptorWithSymbolicTraits:UIFontDescriptorTraitBold];

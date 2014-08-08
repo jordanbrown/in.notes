@@ -19,8 +19,7 @@
 
 import Foundation
 
-@objc protocol ThumbnailViewDelegate
-{
+@objc protocol ThumbnailViewDelegate {
     /**
     *  Protocol method for returning selected thumbnail and
     *  tapGestureRecognizer for

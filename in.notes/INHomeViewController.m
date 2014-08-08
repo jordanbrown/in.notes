@@ -32,8 +32,7 @@
 
 @implementation INHomeViewController
 
-- (NSManagedObjectContext *)managedObjectContext
-{
+- (NSManagedObjectContext *)managedObjectContext {
     if (!_managedObjectContext) {
         INAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
         _managedObjectContext = appDelegate.managedObjectContext;
@@ -42,34 +41,29 @@
     return _managedObjectContext;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     [self configureFetchedResultsController];
     [self configureSizeManager];
     [self configureTableView];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
+- (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self configureObservers];
     [self configureINPlaceholderView:nil];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
+- (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-- (void)configureFetchedResultsController
-{
+- (void)configureFetchedResultsController {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:kINPostEntity];
     NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO];
     request.sortDescriptors = @[descriptor];
@@ -81,8 +75,7 @@
     NSError *error = nil; [self.fetchedResultsController performFetch:&error];
 }
 
-- (void)configureSizeManager
-{
+- (void)configureSizeManager {
     self.sizeManager = [[RZCellSizeManager alloc]init];
 
     [self.sizeManager registerCellClassName:[INTableViewCell className]
@@ -104,8 +97,7 @@
                      }];
 }
 
-- (void)configureTableView
-{
+- (void)configureTableView {
     [self.tableView registerNib:[INTableViewCell nib] forCellReuseIdentifier:[INTableViewCell reuseIdentifier]];
     [self.tableView registerNib:[INTextTableViewCell nib] forCellReuseIdentifier:[INTextTableViewCell reuseIdentifier]];
     [self.tableView registerNib:[INImageTableViewCell nib] forCellReuseIdentifier:[INImageTableViewCell reuseIdentifier]];
@@ -114,8 +106,7 @@
     [self.tableView setTableFooterView:[[UIView alloc]initWithFrame:CGRectZero]];
 }
 
-- (void)configureObservers
-{
+- (void)configureObservers {
     __weak typeof(self) weakSelf = self;
     
     [[NSNotificationCenter defaultCenter] addObserverForName:kINManagedObjectContextDidAddNewItem
@@ -140,8 +131,7 @@
                                                  }];
 }
 
-- (void)configureINPlaceholderView:(NSNotification *)note
-{
+- (void)configureINPlaceholderView:(NSNotification *)note {
     if ([note.name isEqualToString:kINManagedObjectContextDidAddNewItem] || ![INPost isEmpty:self.managedObjectContext]) {
         if ([[self.view.subviews lastObject] isKindOfClass:[PlaceholderView class]]) {
             [self.view.subviews.lastObject removeFromSuperview];
@@ -154,8 +144,7 @@
     }
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:kINEditViewController]) {
         if ([sender isKindOfClass:[NSIndexPath class]]) {
             
@@ -168,15 +157,13 @@
     }
 }
 
-- (IBAction)composeNewPostButtonSelected:(id)sender
-{
+- (IBAction)composeNewPostButtonSelected:(id)sender {
     [self performSegueWithIdentifier:kINComposeViewController sender:nil];
 }
 
 #pragma mark - UITableViewDataSource
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     INPost *post = [self.fetchedResultsController objectAtIndexPath:indexPath];
     UITableViewCell *homeCell = nil;
     
@@ -208,13 +195,11 @@
 
 #pragma mark - UITableViewDelegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self performSegueWithIdentifier:kINEditViewController sender:indexPath];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     INPost *post = [self.fetchedResultsController objectAtIndexPath:indexPath];
     CGFloat height = 0.0;
     
@@ -237,8 +222,7 @@
     return height < 44 ? 44 : height;
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
         [tableView setEditing:NO animated:YES];
@@ -261,22 +245,19 @@
     }
 }
 
-- (void)presentActivityViewControllerWithActivityItems:(NSArray *)items
-{
+- (void)presentActivityViewControllerWithActivityItems:(NSArray *)items {
     [self presentViewController:[[UIActivityViewController alloc]initWithActivityItems:items applicationActivities:nil] animated:YES completion:nil];
 }
 
 #pragma mark - UIScrollViewdelegate methods
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [self.view endEditing:YES];
 }
 
 #pragma mark - MCIMagePreviewDelegate
 
-- (void)imagePreviewDidFinishPreparingImage:(ImagePreview *)view image:(UIImage *)image
-{
+- (void)imagePreviewDidFinishPreparingImage:(ImagePreview *)view image:(UIImage *)image {
     NSArray *activityItems = @[image];
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc]initWithActivityItems:activityItems applicationActivities:nil];
     dispatch_queue_t waitQ = dispatch_queue_create(IN_GENERIC_Q, NULL);
@@ -290,8 +271,7 @@
 
 #pragma mark - INThumbnailViewDelegate
 
-- (void)thumbnail:(UIImageView *)thumbnail didSelectThumbnailImageView:(UITapGestureRecognizer *)tapGestureRecognizer
-{
+- (void)thumbnail:(UIImageView *)thumbnail didSelectThumbnailImageView:(UITapGestureRecognizer *)tapGestureRecognizer {
     CGPoint locationInView = [tapGestureRecognizer locationInView:self.tableView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:locationInView];
     INPost *post = [self.fetchedResultsController objectAtIndexPath:indexPath];

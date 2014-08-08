@@ -19,17 +19,14 @@ let kEmptyString: String = ""
     required init(coder aDecoder: NSCoder!) {
         super.init(coder: aDecoder)
     }
-    
-    init(view: UIView)
-    {
-        super.init(frame: frameForView(view), textContainer: textContainerWithFrame(frame))
+        
+    init(view: UIView) {
+        super.init(frame: view.frame, textContainer: textContainerWithFrame(frame))
         font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
         textColor = UIColor.darkGrayColor()
-        self.delegate = self
     }
     
-    func textContainerWithFrame(frame: CGRect) -> NSTextContainer
-    {
+    func textContainerWithFrame(frame: CGRect) -> NSTextContainer {
         let attributes = [NSFontAttributeName : UIFont.preferredFontForTextStyle(UIFontTextStyleBody)]
         let attributedString = NSAttributedString(string:kEmptyString, attributes:attributes)
         syntaxStorage.appendAttributedString(attributedString)
@@ -45,23 +42,6 @@ let kEmptyString: String = ""
         syntaxStorage.addLayoutManager(manager)
         
         return container
-    }
-    
-    func frameForView(view: UIView) -> CGRect
-    {
-        var navigationBarOffset: CGFloat = 0.0
-        
-        if view.nextResponder().isKindOfClass(UIViewController) {
-            let viewController: UIViewController = view.nextResponder() as UIViewController
-            if viewController.parentViewController.isKindOfClass(UINavigationController) {
-                navigationBarOffset = 64.0
-            }
-        }
-        
-        let textViewWidth: CGFloat = view.frame.size.width
-        let textViewHeight: CGFloat = (view.frame.size.height - navigationBarOffset) - (kKeyboardHeight + kPredictStripHeight)
-        
-        return CGRectMake(0.0, navigationBarOffset, textViewWidth, textViewHeight)
     }
     
 }

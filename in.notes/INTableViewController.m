@@ -16,38 +16,32 @@
 
 @implementation INTableViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self configureFontSize];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
+- (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
-- (void)configureFontSize
-{
+- (void)configureFontSize {
     [[NSNotificationCenter defaultCenter]addObserver:self
                                             selector:@selector(preferredContentSizeChanged:)
                                                 name:UIContentSizeCategoryDidChangeNotification
                                               object:nil];
 }
 
-- (void)preferredContentSizeChanged:(NSNotification *)note
-{
+- (void)preferredContentSizeChanged:(NSNotification *)note {
     [self.tableView reloadData];
 }
 

@@ -16,8 +16,7 @@ import UIKit
         super.init(coder: aDecoder)
     }
     
-    init(frame: CGRect, image: UIImage)
-    {
+    init(frame: CGRect, image: UIImage) {
         super.init(frame: frame)
         backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.97, alpha: 1.0)
         alpha = 0.0
@@ -35,8 +34,7 @@ import UIKit
         animateAlpha()
     }
     
-    func animateAlpha() -> Void
-    {
+    func animateAlpha() -> Void {
         UIView.animateWithDuration(0.4, animations: {
             self.alpha = 1.0
         })

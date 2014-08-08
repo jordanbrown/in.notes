@@ -11,7 +11,6 @@
 		1C254CD7195A418400AA5351 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C254CD6195A418400AA5351 /* PlaceholderView.swift */; };
 		1C254CD9195A467400AA5351 /* AttachmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C254CD8195A467400AA5351 /* AttachmentView.swift */; };
 		1C254CDB195A53E700AA5351 /* AttachmentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C254CDA195A53E700AA5351 /* AttachmentContainer.swift */; };
-		1C378EFE195B9E060074E304 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C378EFD195B9E060074E304 /* TableViewCell.swift */; };
 		1C378F00195B9E320074E304 /* ThumbnailViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C378EFF195B9E320074E304 /* ThumbnailViewDelegate.swift */; };
 		480BE31E19480D3C003C05E1 /* Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480BE31D19480D3C003C05E1 /* Resize.swift */; };
 		4814486D1921C01200BCB519 /* INPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 4814486C1921C01200BCB519 /* INPost.m */; };
@@ -69,7 +68,6 @@
 		1C254CD6195A418400AA5351 /* PlaceholderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
 		1C254CD8195A467400AA5351 /* AttachmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentView.swift; sourceTree = "<group>"; };
 		1C254CDA195A53E700AA5351 /* AttachmentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentContainer.swift; sourceTree = "<group>"; };
-		1C378EFD195B9E060074E304 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		1C378EFF195B9E320074E304 /* ThumbnailViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailViewDelegate.swift; sourceTree = "<group>"; };
 		480A88C819478AC5006684C6 /* in.notes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "in.notes-Bridging-Header.h"; path = "INMarkdownTextView/in.notes-Bridging-Header.h"; sourceTree = "<group>"; };
 		480BE31D19480D3C003C05E1 /* Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resize.swift; sourceTree = "<group>"; };
@@ -347,7 +345,6 @@
 			children = (
 				484994B6191749370023B8AB /* INTableViewCell.h */,
 				484994B7191749370023B8AB /* INTableViewCell.m */,
-				1C378EFD195B9E060074E304 /* TableViewCell.swift */,
 				484994B8191749370023B8AB /* INTableViewCell.xib */,
 				48D844C01915B0B100567AFA /* INImageTableViewCell.h */,
 				48D844C11915B0B100567AFA /* INImageTableViewCell.m */,
@@ -535,7 +532,6 @@
 				480BE31E19480D3C003C05E1 /* Resize.swift in Sources */,
 				1C1E4FA9197C71E500CFBBBA /* INMarkdownSyntaxStorage.m in Sources */,
 				4879C0FD194CBB130029F20D /* HashtagContainer.swift in Sources */,
-				1C378EFE195B9E060074E304 /* TableViewCell.swift in Sources */,
 				48616EE21916D9500011271A /* INTableViewController.m in Sources */,
 				48D844C31915B0B100567AFA /* INImageTableViewCell.m in Sources */,
 				1C254CD9195A467400AA5351 /* AttachmentView.swift in Sources */,

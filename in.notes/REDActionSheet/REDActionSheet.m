@@ -40,8 +40,7 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithCancelButtonTitle:(NSString *)cancelButtonTitle destructiveButtonTitle:(NSString *)destructiveButtonTitle otherButtonTitle:(NSString *)otherButtonTitle
-{
+- (instancetype)initWithCancelButtonTitle:(NSString *)cancelButtonTitle destructiveButtonTitle:(NSString *)destructiveButtonTitle otherButtonTitle:(NSString *)otherButtonTitle {
     self = [super initWithFrame:CGRectZero];
     if (self)
 	{
@@ -82,8 +81,7 @@
 static CGFloat const REDActionSheetButtonHeight = 44.0;
 static CGFloat const REDActionSheetCancelButtonMargin = 5.0;
 
-- (void)didMoveToSuperview
-{
+- (void)didMoveToSuperview {
 	self.frame = self.superview.bounds;
 	CGRect bounds = self.bounds;
 	
@@ -105,8 +103,7 @@ static CGFloat const REDActionSheetCancelButtonMargin = 5.0;
 
 #pragma mark -
 
-- (void)showInView:(UIView *)view
-{
+- (void)showInView:(UIView *)view {
 	// Background
 	self.backgroundView = [view.window snapshotViewAfterScreenUpdates:YES];
 	[self addSubview:self.backgroundView];
@@ -148,15 +145,13 @@ static CGFloat const REDActionSheetCancelButtonMargin = 5.0;
 	[self showButtons];
 }
 
-- (void)addButtonWithTitle:(NSString *)title
-{
+- (void)addButtonWithTitle:(NSString *)title {
     REDActionSheetButton *button = [self buttonWithTitle:title];
     [button addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.buttons addObject:button];
 }
 
-- (NSString*)titleForButtonAtIndex:(NSUInteger)buttonIndex
-{
+- (NSString*)titleForButtonAtIndex:(NSUInteger)buttonIndex {
     if (buttonIndex < [self.buttons count])
     {
         return [self.buttons[buttonIndex] titleForState:UIControlStateNormal];
@@ -176,8 +171,7 @@ static CGFloat const REDShowAnimationDuration = 0.60;
 static CGFloat const REDDismissAnimationDuration = 0.4;
 static CGFloat const REDAnimationSpringDamping = 0.70;
 
-- (void)showButtons
-{
+- (void)showButtons {
 	CGFloat buttonContainerLastYCoor = CGRectGetHeight(self.frame) - (CGRectGetHeight(self.buttonsContainerView.frame) + CGRectGetHeight(self.cancelButton.frame) + (REDActionSheetCancelButtonMargin * 2.0));
 	
 	[UIView animateWithDuration:REDShowAnimationDuration delay:0.0 usingSpringWithDamping:REDAnimationSpringDamping initialSpringVelocity:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
@@ -203,8 +197,7 @@ static CGFloat const REDAnimationSpringDamping = 0.70;
 	}];
 }
 
-- (void)dismiss
-{
+- (void)dismiss {
 	self.userInteractionEnabled = NO;
 	
 	CGFloat yCoorDifferenceBetweenContainerAndCancelButton = fabsf(self.buttonsContainerView.frame.origin.y - self.cancelButton.frame.origin.y);
@@ -237,24 +230,21 @@ static CGFloat const REDAnimationSpringDamping = 0.70;
 
 #pragma mark -
 
-- (REDActionSheetButton *)buttonWithTitle:(NSString *)title
-{
+- (REDActionSheetButton *)buttonWithTitle:(NSString *)title {
 	REDActionSheetButton *button = [[REDActionSheetButton alloc] initWithTitle:title];
 	button.type = REDActionSheetButtonTypeDefault;
 	
 	return button;
 }
 
-- (REDActionSheetButton *)destructiveButtonWithTitle:(NSString *)title
-{
+- (REDActionSheetButton *)destructiveButtonWithTitle:(NSString *)title {
 	REDActionSheetButton *button = [[REDActionSheetButton alloc] initWithTitle:title];
 	button.type = REDActionSheetButtonTypeDestructive;
 	
 	return button;
 }
 
-- (REDActionSheetButton *)cancelButtonWithTitle:(NSString *)title
-{
+- (REDActionSheetButton *)cancelButtonWithTitle:(NSString *)title {
 	REDActionSheetButton *button = [[REDActionSheetButton alloc] initWithTitle:title];
 	button.type = REDActionSheetButtonTypeCancel;
 	
@@ -263,8 +253,7 @@ static CGFloat const REDAnimationSpringDamping = 0.70;
 
 #pragma mark - Actions
 
-- (void)buttonTapped:(id)sender
-{
+- (void)buttonTapped:(id)sender {
 	self.selectedButtonIndex = [self.buttons indexOfObject:sender];
 	if (self.actionSheetWillDismissWithButtonIndexBlock)
 		self.actionSheetWillDismissWithButtonIndexBlock(self, self.selectedButtonIndex);
@@ -275,8 +264,7 @@ static CGFloat const REDAnimationSpringDamping = 0.70;
 	[self dismiss];
 }
 
-- (void)cancelButtonTapped:(id)sender
-{
+- (void)cancelButtonTapped:(id)sender {
 	self.selectedButtonIndex = self.buttons.count;
 	if (self.actionSheetWillDismissWithButtonIndexBlock)
 		self.actionSheetWillDismissWithButtonIndexBlock(self, self.selectedButtonIndex);
@@ -292,8 +280,7 @@ static CGFloat const REDAnimationSpringDamping = 0.70;
 
 #pragma mark - Gestures
 
-- (void)tapGestureEngadged:(UITapGestureRecognizer *)gesture
-{
+- (void)tapGestureEngadged:(UITapGestureRecognizer *)gesture {
 	if (gesture.state == UIGestureRecognizerStateEnded)
 		[self dismiss];
 }

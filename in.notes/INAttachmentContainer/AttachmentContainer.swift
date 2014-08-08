@@ -19,8 +19,7 @@ let attachment_view_image_size = CGSizeMake(300.0, 196.0)
 var attachment_view_init_frame = CGRectZero
 let attachment_image_corner_radius: CGFloat = 1.0
 
-@objc protocol AttachmentContainerDelegate
-{
+@objc protocol AttachmentContainerDelegate {
     func attachmentContainerDidRemoveImageWithRequest(request: Int)
 }
 
@@ -34,8 +33,7 @@ class AttachmentContainer: UIImageView, UICollisionBehaviorDelegate, AttachmentV
         super.init(coder: aDecoder)
     }
     
-    override init(frame: CGRect)
-    {
+    override init(frame: CGRect) {
         super.init(frame: frame)
         attachment_view_init_frame = CGRectMake(10.0, self.frame.size.height + 98.0, 300.0, 196.0)
         image = UIImage(named: "bg-attachment")
@@ -46,16 +44,14 @@ class AttachmentContainer: UIImageView, UICollisionBehaviorDelegate, AttachmentV
         animator = UIDynamicAnimator(referenceView: self)
     }
     
-    func setAttachmentImage(image: UIImage) -> Void
-    {
+    func setAttachmentImage(image: UIImage) -> Void {
         UIView.animateWithDuration(default_animation_duration, delay: default_delay, usingSpringWithDamping: default_spring_damping, initialSpringVelocity: zero, options: UIViewAnimationOptions.CurveLinear, animations: {
             self.attachmentView.image = UIImage.resizeImage(image, toSize: attachment_view_image_size, cornerRadius: attachment_image_corner_radius)
             self.attachmentView.frame = attachment_container_visible_frame
         }, completion: nil)
     }
     
-    func setAttachmentImage(image: UIImage, usingSpringWithDamping usingSpring: Bool) -> Void
-    {
+    func setAttachmentImage(image: UIImage, usingSpringWithDamping usingSpring: Bool) -> Void {
         if usingSpring {
             setAttachmentImage(image)
         } else {
@@ -64,15 +60,13 @@ class AttachmentContainer: UIImageView, UICollisionBehaviorDelegate, AttachmentV
         }
     }
     
-    func moveToPoint(point: CGPoint) -> Void
-    {
+    func moveToPoint(point: CGPoint) -> Void {
         UIView.animateWithDuration(default_animation_duration, delay: default_delay, usingSpringWithDamping: default_spring_damping, initialSpringVelocity: zero, options: UIViewAnimationOptions.CurveLinear, animations: {
             self.frame = CGRectMake(point.x, point.y, self.frame.size.width, self.frame.size.height)
         }, completion: nil)
     }
     
-    func moveToPoint(point: CGPoint, usingSpringWithDamping usingSpring: Bool) -> Void
-    {
+    func moveToPoint(point: CGPoint, usingSpringWithDamping usingSpring: Bool) -> Void {
         if usingSpring {
             moveToPoint(point)
         } else {
@@ -82,8 +76,7 @@ class AttachmentContainer: UIImageView, UICollisionBehaviorDelegate, AttachmentV
         }
     }
     
-    func addMotionEffectToView(view: UIView, magnitude: Float) -> Void
-    {
+    func addMotionEffectToView(view: UIView, magnitude: Float) -> Void {
         let xMotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: UIInterpolatingMotionEffectType.TiltAlongHorizontalAxis)
         let yMotion = UIInterpolatingMotionEffect(keyPath: "center.y", type: UIInterpolatingMotionEffectType.TiltAlongVerticalAxis)
         xMotion.minimumRelativeValue = (-magnitude)
@@ -95,19 +88,16 @@ class AttachmentContainer: UIImageView, UICollisionBehaviorDelegate, AttachmentV
         view.addMotionEffect(motionGroup)
     }
     
-    func imageDataForCurrentImage() -> NSData
-    {
+    func imageDataForCurrentImage() -> NSData {
         return UIImageJPEGRepresentation(attachmentView.image, default_jpg_quality)
     }
     
-    func imageNameForParse() -> String
-    {
+    func imageNameForParse() -> String {
         return NSUUID.UUID().UUIDString
     }
     
     // AttachmentViewDelegate
-    func didSelectActionSheetButtonAtIndex(index: UInt) -> Void
-    {
+    func didSelectActionSheetButtonAtIndex(index: UInt) -> Void {
         resetDynamicAnimator()
         if index == 0 {
             resetAttachmentView()
@@ -120,8 +110,7 @@ class AttachmentContainer: UIImageView, UICollisionBehaviorDelegate, AttachmentV
         }
     }
     
-    func resetAttachmentView() -> Void
-    {
+    func resetAttachmentView() -> Void {
         let intermediateView = attachmentView.snapshotViewAfterScreenUpdates(false)
         insertSubview(intermediateView, aboveSubview: attachmentView)
         let attachmentViewFrame = attachment_view_init_frame
@@ -140,8 +129,7 @@ class AttachmentContainer: UIImageView, UICollisionBehaviorDelegate, AttachmentV
         animator.addBehavior(gravity)
     }
     
-    func resetDynamicAnimator() -> Void
-    {
+    func resetDynamicAnimator() -> Void {
         animator.removeAllBehaviors();
     }
 }

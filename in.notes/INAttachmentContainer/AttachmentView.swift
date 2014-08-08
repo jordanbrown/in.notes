@@ -21,8 +21,7 @@ class AttachmentView: UIImageView {
         super.init(coder: aDecoder)
     }
     
-    init(frame: CGRect, delegate: AttachmentViewDelegate?)
-    {
+    init(frame: CGRect, delegate: AttachmentViewDelegate?) {
         super.init(frame: frame)
         self.delegate = delegate
         userInteractionEnabled = true
@@ -34,8 +33,7 @@ class AttachmentView: UIImageView {
         addGestureRecognizer(tapGestureRecognizer)
     }
     
-    func handleTapGesture(gesture: UITapGestureRecognizer) -> Void
-    {
+    func handleTapGesture(gesture: UITapGestureRecognizer) -> Void {
         let actionSheet = REDActionSheet(cancelButtonTitle: "Cancel",
                                          destructiveButtonTitle: "Remove Image",
                                          otherButtonTitle: "Replace Image")

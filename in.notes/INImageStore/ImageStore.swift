@@ -34,13 +34,11 @@ let kIMageStoreDefaultJPGQuality: CGFloat = 0.7
     *  @param key   used for naming the image for store. As it stands, I am using a constant
     *  because there is no reason the keep more than one file.
     */
-    func setImage(image: UIImage, forKey key:String) -> Void
-    {
+    func setImage(image: UIImage, forKey key:String) -> Void {
         store[key] = image
     }
     
-    func imageForKey(key: String) -> UIImage?
-    {
+    func imageForKey(key: String) -> UIImage? {
         if let image = store[key] {
             return image
         } else {
@@ -53,8 +51,7 @@ let kIMageStoreDefaultJPGQuality: CGFloat = 0.7
     *
     *  @param key is the name of the image to be removed.
     */
-    func deleteImageForKey(key: String) -> Void
-    {
+    func deleteImageForKey(key: String) -> Void {
         store.updateValue(nil, forKey: key)
     }
     
@@ -64,13 +61,11 @@ let kIMageStoreDefaultJPGQuality: CGFloat = 0.7
     *  @return UIImageJPEGRepresentation @ quality of 0.8. If decide to actually
     *  store more images in the direcotry, this wont work. Something like imageDataForImageForKey: will do.
     */
-    func imageDataForCurrentImage() -> NSData
-    {
+    func imageDataForCurrentImage() -> NSData {
         return UIImageJPEGRepresentation(imageForKey(kINImageKey), kIMageStoreDefaultJPGQuality)
     }
     
-    func imageDataForImage(image: UIImage) -> NSData
-    {
+    func imageDataForImage(image: UIImage) -> NSData {
         return UIImageJPEGRepresentation(image, kIMageStoreDefaultJPGQuality)
     }
     
@@ -82,8 +77,7 @@ let kIMageStoreDefaultJPGQuality: CGFloat = 0.7
     *
     *  @return UUID string.
     */
-    func imageName() -> String
-    {
+    func imageName() -> String {
         return NSUUID.UUID().UUIDString
     }
 }

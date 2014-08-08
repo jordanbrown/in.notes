@@ -21,8 +21,7 @@ extension UIImage {
     *
     *  @return Resized image with specified corner radius.
     */
-    class func resizeImage(image: UIImage, toSize size:CGSize, cornerRadius radius:CGFloat) -> UIImage
-    {
+    class func resizeImage(image: UIImage, toSize size:CGSize, cornerRadius radius:CGFloat) -> UIImage {
         let originalImageSize = image.size
         let newRect = CGRectMake(0.0, 0.0, size.width, size.height); // The rectangle of the new image.
         let ratio = max(newRect.size.width / originalImageSize.width, newRect.size.height / originalImageSize.height); // Figure out scaling ratio.

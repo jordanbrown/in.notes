@@ -24,8 +24,7 @@ let kINHashtagSearchPattern: String = "(#[A-Za-z0-9]+)"
     *  If search doesnt return anything, hashtagStringFromString: will return valid but empty string.
     
     */
-    class func hashtagArrayFromString(string: String) -> Array <String>
-    {
+    class func hashtagArrayFromString(string: String) -> Array <String> {
         var hashtags: Array <String> = Array()
         var error: NSError?
         
@@ -42,8 +41,7 @@ let kINHashtagSearchPattern: String = "(#[A-Za-z0-9]+)"
         return hashtags
     }
     
-    class func hashtagStringFromString(string: String) -> String
-    {
+    class func hashtagStringFromString(string: String) -> String {
         var hashtags: String = String()
         var error: NSError?
         let regex: NSRegularExpression = NSRegularExpression.regularExpressionWithPattern(kINHashtagSearchPattern, options: NSRegularExpressionOptions.CaseInsensitive, error: &error)
@@ -70,8 +68,7 @@ let kINHashtagSearchPattern: String = "(#[A-Za-z0-9]+)"
     *
     *  @return NSData of hashtags that later can be converted into an array.
     */
-    class func hashtagDataFromString(string: String) -> NSData
-    {
+    class func hashtagDataFromString(string: String) -> NSData {
         if (HashtagContainer.hashtagArrayFromString(string).count > 0) {
             return NSKeyedArchiver.archivedDataWithRootObject(HashtagContainer.hashtagArrayFromString(string))
         } else {

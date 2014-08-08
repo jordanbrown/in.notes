@@ -30,8 +30,7 @@ class ImagePreview: UIView {
         super.init(coder: aDecoder)
     }
     
-    init(image: UIImage, view: UIView, completion:() -> ())
-    {
+    init(image: UIImage, view: UIView, completion:() -> ()) {
         super.init(frame: UIScreen.mainScreen().bounds)
         self.frame = UIScreen.mainScreen().bounds
         self.backgroundColor = UIColor.blackColor()
@@ -60,16 +59,14 @@ class ImagePreview: UIView {
         self.addGestureRecognizer(tapGestureRecognizer)
     }
     
-    func previewImage() -> Void
-    {
+    func previewImage() -> Void {
         UIView.animateWithDuration(0.6, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
             self.alpha = 1.0
             self.senderView!.transform = CGAffineTransformMakeScale(0.9, 0.9)
             }, completion:nil)
     }
     
-    func handleTapGesture(sender: AnyObject?) -> Void
-    {
+    func handleTapGesture(sender: AnyObject?) -> Void {
         UIView.animateWithDuration(0.4, animations: {
             self.alpha = 0.0
             self.senderView!.transform = CGAffineTransformMakeScale(1.0, 1.0)
@@ -83,8 +80,7 @@ class ImagePreview: UIView {
             })
     }
     
-    func shareButtonSelected(sender: AnyObject) -> Void
-    {
+    func shareButtonSelected(sender: AnyObject) -> Void {
         handleTapGesture(nil)
         delegate!.imagePreviewDidFinishPreparingImage(self, image: self.image!)
         image = nil

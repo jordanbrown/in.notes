@@ -12,8 +12,7 @@
 
 @implementation INTableViewCell
 
-+ (NSString *)reuseIdentifier
-{
++ (NSString *)reuseIdentifier {
     static NSString *reuseIdentifier = nil;
     if (!reuseIdentifier) {
         reuseIdentifier = NSStringFromClass([self class]);
@@ -21,13 +20,11 @@
     return reuseIdentifier;
 }
 
-+ (UINib *)nib
-{
++ (UINib *)nib {
     return [UINib nibWithNibName:[self reuseIdentifier] bundle:[NSBundle mainBundle]];
 }
 
-+ (NSString *)className
-{
++ (NSString *)className {
     static NSString *className = nil;
     if (!className) {
         className = NSStringFromClass([self class]);
@@ -35,15 +32,13 @@
     return className;
 }
 
-+ (CGFloat)estimateCellHeight
-{
++ (CGFloat)estimateCellHeight {
     return 120.0f;
 }
 
 #pragma mark - Instance
 
-- (UITapGestureRecognizer *)tapGestureRecognizer
-{
+- (UITapGestureRecognizer *)tapGestureRecognizer {
     [self.thumbnail.gestureRecognizers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         [self.thumbnail removeGestureRecognizer:(UITapGestureRecognizer *)obj];
     }];
@@ -51,13 +46,11 @@
     return [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleTapGesture:)];
 }
 
-- (void)handleTapGesture:(UITapGestureRecognizer *)tapGestureRecognizer
-{
+- (void)handleTapGesture:(UITapGestureRecognizer *)tapGestureRecognizer {
     [self.incellDelegate thumbnail:self.thumbnail didSelectThumbnailImageView:tapGestureRecognizer];
 }
 
-- (void)setPost:(INPost *)post
-{
+- (void)setPost:(INPost *)post {
     [self.txtLabel setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleBody]];
     [self.txtLabel setText:post.text];
     

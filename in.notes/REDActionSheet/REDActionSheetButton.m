@@ -20,11 +20,9 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithTitle:(NSString *)title
-{
+- (instancetype)initWithTitle:(NSString *)title {
 	self = [self initWithFrame:CGRectZero];
-	if (self)
-	{
+	if (self) {
 		[self setTitle:title forState:UIControlStateNormal];
 	}
 	
@@ -33,21 +31,14 @@
 
 #pragma mark - 
 
-- (void)updateStyle
-{
+- (void)updateStyle {
     self.titleLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
-    
 	self.alpha = 0.98;
-	
-	if (self.highlighted)
-	{
+	if (self.highlighted) {
 		self.backgroundColor = [UIColor colorWithRed:0.078 green:0.490 blue:0.965 alpha:1];
 		[self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-	}
-	else
-	{
-		switch (self.type)
-		{
+	} else {
+		switch (self.type) {
 			case REDActionSheetButtonTypeDefault:
 				self.backgroundColor = [UIColor whiteColor];
 				[self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -69,29 +60,26 @@
 
 #pragma mark -
 
-- (void)setType:(REDActionSheetButtonType)type
-{
-	if (type == _type)
-		return;
+- (void)setType:(REDActionSheetButtonType)type {
+    if (type == _type) {
+        return;
+    }
 	
 	_type = type;
 	[self updateStyle];
 }
 
-- (void)setHighlighted:(BOOL)highlighted
-{
+- (void)setHighlighted:(BOOL)highlighted {
 	[super setHighlighted:highlighted];
 	[self updateStyle];
 }
 
 #pragma mark - Drawing
 
-- (void)drawRect:(CGRect)rect
-{
+- (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
 	
-	if (self.position == REDActionSheetButtonPositionMiddle || self.position == REDActionSheetButtonPositionBottom)
-	{
+	if (self.position == REDActionSheetButtonPositionMiddle || self.position == REDActionSheetButtonPositionBottom) {
         [[UIColor colorWithRed:0.800 green:0.800 blue:0.800 alpha:0.7] set];
         
         UIBezierPath *linePath = [UIBezierPath bezierPath];
@@ -102,21 +90,17 @@
 	}
 		
 	UIBezierPath *path = nil;
-	if (self.position == REDActionSheetButtonPositionTop)
-	{
+	if (self.position == REDActionSheetButtonPositionTop) {
 		path = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(5.0, 5.0)];
 	}
-	else if (self.position == REDActionSheetButtonPositionBottom)
-	{
+	else if (self.position == REDActionSheetButtonPositionBottom) {
 		path = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:UIRectCornerBottomLeft | UIRectCornerBottomRight cornerRadii:CGSizeMake(5.0, 5.0)];
 	}
-	else if (self.type == REDActionSheetButtonTypeCancel)
-	{
+	else if (self.type == REDActionSheetButtonTypeCancel) {
 		path = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:5.0];
 	}
 	
-	if (path)
-	{
+	if (path) {
         // Rounded buttons?
 		CAShapeLayer *maskLayer = [CAShapeLayer layer];
 		maskLayer.path = path.CGPath;

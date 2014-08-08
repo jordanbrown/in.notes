@@ -24,8 +24,7 @@
 
 @implementation INEditViewController
 
-- (NSManagedObjectContext *)managedObjectContext
-{
+- (NSManagedObjectContext *)managedObjectContext {
     if (!_managedObjectContext) {
         INAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
         _managedObjectContext = appDelegate.managedObjectContext;
@@ -34,14 +33,12 @@
     return _managedObjectContext;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     [self setup];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     // This is required to fix UIImagePicker status bar change in an edge case
@@ -49,19 +46,16 @@
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
+- (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [[ImageStore sharedStore]deleteImageForKey:kINImageStoreKey];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-- (void)setup
-{
+- (void)setup {
     // Initialization.
     UIBarButtonItem *publishButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"done-button"] style:UIBarButtonItemStylePlain target:self action:@selector(publishButtonSelected:)];
     UIBarButtonItem *moreButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"more-button"] style:UIBarButtonItemStylePlain target:self action:@selector(moreButtonSelected:)];
@@ -78,8 +72,7 @@
     [self setupData];
 }
 
-- (void)setupData
-{
+- (void)setupData {
     if (self.post.text) {
         [self.notesTextView setText:self.post.text];
     }
@@ -95,21 +88,18 @@
     }
 }
 
-- (void)setMarkdownTextViewAsFirstResponder
-{
+- (void)setMarkdownTextViewAsFirstResponder {
     [self.notesTextView becomeFirstResponder];
 }
 
-- (void)presentImagePicker
-{
+- (void)presentImagePicker {
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
     imagePicker.delegate = self;
     imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
-- (IBAction)publishButtonSelected:(id)sender
-{
+- (IBAction)publishButtonSelected:(id)sender {
     if (![[ImageStore sharedStore]imageForKey:kINImageStoreKey]) { self.post.image = nil; }
     if (![self canSavePOSTData]) { return; }
     
@@ -131,15 +121,13 @@
             }];
 }
 
-- (BOOL)canSavePOSTData
-{
+- (BOOL)canSavePOSTData {
     return [self.notesTextView.text length] || [[ImageStore sharedStore]imageForKey:kINImageStoreKey] ? YES : NO;
 }
 
 #pragma mark - MCMore Button Delegate
 
-- (void)moreButtonSelected:(id)sender
-{
+- (void)moreButtonSelected:(id)sender {
     if (self.attachmentContainer.attachmentView.image) {
         if (self.notesTextView.isFirstResponder) {
             [self.notesTextView resignFirstResponder];
@@ -156,8 +144,7 @@
 
 #pragma mark - Attachemnt Container Delegate
 
-- (void)attachmentContainerDidRemoveImageWithRequest:(NSInteger)request
-{
+- (void)attachmentContainerDidRemoveImageWithRequest:(NSInteger)request {
     if (request == kINAttachmentRequestRemoveImage) {
         [self performSelector:@selector(setMarkdownTextViewAsFirstResponder) withObject:nil afterDelay:0.9];
         
@@ -171,8 +158,7 @@
 
 #pragma mark - Image Picker Delegate
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     [[ImageStore sharedStore]deleteImageForKey:kINImageStoreKey];
     [[ImageStore sharedStore]setImage:[info objectForKey:UIImagePickerControllerOriginalImage]forKey:kINImageStoreKey];
     [self dismissViewControllerAnimated:YES completion: ^{
@@ -181,8 +167,7 @@
     }];
 }
 
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
-{
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     [self dismissViewControllerAnimated:YES completion:^{
         if (!self.attachmentContainer.attachmentView.image) {
             [self.notesTextView becomeFirstResponder];
@@ -195,8 +180,7 @@
 /**
  *  See the INComposeViewController for more information.
  */
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
 }
 
