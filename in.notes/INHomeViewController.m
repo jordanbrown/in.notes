@@ -237,9 +237,7 @@
         dispatch_async(waitQ, ^{
             usleep(400000);
             dispatch_async(dispatch_get_main_queue(), ^{
-                [INPost deletePost:[self.fetchedResultsController objectAtIndexPath:indexPath] context:self.managedObjectContext completion:^(NSError *error) {
-                    // Post deleted.
-                }];
+                [INPost deletePost:[self.fetchedResultsController objectAtIndexPath:indexPath] context:self.managedObjectContext];
             });
         });
     }
@@ -277,11 +275,10 @@
     INPost *post = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     __block ImagePreview *imagePreview = [[ImagePreview alloc]initWithImage:[UIImage imageWithData:post.image]
-                                                                           view:self.navigationController.view completion:^{
-        [imagePreview removeFromSuperview];
-        imagePreview = nil;
-                                                                               
-    }];
+                                                                       view:self.navigationController.view completion:^{
+                                                                           [imagePreview removeFromSuperview];
+                                                                           imagePreview = nil;
+                                                                       }];
     
     imagePreview.delegate = self;
     

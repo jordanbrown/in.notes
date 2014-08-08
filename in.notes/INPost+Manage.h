@@ -35,20 +35,17 @@ typedef enum : NSUInteger {
                image:(UIImage *)image
            thumbnail:(UIImage *)thumbnail
             hashtags:(NSArray *)hashtags
-             context:(NSManagedObjectContext *)context
-          completion:(INPostCompletionHandler)completionHandler;
+             context:(NSManagedObjectContext *)context;
 
 + (void)editPost:(INPost *)post
         withText:(NSString *)text
            image:(UIImage *)image
        thumbnail:(UIImage *)thumbnail
         hashtags:(NSArray *)hashtags
-         context:(NSManagedObjectContext *)context
-      completion:(INPostCompletionHandler)completionHandler;
+         context:(NSManagedObjectContext *)context;
 
 + (void)deletePost:(INPost *)post
-           context:(NSManagedObjectContext *)context
-        completion:(INPostCompletionHandler)completionHandler;
+           context:(NSManagedObjectContext *)context;
 
 /**
  *  Helper method to return if the INPost entity contain enay objects.

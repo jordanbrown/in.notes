@@ -94,16 +94,14 @@
                thumbnail:[UIImage resizeImage:[[ImageStore sharedStore]imageForKey:kINImageStoreKey]
                                        toSize:CGSizeMake(300.0f, 129.0f) cornerRadius:0.0]
                 hashtags:[HashtagContainer hashtagArrayFromString:self.notesTextView.text]
-                 context:self.managedObjectContext completion:^(NSError *error) {
-                    
-                    /**
-                     *  It is important to clear the cache because "image" is still in memory.
-                     *  User can post "empty" posts if not cleared.
-                     */
-                    [[ImageStore sharedStore]deleteImageForKey:kINImageStoreKey];
-                    [self.navigationController popToRootViewControllerAnimated:YES];
-                    
-                }];
+                 context:self.managedObjectContext];
+    
+    /**
+     *  It is important to clear the cache because "image" is still in memory.
+     *  User can post "empty" posts if not cleared.
+     */
+    [[ImageStore sharedStore]deleteImageForKey:kINImageStoreKey];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (BOOL)canSavePOSTData {
