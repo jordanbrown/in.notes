@@ -37,7 +37,7 @@
     
     post.text = text;
     post.hashtags = [NSKeyedArchiver archivedDataWithRootObject:hashtags];
-    post.type = [self postTypeForText:text image:image];
+    post.type = [self postTypeForText:text image:image]; [context save:nil];
 }
 
 + (void)deletePost:(INPost *)post context:(NSManagedObjectContext *)context {

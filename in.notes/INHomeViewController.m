@@ -153,9 +153,9 @@
             break;
         case kINPostTypeText: {
             UITableViewCell *textCell = [tableView dequeueReusableCellWithIdentifier:@"INTextTableViewCell"];
-            textCell.textLabel.text = post.text;
             textCell.textLabel.numberOfLines = 0;
             textCell.textLabel.textColor = [UIColor darkGrayColor];
+                        textCell.textLabel.text = post.text;
             homeCell = textCell;
         }
             break;
