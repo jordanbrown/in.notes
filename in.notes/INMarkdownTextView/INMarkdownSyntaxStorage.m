@@ -69,7 +69,7 @@
                                                                            options:0
                                                                              error:nil];
     NSDictionary *boldAttributes = @{NSFontAttributeName : boldFont, NSForegroundColorAttributeName : [UIColor blueColor]};
-    NSDictionary *normalAttributes = @{NSFontAttributeName : normalFont, NSForegroundColorAttributeName : [UIColor blackColor]};
+    NSDictionary *normalAttributes = @{NSFontAttributeName : normalFont, NSForegroundColorAttributeName : [UIColor darkGrayColor]};
     
     // Iterate over each mathc, making text bold.
     [regex enumerateMatchesInString:[self.backingStore string]

@@ -13,12 +13,12 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import <CoreData/CoreData.h>
     #import "INConstants.h"
     #import "INAppDelegate.h"
 
 #define MR_SHORTHAND
 #define MR_ENABLE_ACTIVE_RECORD_LOGGING 0
-    #import "RZCellSizeManager+CoreData.h"
     #import "REDActionSheet.h"
     #import "in_notes-Swift.h"
 

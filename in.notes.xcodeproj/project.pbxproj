@@ -28,12 +28,10 @@
 		4839959C191427D20085611D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48399584191427D20085611D /* UIKit.framework */; };
 		483995A4191427D20085611D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 483995A2191427D20085611D /* InfoPlist.strings */; };
 		483995A6191427D20085611D /* in_notesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 483995A5191427D20085611D /* in_notesTests.m */; };
-		483995B019142C060085611D /* iPhone568.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483995AF19142C060085611D /* iPhone568.storyboard */; };
+		483995B019142C060085611D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483995AF19142C060085611D /* Main.storyboard */; };
 		483995B319142CC20085611D /* INHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 483995B219142CC20085611D /* INHomeViewController.m */; };
 		4839966D191437FA0085611D /* REDActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839961B191437FA0085611D /* REDActionSheet.m */; };
 		4839966E191437FA0085611D /* REDActionSheetButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839961D191437FA0085611D /* REDActionSheetButton.m */; };
-		4839966F191437FA0085611D /* RZCellSizeManager+CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 48399620191437FA0085611D /* RZCellSizeManager+CoreData.m */; };
-		48399670191437FA0085611D /* RZCellSizeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48399622191437FA0085611D /* RZCellSizeManager.m */; };
 		4839968219143A5F0085611D /* INComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839968119143A5F0085611D /* INComposeViewController.m */; };
 		4839968F191443D00085611D /* INPost+Manage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4839968E191443D00085611D /* INPost+Manage.m */; };
 		484994B9191749370023B8AB /* INTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 484994B7191749370023B8AB /* INTableViewCell.m */; };
@@ -48,8 +46,6 @@
 		48B10E43192BECF400747B9C /* INEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B10E42192BECF400747B9C /* INEditViewController.m */; };
 		48D844C31915B0B100567AFA /* INImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844C11915B0B100567AFA /* INImageTableViewCell.m */; };
 		48D844C41915B0B100567AFA /* INImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D844C21915B0B100567AFA /* INImageTableViewCell.xib */; };
-		48D844E31915C1BD00567AFA /* INTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D844E11915C1BD00567AFA /* INTextTableViewCell.m */; };
-		48D844E41915C1BD00567AFA /* INTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D844E21915C1BD00567AFA /* INTextTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,7 +87,7 @@
 		483995A1191427D20085611D /* in.notesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "in.notesTests-Info.plist"; sourceTree = "<group>"; };
 		483995A3191427D20085611D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		483995A5191427D20085611D /* in_notesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = in_notesTests.m; sourceTree = "<group>"; };
-		483995AF19142C060085611D /* iPhone568.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone568.storyboard; sourceTree = "<group>"; };
+		483995AF19142C060085611D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		483995B119142CC20085611D /* INHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INHomeViewController.h; sourceTree = "<group>"; };
 		483995B219142CC20085611D /* INHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INHomeViewController.m; sourceTree = "<group>"; };
 		483995B419142CE40085611D /* INConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INConstants.h; sourceTree = "<group>"; };
@@ -99,10 +95,6 @@
 		4839961B191437FA0085611D /* REDActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REDActionSheet.m; sourceTree = "<group>"; };
 		4839961C191437FA0085611D /* REDActionSheetButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REDActionSheetButton.h; sourceTree = "<group>"; };
 		4839961D191437FA0085611D /* REDActionSheetButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REDActionSheetButton.m; sourceTree = "<group>"; };
-		4839961F191437FA0085611D /* RZCellSizeManager+CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RZCellSizeManager+CoreData.h"; sourceTree = "<group>"; };
-		48399620191437FA0085611D /* RZCellSizeManager+CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RZCellSizeManager+CoreData.m"; sourceTree = "<group>"; };
-		48399621191437FA0085611D /* RZCellSizeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZCellSizeManager.h; sourceTree = "<group>"; };
-		48399622191437FA0085611D /* RZCellSizeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZCellSizeManager.m; sourceTree = "<group>"; };
 		4839968019143A5F0085611D /* INComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INComposeViewController.h; sourceTree = "<group>"; };
 		4839968119143A5F0085611D /* INComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INComposeViewController.m; sourceTree = "<group>"; };
 		4839968D191443D00085611D /* INPost+Manage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "INPost+Manage.h"; sourceTree = "<group>"; };
@@ -124,9 +116,6 @@
 		48D844C01915B0B100567AFA /* INImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INImageTableViewCell.h; sourceTree = "<group>"; };
 		48D844C11915B0B100567AFA /* INImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INImageTableViewCell.m; sourceTree = "<group>"; };
 		48D844C21915B0B100567AFA /* INImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = INImageTableViewCell.xib; sourceTree = "<group>"; };
-		48D844E01915C1BD00567AFA /* INTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INTextTableViewCell.h; sourceTree = "<group>"; };
-		48D844E11915C1BD00567AFA /* INTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INTextTableViewCell.m; sourceTree = "<group>"; };
-		48D844E21915C1BD00567AFA /* INTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = INTextTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,7 +187,7 @@
 				483995B419142CE40085611D /* INConstants.h */,
 				4839958F191427D20085611D /* INAppDelegate.h */,
 				48399590191427D20085611D /* INAppDelegate.m */,
-				483995AF19142C060085611D /* iPhone568.storyboard */,
+				483995AF19142C060085611D /* Main.storyboard */,
 				48B4A8DB191767BE00DDD642 /* ViewControllers */,
 				48399690191443D70085611D /* Core Data */,
 				48399592191427D20085611D /* Images.xcassets */,
@@ -258,17 +247,6 @@
 			path = REDActionSheet;
 			sourceTree = "<group>";
 		};
-		4839961E191437FA0085611D /* RZCellSizeManager */ = {
-			isa = PBXGroup;
-			children = (
-				4839961F191437FA0085611D /* RZCellSizeManager+CoreData.h */,
-				48399620191437FA0085611D /* RZCellSizeManager+CoreData.m */,
-				48399621191437FA0085611D /* RZCellSizeManager.h */,
-				48399622191437FA0085611D /* RZCellSizeManager.m */,
-			);
-			path = RZCellSizeManager;
-			sourceTree = "<group>";
-		};
 		48399690191443D70085611D /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,7 +304,6 @@
 			isa = PBXGroup;
 			children = (
 				48399619191437FA0085611D /* REDActionSheet */,
-				4839961E191437FA0085611D /* RZCellSizeManager */,
 			);
 			name = xOther;
 			sourceTree = "<group>";
@@ -349,9 +326,6 @@
 				48D844C01915B0B100567AFA /* INImageTableViewCell.h */,
 				48D844C11915B0B100567AFA /* INImageTableViewCell.m */,
 				48D844C21915B0B100567AFA /* INImageTableViewCell.xib */,
-				48D844E01915C1BD00567AFA /* INTextTableViewCell.h */,
-				48D844E11915C1BD00567AFA /* INTextTableViewCell.m */,
-				48D844E21915C1BD00567AFA /* INTextTableViewCell.xib */,
 				1C378EFF195B9E320074E304 /* ThumbnailViewDelegate.swift */,
 			);
 			path = INFeedCell;
@@ -486,8 +460,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48D844E41915C1BD00567AFA /* INTextTableViewCell.xib in Resources */,
-				483995B019142C060085611D /* iPhone568.storyboard in Resources */,
+				483995B019142C060085611D /* Main.storyboard in Resources */,
 				4839958B191427D20085611D /* InfoPlist.strings in Resources */,
 				48D844C41915B0B100567AFA /* INImageTableViewCell.xib in Resources */,
 				48399593191427D20085611D /* Images.xcassets in Resources */,
@@ -523,12 +496,9 @@
 				48982597194D4B3B00A4E236 /* ImageStore.swift in Sources */,
 				4839966E191437FA0085611D /* REDActionSheetButton.m in Sources */,
 				4814486D1921C01200BCB519 /* INPost.m in Sources */,
-				48399670191437FA0085611D /* RZCellSizeManager.m in Sources */,
 				4839968219143A5F0085611D /* INComposeViewController.m in Sources */,
 				48B10E43192BECF400747B9C /* INEditViewController.m in Sources */,
-				4839966F191437FA0085611D /* RZCellSizeManager+CoreData.m in Sources */,
 				48616EDB1916D0810011271A /* INNotesFetchedResultsController.m in Sources */,
-				48D844E31915C1BD00567AFA /* INTextTableViewCell.m in Sources */,
 				480BE31E19480D3C003C05E1 /* Resize.swift in Sources */,
 				1C1E4FA9197C71E500CFBBBA /* INMarkdownSyntaxStorage.m in Sources */,
 				4879C0FD194CBB130029F20D /* HashtagContainer.swift in Sources */,
@@ -668,7 +638,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "in.notes/INMarkdownTextView/in.notes-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -690,7 +660,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "in.notes/INMarkdownTextView/in.notes-Bridging-Header.h";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

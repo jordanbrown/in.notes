@@ -11,7 +11,6 @@
 
 #import "INTableViewCell.h"
 #import "INImageTableViewCell.h"
-#import "INTextTableViewCell.h"
 
 #import "INComposeViewController.h"
 #import "INEditViewController.h"
@@ -21,7 +20,6 @@
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 - (void)configureFetchedResultsController;
-- (void)configureSizeManager;
 - (void)configureTableView;
 - (void)configureObservers;
 - (void)configureINPlaceholderView:(NSNotification *)note;
@@ -44,7 +42,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configureFetchedResultsController];
-    [self configureSizeManager];
     [self configureTableView];
 }
 
@@ -75,31 +72,10 @@
     NSError *error = nil; [self.fetchedResultsController performFetch:&error];
 }
 
-- (void)configureSizeManager {
-    self.sizeManager = [[RZCellSizeManager alloc]init];
-
-    [self.sizeManager registerCellClassName:[INTableViewCell className]
-                         forReuseIdentifier:[INTableViewCell reuseIdentifier]
-                     withConfigurationBlock:^(INTableViewCell *cell, INPost *post) {
-                         [cell setPost:post];
-                     }];
-    
-    [self.sizeManager registerCellClassName:[INTextTableViewCell className]
-                         forReuseIdentifier:[INTextTableViewCell reuseIdentifier]
-                     withConfigurationBlock:^(INTextTableViewCell *textCell, INPost *post) {
-                         [textCell setPost:post];
-                     }];
-    
-    [self.sizeManager registerCellClassName:[INImageTableViewCell className]
-                         forReuseIdentifier:[INImageTableViewCell reuseIdentifier]
-                     withConfigurationBlock:^(INImageTableViewCell *imageCell, INPost *post) {
-                         [imageCell setPost:post];
-                     }];
-}
-
 - (void)configureTableView {
+    [self.tableView setRowHeight:UITableViewAutomaticDimension];
+    [self.tableView setEstimatedRowHeight:320.0];
     [self.tableView registerNib:[INTableViewCell nib] forCellReuseIdentifier:[INTableViewCell reuseIdentifier]];
-    [self.tableView registerNib:[INTextTableViewCell nib] forCellReuseIdentifier:[INTextTableViewCell reuseIdentifier]];
     [self.tableView registerNib:[INImageTableViewCell nib] forCellReuseIdentifier:[INImageTableViewCell reuseIdentifier]];
     
     // Setting footer to CGRectZero assure there are only separators for specific / added rows.
@@ -176,8 +152,10 @@
         }
             break;
         case kINPostTypeText: {
-            INTextTableViewCell *textCell = [tableView dequeueReusableCellWithIdentifier:[INTextTableViewCell reuseIdentifier]];
-            textCell.post = post;
+            UITableViewCell *textCell = [tableView dequeueReusableCellWithIdentifier:@"INTextTableViewCell"];
+            textCell.textLabel.text = post.text;
+            textCell.textLabel.numberOfLines = 0;
+            textCell.textLabel.textColor = [UIColor darkGrayColor];
             homeCell = textCell;
         }
             break;
@@ -205,21 +183,16 @@
     
     switch ([post.type integerValue]) {
         case kINPostTypeComplete: {
-            height = [self.sizeManager cellHeightForObject:post indexPath:indexPath cellReuseIdentifier:[INTableViewCell reuseIdentifier]];
-        }
-            break;
-        case kINPostTypeText: {
-            height = [self.sizeManager cellHeightForObject:post indexPath:indexPath cellReuseIdentifier:[INTextTableViewCell reuseIdentifier]];
+            height = 0.0;// [self.sizeManager cellHeightForObject:post indexPath:indexPath cellReuseIdentifier:[INTableViewCell reuseIdentifier]];
         }
             break;
         case kINPostTypeImage: {
-            height = [self.sizeManager cellHeightForObject:post indexPath:indexPath cellReuseIdentifier:[INImageTableViewCell reuseIdentifier]];
+            height = 0.0; // [self.sizeManager cellHeightForObject:post indexPath:indexPath cellReuseIdentifier:[INImageTableViewCell reuseIdentifier]];
         }
             break;
     }
     
-    // Making sure the cell height is at least 44 points.
-    return height < 44 ? 44 : height;
+    return height > 0.0 ? height : UITableViewAutomaticDimension;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
