@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 in.notes. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "INViewController.h"
 
-@interface INComposeViewController : UIViewController
+@interface INComposeViewController : INViewController
 
 @end

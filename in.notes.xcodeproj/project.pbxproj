@@ -12,6 +12,7 @@
 		1C254CD9195A467400AA5351 /* AttachmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C254CD8195A467400AA5351 /* AttachmentView.swift */; };
 		1C254CDB195A53E700AA5351 /* AttachmentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C254CDA195A53E700AA5351 /* AttachmentContainer.swift */; };
 		1C378F00195B9E320074E304 /* ThumbnailViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C378EFF195B9E320074E304 /* ThumbnailViewDelegate.swift */; };
+		1C94706B19982F4D003AF556 /* INViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C94706A19982F4D003AF556 /* INViewController.m */; };
 		480BE31E19480D3C003C05E1 /* Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480BE31D19480D3C003C05E1 /* Resize.swift */; };
 		4814486D1921C01200BCB519 /* INPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 4814486C1921C01200BCB519 /* INPost.m */; };
 		48224A5A191930F700514A86 /* intro-image-thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 48224A58191930F700514A86 /* intro-image-thumbnail.png */; };
@@ -65,6 +66,8 @@
 		1C254CD8195A467400AA5351 /* AttachmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentView.swift; sourceTree = "<group>"; };
 		1C254CDA195A53E700AA5351 /* AttachmentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentContainer.swift; sourceTree = "<group>"; };
 		1C378EFF195B9E320074E304 /* ThumbnailViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailViewDelegate.swift; sourceTree = "<group>"; };
+		1C94706919982F4D003AF556 /* INViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INViewController.h; sourceTree = "<group>"; };
+		1C94706A19982F4D003AF556 /* INViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INViewController.m; sourceTree = "<group>"; };
 		480A88C819478AC5006684C6 /* in.notes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "in.notes-Bridging-Header.h"; path = "INMarkdownTextView/in.notes-Bridging-Header.h"; sourceTree = "<group>"; };
 		480BE31D19480D3C003C05E1 /* Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resize.swift; sourceTree = "<group>"; };
 		4814486B1921C01200BCB519 /* INPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INPost.h; sourceTree = "<group>"; };
@@ -272,20 +275,15 @@
 			name = HomeViewController;
 			sourceTree = "<group>";
 		};
-		48B10E44192BECF800747B9C /* EditViewController */ = {
-			isa = PBXGroup;
-			children = (
-				48B10E41192BECF400747B9C /* INEditViewController.h */,
-				48B10E42192BECF400747B9C /* INEditViewController.m */,
-			);
-			name = EditViewController;
-			sourceTree = "<group>";
-		};
 		48B4A8DA191767AC00DDD642 /* ComposeViewController */ = {
 			isa = PBXGroup;
 			children = (
+				1C94706919982F4D003AF556 /* INViewController.h */,
+				1C94706A19982F4D003AF556 /* INViewController.m */,
 				4839968019143A5F0085611D /* INComposeViewController.h */,
 				4839968119143A5F0085611D /* INComposeViewController.m */,
+				48B10E41192BECF400747B9C /* INEditViewController.h */,
+				48B10E42192BECF400747B9C /* INEditViewController.m */,
 			);
 			name = ComposeViewController;
 			sourceTree = "<group>";
@@ -295,7 +293,6 @@
 			children = (
 				48616EDC1916D0BE0011271A /* HomeViewController */,
 				48B4A8DA191767AC00DDD642 /* ComposeViewController */,
-				48B10E44192BECF800747B9C /* EditViewController */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -493,6 +490,7 @@
 				48AC1283192BE969001E45A4 /* in.notes.xcdatamodeld in Sources */,
 				4839968F191443D00085611D /* INPost+Manage.m in Sources */,
 				484B8C41194E9E8300C0BDA7 /* ImagePreview.swift in Sources */,
+				1C94706B19982F4D003AF556 /* INViewController.m in Sources */,
 				48982597194D4B3B00A4E236 /* ImageStore.swift in Sources */,
 				4839966E191437FA0085611D /* REDActionSheetButton.m in Sources */,
 				4814486D1921C01200BCB519 /* INPost.m in Sources */,

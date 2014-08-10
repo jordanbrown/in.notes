@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 in.notes. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "INViewController.h"
 
 @class INPost;
 
-@interface INEditViewController : UIViewController
+@interface INEditViewController : INViewController
 
 @property (strong, nonatomic) INPost *post;
 
