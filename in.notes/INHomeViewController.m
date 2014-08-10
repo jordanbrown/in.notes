@@ -86,22 +86,19 @@
     __weak typeof(self) weakSelf = self;
     
     [[NSNotificationCenter defaultCenter] addObserverForName:kINManagedObjectContextDidAddNewItem
-                                                      object:nil
-                                                       queue:[NSOperationQueue mainQueue]
+                                                      object:nil queue:[NSOperationQueue mainQueue]
                                                   usingBlock:^(NSNotification *note) {
                                                       [weakSelf configureINPlaceholderView:note];
                                                   }];
     
     [[NSNotificationCenter defaultCenter] addObserverForName:kINManagedObjectContextDidDeleteLastItem
-                                                      object:nil
-                                                       queue:[NSOperationQueue mainQueue]
+                                                      object:nil queue:[NSOperationQueue mainQueue]
                                                   usingBlock:^(NSNotification *note) {
                                                       [weakSelf configureINPlaceholderView:note];
                                                   }];
     
     [[NSNotificationCenter defaultCenter]addObserverForName:NSManagedObjectContextDidSaveNotification
-                                                     object:nil
-                                                      queue:[NSOperationQueue mainQueue]
+                                                     object:nil queue:[NSOperationQueue mainQueue]
                                                  usingBlock:^(NSNotification *note) {
                                                      [weakSelf.tableView reloadData];
                                                  }];

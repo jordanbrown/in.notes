@@ -13,9 +13,12 @@
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) NotesTextView *notesTextView;
+@property (strong, nonatomic) NSLayoutConstraint *notesTextViewBottomConstraint;
 @property (strong, nonatomic) AttachmentContainer *attachmentContainer;
 
 - (void)setup;
+- (void)configureNotesTextView;
+- (void)configureObservers;
 - (void)setupData;
 - (void)presentImagePicker;
 - (IBAction)publishButtonSelected:(id)sender;
@@ -35,11 +38,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self configureNotesTextView];
     [self setup];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self configureObservers];
     
     // This is required to fix UIImagePicker status bar change in an edge case
     // when the user performs partial swipe back and then forward on image picker.
@@ -49,6 +54,7 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [[ImageStore sharedStore]deleteImageForKey:kINImageStoreKey];
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,16 +66,85 @@
     UIBarButtonItem *publishButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"done-button"] style:UIBarButtonItemStylePlain target:self action:@selector(publishButtonSelected:)];
     UIBarButtonItem *moreButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"more-button"] style:UIBarButtonItemStylePlain target:self action:@selector(moreButtonSelected:)];
     self.navigationItem.rightBarButtonItems = @[publishButton, moreButton];
-    self.notesTextView = [[NotesTextView alloc]initWithView:self.view];
     self.attachmentContainer = [[AttachmentContainer alloc]initWithFrame:IN_ATTACHMENT_CONTAINER_INIT_FRAME_EDIT];
     self.attachmentContainer.delegate = self;
     
     // Subviews setup.
-    [self.view addSubview:self.notesTextView];
     [self.view addSubview:self.attachmentContainer];
     
     // Setup / populate views with data.
     [self setupData];
+}
+
+- (void)configureNotesTextView {
+    self.notesTextView = [[NotesTextView alloc]initWithView:self.view];
+    self.notesTextView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    // Add subview before applying constraints.
+    [self.view addSubview:self.notesTextView];
+    
+    NSLayoutConstraint *notesTextViewTopConstraint = [NSLayoutConstraint constraintWithItem:self.notesTextView
+                                                                                  attribute:NSLayoutAttributeTop
+                                                                                  relatedBy:NSLayoutRelationEqual
+                                                                                     toItem:self.view
+                                                                                  attribute:NSLayoutAttributeTop
+                                                                                 multiplier:1.0
+                                                                                   constant:0.0];
+    NSLayoutConstraint *notesTextViewRightConstraint = [NSLayoutConstraint constraintWithItem:self.notesTextView
+                                                                                    attribute:NSLayoutAttributeRight
+                                                                                    relatedBy:NSLayoutRelationEqual
+                                                                                       toItem:self.view
+                                                                                    attribute:NSLayoutAttributeRight
+                                                                                   multiplier:1.0
+                                                                                     constant:0.0];
+    NSLayoutConstraint *notesTextViewLeftConstraint = [NSLayoutConstraint constraintWithItem:self.notesTextView
+                                                                                   attribute:NSLayoutAttributeLeft
+                                                                                   relatedBy:NSLayoutRelationEqual
+                                                                                      toItem:self.view
+                                                                                   attribute:NSLayoutAttributeLeft
+                                                                                  multiplier:1.0 constant:0.0];
+    
+    self.notesTextViewBottomConstraint = [NSLayoutConstraint constraintWithItem:self.notesTextView
+                                                                      attribute:NSLayoutAttributeBottom
+                                                                      relatedBy:NSLayoutRelationEqual
+                                                                         toItem:self.view
+                                                                      attribute:NSLayoutAttributeBottom
+                                                                     multiplier:1.0
+                                                                       constant:0.0];
+    [self.view addConstraint:notesTextViewTopConstraint];
+    [self.view addConstraint:notesTextViewRightConstraint];
+    [self.view addConstraint:notesTextViewLeftConstraint];
+    [self.view addConstraint:self.notesTextViewBottomConstraint];
+}
+
+- (void)configureObservers {
+
+    __weak typeof(self) weakSelf = self;
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardWillShowNotification
+                                                      object:nil queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:^(NSNotification *note) {
+                                                      NSDictionary *userInfo = note.userInfo;
+                                                      CGRect keyboardFrame = [userInfo[UIKeyboardFrameEndUserInfoKey]CGRectValue];
+                                                      NSTimeInterval animationDuration = [userInfo[UIKeyboardAnimationDurationUserInfoKey]doubleValue];
+                                                      CGRect finalKeyboardFrame = [self.view convertRect:keyboardFrame fromView:self.view.window];
+                                                      CGFloat keyboardHeight = finalKeyboardFrame.size.height;
+                                                      weakSelf.notesTextViewBottomConstraint.constant = -keyboardHeight + self.notesTextViewBottomConstraint.constant;
+                                                      [UIView animateWithDuration:animationDuration animations:^{
+                                                          [weakSelf.view layoutIfNeeded];
+                                                      }];
+                                                  }];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardWillHideNotification
+                                                      object:nil queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:^(NSNotification *note) {
+                                                      NSDictionary *userInfo = note.userInfo;
+                                                      NSTimeInterval animationDuration = [userInfo[UIKeyboardAnimationDurationUserInfoKey]doubleValue];
+                                                      weakSelf.notesTextViewBottomConstraint.constant = -self.attachmentContainer.frame.size.height;
+                                                      [UIView animateWithDuration:animationDuration animations:^{
+                                                          [weakSelf.view layoutIfNeeded];
+                                                      }];
+                                                  }];
 }
 
 - (void)setupData {
